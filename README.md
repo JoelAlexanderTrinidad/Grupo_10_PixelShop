@@ -1,3 +1,9 @@
+PixelShop
+
+Nuestra plataforma ofrece la venta de videojuegos digitales y la comunidadPixel donde pueden tener información de actualizaciones, subir contenidos y debatir con otros miembros.
+Los juegos están disponibles para distintas plataformas desde celulares, tablets o computadoras. 
+Esta dirigida al público en general. 
+
 SITIOS DE REFERENCIA
 Los sitios de referencia que utilizamos son los siguientes:
 * https://store.steampowered.com/
