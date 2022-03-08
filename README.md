@@ -4,6 +4,13 @@ Nuestra plataforma ofrece la venta de videojuegos digitales y la comunidadPixel 
 Los juegos están disponibles para distintas plataformas desde celulares, tablets o computadoras. 
 Esta dirigida al público en general. 
 
+INTEGRANTES
+
+*JOEL ALEXANDER, Trinidad
+*MANUEL DAVID, Ramirez
+*MARIA DEL CAMPO, Peralta Huaycho
+*FLORENCIA AGUSTINA, Mamani (https://github.com/Agusflor)
+
 SITIOS DE REFERENCIA
 Los sitios de referencia que utilizamos son los siguientes:
 * https://store.steampowered.com/
