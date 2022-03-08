@@ -7,7 +7,7 @@ Esta dirigida al público en general.
 INTEGRANTES
 
 *JOEL ALEXANDER, Trinidad
-*MANUEL DAVID, Ramirez
+*MANUEL DAVID, Ramirez (https://github.com/ManuelDavidRamirez)
 *MARIA DEL CAMPO, Peralta Huaycho
 *FLORENCIA AGUSTINA, Mamani (https://github.com/Agusflor)
 
