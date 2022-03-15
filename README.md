@@ -7,8 +7,8 @@ Esta dirigida al público en general.
 INTEGRANTES
 
 * JOEL ALEXANDER, Trinidad (https://github.com/JoelAlexanderTrinidad)
-* MANUEL DAVID, Ramirez (https://github.com/ManuelDavidRamirez)
-* FLORENCIA AGUSTINA, Mamani (https://github.com/Agusflor) - 24 años - Lanus, Buenos Aires- Representante de envíos.
+* MANUEL DAVID, Ramirez (https://github.com/ManuelDavidRamirez) - 27 años - La Boca, Buenos Aires - Aspirante a Programador.
+* FLORENCIA AGUSTINA, Mamani (https://github.com/Agusflor) - 24 años - Lanus, Buenos Aires - Representante de envíos.
 
 
 SITIOS DE REFERENCIA
