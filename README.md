@@ -6,7 +6,7 @@ Esta dirigida al público en general.
 
 INTEGRANTES
 
-* JOEL ALEXANDER, Trinidad (https://github.com/JoelAlexanderTrinidad)
+* JOEL ALEXANDER, Trinidad (https://github.com/JoelAlexanderTrinidad) 30 años - San Cristobal, Buenos Aires - Estudiante de análisis de sistemas.
 * MANUEL DAVID, Ramirez (https://github.com/ManuelDavidRamirez) - 27 años - La Boca, Buenos Aires - Aspirante a Programador.
 * FLORENCIA AGUSTINA, Mamani (https://github.com/Agusflor) - 24 años - Lanus, Buenos Aires - Representante de envíos.
 
