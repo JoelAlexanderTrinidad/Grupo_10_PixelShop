@@ -6,16 +6,17 @@ Esta dirigida al público en general.
 
 INTEGRANTES
 
-*JOEL ALEXANDER, Trinidad
-*MANUEL DAVID, Ramirez (https://github.com/ManuelDavidRamirez)
-*MARIA DEL CAMPO, Peralta Huaycho
-*FLORENCIA AGUSTINA, Mamani (https://github.com/Agusflor)
+* JOEL ALEXANDER, Trinidad (https://github.com/JoelAlexanderTrinidad)
+* MANUEL DAVID, Ramirez (https://github.com/ManuelDavidRamirez)
+* FLORENCIA AGUSTINA, Mamani (https://github.com/Agusflor) - 24 años - Lanus, Buenos Aires- Representante de envíos.
+
 
 SITIOS DE REFERENCIA
 Los sitios de referencia que utilizamos son los siguientes:
-* https://store.steampowered.com/
-* https://www.origin.com/arg/es-es/
-* https://www.mercadolibre.com.ar/
-* https://dixgamer.com/
-* https://www.fravega.com/
+* https://store.steampowered.com/ (Modelo a seguir)
+* https://www.facebook.com/ (Registro e Incio de sesión)
+* https://www.mercadolibre.com.ar/ (Home)
+* https://dixgamer.com/ (Descripción del producto)
+* https://www.fravega.com/ (Carrito de compra y descripción del producto)
+
 Elegimos estas páginas para tener una visión y comprensión general acerca de la venta de videojuegos digitales. Nos sirvieron de ayuda, para organizar la información y diseñar nuestro proceso. 
