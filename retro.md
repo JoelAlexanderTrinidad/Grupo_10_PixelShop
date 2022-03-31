@@ -1,2 +1,3 @@
 Concluciones del primer sprint:
+
 Con la primera entrega nos dimos cuenta que pudimos trabajar bien en equipo, nos dividimos las tareas, pudimos solucionar coflictos imprevistos, cumplir con los plazos de entrega. Nos dimos cuenta que tendríamos que debatir más acerca de las propuestas de nuestros compañeros y no quedarnos con la primera opción. Deberíamos prestarle atención a las tarjetas en su debido proceso y poniéndoles fechas estipuladas de entrega en Trello. Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final para poder corregir los errores y unificar todas las partes.
