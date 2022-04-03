@@ -20,3 +20,6 @@ Los sitios de referencia que utilizamos son los siguientes:
 * https://www.fravega.com/ (Carrito de compra y descripción del producto)
 
 Elegimos estas páginas para tener una visión y comprensión general acerca de la venta de videojuegos digitales. Nos sirvieron de ayuda, para organizar la información y diseñar nuestro proceso. 
+
+Tablero de trabajo: https://trello.com/c14grupo10
+GitHub: https://github.com/JoelAlexanderTrinidad/Grupo_10_PixelShop
