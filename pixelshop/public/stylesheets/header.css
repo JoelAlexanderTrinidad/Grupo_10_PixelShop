@@ -1,6 +1,61 @@
 .home__header__section {
     display: flex;
     justify-content: space-between;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
+.home__header__nav{
+    display: none;
     
+}
+
+.home__header__nav__user{
+    display: none;
+}
+
+#busqueda{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: var(--colorAzulNoche);
+}
+
+#busqueda input{
+    width: 80%;
+}
+
+.footer__nav{
+    display: none;
+}
+
+.footer__section{
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.footer__section p{
+    width: 50%;
+    text-align: center;
+    background-color: var(--colorRosaBebeOpacity);
+    border-radius: 10px;
+    border: 1px solid var(--colorAzulNoche);
+    box-shadow: 5px 5px 3px var(--colorAzulNoche);
+}
+
+.footer{
+    padding-top: 15px;
+    background-color: var(--colorAqua);
+}
+
+.footer__nav__networks{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.footer__section a i{
+   font-size: 40px;
+}
