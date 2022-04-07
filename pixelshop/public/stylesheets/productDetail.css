@@ -1,44 +1,81 @@
 /* ############### main ###############*/
-.details {
-    width: 90%;
+.main {
+    width: 94%;
     margin: 10px auto 0;
 }
 
-.details h3{
+.main h3{
     font-size: 30px;
 }
 
-
-.details__section{
-    border: 1px solid var(--colorAzulOscuro);
-    padding: 15px;
-    margin-top: 20px;
+.main__section{
     background-color: var(--colorLila);
     border-radius: 10px;
+    border: 1px solid var(--colorAzulOscuro);
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
 }
-/* .details__section h3{
+.main__section img{
+    border-radius: 15px;
+}
+.main__div-carrusel{
+    width: 100vw;
+    margin-left: -3.5%;
+}
+
+.main__div-carrusel img{
+    margin: 0 auto;
+   
+}
+
+/* .main__section h3{
     margin-top: 20px;
 } */
 
-.details__section ul{
+.main__section-categories{
     display: flex;
     flex-wrap: wrap;
 }
 
-.details__section-categories li{
+.main__section-categories li{
+    
     background-color: var(--colorVerde);
+    border-radius: 5px;
     margin: 5px 15px 0 0;
     padding: 0 10px;
-    border-radius: 5px;
 }
 
-.details__section-info{
+.main__section-info{
     display: flex;
     flex-direction: column;
     padding: 10px 0;
 }
 
-.details__section h2, .details__section-buy{
-    font-size: 35px;
+.main__section-buy{
+    font-weight: 900;
     text-align: center;
+    font-size: 25px;
+    
+}
+
+.main__section-buy li{
+    background-color: var(--colorTurquesa);
+    border: 2px solid var(--colorVino);
+    border-radius: 15px;
+    margin: 5px auto;
+    padding: 10px 0;
+    width: 75%;
+}
+.main__section-buy h2{
+    background-color: var(--colorAqua);
+    border: 2px solid var(--colorVino);
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 50%;
+}
+
+.main__section-buy a{
+    color: var(--colorAzulOscuro);
 }

@@ -3,6 +3,25 @@
     justify-content: space-between;
     font-size: 25px;
     background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+.home__header__section h3{
+    padding-bottom: 10px;
+    font-size: 40px;
+}
+.home__header__div i{
+    background-color: var(--colorMorado);
+    color: var(--colorVerde);
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+.home__header__div img{
+    width: 30px;
+    
+}
+
+.home__header__div-user{
+    padding-top: 5px;
 }
 
 .home__header__nav{
