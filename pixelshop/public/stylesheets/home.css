@@ -1,0 +1,91 @@
+/*Banner*/
+
+.home__main section .home__main__banner img{
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+/*Ofertas Especiales*/
+
+.home__main h4{
+    margin: 10px;
+}
+
+.home__main .home__main__offer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.home__main .home__main__offer article{
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.home__main .home__main__offer article img{
+    border-radius: 5%;
+}
+
+.home__main .home__main__offer .price{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Destacados */
+
+.home__main .home__main__featured article{
+    background-color: var(--colorRosaBebeOpacity);
+    border: 2px dashed var(--colorAzulOscuro);
+    border-radius: 5%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.home__main .home__main__featured img{
+    border-radius: 5%;
+}
+
+.home__main .home__main__featured p{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.home__main .home__main__featured i{
+    color: yellow;
+}
+
+/* Recomendados */
+
+.home__main .home__main__recommended{
+    margin: 10px;
+}
+
+.home__main .home__main__recommended article{
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 10%;
+    margin: 10px;
+}
+
+.home__main .home__main__recommended article img{
+    border: 1px solid black;
+}
+
+.home__main .home__main__recommended article span{
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid black;
+    justify-content: flex-end;
+}
+
+.home__main .home__main__more{
+    background-color: var(--colorFucsia);
+    display: block;
+    text-align: center;
+    width: 30%;
+    margin: 15px;
+    border: 2px solid black;
+}
+
