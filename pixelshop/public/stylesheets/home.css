@@ -26,19 +26,32 @@
     border-radius: 5%;
 }
 
-.home__main .home__main__offer .price{
+.home__main .home__main__offer .details{
     display: flex;
     justify-content: space-between;
 }
 
+.home__main .home__main__offer span{
+    color: rgb(24, 218, 24);
+}
+
+.home__main .home__main__offer .fa-heart:before{
+    color: rgb(238, 12, 12);
+}
+
 /* Destacados */
 
+.home__main .home__main__featured{
+    background-color: var(--colorMorado);
+    padding: 10px;
+}
+
 .home__main .home__main__featured article{
-    background-color: var(--colorRosaBebeOpacity);
+    background-color: var(--colorTurquesa);
     border: 2px dashed var(--colorAzulOscuro);
     border-radius: 5%;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .home__main .home__main__featured img{
@@ -50,8 +63,15 @@
     text-align: center;
 }
 
-.home__main .home__main__featured i{
+.home__main .home__main__featured .fa-star:before{
     color: yellow;
+}
+
+.home__main .home__main__featured .carousel{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
 }
 
 /* Recomendados */
@@ -61,31 +81,47 @@
 }
 
 .home__main .home__main__recommended article{
+    background-color: var(--colorRosaBebeOpacity);
     border: 2px solid black;
     border-radius: 5%;
-    background-color: white;
-    padding: 10px;
-    padding-bottom: 10%;
-    margin: 10px;
+    padding: 15px;
+    padding-bottom: 4%;
+    margin: 15px;
 }
 
 .home__main .home__main__recommended article img{
     border: 1px solid black;
+    border-radius: 50%;
 }
 
-.home__main .home__main__recommended article span{
-    display: flex;
-    justify-content: flex-end;
+.home__main .home__main__recommended article p{
+    background-color: rgb(224, 224, 224);
+    border: 1px double black;
+    margin: 15px 5px;
+    padding: 10px;
+}
+
+.home__main .home__main__recommended article .more{
+    background-color: var(--colorVioleta);
+    display: block;
+    text-align: center;
     border: 1px solid black;
-    justify-content: flex-end;
+    border-radius: 5%;
+    width: 30%;
+    padding: 5px;
+    position: relative;
+    left: 70%;
 }
 
-.home__main .home__main__more{
+.home__main .home__main__continue{
     background-color: var(--colorFucsia);
     display: block;
     text-align: center;
-    width: 30%;
-    margin: 15px;
     border: 2px solid black;
+    border-radius: 5%;
+    width: 45%;
+    margin: 20px;
+    padding: 5px;
+    position: relative;
+    left: 22%;
 }
-
