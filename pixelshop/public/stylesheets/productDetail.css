@@ -8,29 +8,7 @@
     font-size: 28px;
 }
 
-.main__section{
-    border-radius: 10px;    
-    margin-top: 20px;
-    width: 100%;
-}
-
-.main__section-resumen{
-    border: 1px solid red;
-}
-.main__section-info{
-    border: 1px solid red;
-
-}
-.main__secition-desc h3{
-}
-
-
-.main__secition-desc h3 span{
-    font-size: 15px;
-}
-.main__section img{
-    border-radius: 15px;
-}
+/* main__div-carrusel */
 .main__div-carrusel{
     width: 100vw;
     margin-left: -3.5%;
@@ -39,6 +17,47 @@
 .main__div-carrusel img{
     margin: 0 auto;
    
+}
+/* main__section */
+.main__section{
+    border-radius: 10px;    
+    margin-top: 20px;
+    width: 100%;
+}
+.main__section img{
+    border-radius: 15px;
+}
+
+.main__section-resumen{
+}
+
+.main__section-info #info{
+    margin: 10px 0;
+    border-top: 1px solid var(--colorBordeSparador);
+    padding: 10px 0;
+}
+.main__section-info{
+    border-top: 1px solid var(--colorBordeSparador);
+    border: 2px solid var(--colorBordeRojo);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.main__secition-desc a{
+    color: black;
+}
+
+.main__secition-desc h3{
+    padding: 10px 0;
+}
+
+
+.main__secition-desc h3 span{
+    font-size: 15px;
+}
+
+.main__section__articles img{
+    width: 100%;
 }
 
 .main__section__articles{
@@ -58,11 +77,12 @@
 .main__section-categories{
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 10px;
 }
 
 .main__section-categories li{
     
-    /* background-color: var(--colorVerde); */
+    background-color: var(--colorVerde);
     border-radius: 5px;
     margin: 5px 15px 0 0;
     padding: 0 10px;
@@ -80,6 +100,7 @@
 
 .main__section-buy li{
     /* background-color: var(--colorTurquesa); */
+    border-radius: 5px;
     padding: 10px 0;
     width: 100%;
     background-color: var(--colorAmarillo);
@@ -88,24 +109,23 @@
 .main__section-buy h2{
     font-size: 25px;
     /* background-color: var(--colorTurquesa); */
-    border-top: 1px solid rgb(194, 227, 233);
+    border-top: 1px solid  var(--colorBordeSparador);
     margin-top: 10px;
     padding: 10px 0;
-
-}
-
-.main__secition-desc a{
-    color: black;
 }
 
 .main__section-buy span{
     font-size: 10px;
 }
 
-.main__section__articles img{
-    width: 100%;
+
+.main__secition-desc #more{
+    margin: 15px 0;
 }
 
+
+
+/* mobile */
 @media (max-width: 375px){
     .main__div-carrusel{
         display: none;

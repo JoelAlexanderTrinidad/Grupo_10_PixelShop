@@ -8,7 +8,7 @@
     --colorTurquesa:#04c4d9;
 
     --colorBeige: #febaad;
-    --colorVerde:#05edbd;
+    --colorVerde:#5debcc75;
     --colorFucsia:#ff00aa;
     --colorAzul:#0000a2;
 
@@ -23,5 +23,7 @@
     --colorVioletaOscuro:#2d204f;
     --colorLetra: #fa91fd;
     --colorFondo: #94e8f2;
-    --colorAmarillo: #f3e24b7a;
+    --colorAmarillo: #46a5c94f;
+    --colorBordeSparador: #c2e3e9;
+    --colorBordeRojo: #c13fcb6e;
 }
