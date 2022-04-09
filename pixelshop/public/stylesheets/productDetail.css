@@ -22,7 +22,6 @@
 
 }
 .main__secition-desc h3{
-    border: 1px solid red;
 }
 
 
@@ -83,13 +82,20 @@
     /* background-color: var(--colorTurquesa); */
     padding: 10px 0;
     width: 100%;
-    border: 1px solid red;
+    background-color: var(--colorAmarillo);
+    margin: 10px 0;
 }
 .main__section-buy h2{
     font-size: 25px;
     /* background-color: var(--colorTurquesa); */
-    border: 1px solid red;
+    border-top: 1px solid rgb(194, 227, 233);
+    margin-top: 10px;
+    padding: 10px 0;
 
+}
+
+.main__secition-desc a{
+    color: black;
 }
 
 .main__section-buy span{
