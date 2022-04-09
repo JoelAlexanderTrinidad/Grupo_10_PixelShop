@@ -5,14 +5,29 @@
 }
 
 .main h3{
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .main__section{
-    background-color: rgb(255, 243, 176);
     border-radius: 10px;    
     margin-top: 20px;
     width: 100%;
+}
+
+.main__section-resumen{
+    border: 1px solid red;
+}
+.main__section-info{
+    border: 1px solid red;
+
+}
+.main__secition-desc h3{
+    border: 1px solid red;
+}
+
+
+.main__secition-desc h3 span{
+    font-size: 15px;
 }
 .main__section img{
     border-radius: 15px;
@@ -27,6 +42,19 @@
    
 }
 
+.main__section__articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.main__section__articles article{
+    width: 40%;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 2px;
+}
 
 .main__section-categories{
     display: flex;
@@ -35,27 +63,33 @@
 
 .main__section-categories li{
     
-    background-color: var(--colorVerde);
+    /* background-color: var(--colorVerde); */
     border-radius: 5px;
     margin: 5px 15px 0 0;
     padding: 0 10px;
 }
 
 .main__section-buy{
+    margin: 20px 0;
     font-weight: 900;
-    text-align: center;
     font-size: 25px;
 }
 
+.main__section-buy ul{
+    text-align: center;
+}
+
 .main__section-buy li{
-    background-color: var(--colorTurquesa);
+    /* background-color: var(--colorTurquesa); */
     padding: 10px 0;
-    width: 95%;
+    width: 100%;
+    border: 1px solid red;
 }
 .main__section-buy h2{
     font-size: 25px;
-    background-color: var(--colorTurquesa);
-    width: 90%;
+    /* background-color: var(--colorTurquesa); */
+    border: 1px solid red;
+
 }
 
 .main__section-buy span{
@@ -63,7 +97,7 @@
 }
 
 .main__section__articles img{
-    width: 40%;
+    width: 100%;
 }
 
 @media (max-width: 375px){
