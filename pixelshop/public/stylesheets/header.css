@@ -74,6 +74,10 @@
     background-color: #60d5df;
 }
 
+#busqueda button i{
+    color: #1d3d66;
+}
+
 #busqueda input{
     width: 80%;
     border-radius: 5px;
