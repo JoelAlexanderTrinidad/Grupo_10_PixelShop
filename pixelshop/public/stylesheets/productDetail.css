@@ -28,7 +28,7 @@
     border-radius: 15px;
 }
 
-.main__section-info #info{
+.main__section-info #especificaciones{
     margin: 10px 0;
     border-top: 1px solid var(--colorBordeSparador);
     padding: 10px 0;
@@ -44,26 +44,28 @@
     margin-top: 5px;
 }
 
-.main__secition-desc a{
+.main__section-desc a{
     color: var(--colorPrueba3);
 }
 
-.main__secition-desc h3{
+#info .main__section h3{
     padding: 10px 0;
     color: var(--colorPrueba3);
 }
 
 
-.main__secition-desc h3 span{
+#info .main__section h3 span{
     font-size: 15px;
 }
 
-.main__secition-desc #more{
+#more{
     margin: 15px 0;
+    width: 84.6vw;
 }
 
 .main__section__articles img{
     width: 100%;
+    height: 80%;
 }
 
 .main__section__articles{
@@ -99,6 +101,7 @@
     margin: 20px 0;
     font-weight: 900;
     font-size: 25px;
+    width: 100%;
 }
 
 .main__section-buy i{
@@ -116,6 +119,7 @@
     width: 100%;
     background-color: var(--colorPrueba);
     margin: 10px 0;
+    border: 1px solid #603084;
 }
 .main__section-buy h2{
     font-size: 25px;
@@ -136,5 +140,51 @@
 @media (max-width: 425px){
     .main__div-carrusel{
         display: none;
+    }
+}
+
+/* tablets */
+@media (min-width: 768px){
+    .main__section{
+        margin-top: 0;
+        width: 100%;
+    }
+    .main__section-desc{
+        width: 100%;
+    }
+    .main__section-buy{
+        margin: 0;
+        
+    }
+    .main__section-info{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 25px 15px 0;
+        width: 48%;
+        flex-direction: column;
+    }
+    .main #info{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+    .main #img-buy{
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+    }
+    .main__section__articles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    #more{
+        margin: 15px 0;
+        width: 84.6vw;
+        font-size: 35px;
+    }
+    .main__section__articles article {
+        width: 28%;
     }
 }
