@@ -1,8 +1,4 @@
 /* ############### main ###############*/
-
-.body{
-    /* background-color: var(--colorBody); */
-}
 .main {
     width: 94%;
     margin: 10px auto 0;
@@ -30,9 +26,6 @@
 }
 .main__section img{
     border-radius: 15px;
-}
-
-.main__section-resumen{
 }
 
 .main__section-info #info{
