@@ -1,4 +1,8 @@
 /* ############### main ###############*/
+
+.body{
+    /* background-color: var(--colorBody); */
+}
 .main {
     width: 94%;
     margin: 10px auto 0;
@@ -41,19 +45,28 @@
     border: 2px solid var(--colorBordeRojo);
     padding: 5px;
     border-radius: 10px;
+    color: var(--colorPrueba3);
+}
+.main__section-info-div{
+    margin-top: 5px;
 }
 
 .main__secition-desc a{
-    color: black;
+    color: var(--colorPrueba3);
 }
 
 .main__secition-desc h3{
     padding: 10px 0;
+    color: var(--colorPrueba3);
 }
 
 
 .main__secition-desc h3 span{
     font-size: 15px;
+}
+
+.main__secition-desc #more{
+    margin: 15px 0;
 }
 
 .main__section__articles img{
@@ -72,6 +85,7 @@
     margin: 10px 0;
     background-color: white;
     border-radius: 2px;
+    color: var(--colorPrueba3);
 }
 
 .main__section-categories{
@@ -82,7 +96,7 @@
 
 .main__section-categories li{
     
-    background-color: var(--colorVerde);
+    background-color: var(--colorPrueba2);
     border-radius: 5px;
     margin: 5px 15px 0 0;
     padding: 0 10px;
@@ -94,6 +108,10 @@
     font-size: 25px;
 }
 
+.main__section-buy i{
+    margin-right: 10px;
+}
+
 .main__section-buy ul{
     text-align: center;
 }
@@ -103,7 +121,7 @@
     border-radius: 5px;
     padding: 10px 0;
     width: 100%;
-    background-color: var(--colorAmarillo);
+    background-color: var(--colorPrueba);
     margin: 10px 0;
 }
 .main__section-buy h2{
@@ -118,10 +136,6 @@
     font-size: 10px;
 }
 
-
-.main__secition-desc #more{
-    margin: 15px 0;
-}
 
 
 
