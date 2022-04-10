@@ -1,5 +1,8 @@
 .home__header{
+    background-image: url(/images/bg3.jpg);
+    background-repeat: round;
     background-color: #3bcbd7cf;
+    background-blend-mode: hard-light;
 }
 .home__header__section {
     display: flex;
@@ -13,7 +16,7 @@
     font-family: 'Black Ops One';
     font-weight: 100;
     font-size: 35px;
-    color: #1d3d66;
+    color: white;
 }
 .home__header__section-div img{
     width: 68px;
@@ -35,7 +38,7 @@
     font-size: 20px;
 }
 .home__header__section__div-user a{
-    color: #1d3d66;
+    color: white;
 }
 .home__header__div i{
     background-color: var(--colorMorado);
@@ -71,7 +74,6 @@
 #busqueda button{
     border: 1px solid #1d3d66;
     border-radius: 3px;
-    background-color: #60d5df;
 }
 
 #busqueda button i{
