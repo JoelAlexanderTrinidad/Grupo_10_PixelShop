@@ -6,6 +6,11 @@
 
 .main h3{
     font-size: 28px;
+    color: var(--colorPrueba3);
+}
+.main h3 span{
+    font-size: 20px;
+    color: var(--colorPrueba3);
 }
 
 /* main__div-carrusel */
@@ -127,6 +132,7 @@
     border-top: 1px solid  var(--colorBordeSparador);
     margin-top: 10px;
     padding: 10px 0;
+    color: #11c14fe0;
 }
 
 .main__section-buy span{
@@ -145,34 +151,41 @@
 
 /* tablets */
 @media (min-width: 768px){
+    .main #info-principal{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+    #buy-info{
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+    .main__section-buy h2{
+        border: none;
+        font-size: 50px;
+    }
     .main__section{
         margin-top: 0;
-        width: 100%;
+        width: 45%;
     }
-    .main__section-desc{
-        width: 100%;
+    .main__section-buy span {
+        font-size: 20px;
     }
     .main__section-buy{
         margin: 0;
-        
+        width: 100%;
     }
     .main__section-info{
-        display: flex;
-        flex-wrap: wrap;
         padding: 25px 15px 0;
-        width: 48%;
-        flex-direction: column;
+        width: 100%;
     }
     .main #info{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         
-    }
-    .main #img-buy{
-        display: flex;
-        flex-direction: column;
-        width: 48%;
     }
     .main__section__articles {
         display: flex;
@@ -181,10 +194,16 @@
     }
     #more{
         margin: 15px 0;
-        width: 84.6vw;
+        width: 89.6vw;
         font-size: 35px;
     }
     .main__section__articles article {
         width: 28%;
+    }
+}
+
+@media (min-width: 1024px){
+    .main #info {
+        
     }
 }
