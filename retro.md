@@ -25,6 +25,7 @@
     -Ser mas creativos.
     -Organización con fechas estipuladas para saber como viene la entrega.
     
+### Resumen:
 Con la primera entrega nos dimos cuenta que pudimos trabajar bien en equipo, nos dividimos las tareas, pudimos solucionar coflictos imprevistos, cumplir con los plazos de entrega. <br /> 
 
 Nos dimos cuenta que tendríamos que debatir más acerca de las propuestas de nuestros compañeros y no quedarnos con la primera opción.
