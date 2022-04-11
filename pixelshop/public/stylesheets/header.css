@@ -16,11 +16,11 @@
 .home__header__section h3{
     font-family: 'Black Ops One';
     font-weight: 100;
-    font-size: 29px;
+    font-size: 30px;
     color: white;
 }
 .home__header__section-div img{
-    width: 68px;
+    width: 70px;
 }
 .home__header #burger{
     background-color: #1d3d66;
@@ -36,7 +36,7 @@
     color: white;
 }
 .home__header__section__div-user{
-    font-size: 20px;
+    font-size: 25px;
 }
 .home__header__section__div-user a{
     color: white;
@@ -125,4 +125,16 @@
 
 .footer__section img{
     width: 55px;
+}
+
+@media (min-width: 768px){
+    .home__header__section__div-user{
+        font-size: 30px;
+    }
+    .home__header__section h3{
+        font-size: 60px;
+    }
+    .home__header__section-div img{
+        width: 70px;
+    }
 }

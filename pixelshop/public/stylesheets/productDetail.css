@@ -2,9 +2,9 @@
 .main {
     width: 94%;
     margin: 10px auto 0;
-    background-image: url(/images/main6.jpg);
+    /* background-image: url(/images/main6.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 .main h3{
@@ -150,6 +150,30 @@
 .main__section-buy span{
     font-size: 10px;
 }
+/* footer */
+.footer{
+    background-image: url(/images/bg3.jpg);
+    background-size: cover;
+}
+.footer__section i{
+    color: #2af0ffa3;
+}
+
+.footer__nav__networks i{
+    color: #ff089bcc;;
+}
+.footer__section p {
+    font-family: 'Bebas Neue';
+    color: #afefff;
+    width: 50%;
+    background-color: var(--colorRosaBebeOpacity);    
+    box-shadow: 5px 5px 1px #cf068db0;
+}
+.footer__section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 
 /* mobile */
@@ -162,6 +186,27 @@
 
 /* tablets */
 @media (min-width: 768px){
+    .home__header__nav{
+        display: block;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .home__header__nav a{
+        color: white;
+        font-size: 12px;
+        margin: 0 10px;
+    }
+    .home__header__nav ul{
+        display: flex;
+        justify-content: space-around;
+    }
+    #busqueda{
+        margin-top: 15px;
+    }
+    
     .main {    
         margin: 0 auto;
     }
@@ -216,6 +261,9 @@
     }
     .main__section__articles article {
         width: 28%;
+    }
+    #burger{
+        display: none;
     }
 }
 
