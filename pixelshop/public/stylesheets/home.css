@@ -1,3 +1,8 @@
+.home__main{
+    background-image: url("/images/fondo1.jpg");
+    background-size: contain;
+}
+
 /*Banner*/
 
 .home__main section .home__main__banner img{
@@ -9,6 +14,7 @@
 
 .home__main h4{
     margin: 10px;
+    color: white;
 }
 
 .home__main .home__main__offer{
@@ -31,27 +37,36 @@
     justify-content: space-between;
 }
 
+.home__main .home__main__offer p{
+    font-weight: bold;
+    color: white;
+}
+
 .home__main .home__main__offer span{
     color: rgb(24, 218, 24);
+    font-weight: bold;
 }
 
 .home__main .home__main__offer .fa-heart:before{
     color: rgb(238, 12, 12);
 }
 
+.home__main .home__main__offer .fa-cart-plus:before{
+    color: rgb(20, 20, 233);
+}
+
 /* Destacados */
 
 .home__main .home__main__featured{
-    background-color: var(--colorMorado);
+    background-image: url("/images/fondo-destacados.jpg");
+    background-size: cover;
     padding: 10px;
 }
 
 .home__main .home__main__featured article{
-    background-color: var(--colorTurquesa);
-    border: 2px dashed var(--colorAzulOscuro);
-    border-radius: 5%;
     padding: 10px;
     margin: 5px;
+    border: double; border-color: red blue green black;
 }
 
 .home__main .home__main__featured img{
@@ -61,6 +76,7 @@
 .home__main .home__main__featured p{
     padding-bottom: 10px;
     text-align: center;
+    font-weight: bold;
 }
 
 .home__main .home__main__featured .fa-star:before{
@@ -81,8 +97,7 @@
 }
 
 .home__main .home__main__recommended article{
-    background-color: var(--colorRosaBebeOpacity);
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 5%;
     padding: 15px;
     padding-bottom: 4%;
@@ -95,7 +110,7 @@
 }
 
 .home__main .home__main__recommended article p{
-    background-color: rgb(224, 224, 224);
+    background-color: white;
     border: 1px double black;
     margin: 15px 5px;
     padding: 10px;
@@ -106,7 +121,7 @@
     display: block;
     text-align: center;
     border: 1px solid black;
-    border-radius: 5%;
+    border-radius: 20%;
     width: 30%;
     padding: 5px;
     position: relative;
@@ -120,8 +135,7 @@
     border: 2px solid black;
     border-radius: 5%;
     width: 45%;
-    margin: 20px;
     padding: 5px;
     position: relative;
-    left: 22%;
+    left: 28%;
 }
