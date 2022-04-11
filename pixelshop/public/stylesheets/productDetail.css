@@ -9,19 +9,19 @@
     color: var(--colorPrueba3);
 }
 .main h3 span{
-    font-size: 20px;
+    font-size: 15px;
     color: var(--colorPrueba3);
 }
 
 /* main__div-carrusel */
 .main__div-carrusel{
     width: 100vw;
-    margin-left: -3.5%;
+    margin-left: -3.4%;
 }
 
 .main__div-carrusel img{
     margin: 0 auto;
-   
+    height: 100%;
 }
 /* main__section */
 .main__section{
@@ -80,12 +80,18 @@
     
 }
 
-.main__section__articles article{
+.main__section__articles article {
     width: 40%;
     margin: 10px 0;
     background-color: white;
     border-radius: 2px;
     color: var(--colorPrueba3);
+    padding-bottom: 10px;
+    box-shadow: 1px 3px 6px 1px #401dab69;
+}
+
+.main__section__articles div {
+    font-size: 12px;
 }
 
 .main__section-categories{
@@ -95,7 +101,7 @@
 }
 
 .main__section-categories li{
-    
+    box-shadow: 1px 1px 3px 1px #401dab69;
     background-color: var(--colorPrueba2);
     border-radius: 5px;
     margin: 5px 15px 0 0;
@@ -117,17 +123,17 @@
     text-align: center;
 }
 
-.main__section-buy li{
-    /* background-color: var(--colorTurquesa); */
+.main__section-buy button {
     border-radius: 5px;
     padding: 10px 0;
     width: 100%;
     background-color: var(--colorPrueba);
     margin: 10px 0;
-    border: 1px solid #603084;
+    border: 3px solid #e936ed78;
+    font-family: 'Bungee';
 }
 .main__section-buy h2{
-    font-size: 25px;
+    font-size: 40px;
     /* background-color: var(--colorTurquesa); */
     border-top: 1px solid  var(--colorBordeSparador);
     margin-top: 10px;
@@ -140,17 +146,22 @@
 }
 
 
-
-
 /* mobile */
-@media (max-width: 425px){
+@media (max-width: 767px){
     .main__div-carrusel{
         display: none;
     }
 }
 
+
 /* tablets */
 @media (min-width: 768px){
+    .main {    
+        margin: 0 auto;
+    }
+    .main__div-carrusel {
+          height: 250px;       
+    }
     .main #info-principal{
         display: flex;
         flex-wrap: wrap;
@@ -203,7 +214,35 @@
 }
 
 @media (min-width: 1024px){
-    .main #info {
-        
+    .main__section__articles article {
+        width: 15%;
+        margin: 0 5% 40px;
+        padding-bottom: 20px;
+    }
+    .main__div-carrusel{
+        height: 340px;
+    }
+    .main h3 span {
+        font-size: 15px;        
+    }
+    .main h3 {
+        font-size: 25px;
+    }
+    .main__section {
+        margin-top: 0;
+        width: 30%;
+    }
+    #buy-info {
+        width: 60%;
+    }
+    .main__section-info {
+        padding: 25px 15px 0;
+        width: 100%;
+        font-size: 14px;
+    }
+    .main__section-buy div {
+        text-align: center;
+        font-size: 20px;
+        width: 45%;
     }
 }
