@@ -139,6 +139,9 @@
     .footer__nav ul{
         display: flex;        
     }
+    .footer__nav li{
+        margin-top: 10px;
+    }
     .footer__nav__networks {
         font-size: 21px;
         justify-content: flex-end;
@@ -168,4 +171,31 @@
   background-image: -o-linear-gradient(top, #f739c7 0%, #3a4ed5 100%), -o-linear-gradient(top, #f739c7 0%, #3a4ed5 100%);
   background-image: linear-gradient(to bottom, #f739c7 0%, #3a4ed5 100%), linear-gradient(to bottom, #f739c7 0%, #3a4ed5 100%);
 }
+}
+
+@media (min-width: 1024px){
+    .home__header__section h3 {
+        font-size: 80px;
+    }
+    .home__header__section-div img {
+        width: 100px;
+    }
+    .home__header__nav a {
+        font-size: 17px;
+    }
+    #busqueda input {
+        padding: 5px;
+    }
+    #busqueda button {    
+        width: 30px;
+    }
+    .home__header {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .footer {
+        background-size: cover;
+        background-position: center;
+    }
 }
