@@ -81,8 +81,8 @@
 }
 
 .main__section__articles article {
-    width: 40%;
-    margin: 10px 0;
+    width: 42%;
+    margin-bottom: 15px;
     background-color: white;
     border-radius: 2px;
     color: var(--colorPrueba3);
@@ -92,6 +92,7 @@
 
 .main__section__articles div {
     font-size: 12px;
+    padding: 5px;
 }
 
 .main__section-categories{
