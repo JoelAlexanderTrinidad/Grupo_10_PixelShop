@@ -2,6 +2,9 @@
 .main {
     width: 94%;
     margin: 10px auto 0;
+    background-image: url(/images/main6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .main h3{
@@ -39,11 +42,13 @@
     padding: 10px 0;
 }
 .main__section-info{
+    color: white;
     border-top: 1px solid var(--colorBordeSparador);
     border: 2px solid var(--colorBordeRojo);
     padding: 5px;
     border-radius: 10px;
     color: var(--colorPrueba3);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 .main__section-info-div{
     margin-top: 5px;
