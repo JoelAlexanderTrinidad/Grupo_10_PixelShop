@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/182101e9ec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Register</title>
+</head>
+<body>
+    <header class="home__header">
+        <section class="home__header__section">
+         <div>
+             <i class="fa-solid fa-bars"></i>
+             <img src="" alt="logo">
+         </div>
+         <h3>Pixel Shop</h3>
+         <div>
+             <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+             <a href="/login"><i class="fa-solid fa-user"></i></a>
+         </div>
+        </section>
+         <nav class="home__header__nav">
+             <ul>
+                 <li><a href="">Comunidad</a></li>
+                 <li><a href="">Nuestra App</a></li>
+                 <li><a href="">Soporte</a></li>
+                 <li><a href="">Idioma</a></li>
+             </ul>
+             <ul>
+                 <li> <a href="">Tendencias y Novedades</a></li>
+                 <li> <a href="">Suscripción Premium</a></li>
+                 <li> <a href="">Quienes Somos</a></li>
+             </ul>
+         </nav>
+         <nav class="home__header__nav__user">        
+             <ul>
+                 <li><a href="/login">Ingresa <i class="fa-solid fa-user"></i></a></li>
+                 <li><a href="/register">Registrate</a></li>
+                 <li><a href="/productCart">Carrito de Compra <i class="fa-solid fa-cart-shopping"></i></a></li>
+             </ul>
+         </nav>
+         <div id="busqueda">
+             <input type="search" placeholder="Buscar videojuegos, marcas...">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+         </div>
+     </header>
+    <main>
+        <section>
+            <h2>Registrate</h2>
+            <h4>Es fácil y rápido</h4>
+        </section>
+        <section>
+            <form action="" method="get">
+                <div>
+                    <label for="nombre" >Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder=" nombre" required>
+                </div>
+
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" placeholder=" apellido" required>
+                </div>
+
+                <div>
+                    <label for="tel">Número de celular </label>
+                    <input type="tel" name="tel" id="tel" placeholder=" número de celular">
+                </div>
+
+                <div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="email" placeholder=" email" required>
+                </div>
+
+                <div>
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" name="contraseña" id="contraseña" placeholder=" contraseña" required>
+                </div>
+
+                <div>
+                    <label for="fecha">Fecha de nacimiento</label>
+                    <input type="date" name="fecha" id="fecha" required>
+                </div>
+
+                <label for="">Género</label>
+                <div>
+                    <label for="fem">Femenino</label>
+                    <input type="radio" name="genero" value="f" id="fem">
+                </div>
+                <div>
+                    <label for="mas">Masculino</label>
+                    <input type="radio" name="genero" value="m" id="mas">
+                </div>
+                <div>
+                    <label for="otro">Otros</label>
+                    <input type="radio" name="genero" value="o" id="otro">
+                </div>
+            </form>
+          
+            <div>
+                <label for="terminos">He leído y estoy de acuerdo con los <span>términos y condiciones de uso</span></label>
+                <input type="checkbox" id="terminos" name="terminos" required >
+            </div>
+            <div>
+                <label for="privacidad">He leído y acepto las <span>políticas de privacidad</span></label>
+                <input type="checkbox" id="privacidad" name="privacidad" required >
+            </div>
+            <button type="submit">REGISTRATE</button>
+        </section>
+        <h4>O registrate con</h4>
+        <a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a>
+        <a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a>
+        <a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a>
+    </main>
+</body>
+</html>
