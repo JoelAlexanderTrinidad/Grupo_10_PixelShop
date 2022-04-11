@@ -1,5 +1,4 @@
-.home__header{
-    
+.home__header{    
     background-image: url(/images/bg3.jpg);
     background-repeat: round;
     background-color: #3bcbd7cf;
@@ -9,7 +8,6 @@
     display: flex;
     justify-content: space-around;
     font-size: 25px;
-    /* background-color: var(--colorAqua); */
     padding: 20px 20px 0;
     align-items: center;
 }
@@ -88,3 +86,16 @@
     padding-left: 10px;
 }
 
+
+
+@media (min-width: 768px){
+    .home__header__section__div-user{
+        font-size: 30px;
+    }
+    .home__header__section h3{
+        font-size: 60px;
+    }
+    .home__header__section-div img{
+        width: 70px;
+    }
+}

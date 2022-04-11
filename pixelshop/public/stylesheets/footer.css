@@ -33,6 +33,31 @@
    
 }
 
+.footer__nav__networks{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.footer__section a i{
+   font-size: 40px;
+}
+
+.footer__section img{
+    width: 55px;
+}
+
+.footer__nav{
+    display: none;
+}
+
+.footer__section{
+    display: flex;
+    justify-content: space-around;
+   
+}
+
 .footer__section p{
     width: 50%;
     text-align: center;
@@ -60,142 +85,4 @@
 
 .footer__section img{
     width: 55px;
-}
-
-@media (min-width: 768px){
-    .home__header__section__div-user{
-        font-size: 30px;
-    }
-    .home__header__section h3{
-        font-size: 60px;
-    }
-    .home__header__section-div img{
-        width: 70px;
-    }
-}
-
-
-/* mobile */
-@media (max-width: 767px){
-    .main__div-carrusel{
-        display: none;
-    }
-}
-
-
-/* tablets */
-@media (min-width: 768px){
-    .home__header__nav{
-        display: block;
-        font-weight: 700;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 10px;
-    }
-    .home__header__nav a{
-        color: white;
-        font-size: 12px;
-        margin: 0 10px;
-    }
-    .home__header__nav ul{
-        display: flex;
-        justify-content: space-around;
-    }
-    #busqueda{
-        margin-top: 15px;
-    }
-    
-    .main {    
-        margin: 0 auto;
-    }
-    .main__div-carrusel {
-          height: 250px;       
-    }
-    .main #info-principal{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin-top: 30px;
-    }
-    #buy-info{
-        display: flex;
-        flex-direction: column;
-        width: 45%;
-    }
-    .main__section-buy h2{
-        border: none;
-        font-size: 50px;
-    }
-    .main__section{
-        margin-top: 0;
-        width: 45%;
-    }
-    .main__section-buy span {
-        font-size: 20px;
-    }
-    .main__section-buy{
-        margin: 0;
-        width: 100%;
-    }
-    .main__section-info{
-        padding: 25px 15px 0;
-        width: 100%;
-    }
-    .main #info{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        
-    }
-    .main__section__articles {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    #more{
-        margin: 15px 0;
-        width: 89.6vw;
-        font-size: 35px;
-    }
-    .main__section__articles article {
-        width: 28%;
-    }
-    #burger{
-        display: none;
-    }
-}
-
-@media (min-width: 1024px){
-    .main__section__articles article {
-        width: 15%;
-        margin: 0 5% 40px;
-        padding-bottom: 20px;
-    }
-    .main__div-carrusel{
-        height: 340px;
-    }
-    .main h3 span {
-        font-size: 15px;        
-    }
-    .main h3 {
-        font-size: 25px;
-    }
-    .main__section {
-        margin-top: 0;
-        width: 30%;
-    }
-    #buy-info {
-        width: 60%;
-    }
-    .main__section-info {
-        padding: 25px 15px 0;
-        width: 100%;
-        font-size: 14px;
-    }
-    .main__section-buy div {
-        text-align: center;
-        font-size: 20px;
-        width: 45%;
-    }
 }
