@@ -9,7 +9,6 @@
 
 .main h3 {
     font-size: 35px;
-    color: #524343;
     text-align: center;
     
 }
@@ -19,11 +18,6 @@
 }
 
 /* main__div-carrusel */
-.main__div-carrusel{
-    width: 100vw;
-    margin-left: -3.4%;
-}
-
 .main__div-carrusel img{
     margin: 0 auto;
     height: 100%;
@@ -158,10 +152,64 @@
     margin-top: 10px;
     padding: 10px 0;
     color: #35d341;
+    text-align: center;
 }
 #more{   
     font-size: 30px;
 }
 .main__section-buy span{
     font-size: 22px;
+}
+
+@media(max-width: 767px){
+    .main__div-carrusel img{
+        display: none;
+    }
+}
+
+@media (min-width: 768px){
+    .main {    
+        margin: 0 auto;
+        width: 100%;
+    }
+    .main__div-carrusel {
+          height: 250px;       
+    }
+    .main #info-principal{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+    #buy-info{
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+    .main__section-buy h2{
+        text-align: center;
+        border: none;
+        font-size: 60px;
+        background-color: #ffffff00;
+        color: white;
+    }
+    .main__section{
+        margin-top: 0;
+        width: 45%;
+    }
+    .main h3 {
+        font-size: 30px;        
+    }
+}
+
+@media (min-width: 1024px){
+    .main__section__articles article {
+        width: 15%;
+    }
+    .main__section__articles {
+        justify-content: space-evenly;
+    }
+    .main h3 {
+        font-size: 40px;        
+    }
 }
