@@ -96,6 +96,7 @@
     font-size: 12px;
     padding: 10px;
     text-align: center;
+    height: 22%;
 }
 
 .main__section__articles div h3{
@@ -167,10 +168,13 @@
     }
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px){    
     .main {    
         margin: 0 auto;
         width: 100%;
+        background-image: url(/images/main6.jpg);
+        background-size: cover;
+        background-repeat: inherit;
     }
     .main__div-carrusel {
           height: 250px;       
