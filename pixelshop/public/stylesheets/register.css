@@ -1,0 +1,37 @@
+body{
+    background-color: #75757533;
+}
+
+.main{
+    width: 90%;
+    padding: 15px;
+    margin: 10px auto;
+    font-family: 'Rubik', sans-serif;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+.main h2, h4{
+    text-align: center;
+}
+.main__section{
+    margin: 5px;
+    
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+         
+}
+
+
+.main__section form div{
+    padding: 10px 25px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.main__section form div input {
+    border: none;
+    border-radius: 5px;
+    padding: 3px 0;
+    display: flex;
+    justify-content: space-between;
+}
