@@ -85,7 +85,6 @@
     border: none;
     padding-left: 10px;
 }
-
 /* tablets */
 @media (min-width: 768px){
     .home__header__section__div-user{
@@ -176,4 +175,28 @@
     #burger{
         display: none;
     }
+}
+
+@media (min-width: 1024px){
+    .home__header__section h3 {
+        font-size: 80px;
+    }
+    .home__header__section-div img {
+        width: 100px;
+    }
+    .home__header__nav a {
+        font-size: 17px;
+    }
+    #busqueda input {
+        padding: 5px;
+    }
+    #busqueda button {    
+        width: 30px;
+    }
+    .home__header {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
 }
