@@ -1,13 +1,20 @@
-.productCart{
+body{
     background-color: #dfe3f8;
+}
+main{
+       background-image:url("/images/b4g.jpg");
     font-family: 'Bebas Neue';
     font-size: 18px;
+    
+}
+.productCart{
+    width: 90%;   
+    margin: 0 auto;
 }
 
 .productCart .button input{
     border-radius: 5px;
     padding: 3px 10px;
-    margin-top: 5px;
     border: solid 1px  #cdc0ee;
     border-radius: 5px;
     color: black;
@@ -17,7 +24,6 @@
 
 .productCart .listProduct{
     background-color: #efeafd;
-    margin: 5px 10px ;
     padding: 10px;
     border: solid 1px  #cdc0ee;
     border-radius: 5px;
@@ -69,13 +75,15 @@ width: 30vw;
     text-align: center;
     
   }
-  .productCart .resumen ul{
-    margin-top: 15px ;
+
+.productCart h3{
+    text-align: center;
 }
   
   .productCart .resumen li{ 
     display: flex;
     justify-content: space-between;
+    margin: 0 15%;
     
   }
   .productCart .resumen .button{
@@ -83,12 +91,10 @@ width: 30vw;
       justify-content: center;
         }
 
- .productCart .carrusel img {
+.productCart.carrusel {
      width: 100vw;
-    }
-    .productCart .carrusel h2{
-        padding: 10px;
-    }
+    
+        }
     
     /* tablets */
 @media (min-width: 768px){
@@ -109,7 +115,7 @@ width: 30vw;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     
     }
 }
