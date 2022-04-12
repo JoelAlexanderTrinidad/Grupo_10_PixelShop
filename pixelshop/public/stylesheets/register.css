@@ -13,20 +13,18 @@ body{
     text-align: center;
 }
 .main__section{
-    margin: 5px;
-    
     display: flex;
     flex-direction: column;
+    margin: 5px;
     font-weight: 600;
-         
 }
 
 
-.main__section form div{
-    padding: 10px 25px;
-    margin: 0 auto;
+.main__section form .datos{
     display: flex;
     flex-direction: column;
+    padding: 10px 25px;
+    margin: 0 auto;
 }
 .main__section form div input {
     border: none;
@@ -34,4 +32,15 @@ body{
     padding: 3px 0;
     display: flex;
     justify-content: space-between;
+}
+
+.main__section form #genero{
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0;
+}
+
+.main__section .datos input{
+    border-bottom: 1px solid black;
+    background-color: rgba(255, 255, 255, 0)
 }
