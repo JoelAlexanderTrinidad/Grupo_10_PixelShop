@@ -8,19 +8,22 @@
     <script src="https://kit.fontawesome.com/182101e9ec.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body class="productCart">
+<body >
     <header class="home__header">
         <section class="home__header__section">
-         <div>
-             <i class="fa-solid fa-bars"></i>
-             <img src="" alt="logo">
+         <div class="home__header__section-div">
+             <a href="#"><img src="/images/logo.png" alt="logo"></a>
+             
          </div>
          <h3>Pixel Shop</h3>
-         <div>
-             <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-             <a href="/login"><i class="fa-solid fa-user"></i></a>
+         <div  class="home__header__section__div-user">
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/login"><i class="fa-solid fa-user"></i></a>
          </div>
         </section>
+        <div id="burger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
          <nav class="home__header__nav">
              <ul>
                  <li><a href="">Comunidad</a></li>
@@ -46,103 +49,108 @@
               <button><i class="fa-solid fa-magnifying-glass"></i></button>
          </div>
      </header>
-     <main >
+     <main class="productCart">
     <section class="button">
         <input type="button" value="Carrito">
         <input type="button" value="Favoritos">
     </section>
-    <section >
-        <article class="ventaDeProducto">
-            <h4>Nombre del producto</h4>
-            <span>
-                <img class="imagendelproducto" src="/images/juego-1.jpg" alt>
-            </span>
-            <div class="cantidad-precio">
+    <section class="tablet">
+    <section class="listProduct">
+        <article class="product">
+            <h2>Nombre del producto</h2>
+            <div class="product_info">
+                <span>
+                    <img  src="/images/juego-1.jpg" alt>
+                </span>
+                <div>
                 <input type="button" value="-">
                 <span> 1 </span>
                 <input type="button" value="+">
-                <span> $precio original</span>
-                <span>$ precio con descuento</span>
+                <span> $p. original</span>
+                <span>$p. desc</span>
                 <i class="fa-solid fa-trash-can"></i>
+                </div>
             </div>
             <p>descripción del producto</p>
             </article>
-        <article class="ventaDeProducto">
-            <h4>Nombre del producto</h4>
-            <span>
-                <img class="imagendelproducto" src="/images/juego-1.jpg" alt>
-            </span>
-            <p>descripción del producto</p>
-            <div class="cantidad-precio">
-                <input type="button" value="-">
-                <p> 1 </p>
-                <input type="button" value="+">
-                <p> $precio original</p>
-                <p>$ precio con descuento</p>
-                <i class="fa-solid fa-trash-can"></i>
-            </div>
-        </article>
+            <article class="product">
+                <h2>Nombre del producto</h2>
+                <div class="product_info">
+                    <span>
+                        <img  src="/images/juego-1.jpg" alt>
+                    </span>
+                    <div>
+                    <input type="button" value="-">
+                    <span> 1 </span>
+                    <input type="button" value="+">
+                    <span> $p. original</span>
+                    <span>$p. desc</span>
+                    <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+                <p>descripción del producto</p>
+                </article>
     </section>
-    <span>
+    <!--
+        <span>
         <p>¿Quieres agregarle DLC?</p>
         <input type="button" value="Ver más">
     </span>
-    <section>
-        <h3>Resumen de Compra</h3>
-        <p>¿Tenés un codigo de descuento?</p>
-        <input type="text" name="codigo" id="">
+    -->
+   <div class="linea">
+
+   </div>
+    <section class="resumen">
+        <h2>Resumen de Compra</h2>
+        <div>
+            <p>¿Tenés un codigo de descuento?</p>
+        <input type="text" placeholder="Codigo" id="">
         <input type="button" value="Aplicar">
-    </section>
-    <section>
-        <ul>
+        </div>
+        <ul >
             <li>Productos (suma de productos)</li>
-            <li>Subtotal <span>$precio</span></li>
-            <li>Total <span>$precio</span></li>
+            <li>Subtotal <p>$precio</p></li>
+            <li>Total <p>$precio</p></li>
         </ul>
-    </section>
-    <section>
+    <section class="button">
         <input type="button" value="finalizar compra">
         <input type="button" value="continuar comprando">
     </section>
-    <section>
-        <h4> Productos Similares</h4>
-        <div class="main__div-carrusel">
-            <img src="/images/carrusel-muestra.jpg" alt="">
-        </div>
-        <section class="main__section">
-            <div>
-                <img src="/images/juego-muestra.jpg" alt="">
-            </div>
-            <div>
-                <img src="/images/carrusel-miniatura.png" alt="">
-            </div>
-    </section>    
+    </section>
+</section>
+    <section class="carrusel">
+        <h2> Productos Similares</h2>
+        <img src="/images/carrusel-muestra.jpg" alt="">
+    </section>
+  
      </main>
      <footer class="footer">
         <section class="footer__section">
             <span>
-                <img src="" alt="logo">
+                <img src="/images/logo.png" alt="logo">
             </span>
             <p>Gracias por su visita, esperamos que tenga un buen día</p>
             <a href=""><i class="fas fa-arrow-circle-up"></i></a>
         </section>
-        <nav class="footer__nav">
-            <ul>
-                <li><a href="">Ayuda</a></li>
-                <li><a href="">Empleo</a></li>
-                <li><a href="">Terminos y condiciones de uso</a></li>
-                <li><a href="">Cookies</a></li>
-                <li><a href="">Contactos</a></li>
-                <li><a href="">Política de privacidad</a></li>
-                <li><a href="">Información legal</a></li>
-                <li><a href="">Nuestro sitio web</a></li>
+        <nav>
+            <ul class="footer__nav">
+                    <li><a href="">Ayuda</a></li>
+                    <li><a href="">Empleo</a></li>
+                    <li><a href="">Terminos y condiciones de uso</a></li>
+                    <li><a href="">Cookies</a></li>
+                    <li><a href="">Contactos</a></li>
+                    <li><a href="">Política de privacidad</a></li>
+                    <li><a href="">Información legal</a></li>
+                    <li><a href="">Nuestro sitio web</a></li>
             </ul>
         </nav>
         <nav class="footer__nav__networks">
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-facebook-square"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <div>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>            
         </nav>
     </footer>
 </body>

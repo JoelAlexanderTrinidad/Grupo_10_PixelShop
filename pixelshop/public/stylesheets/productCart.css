@@ -1,26 +1,133 @@
-.productCart .button input{
-    background-color: none;
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 3px;
+.productCart{
+    background-color: #dfe3f8;
+    font-family: 'Bebas Neue';
+    font-size: 18px;
 }
 
-.productCart .ventaDeProducto{
-    margin: 10px ;
-    padding: 10px;
-    border: solid 1px black;
+.productCart .button input{
     border-radius: 5px;
+    padding: 3px 10px;
+    margin-top: 5px;
+    border: solid 1px  #cdc0ee;
+    border-radius: 5px;
+    color: black;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.productCart .listProduct{
+    background-color: #efeafd;
+    margin: 5px 10px ;
+    padding: 10px;
+    border: solid 1px  #cdc0ee;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #999;
+
+    }
+   
+
+
+.productCart .product_info{
+    display: flex; 
+    justify-content: space-between;
+
+}
+.productCart .product_info div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+
+}
+.productCart .product_info div span{
+    padding: 0 5px;
+
+}
+.productCart .product_info img{
+width: 30vw;
+} 
+.linea {
+    border-top: 4px solid black;
+    height: 2px;
+    max-width: 85vw;
+    padding: 0;
+    margin: 20px auto 0 auto;
+  }
+  .productCart .resumen{
+    margin: auto;
+    padding: 10px;
+  }
+  
+ 
+  .productCart .resumen div{
+    background-color: #efeafd;
+    margin: 5px auto ;
+    padding: 10px;
+    border: solid 1px  #cdc0ee;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #999;
+    text-align: center;
+    
+  }
+  .productCart .resumen ul{
+    margin-top: 15px ;
+}
+  
+  .productCart .resumen li{ 
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .productCart .resumen .button{
+      display: flex;
+      justify-content: center;
+        }
+
+ .productCart .carrusel img {
+     width: 100vw;
+    }
+    .productCart .carrusel h2{
+        padding: 10px;
+    }
+    
+    /* tablets */
+@media (min-width: 768px){
+    .productCart .tablet{
+        display: flex;
+        justify-content: space-around;
+}
+    .linea{
+        display: none;
+    }
+    .productCart .resumen{
+     background-color: #efeafd;
+     margin: 5px 10px;
+    padding: 10px;
+    border: solid 1px  #cdc0ee;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #999;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    }
+}
+    /* desktop */
+    @media (min-width: 1024px){
+        .productCart .button input{
+            font-size: 25px;
+}
+.productCart{
+     font-size: 20px;
+}
     }
 
-.productCart .ventaDeProducto h4{
-    text-transform: uppercase;
-}
-
-.productCart .cantidad-precio{
-    display: flex; 
-    justify-content: flex-end;
-}
+    
 /*
+ 
+position: relative;
+    left: 25px;
 .productCart .cantidad-precio{
     display: flex;
     justify-content: flex-end;
