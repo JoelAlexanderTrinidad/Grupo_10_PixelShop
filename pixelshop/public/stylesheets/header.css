@@ -2,7 +2,6 @@
     background-image: url(/images/bg3.jpg);
     background-repeat: round;
     background-color: #3bcbd7cf;
-    background-blend-mode: hard-light;
 }
 .home__header__section {
     display: flex;
@@ -87,6 +86,11 @@
 }
 /* tablets */
 @media (min-width: 768px){
+    .home__header {
+        background-size: cover;
+        background-repeat: inherit;
+        background-position: center;
+    }
     .home__header__section__div-user{
         font-size: 30px;
     }
