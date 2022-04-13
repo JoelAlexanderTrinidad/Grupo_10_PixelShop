@@ -13,8 +13,9 @@
 /*Ofertas Especiales*/
 
 .home__main h4{
-    margin: 10px;
+    font-size: 20px;
     color: white;
+    margin: 30px;
 }
 
 .home__main .home__main__offer{
@@ -65,8 +66,9 @@
 
 .home__main .home__main__featured article{
     padding: 10px;
-    margin: 5px;
-    border: double; border-color: red blue green black;
+    margin: 10px;
+    border: double; 
+    border-color: red blue green black;
 }
 
 .home__main .home__main__featured img{
@@ -81,13 +83,6 @@
 
 .home__main .home__main__featured .fa-star:before{
     color: yellow;
-}
-
-.home__main .home__main__featured .carousel{
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
 }
 
 /* Recomendados */
@@ -121,8 +116,8 @@
     display: block;
     text-align: center;
     border: 1px solid black;
-    border-radius: 20%;
-    width: 30%;
+    border-radius: 5%;
+    width: 25%;
     padding: 5px;
     position: relative;
     left: 70%;
@@ -130,12 +125,47 @@
 
 .home__main .home__main__continue{
     background-color: var(--colorFucsia);
-    display: block;
     text-align: center;
     border: 2px solid black;
     border-radius: 5%;
-    width: 45%;
     padding: 5px;
-    position: relative;
-    left: 28%;
+}
+
+@media (min-width: 768px){
+    .home__main .home__main__offer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .home__main .home__main__offer article{
+        width: 30%;
+    }
+
+    .home__main .home__main__featured{
+        display: flex;
+    }
+
+    .home__main .home__main__featured article{
+        width: 50%;
+    }
+
+    .home__main .home__main__recommended{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .home__main .home__main__recommended article{
+        width: 45%;
+    }
+}
+
+@media (min-width: 1024px){  
+    .home__main .home__main__offer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .home__main .home__main__offer article{
+        width: 22%;
+    }
 }
