@@ -117,7 +117,7 @@
     text-align: center;
     border: 1px solid black;
     border-radius: 5%;
-    width: 25%;
+    width: 30%;
     padding: 5px;
     position: relative;
     left: 70%;
@@ -159,7 +159,11 @@
     .home__main .home__main__recommended article{
         width: 45%;
     }
-
+    
+    .home__main .home__main__recommended article .more{
+        width: 25%;
+    }
+    
     .home__main .home__main__continue{
         width: 20%;
     }
