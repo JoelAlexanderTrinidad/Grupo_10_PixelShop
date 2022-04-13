@@ -7,6 +7,7 @@ body{
     width: 90%;
     color: white;
     background-image: url(/images/b4g.jpg);
+    background-position: center;
     padding: 15px;
     margin: 10px auto;
     font-family: 'Rubik', sans-serif;
@@ -108,4 +109,58 @@ body{
     font-size: 25px;
     font-weight: 600;
 
+}
+
+
+
+
+/* tablets */
+@media (min-width: 768px){
+    .main{
+        background-size: cover;
+    }
+       .main__section form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .main__section form .datos {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 15px;
+        margin: 12px 0px;
+        width: 50%;
+    }
+    
+    .main__section .required{
+        margin: 10px 4px;
+        font-size: 15px;
+    }
+    .main__section .datos{
+        font-size: 18px;
+    }
+    .redes h4{
+        font-size: 25px;
+    }
+    .main h2{
+        font-size: 30px;
+        padding-bottom: 5px;
+    }
+    .main .redes ul li a i{
+        font-size: 50px;
+    }
+
+}
+@media (min-width: 1024px){
+
+    .main h2{
+        font-size: 45px;
+        padding-bottom: 5px;
+    }
+    .redes h4{
+        font-size: 28px;
+
+    }
+    .button button{
+        font-size: 28px;
+}
 }
