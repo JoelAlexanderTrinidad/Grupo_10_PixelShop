@@ -1,5 +1,5 @@
 .home__main{
-    background-image: url("/images/fondo1.jpg");
+    background-image: url("/images/fondo.jpg");
     background-size: contain;
 }
 
@@ -61,6 +61,7 @@
 .home__main .home__main__featured{
     background-image: url("/images/fondo-destacados.jpg");
     background-size: cover;
+    background-position: center;
     padding: 10px;
 }
 
@@ -85,6 +86,11 @@
     color: yellow;
 }
 
+.home__main .home__main__featured .carousel{
+    font-size: 10px;
+    text-align: center;
+}
+
 /* Recomendados */
 
 .home__main .home__main__recommended{
@@ -92,10 +98,10 @@
 }
 
 .home__main .home__main__recommended article{
+    background: linear-gradient(to right, #7404c069, #891b8c91);
     border: 2px solid white;
     border-radius: 5%;
     padding: 15px;
-    padding-bottom: 4%;
     margin: 15px;
 }
 
@@ -105,27 +111,28 @@
 }
 
 .home__main .home__main__recommended article p{
-    background-color: white;
+    background-color: rgb(210, 210, 210);
     border: 1px double black;
-    margin: 15px 5px;
+    border-radius: 10px;
     padding: 10px;
 }
 
-.home__main .home__main__recommended article .more{
-    background-color: var(--colorVioleta);
+.home__main .home__main__recommended article a{
+    background: linear-gradient(to right, var(--colorLila), var(--colorMorado));
     display: block;
-    text-align: center;
+    font-weight: bold;
     border: 1px solid black;
     border-radius: 5%;
     width: 30%;
     padding: 5px;
-    position: relative;
-    left: 70%;
+    text-align: center;
+    margin: 10px 70% 0px;
 }
 
 .home__main .home__main__continue{
-    background-color: var(--colorFucsia);
+    background: linear-gradient(to top, var(--colorTurquesa), var(--colorBeige));
     text-align: center;
+    font-weight: bold;
     border: 2px solid black;
     border-radius: 5%;
     padding: 5px;
@@ -145,10 +152,16 @@
 
     .home__main .home__main__featured{
         display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .home__main .home__main__featured article{
-        width: 50%;
+        width: 47%;
+    }
+
+    .home__main .home__main__featured .carousel{
+        width: 100%;
     }
 
     .home__main .home__main__recommended{
@@ -158,10 +171,6 @@
 
     .home__main .home__main__recommended article{
         width: 45%;
-    }
-    
-    .home__main .home__main__recommended article .more{
-        width: 25%;
     }
     
     .home__main .home__main__continue{
