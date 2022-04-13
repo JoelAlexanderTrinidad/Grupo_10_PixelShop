@@ -85,9 +85,9 @@
                     <label for="fecha">Fecha de nacimiento</label>
                     <input type="date" name="fecha" id="fecha" required>
                 </div>
-
              
-                <label class="datos" for="">Género</label>
+                <section class="section__genero">
+                    <label   for="">Género</label>
                 <div id="genero">
                 <div>
                     <label for="fem">Femenino</label>
@@ -102,22 +102,34 @@
                     <input type="radio" name="genero" value="o" id="otro">
                 </div>
                </div>
+                </section>
             </form>
           
-            <div class="required">
-                <label for="terminos">He leído y estoy de acuerdo con los <span>términos y condiciones de uso</span></label>
-                <input type="checkbox" id="terminos" name="terminos" required >
-            </div>
-            <div class="required">
-                <label for="privacidad">He leído y acepto las <span>políticas de privacidad</span></label>
-                <input type="checkbox" id="privacidad" name="privacidad" required >
-            </div>
-            <button type="submit">REGISTRATE</button>
+            <section class="required">
+                <div >
+                    <input type="checkbox" id="terminos" name="terminos" required >
+                    <label for="terminos">He leído y estoy de acuerdo con los <span>términos y condiciones de uso</span></label>
+                    
+                </div>
+                <div>
+                    <input type="checkbox" id="privacidad" name="privacidad" required >
+                    <label for="privacidad">He leído y acepto las <span>políticas de privacidad</span></label>
+                    
+                </div>
+            </section>
+            
         </section>
+        <div class="button">
+            <button type="submit">REGISTRATE</button>
+        </div>
+        <section class="redes">
         <h4>O registrate con</h4>
-        <a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a>
-        <a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a>
-        <a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a>
+        <ul>
+            <li><a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a></li>
+            <li>       <a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a></li>
+            <li>        <a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </section>
     </main>
     <footer class="footer">
         <section class="footer__section">
