@@ -25,8 +25,8 @@
 }
 
 .home__main .home__main__offer article{
-    width: 40%;
-    margin-bottom: 10px;
+    width: 80%;
+    margin-bottom: 20px;
 }
 
 .home__main .home__main__offer article img{
@@ -140,7 +140,7 @@
     }
     
     .home__main .home__main__offer article{
-        width: 30%;
+        width: 45%;
     }
 
     .home__main .home__main__featured{
@@ -177,5 +177,9 @@
     
     .home__main .home__main__offer article{
         width: 22%;
+    }
+
+    .home__main .home__main__recommended article{
+        width: 30%;
     }
 }
