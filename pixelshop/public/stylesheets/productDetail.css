@@ -176,14 +176,20 @@
         background-size: cover;
         background-repeat: inherit;
     }
+    .main__section__articles article {
+        width: 26%;
+    }
     .main__div-carrusel {
           height: 250px;       
     }
-    .main #info-principal{
+    .main #info-principal {
+        margin: 0 auto;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-evenly;
         margin-top: 30px;
+        align-items: center;
     }
     #buy-info{
         display: flex;
@@ -199,12 +205,12 @@
     }
     .main__section{
         margin-top: 0;
-        width: 45%;
+        width: 40%;
     }
     .main h3 {
         font-size: 30px;        
     }
-}
+    
 
 @media (min-width: 1024px){
     .main__section__articles article {
@@ -216,4 +222,15 @@
     .main h3 {
         font-size: 40px;        
     }
+    .main #info-principal {
+        margin: 0 auto;
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 30px;
+        align-items: end;
+    }
+    
+}
 }
