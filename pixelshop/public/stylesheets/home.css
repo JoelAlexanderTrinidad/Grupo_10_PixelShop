@@ -129,6 +129,8 @@
     border: 2px solid black;
     border-radius: 5%;
     padding: 5px;
+    width: 30%;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px){
@@ -156,6 +158,10 @@
 
     .home__main .home__main__recommended article{
         width: 45%;
+    }
+
+    .home__main .home__main__continue{
+        width: 20%;
     }
 }
 
