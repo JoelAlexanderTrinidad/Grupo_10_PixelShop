@@ -1,46 +1,70 @@
-body{
-    background-color: #75757533;
-}
-
-.main{
-    width: 90%;
-    padding: 15px;
-    margin: 10px auto;
-    font-family: 'Rubik', sans-serif;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-.main h2, h4{
-    text-align: center;
-}
-.main__section{
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-    font-weight: 600;
-}
 
 
-.main__section form .datos{
-    display: flex;
-    flex-direction: column;
-    padding: 10px 25px;
-    margin: 0 auto;
-}
-.main__section form div input {
-    border: none;
-    border-radius: 5px;
-    padding: 3px 0;
-    display: flex;
-    justify-content: space-between;
-}
 
-.main__section form #genero{
-    display: flex;
-    justify-content: space-around;
-    margin: 5px 0;
-}
 
-.main__section .datos input{
-    border-bottom: 1px solid black;
-    background-color: rgba(255, 255, 255, 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* tablets */
+@media (min-width: 768px){
+    body{
+        background-size: cover;
+    }
+       .main__section form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .main__section form .datos {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 15px;
+        margin: 12px 0px;
+        width: 50%;
+    }
+    .main__section .section__genero{
+        padding: 10px 25px;
+        margin: 0;
+    }
+    .main__section .required{
+        margin: 10px 4px;
+        font-size: 14px;
+    }
+    .main__section .datos{
+        font-size: 18px;
+    }
+    .redes h4{
+        font-size: 25px;
+    }
+    .main h2{
+        font-size: 30px;
+        padding-bottom: 5px;
+    }
+    .main .redes ul li a i{
+        font-size: 50px;
+    }
+
+}
+@media (min-width: 1024px){
+    .main h2{
+        font-size: 45px;
+        padding-bottom: 5px;
+    }
+    .redes h4{
+        font-size: 28px;
+
+    }
+    .button button{
+        font-size: 28px;
+}
 }
