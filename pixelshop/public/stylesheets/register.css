@@ -21,31 +21,32 @@ body {
     flex-direction: column;
 }
 
-
-.main__section form .datos{
+.main_register form .datos{
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
     padding: 10px 25px;
-    margin: 0 auto;
+    margin: 3px auto;
 }
-.main__section .section__genero{
-    padding: 10px 25px;
+.main_register .section__genero {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
-    text-transform: uppercase;
+    height: 45px;
 }
 .main_register ::placeholder{
     color: violet;
 }
 
-.main__section form div input {
+.main_register form div input {
     border: none;
     color: violet;
     padding: 3px 0;
-  
 }
-
-
+#genero{
+    display: flex;
+    justify-content: space-between;
+}
 
 
 .main_register .redes ul{
@@ -64,32 +65,47 @@ body {
     font-size: 20px;
     text-transform: uppercase;
 }
-
+.main_register .button {
+    text-align: center;
+ }
+ .main_register .button button{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 0 15px;
+    border-radius: 5px;
+    background-color:  #ffffff70;
+}
+.main_register .datos input{
+    border-bottom: 1.5px solid white;
+    background-color: rgba(255, 255, 255, 0)
+}
 /* tablets */
 @media (min-width: 768px){
     body{
         background-size: cover;
     }
-       .main__section form {
+    
+    .main_register form {
         display: flex;
         flex-wrap: wrap;
     }
-    .main__section form .datos {
+    .main_register form .datos {
         display: flex;
         flex-direction: column;
         padding: 0px 15px;
         margin: 12px 0px;
         width: 50%;
     }
-    .main__section .section__genero{
+    .main_register .section__genero {
         padding: 10px 25px;
         margin: 0;
+        width: 50%;
     }
-    .main__section .required{
+    .main_register .required{
         margin: 10px 4px;
         font-size: 14px;
     }
-    .main__section .datos{
+    .main_register .datos{
         font-size: 18px;
     }
     .redes h4{
@@ -102,6 +118,15 @@ body {
     .main_register .redes ul li a i{
         font-size: 50px;
     }
+    .main_register h3{
+        width: 100%;
+        padding: 0 16px;
+    }
+    .main_register .section__genero {
+        padding: 8px 16px;
+        margin: 0;
+        width: 50%;
+    }
 /* desktop */
 
 }
@@ -110,10 +135,13 @@ body {
         font-size: 45px;
         padding-bottom: 5px;
     }
+    
     .redes h4{
         font-size: 28px;
-
     }
+    
+    
+
 }
 
 

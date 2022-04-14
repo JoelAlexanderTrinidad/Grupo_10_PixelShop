@@ -12,16 +12,17 @@ body{
     margin: 10px auto;
     font-family: 'Rubik', sans-serif;
 }
-.main h2{
+.main_login h2{
     text-align: center;
 }
-.main__section{
+
+.main__login{
     margin: 5px;
     font-weight: 600;
     display: flex;
     flex-direction: column;
 }
-.main__section form .datos{
+.main__login form .datos{
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -29,22 +30,22 @@ body{
     margin: 0 auto;
 }
 
-.main ::placeholder{
+.main__login ::placeholder{
     color: violet;
 }
 
-.main__section form div input {
+.main__login form div input {
     border: none;
     color: violet;
     padding: 3px 0;
   
 }
 
-.main__section .datos input{
+.main__login .datos input{
     border-bottom: 1.5px solid white;
     background-color: rgba(255, 255, 255, 0)
 }
-.main__section .required{
+.main__login .required{
     margin: 10px 4px;
     font-size: 13px;
 }
@@ -58,16 +59,16 @@ body{
     border-radius: 5px;
     background-color:  #ffffff70;
 }
-.main .redes ul{
+.main_login .redes ul{
     display: flex;
     font-size: 36px;
     justify-content: space-evenly;
     margin: 15px 0 5px 0;
 }
-.main .redes ul li a i{
+.main_login .redes ul li a i{
     color: white;
 }
-.main .redes{ 
+.main_login .redes{ 
     margin-top: 20px;
 }
 .section__login p{
@@ -116,26 +117,31 @@ body{
 
 /* tablets */
 @media (min-width: 768px){
+    .main__login{
+        display: flex;
+        flex-direction: column;
+    }
     .main_login{
         background-size: cover;
-    }
-       .main__section form {
+    } 
+    
+    .main__section form {
         display: flex;
         flex-wrap: wrap;
     }
-    .main__section form .datos {
+    .main__login form .datos {
         display: flex;
         flex-direction: column;
-        padding: 0px 15px;
         margin: 12px 0px;
-        width: 50%;
+        align-items: center;
     }
     
-    .main__section .required{
+    .main__login .required{
         margin: 10px 4px;
         font-size: 15px;
+        margin: 0 auto;
     }
-    .main__section .datos{
+    .main__login .datos{
         font-size: 18px;
     }
     .redes h4{
