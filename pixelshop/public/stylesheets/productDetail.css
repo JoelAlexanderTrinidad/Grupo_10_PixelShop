@@ -1,4 +1,5 @@
 /* ############### main ###############*/
+
 .main {
     width: 94%;
     margin: 10px auto 0;
@@ -21,12 +22,6 @@
 .main__div-carrusel img{
     margin: 0 auto;
     height: 100%;
-}
-/* main__section */
-.main__section{
-    border-radius: 10px;    
-    margin-top: 20px;
-    width: 100%;
 }
 
 .main__section-info h3{
@@ -56,6 +51,11 @@
     color: var(--colorPrueba3);
 }
 
+
+.main__section{
+    border-radius: 10px;    
+    margin-top: 20px;
+}
 .main__section h3{
     padding-top: 10px;
     color: white;
@@ -164,7 +164,7 @@
     text-align: center;
 }
 #more{   
-    font-size: 30px;
+    font-size: 50px;
 }
 .main__section-buy span{
     font-size: 22px;
