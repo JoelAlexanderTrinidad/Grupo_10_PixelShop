@@ -1,9 +1,9 @@
-body{
+body {
     background-image: url(/images/main2.jpg);
     background-size: auto;
 }
 
-.main{
+.main_register{
     width: 90%;
     color: white;
     background-color: #000000ad;
@@ -11,7 +11,7 @@ body{
     margin: 10px auto;
     font-family: 'Rubik', sans-serif;
 }
-.main h2, h4{
+.main_register h2, h4{
     text-align: center;
 }
 .main__section{
@@ -34,7 +34,7 @@ body{
     margin: 0 auto;
     text-transform: uppercase;
 }
-.main ::placeholder{
+.main_register ::placeholder{
     color: violet;
 }
 
@@ -74,16 +74,16 @@ body{
 }
 
 
-.main .redes ul{
+.main_register .redes ul{
     display: flex;
     font-size: 36px;
     justify-content: space-evenly;
     margin: 15px 0 5px 0;
 }
-.main .redes ul li a i{
+.main_register .redes ul li a i{
     color: white;
 }
-.main .redes{ 
+.main_register .redes{ 
     margin-top: 20px;
 }
 .redes h4{
@@ -121,18 +121,18 @@ body{
     .redes h4{
         font-size: 25px;
     }
-    .main h2{
+    .main_register h2{
         font-size: 30px;
         padding-bottom: 5px;
     }
-    .main .redes ul li a i{
+    .main_register .redes ul li a i{
         font-size: 50px;
     }
 /* desktop */
 
 }
 @media (min-width: 1024px){
-    .main h2{
+    .main_register h2{
         font-size: 45px;
         padding-bottom: 5px;
     }
