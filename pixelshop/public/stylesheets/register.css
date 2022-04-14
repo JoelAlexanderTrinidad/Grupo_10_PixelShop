@@ -1,20 +1,69 @@
+body {
+    background-image: url(/images/main2.jpg);
+    background-size: auto;
+}
+
+.main_register{
+    width: 90%;
+    color: white;
+    background-color: #000000ad;
+    padding: 15px;
+    margin: 10px auto;
+    font-family: 'Rubik', sans-serif;
+}
+.main_register h2, h4{
+    text-align: center;
+}
+.main__section{
+    margin: 5px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.main__section form .datos{
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    margin: 0 auto;
+}
+.main__section .section__genero{
+    padding: 10px 25px;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+.main_register ::placeholder{
+    color: violet;
+}
+
+.main__section form div input {
+    border: none;
+    color: violet;
+    padding: 3px 0;
+  
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.main_register .redes ul{
+    display: flex;
+    font-size: 36px;
+    justify-content: space-evenly;
+    margin: 15px 0 5px 0;
+}
+.main_register .redes ul li a i{
+    color: white;
+}
+.main_register .redes{ 
+    margin-top: 20px;
+}
+.redes h4{
+    font-size: 20px;
+    text-transform: uppercase;
+}
 
 /* tablets */
 @media (min-width: 768px){
@@ -46,17 +95,18 @@
     .redes h4{
         font-size: 25px;
     }
-    .main h2{
+    .main_register h2{
         font-size: 30px;
         padding-bottom: 5px;
     }
-    .main .redes ul li a i{
+    .main_register .redes ul li a i{
         font-size: 50px;
     }
+/* desktop */
 
 }
 @media (min-width: 1024px){
-    .main h2{
+    .main_register h2{
         font-size: 45px;
         padding-bottom: 5px;
     }
@@ -64,7 +114,7 @@
         font-size: 28px;
 
     }
-    .button button{
-        font-size: 28px;
 }
-}
+
+
+

@@ -8,10 +8,6 @@ body{
     box-sizing: border-box;
 }
 
-img{
-    width: 100%;
-}
-
 li{
     list-style: none;
     
