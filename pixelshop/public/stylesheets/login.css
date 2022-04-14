@@ -3,7 +3,7 @@ body{
     background-size: auto;
 }
 
-.main{
+.main_login{
     width: 90%;
     color: white;
     background-image: url(/images/b4g.jpg);
@@ -116,7 +116,7 @@ body{
 
 /* tablets */
 @media (min-width: 768px){
-    .main{
+    .main_login{
         background-size: cover;
     }
        .main__section form {
@@ -152,7 +152,7 @@ body{
 }
 @media (min-width: 1024px){
 
-    .main h2{
+    .main_login h2{
         font-size: 45px;
         padding-bottom: 5px;
     }
