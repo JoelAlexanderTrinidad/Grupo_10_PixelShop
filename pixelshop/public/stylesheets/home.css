@@ -119,6 +119,7 @@
 
 .home__main .home__main__recommended article a{
     background: linear-gradient(to right, var(--colorLila), var(--colorMorado));
+    color: var(--colorTurquesa);
     display: block;
     font-weight: bold;
     border: 1px solid black;
