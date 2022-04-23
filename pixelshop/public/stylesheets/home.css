@@ -3,13 +3,6 @@
     background-size: contain;
 }
 
-/*Banner*/
-
-.home__main section .home__main__banner img{
-    border-bottom-left-radius: 10%;
-    border-bottom-right-radius: 10%;
-}
-
 /*Ofertas Especiales*/
 
 .home__main h4{
