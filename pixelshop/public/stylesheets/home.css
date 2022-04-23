@@ -26,7 +26,7 @@
 
 .home__main .home__main__offer article{
     width: 80%;
-    margin-bottom: 20px;
+    margin-bottom: 15%;
 }
 
 .home__main .home__main__offer article img{
@@ -36,6 +36,7 @@
 .home__main .home__main__offer .details{
     display: flex;
     justify-content: space-between;
+    font-size: 25px;
 }
 
 .home__main .home__main__offer p{
@@ -146,9 +147,14 @@
         display: flex;
         flex-wrap: wrap;
     }
-    
+        
     .home__main .home__main__offer article{
         width: 45%;
+        margin-bottom: 10%;
+    }
+    
+    .home__main .home__main__offer .details{
+        font-size: 30px;
     }
 
     .home__main .home__main__featured{
@@ -180,6 +186,10 @@
 }
 
 @media (min-width: 1024px){  
+    .home__main .home__main__offer .details{
+        font-size: 22px;
+    }
+    
     .home__main .home__main__offer{
         display: flex;
         flex-wrap: wrap;
@@ -187,6 +197,7 @@
     
     .home__main .home__main__offer article{
         width: 22%;
+        margin-bottom: 5%;
     }
 
     .home__main .home__main__recommended article{
