@@ -1,6 +1,11 @@
 .home__main{
     background-image: url("/images/fondo.jpg");
     background-size: contain;
+    padding-top: 0px;
+}
+
+.home__main__banner video{
+    display: none;
 }
 
 /*Ofertas Especiales*/
@@ -8,7 +13,10 @@
 .home__main h4{
     font-size: 20px;
     color: white;
-    margin: 30px;
+    padding: 20px 0;
+}
+.offer-recomended{
+    padding-top: 20px;
 }
 
 .home__main .home__main__offer{
@@ -20,6 +28,10 @@
 .home__main .home__main__offer article{
     width: 80%;
     margin-bottom: 15%;
+}
+
+.home__main .home__main__offer article:last-child {
+    margin-bottom: 0;
 }
 
 .home__main .home__main__offer article img{
@@ -181,6 +193,13 @@
 @media (min-width: 1024px){  
     .home__main .home__main__offer .details{
         font-size: 22px;
+    }
+
+    .home__main__banner video{
+        display: block;
+        border: 10px double #af5f5fb3;
+        width: 85%;
+        margin: 20px 8%;
     }
     
     .home__main .home__main__offer{
