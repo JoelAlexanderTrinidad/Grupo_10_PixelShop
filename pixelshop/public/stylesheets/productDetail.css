@@ -194,7 +194,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        margin-top: 30px;
         align-items: center;
     }
     #buy-info{
@@ -206,7 +205,6 @@
         font-size: 60px;
     }
     .main__section{
-        margin-top: 0;
         width: 40%;
     }
     .main h3 {
@@ -236,7 +234,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        margin-top: 30px;
         align-items: end;
     }
     
