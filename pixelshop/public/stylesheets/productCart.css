@@ -1,8 +1,8 @@
 
 .main_product{
-       background-image:url("/images/main8.jpg");
+ 
     font-size: 18px;
-    color: #e5d3d5
+  
     
 }
 .productCart{
@@ -17,7 +17,7 @@
 .productCart .button input{ 
     padding: 1% 2%;
     border-radius: 5px;
-    color: #e5d3d5;
+ 
     background-color: unset;
     text-transform: uppercase;
     font-family: "Bebas Neue";
@@ -28,7 +28,7 @@
 .productCart .listProduct{
     padding:0 2%;
     border-radius: 5px;
-    background-color: #0000009e;
+    border: #baa0bd solid 2px;
 }
 .productCart .listProduct article {
     margin: 3% 0;

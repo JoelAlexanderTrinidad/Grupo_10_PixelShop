@@ -1,4 +1,4 @@
-.home__header{    
+header{    
     background-color: black;
 }
 /* PIXELSHOP ANIMACION */
@@ -43,23 +43,23 @@
     }    
   }
 /*  */
-.home__header__section {
+.header__section {
     display: flex;
     justify-content: space-between;
     padding: 20px 20px 0;
     align-items: center;
 }
-.home__header__section h3{
+.header__section h3{
     font-family: 'Black Ops One';
     font-weight: 100;
     font-size: 30px;
     color: white;
 }
 
-.home__header__section-div img{
+.header__section-div img{
     width: 70px;
 }
-.home__header #burger {
+header #burger {
     background-color: #000000;
     width: 40px;
     margin: 0 auto 8px;
@@ -68,40 +68,40 @@
     border-radius: 8px;
     border: 2px solid #d4118b;
 }
-.home__header #burger i{
+header #burger i{
     font-size: 22px;
     color: white;
 }
-.home__header__section__div-user {
+.header__section__div-user {
     width: 85px;
     font-size: 25px;
     display: flex;
     justify-content: space-around;
 }
-.home__header__section__div-user a{
+.header__section__div-user a{
     color: white;
 }
-.home__header__div i{
+.header__div i{
     background-color: var(--colorMorado);
     color: var(--colorVerde);
     padding: 10px 12px;
     border-radius: 10px;
 }
-.home__header__div img{
+.header__div img{
     width: 30px;
     
 }
 
-.home__header__div-user{
+.header__div-user{
     padding-top: 5px;
 }
 
-.home__header__nav{
+.header__nav{
     display: none;
     
 }
 
-.home__header__nav__user{
+.header__nav__user{
     display: none;
 }
 
@@ -144,21 +144,21 @@
         color: #fff;
         text-shadow: 0 0 7px #ff00f382, 0 0 10px #ff00f382, 0 0 21px #f006, 0 0 42px #ff000085, 0 0 82px #ff000073, 0 0 92px #ff0000ab, 0 0 102px #1000ff8c, 0 0 151px #3300ff61;
     }
-    .home__header {
+    header {
         background-size: cover;
         background-repeat: inherit;
         background-position: center;
     }
-    .home__header__section__div-user{
+    .header__section__div-user{
         font-size: 30px;
     }
-    .home__header__section h3{
+    .header__section h3{
         font-size: 60px;
     }
-    .home__header__section-div img{
+    .header__section-div img{
         width: 70px;
     }
-    .home__header__nav{
+    .header__nav{
         display: block;
         font-weight: 700;
         display: flex;
@@ -166,31 +166,31 @@
         align-items: center;
         margin-top: 10px;
     }
-    .home__header__nav a{
+    .header__nav a{
         color: white;
         font-size: 12px;
         margin: 0 10px;
     }
-    .home__header__nav ul{
+    .header__nav ul{
         display: flex;
         justify-content: space-around;
     }
     #busqueda{
         margin-top: 15px;
     }
-    .home__header #burger {
+    header #burger {
         display: none;
     }
 }
 
 @media (min-width: 1024px){
-    .home__header__section h3 {
+    .header__section h3 {
         font-size: 80px;
     }
-    .home__header__section-div img {
+    .header__section-div img {
         width: 100px;
     }
-    .home__header__nav a {
+    .header__nav a {
         font-size: 17px;
     }
     #busqueda input {
@@ -199,7 +199,7 @@
     #busqueda button {    
         width: 30px;
     }
-    .home__header {
+    header {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

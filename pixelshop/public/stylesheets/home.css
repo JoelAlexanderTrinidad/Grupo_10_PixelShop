@@ -1,5 +1,5 @@
 .home__main{
-    background-image: url("/images/fondo.jpg");
+   /* background-image: url("/images/fondo.jpg");*/
     background-size: contain;
     padding-top: 0px;
 }
@@ -12,7 +12,7 @@
 
 .home__main h4{
     font-size: 20px;
-    color: white;
+
     padding: 20px 0;
 }
 .offer-recomended{
@@ -46,7 +46,7 @@
 
 .home__main .home__main__offer p{
     font-weight: bold;
-    color: white;
+   
 }
 
 .home__main .home__main__offer span{
