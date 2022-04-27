@@ -127,8 +127,23 @@
     border: none;
     padding-left: 10px;
 }
+@media(max-width: 767px){
+    .neonText-principal{
+        display: none;
+    }
+}
 /* tablets */
 @media (min-width: 768px){
+    .neonText-principal {
+        margin: 0;
+        display: block;
+        font-family: 'Rubik Glitch';
+        font-weight: 100;
+        font-size: 8vw;
+        font-weight: 100;
+        color: #fff;
+        text-shadow: 0 0 7px #ff00f382, 0 0 10px #ff00f382, 0 0 21px #f006, 0 0 42px #ff000085, 0 0 82px #ff000073, 0 0 92px #ff0000ab, 0 0 102px #1000ff8c, 0 0 151px #3300ff61;
+    }
     .home__header {
         background-size: cover;
         background-repeat: inherit;
