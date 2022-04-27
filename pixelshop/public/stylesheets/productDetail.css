@@ -1,23 +1,23 @@
 /* ############### main ###############*/
-
 .main {
-    width: 94%;
-    margin: 10px auto 0;
-    background-image: url(/images/main6.jpg);
+    margin: 0 5%;
+}
+
+.main__background{
+    background-image: url(/images/main6a.jpg);
     background-size: contain;
     background-repeat: round;
-}
 
+}
 .main h3 {
-    font-size: 35px;
-    text-align: center;
-    
+    font-size: 20px;
+    margin: 10px 0 20px;
+    color: var(--colorLetras);
 }
 .main h3 span {
-    font-size: 18px;
-    color: #5d2c83;
+    font-size: 10px;
+    color: var(--colorLetras);
 }
-
 /* main__div-carrusel */
 .main__div-carrusel img{
     margin: 0 auto;
@@ -34,14 +34,14 @@
     padding: 10px 0;
 }
 .main__section-info {
-    color: white;
-    margin: 0 10px;
+    color: #665454;
+    margin: 0 auto;
     border-top: 1px solid var(--colorBordeSparador);
     border: 2px solid var(--colorBordeRojo);
     padding: 20px;
     border-radius: 10px;
-    color: #fdfaff;
-    background-color: #45076180;
+    /* background-color: #aaa9f1; */
+    width: 100%;
 }
 .main__section-info-div{
     margin-top: 5px;
@@ -52,9 +52,11 @@
 }
 
 
-.main__section{
-    border-radius: 10px;    
-    margin-top: 20px;
+.detail__main__section {
+    border-radius: 10px;
+    border: 1px solid #a9cff1;
+    margin: 22px auto;
+    padding-top: 50px;
 }
 .main__section h3{
     padding-top: 10px;
@@ -70,6 +72,8 @@
 #more{
     margin: 15px 0;
     width: 84.6vw;
+    font-size: 30px;
+    color: var(--colorLetras);
 }
 
 .main__section__articles img{
@@ -77,11 +81,11 @@
     height: 80%;
 }
 
-.main__section__articles{
+.main__section__articles {
     margin-top: 10%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;    
+    justify-content: space-between;
 }
 
 .main__section__articles article {
@@ -127,7 +131,7 @@
 }
 
 .main__section-buy a{
-    color: white;
+    color: var(--colorLetras);
 }
 
 .main__section-buy i{
@@ -147,25 +151,23 @@
     border-radius: 5px;
     padding: 10px 0;
     width: 100%;
-    background-color: #ffffff6e;
+    background-color: #a9cff1;
     margin: 10px 0;
-    border: 3px solid #ff05b4a1;
+    /* border: 3px solid #ff05b4a1; */
     font-family: 'Bungee';
+    border: none;
+    /* color: #6cb5b5; */
 }
 .main__section-buy h2 {
-    border-radius: 15px;
-    background-color: #110a5580;
-    width: 80%;
-    margin: 0 auto;
-    font-size: 50px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 25px;
     margin-top: 10px;
     padding: 10px 0;
-    color: #5dff6a;
+    color: #5bb166;
     text-align: center;
 }
-#more{   
-    font-size: 50px;
-}
+
 .main__section-buy span{
     font-size: 22px;
 }
@@ -194,7 +196,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        margin-top: 30px;
         align-items: center;
     }
     #buy-info{
@@ -206,7 +207,6 @@
         font-size: 60px;
     }
     .main__section{
-        margin-top: 0;
         width: 40%;
     }
     .main h3 {
@@ -236,7 +236,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        margin-top: 30px;
         align-items: end;
     }
     
