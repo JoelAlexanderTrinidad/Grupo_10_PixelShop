@@ -134,6 +134,9 @@
 }
 /* tablets */
 @media (min-width: 768px){
+    .container h1 {
+        font-size: 16px;
+    }
     .neonText-principal {
         margin: 0;
         display: block;
@@ -156,7 +159,7 @@
         font-size: 60px;
     }
     .home__header__section-div img{
-        width: 70px;
+        width: 100px;
     }
     .home__header__nav{
         display: block;
@@ -184,11 +187,20 @@
 }
 
 @media (min-width: 1024px){
+    .home__header__section__div-user {
+        width: 20%;
+        font-size: 35px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .container h1 {
+        font-size: 21px;
+    }
     .home__header__section h3 {
         font-size: 80px;
     }
     .home__header__section-div img {
-        width: 100px;
+        width: 130px;
     }
     .home__header__nav a {
         font-size: 17px;
