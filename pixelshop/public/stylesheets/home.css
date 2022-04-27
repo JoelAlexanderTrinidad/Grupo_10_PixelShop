@@ -1,0 +1,218 @@
+.home__main{
+    background-image: url("/images/fondo.jpg");
+    background-size: contain;
+    padding-top: 0px;
+}
+
+.home__main__banner video{
+    display: none;
+}
+
+/*Ofertas Especiales*/
+
+.home__main h4{
+    font-size: 20px;
+    color: white;
+    padding: 20px 0;
+}
+.offer-recomended{
+    padding-top: 20px;
+}
+
+.home__main .home__main__offer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.home__main .home__main__offer article{
+    width: 80%;
+    margin-bottom: 15%;
+}
+
+.home__main .home__main__offer article:last-child {
+    margin-bottom: 0;
+}
+
+.home__main .home__main__offer article img{
+    border-radius: 5%;
+}
+
+.home__main .home__main__offer .details{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+.home__main .home__main__offer p{
+    font-weight: bold;
+    color: white;
+}
+
+.home__main .home__main__offer span{
+    color: rgb(24, 218, 24);
+    font-weight: bold;
+}
+
+.home__main .home__main__offer .fa-heart:before{
+    color: rgb(238, 12, 12);
+}
+
+.home__main .home__main__offer .fa-cart-plus:before{
+    color: rgb(20, 20, 233);
+}
+
+/* Destacados */
+
+.home__main .home__main__featured{
+    background-image: url("/images/fondo-destacados.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+}
+
+.home__main .home__main__featured article{
+    padding: 10px;
+    margin: 10px;
+    border: double; 
+    border-color: red blue green black;
+}
+
+.home__main .home__main__featured img{
+    border-radius: 5%;
+}
+
+.home__main .home__main__featured p{
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.home__main .home__main__featured .fa-star:before{
+    color: yellow;
+}
+
+.home__main .home__main__featured .carousel{
+    font-size: 10px;
+    text-align: center;
+}
+
+/* Recomendados */
+
+.home__main .home__main__recommended{
+    margin: 10px;
+}
+
+.home__main .home__main__recommended article{
+    background: linear-gradient(to right, #7404c069, #891b8c91);
+    border: 2px solid white;
+    border-radius: 5%;
+    padding: 15px;
+    margin: 15px;
+}
+
+.home__main .home__main__recommended article img{
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.home__main .home__main__recommended article p{
+    background-color: rgb(210, 210, 210);
+    border: 1px double black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.home__main .home__main__recommended article a{
+    background: linear-gradient(to right, var(--colorLila), var(--colorMorado));
+    color: var(--colorTurquesa);
+    display: block;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5%;
+    width: 30%;
+    padding: 5px;
+    text-align: center;
+    margin: 10px 70% 0px;
+}
+
+.home__main .home__main__continue{
+    background: linear-gradient(to top, var(--colorTurquesa), var(--colorBeige));
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5%;
+    padding: 5px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px){
+    .home__main .home__main__offer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+        
+    .home__main .home__main__offer article{
+        width: 45%;
+        margin-bottom: 10%;
+    }
+    
+    .home__main .home__main__offer .details{
+        font-size: 30px;
+    }
+
+    .home__main .home__main__featured{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .home__main .home__main__featured article{
+        width: 47%;
+    }
+
+    .home__main .home__main__featured .carousel{
+        width: 100%;
+    }
+
+    .home__main .home__main__recommended{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .home__main .home__main__recommended article{
+        width: 45%;
+    }
+    
+    .home__main .home__main__continue{
+        width: 20%;
+    }
+}
+
+@media (min-width: 1024px){  
+    .home__main .home__main__offer .details{
+        font-size: 22px;
+    }
+
+    .home__main__banner video{
+        display: block;
+        border: 10px double #af5f5fb3;
+        width: 85%;
+        margin: 20px 8%;
+    }
+    
+    .home__main .home__main__offer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .home__main .home__main__offer article{
+        width: 22%;
+        margin-bottom: 5%;
+    }
+
+    .home__main .home__main__recommended article{
+        width: 30%;
+    }
+}

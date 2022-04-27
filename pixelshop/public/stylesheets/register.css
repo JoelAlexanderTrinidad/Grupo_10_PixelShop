@@ -1,0 +1,148 @@
+body {
+    background-image: url(/images/main2.jpg);
+    background-size: auto;
+}
+
+.main_register{
+    width: 90%;
+    color: white;
+    background-color: #000000ad;
+    padding: 15px;
+    margin: 10px auto;
+    font-family: 'Rubik', sans-serif;
+}
+.main_register h2, h4{
+    text-align: center;
+}
+.main__section{
+    margin: 5px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_register form .datos{
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    margin: 3px auto;
+}
+.main_register .section__genero {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    height: 45px;
+}
+.main_register ::placeholder{
+    color: violet;
+}
+
+.main_register form div input {
+    border: none;
+    color: violet;
+    padding: 3px 0;
+}
+#genero{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.main_register .redes ul{
+    display: flex;
+    font-size: 36px;
+    justify-content: space-evenly;
+    margin: 15px 0 5px 0;
+}
+.main_register .redes ul li a i{
+    color: white;
+}
+.main_register .redes{ 
+    margin-top: 20px;
+}
+.redes h4{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.main_register .button {
+    text-align: center;
+ }
+ .main_register .button button{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 0 15px;
+    border-radius: 5px;
+    background-color:  #ffffff70;
+}
+.main_register .datos input{
+    border-bottom: 1.5px solid white;
+    background-color: rgba(255, 255, 255, 0)
+}
+/* tablets */
+@media (min-width: 768px){
+    body{
+        background-size: cover;
+    }
+    
+    .main_register form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .main_register form .datos {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 15px;
+        margin: 12px 0px;
+        width: 50%;
+    }
+    .main_register .section__genero {
+        padding: 10px 25px;
+        margin: 0;
+        width: 50%;
+    }
+    .main_register .required{
+        margin: 10px 4px;
+        font-size: 14px;
+    }
+    .main_register .datos{
+        font-size: 18px;
+    }
+    .redes h4{
+        font-size: 25px;
+    }
+    .main_register h2{
+        font-size: 30px;
+        padding-bottom: 5px;
+    }
+    .main_register .redes ul li a i{
+        font-size: 50px;
+    }
+    .main_register h3{
+        width: 100%;
+        padding: 0 16px;
+    }
+    .main_register .section__genero {
+        padding: 8px 16px;
+        margin: 0;
+        width: 50%;
+    }
+/* desktop */
+
+}
+@media (min-width: 1024px){
+    .main_register h2{
+        font-size: 45px;
+        padding-bottom: 5px;
+    }
+    
+    .redes h4{
+        font-size: 28px;
+    }
+    
+    
+
+}
+
+
+
