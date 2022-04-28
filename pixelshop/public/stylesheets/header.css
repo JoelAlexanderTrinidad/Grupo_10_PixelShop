@@ -109,7 +109,7 @@ header #burger i{
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    background-color: #9a46ff4f;
+    background-color: var(--colorFucsia);
 }
 
 #busqueda button{

@@ -56,20 +56,19 @@
               <button><i class="fa-solid fa-magnifying-glass"></i></button>
          </div>
      </header>
-
-     <main class="main_product">
-<section class="productCart">
-    <section class="button">
+     <main class="productCart">
+<section>
+    <section class="productCart__button">
         <input type="button" value="Carrito">
         <input type="button" value="Favoritos">
     </section>
     <section class="productCart__section">
-    <section class="listProduct">
-        <article class="product">
+    <section >
+        <article class="productCart__product">
             <h2>Nombre del producto</h2>
-            <div class="product_info">
+            <div class="productCart__product_info">
                 <span>
-                    <img  src="/images/destacado-1.jpg" alt>
+                   <a href="/productDetail" > <img  src="/images/destacado-1.jpg" alt></a>
                 </span>
                 <div>
                 <input type="button" value="-">
@@ -82,11 +81,11 @@
             </div>
             <p>descripción del producto</p>
             </article>
-            <article class="product">
+            <article class="productCart__product">
                 <h2>Nombre del producto</h2>
-                <div class="product_info">
+                <div class="productCart__product_info">
                     <span>
-                        <img  src="/images/destacado-1.jpg" alt>
+                       <a href="/productDetail"> <img  src="/images/destacado-1.jpg" alt></a>
                     </span>
                     <div>
                     <input type="button" value="-">
@@ -109,9 +108,9 @@
    <div class="linea">
 
    </div>
-    <section class="resumen">
+    <section class="productCart__resumen">
         <h2>Resumen de Compra</h2>
-        <div>
+        <div class="productCart__resumen-descuento" >
             <p>¿Tenés un codigo de descuento?</p>
         <input type="text" placeholder="Codigo" id="">
         <input type="button" value="Aplicar">
@@ -121,19 +120,19 @@
             <li>Subtotal <p>$precio</p></li>
             <li>Total <p>$precio</p></li>
         </ul>
-    <section class="button">
+    <div class="productCart__resumen-button">
         <input type="button" value="finalizar compra">
         <input type="button" value="continuar comprando">
-    </section>
+    </div>
     </section>
 </section>
-    <section class="section__productos" >
+    <section class="productCart__carousel" >
         <h2> Productos Similares</h2>
-        <section class="productos__similares">
+        <section class="productCart__carousel-products">
         <span>
             <i class="fas fa-angle-left"></i>
         </span>
-        <section class="section__productos__box">
+        <section class="productCart__carousel-products-box">
             <article>
                 <a href="/productDetail"><img src="/images/j1.jpg" alt=""></a>                
                 <div>
@@ -159,7 +158,7 @@
                 </div>
             </article>
         </section>
-        <section class="section__productos__box__articulos">
+        <section class="productCart__articles">
             <article>
                 <a href="/productDetail"><img src="/images/j1.jpg" alt=""></a>                
                 <div>
@@ -188,11 +187,16 @@
 </main>
 <footer class="footer">
     <section class="footer__section">
-        <span>
-            <a href="/"><img src="/images/logo.png" alt="logo"></a>            
-        </span>
+    <div class="footer__section-div">
+        <a href="/"><img src="/images/nuevoLogo.jpg" alt="logo"></a>            
+        <div class="container">
+           <h1 class="neonText">
+                 PIXELSHOP
+           </h1>        
+        </div>
+    </div>
         <p>Gracias por su visita, esperamos que tenga un buen día</p>
-        <a href=""><i class="fas fa-arrow-circle-up"></i></a>
+        <a href="/"><i class="fas fa-arrow-circle-up"></i></a>
     </section>
     <nav>
         <ul class="footer__nav">

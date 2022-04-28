@@ -1,7 +1,7 @@
 /* footer */
 footer{    
     background-color: black;
-    padding-top: 15px;
+   
 }
 /* PIXELSHOP ANIMACION */
 .neonText {
@@ -76,7 +76,7 @@ footer{
 .footer__nav__networks{
     display: flex;
     justify-content: space-evenly;
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 30px;
 }
 
@@ -121,7 +121,7 @@ footer{
 }
 .footer__nav__networks {
     display: flex;
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 35px;
     justify-content: flex-end;
 }
