@@ -12,8 +12,9 @@
 
 .home__main h4{
     font-size: 20px;
-
     padding: 20px 0;
+    font-family: 'Bungee';
+    background: linear-gradient(to bottom, #3cdaf2, white 50%, #f0128c);
 }
 .offer-recomended{
     padding-top: 20px;
@@ -23,15 +24,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding: 10px;
 }
 
 .home__main .home__main__offer article{
-    width: 80%;
-    margin-bottom: 15%;
-}
-
-.home__main .home__main__offer article:last-child {
-    margin-bottom: 0;
+    width: 90%;
+    border: 1px solid var(--colorFucsia);
+    border-radius: 5%;
+    padding: 20px;
+    box-shadow: 4px 4px 5px #665454;
+    margin: 15px;
 }
 
 .home__main .home__main__offer article img{
@@ -41,7 +43,8 @@
 .home__main .home__main__offer .details{
     display: flex;
     justify-content: space-between;
-    font-size: 25px;
+    font-size: 20px;
+    padding-top: 15px;
 }
 
 .home__main .home__main__offer p{
@@ -103,12 +106,19 @@
     margin: 10px;
 }
 
+.home__main .home__main__recommended h5{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Bungee';
+    color: black;
+}
+
 .home__main .home__main__recommended article{
     background: linear-gradient(to right, #7404c069, #891b8c91);
-    border: 2px solid white;
+    border: 1px solid;
     border-radius: 5%;
     padding: 15px;
-    margin: 15px;
+    margin: 20px;
 }
 
 .home__main .home__main__recommended article img{
@@ -124,8 +134,8 @@
 }
 
 .home__main .home__main__recommended article a{
-    background: linear-gradient(to right, var(--colorLila), var(--colorMorado));
-    color: var(--colorTurquesa);
+    background-color: var(--colorCelesteClaro);
+    color: var(--colorLetras);
     display: block;
     font-weight: bold;
     border: 1px solid black;
@@ -155,11 +165,6 @@
         
     .home__main .home__main__offer article{
         width: 45%;
-        margin-bottom: 10%;
-    }
-    
-    .home__main .home__main__offer .details{
-        font-size: 30px;
     }
 
     .home__main .home__main__featured{
@@ -182,7 +187,7 @@
     }
 
     .home__main .home__main__recommended article{
-        width: 45%;
+        width: 44%;
     }
     
     .home__main .home__main__continue{
@@ -192,7 +197,7 @@
 
 @media (min-width: 1024px){  
     .home__main .home__main__offer .details{
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .home__main__banner video{
@@ -209,11 +214,10 @@
     
     .home__main .home__main__offer article{
         width: 22%;
-        margin-bottom: 5%;
     }
 
     .home__main .home__main__recommended article{
-        width: 30%;
+        width: 29%;
     }
 
     .home__main .home__main__continue{
