@@ -1,13 +1,25 @@
 :root{
-    --colorRosa:#d92acd;
-    --colorVino:#891b8c;
-    --colorVioleta:#7404c0;
-    --colorMorado:#2b118c; 
-    --colorAzulOscuro:#2e315a;
-    --colorLila:#8577d9;
-    --colorTurquesa:#04c4d9;
 
+    /*bordes */
+    --colorCeleste:#43d4f0;
+    --colorFucsia:#d4118b;
+
+    /*fondo botones*/
+ 
+    --colorCelesteClaro:#a9cff1;
+    --colorLetras: #665454;
+
+    /*precios*/
+    
+    --colorVerde:#5bb166; 
+
+    /*fondo secciones*/
+    --colorDegradadoVioleta:linear-gradient(to right, #7404c069, #891b8c91);
+    --colorDegradadoCeleste: linear-gradient(to top, var(--colorTurquesa), var(--colorBeige));
+    --colorTurquesa:#04c4d9;
     --colorBeige: #febaad;
+
+
     --colorVerde:#5debcc75;
     --colorFucsia:#ff00aa;
     --colorAzul:#0000a2;
@@ -33,5 +45,4 @@
     --colorPrueba3: #41086cd6;
     --colorPrueba4: #d540bf59;
 
-    --colorLetras: #665454;
 }

@@ -16,7 +16,9 @@ li{
 a{
 
     text-decoration: none;
+    font-family: 'Bungee';
 }
+
 /* definir el diseño de los iconos*/
 img {
     width: 100%;

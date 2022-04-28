@@ -134,6 +134,9 @@ header #burger i{
 }
 /* tablets */
 @media (min-width: 768px){
+    .container h1 {
+        font-size: 16px;
+    }
     .neonText-principal {
         margin: 0;
         display: block;
@@ -156,7 +159,7 @@ header #burger i{
         font-size: 60px;
     }
     .header__section-div img{
-        width: 70px;
+        width: 100px;
     }
     .header__nav{
         display: block;
@@ -168,8 +171,8 @@ header #burger i{
     }
     .header__nav a{
         color: white;
-        font-size: 12px;
-        margin: 0 10px;
+        font-size: 11px;
+        margin: 0 8px;
     }
     .header__nav ul{
         display: flex;
@@ -184,14 +187,23 @@ header #burger i{
 }
 
 @media (min-width: 1024px){
+    .header__section__div-user {
+        width: 10%;
+        font-size: 35px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .container h1 {
+        font-size: 21px;
+    }
     .header__section h3 {
         font-size: 80px;
     }
     .header__section-div img {
-        width: 100px;
+        width: 130px;
     }
     .header__nav a {
-        font-size: 17px;
+        font-size: 15px;
     }
     #busqueda input {
         padding: 5px;
