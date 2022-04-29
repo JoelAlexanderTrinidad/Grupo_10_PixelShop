@@ -197,7 +197,7 @@
 
 @media (min-width: 1024px){  
     .home__main .home__main__offer .details{
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .home__main__banner video{
@@ -213,7 +213,7 @@
     }
     
     .home__main .home__main__offer article{
-        width: 22%;
+        width: 20%;
     }
 
     .home__main .home__main__recommended article{
