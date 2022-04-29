@@ -3,6 +3,7 @@ header{
 }
 /* PIXELSHOP ANIMACION */
 .neonText {
+    font-size: 11px;
     font-family: 'Rubik Glitch';
     font-weight: 100;
     color: #fff;
@@ -134,6 +135,9 @@ header #burger i{
 }
 /* tablets */
 @media (min-width: 768px){
+    .neonText {
+        font-size: 16px;
+    }
     .home .container h1 {
         font-size: 16px;
     }
@@ -187,6 +191,9 @@ header #burger i{
 }
 
 @media (min-width: 1024px){
+    .neonText{
+        font-size: 20px;
+    }
     .header__section__div-user {
         width: 10%;
         font-size: 35px;
