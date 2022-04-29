@@ -83,6 +83,9 @@ footer{
 .footer__section a i{
    font-size: 40px;
    color: var(--colorFucsia);
+   position: fixed;
+   top: 27rem;
+    right: 14px;
 }
 @media (min-width: 768px){
     .footer .container h1 {
@@ -147,5 +150,10 @@ footer{
     .footer__nav li a{
         color: white;
         font-size: 20px;
+        
     }
+    .footer__section a i {
+        top: 28rem;
+        right: 45px;
     }
+}
