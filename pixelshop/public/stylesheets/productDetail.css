@@ -56,7 +56,6 @@
     border-radius: 10px;
     border: 1px solid #a9cff1;
     margin: 22px auto;
-    padding-top: 50px;
 }
 .main__section h3{
     padding-top: 10px;
@@ -182,7 +181,6 @@
     .main {    
         margin: 0 auto;
         width: 100%;
-        background-image: url(/images/main6.jpg);
         background-size: contain;
         background-repeat: inherit;
     }
@@ -232,12 +230,17 @@
     }
     .main #info-principal {
         margin: 0 auto;
-        width: 85%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        align-items: end;
+    }
+    #buy-info{
+        width: 40%;
     }
     
+    .detail__main__section {
+        width: 33%;
+        margin: 0;
+    }
 }
 }
