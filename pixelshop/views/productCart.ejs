@@ -1,61 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compra | PixelShop</title>
-    <script src="https://kit.fontawesome.com/182101e9ec.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body >
-    <header >
-        <section class="header__section">
-         <div class="header__section-div">
-             <a href="/"><img src="/images/nuevoLogo.jpg" alt="logo"></a>            
-             <div class="container">
-                <h1 class="neonText">
-                      PIXELSHOP
-                </h1>        
-             </div>
-         </div>
-         <h1 class="neonText-principal">
-            PIXELSHOP
-        </h1> 
-         <div id="burger">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-         <div  class="header__section__div-user">
-            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="/login"><i class="fa-solid fa-user"></i></a>
-         </div>
-        </section>
-       
-         <nav class="header__nav">
-             <ul>
-                 <li><a href="">Comunidad</a></li>
-                 <li><a href="">Nuestra App</a></li>
-                 <li><a href="">Soporte</a></li>
-                 <li><a href="">Idioma</a></li>
-             </ul>
-             <ul>
-                 <li> <a href="">Tendencias y Novedades</a></li>
-                 <li> <a href="">Suscripción Premium</a></li>
-                 <li> <a href="">Quienes Somos</a></li>
-             </ul>
-         </nav>
-         <nav class="header__nav__user">        
-             <ul>
-                 <li><a href="/login">Ingresa <i class="fa-solid fa-user"></i></a></li>
-                 <li><a href="/register">Registrate</a></li>
-                 <li><a href="/productCart">Carrito de Compra <i class="fa-solid fa-cart-shopping"></i></a></li>
-             </ul>
-         </nav>
-         <div id="busqueda">
-             <input type="search" placeholder="Buscar videojuegos, marcas...">
-              <button><i class="fa-solid fa-magnifying-glass"></i></button>
-         </div>
-     </header>
+    <%- include('./partials/head',{title: 'Home | Pixel Shop'}) %> 
+    <body >
+       <%- include('./partials/header') %> 
      <main class="productCart">
 <section>
     <section class="productCart__button">
@@ -68,7 +15,7 @@
             <h2>Nombre del producto</h2>
             <div class="productCart__product_info">
                 <span>
-                   <a href="/productDetail" > <img  src="/images/destacado-1.jpg" alt></a>
+                   <a href="/product/Detail" > <img  src="/images/destacado-1.jpg" alt></a>
                 </span>
                 <div>
                 <input type="button" value="-">
@@ -85,7 +32,7 @@
                 <h2>Nombre del producto</h2>
                 <div class="productCart__product_info">
                     <span>
-                       <a href="/productDetail"> <img  src="/images/destacado-1.jpg" alt></a>
+                       <a href="/product/Detail"> <img  src="/images/destacado-1.jpg" alt></a>
                     </span>
                     <div>
                     <input type="button" value="-">
@@ -134,7 +81,7 @@
         </span>
         <section class="productCart__carousel-products-box">
             <article>
-                <a href="/productDetail"><img src="/images/j1.jpg" alt=""></a>                
+                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
                 <div>
                     <p>$xxxx</p>
                     <i class="fas fa-heart"></i>  
@@ -142,7 +89,7 @@
                 </div>
             </article>
             <article>
-                <a href="/productDetail"><img src="/images/j1.jpg" alt=""></a>                
+                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
                 <div>
                     <p>$xxxx</p>
                     <i class="fas fa-heart"></i>  
@@ -150,7 +97,7 @@
                 </div>
             </article>
             <article>
-                <a href="/productDetail"><img src="/images/j1.jpg" alt=""></a>                
+                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
                 <div>
                     <p>$xxxx</p>
                     <i class="fas fa-heart"></i>  
@@ -160,7 +107,7 @@
         </section>
         <section class="productCart__articles">
             <article>
-                <a href="/productDetail"><img src="/images/j1.jpg" alt=""></a>                
+                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
                 <div>
                     <p>$xxxx</p>
                     <i class="fas fa-heart"></i>  
@@ -168,7 +115,7 @@
                 </div>
             </article>
             <article>
-                <a href="/productDetail"><img src="/images/j1.jpg" alt=""></a>                
+                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
                 <div>
                     <p>$xxxx</p>
                     <i class="fas fa-heart"></i>  
@@ -185,39 +132,6 @@
     </section>
 </section>
 </main>
-<footer class="footer">
-    <section class="footer__section">
-    <div class="footer__section-div">
-        <a href="/"><img src="/images/nuevoLogo.jpg" alt="logo"></a>            
-        <div class="container">
-           <h1 class="neonText">
-                 PIXELSHOP
-           </h1>        
-        </div>
-    </div>
-        <p>Gracias por su visita, esperamos que tenga un buen día</p>
-        <a href="/"><i class="fas fa-arrow-circle-up"></i></a>
-    </section>
-    <nav>
-        <ul class="footer__nav">
-                <li><a href="">Ayuda</a></li>
-                <li><a href="">Empleo</a></li>
-                <li><a href="">Terminos y condiciones de uso</a></li>
-                <li><a href="">Cookies</a></li>
-                <li><a href="">Contactos</a></li>
-                <li><a href="">Política de privacidad</a></li>
-                <li><a href="">Información legal</a></li>
-                <li><a href="">Nuestro sitio web</a></li>
-        </ul>
-    </nav>
-    <nav class="footer__nav__networks">
-        <div>
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-facebook-square"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-youtube"></i></a>
-        </div>            
-    </nav>
-</footer>
+<%- include('./partials/footer') %> 
 </body>
 </html>
