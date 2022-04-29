@@ -126,23 +126,26 @@ footer{
     justify-content: flex-end;
 }
 .footer__nav {
-    display: block;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-evenly;
-    text-transform: uppercase;
-    flex-wrap: wrap;
+        /* display: block; */
+        /* margin-top: 10px; */
+        display: flex;
+        /* flex-wrap: wrap; */
+        flex-direction: row;
+        justify-content: space-evenly;
+   
+    }
+    .footer__nav li{
+        margin: 10px 0;
+    
 }
 .footer__nav li a{
     color: white;
-    margin: 0 5px;
 }
-@media (min-width: 1024px){
-    .footer__section p{
-        width: 55%;
-    }
+}
+
+@media (min-width:1024px){
     .footer__nav li a{
-            margin: 0 25px;
+        color: white;
+        font-size: 20px;
     }
-}
-}
+    }
