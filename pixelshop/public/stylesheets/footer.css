@@ -19,7 +19,7 @@ footer{
         0 0 151px #6200ff;
   }
   
-  .container h1 {
+  .footer .container h1 {
     font-size: 11px;
     animation: flicker 1.5s infinite alternate;     
   }
@@ -85,7 +85,7 @@ footer{
    color: var(--colorFucsia);
 }
 @media (min-width: 768px){
-    .container h1 {
+    .footer .container h1 {
         font-size: 16px;
     }
     .footer__section-div img{

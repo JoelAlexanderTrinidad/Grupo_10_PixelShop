@@ -17,7 +17,7 @@ header{
         0 0 151px #6200ff;
   }
  
-  .container h1 {
+  .home .container h1 {
     font-size: 11px;
     animation: flicker 1.5s infinite alternate;     
   }
@@ -134,7 +134,7 @@ header #burger i{
 }
 /* tablets */
 @media (min-width: 768px){
-    .container h1 {
+    .home .container h1 {
         font-size: 16px;
     }
     .neonText-principal {
@@ -193,7 +193,7 @@ header #burger i{
         display: flex;
         justify-content: space-evenly;
     }
-    .container h1 {
+    .home .container h1 {
         font-size: 21px;
     }
     .header__section h3 {
