@@ -1,11 +1,280 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Pixel Shop</title>
+    <script src="https://kit.fontawesome.com/182101e9ec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="home">
+    <header >
+        <section class="header__section">
+         <div class="header__section-div">
+             <a href="/"><img src="/images/nuevoLogo.jpg" alt="logo"></a>            
+             <div class="container">
+                <h1 class="neonText">
+                      PIXELSHOP
+                </h1>        
+             </div>
+         </div>
+         <h1 class="neonText-principal">
+            PIXELSHOP
+        </h1> 
+         <div id="burger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+         <div  class="header__section__div-user">
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/login"><i class="fa-solid fa-user"></i></a>
+         </div>
+        </section>
+       
+         <nav class="header__nav">
+             <ul>
+                 <li><a href="">Comunidad</a></li>
+                 <li><a href="">Nuestra App</a></li>
+                 <li><a href="">Soporte</a></li>
+                 <li><a href="">Idioma</a></li>
+             </ul>
+             <ul>
+                 <li> <a href="">Tendencias y Novedades</a></li>
+                 <li> <a href="">Suscripción Premium</a></li>
+                 <li> <a href="">Quienes Somos</a></li>
+             </ul>
+         </nav>
+         <nav class="header__nav__user">        
+             <ul>
+                 <li><a href="/login">Ingresa <i class="fa-solid fa-user"></i></a></li>
+                 <li><a href="/register">Registrate</a></li>
+                 <li><a href="/productCart">Carrito de Compra <i class="fa-solid fa-cart-shopping"></i></a></li>
+             </ul>
+         </nav>
+         <div id="busqueda">
+             <input type="search" placeholder="Buscar videojuegos, marcas...">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+         </div>
+     </header>
+    <main class="home__main">
+        <!-- Banner -->
+        <section>
+            <article class="home__main__banner">
+                <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline preload="auto"  id="miVideo">
+                    <source src="/videos/videoplayback.webm" type="video/mp4">
+                    <source src="/videos/videoplayback.webm" type="video/webm">
+                    </video>
+            </article>
+        </section>
+        <h4>OFERTAS ESPECIALES <i class="fa-solid fa-tag"></i></h4>
+        <!-- Ofertas especiales -->
+        <section class="home__main__offer">
+            <article>
+                <a href="/productDetail"><img src="images/oferta-1.jpg" alt="" width="100%"></a>
+                <div class="details">
+                    <p>$960,40</p>
+                    <span>30%OFF</span>
+                    <div>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <a href="/productDetail"><img src="/images/oferta-2.jpg" alt="" width="100%"></a>
+                <div class="details">
+                    <p>$1240,50</p>
+                    <span>40%OFF</span>
+                    <div>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <a href="/productDetail"><img src="/images/oferta-3.jpg" alt="" width="100%"></a>
+                <div class="details">
+                    <p>$824,17</p>
+                    <span>50%OFF</span>
+                    <div>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <a href="/productDetail"><img src="/images/oferta-4.jpg" alt="" width="100%"></a>
+                <div class="details">
+                    <p>$328,35</p>
+                    <span>40%OFF</span>
+                    <div>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <a href="/productDetail"><img src="/images/oferta-5.jpg" alt="" width="100%"></a>
+                <div class="details">
+                    <p>$541,19</p>
+                    <span>60%OFF</span>
+                    <div>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <a href="/productDetail"><img src="/images/oferta-6.jpg" alt="" width="100%"></a>
+                <div class="details">
+                    <p>$296,99</p>
+                    <span>40%OFF</span>
+                    <div>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <a href="/productDetail"><img src="images/oferta-7.jpg" alt="" width="100%"></a>
+                <div class="details">
+                    <p>$560,18</p>
+                    <span>50%OFF</span>
+                    <div>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <a href="/productDetail"><img src="images/oferta-8.jpg" alt="" width="100%"></a>
+                <div class="details">
+                    <p>$371,24</p>
+                    <span>40%OFF</span>
+                    <div>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- Destacados -->
+        <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
+        <section class="home__main__featured">
+            <article>
+                <p>popularidad: 
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </p>
+                <a href="/productDetail"><img src="/images/destacado-1.jpg" alt="" width="100%"></a>
+            </article>
+            <article>
+                <p>popularidad: 
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </p>
+                <a href="/productDetail"><img src="/images/destacado-2.jpg" alt="" width="100%"></a>
+            </article>
+            <div class="carousel">
+                <i class="fas fa-dot-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+            </div>
+        </section>
+        <!-- Publicidad (desactivar adblock para ver :) -->
+        <div class="home__main__publicidad">
+            <a href="https://playground.digitalhouse.com/"><img src="/images/publicidad.jpg" alt="" width="100%"></a>
+        </div>
+        <!-- Recomendados -->
+        <h4>RECOMENDADOS <i class="fa-solid fa-thumbs-up"></i></h4>
+        <section class="home__main__recommended">
+            <article>
+                <img src="/images/recomendado-1.jpg" alt="" width="100%"></a>
+                <h5>Reseña popular</h5>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
+                <a href="/productDetail">Ver mas</a>
+            </article>
+            <article>
+                <img src="/images/recomendado-2.jpg" alt="" width="100%"></a>
+                <h5>Reseña popular</h5>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
+                <a href="/productDetail">Ver mas</a>
+            </article>
+            <article>
+                <img src="/images/recomendado-3.jpg" alt="" width="100%"></a>
+                <h5>Reseña popular</h4>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
+                <a href="/productDetail">Ver mas</a>
+            </article>
+            <article>
+                <img src="/images/recomendado-4.jpg" alt="" width="100%"></a>
+                <h5>Reseña popular</h5>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
+                <a href="/productDetail">Ver mas</a>
+            </article>
+            <article>
+                <img src="/images/recomendado-5.jpg" alt="" width="100%"></a>
+                <h5>Reseña popular</h5>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
+                <a href="/productDetail"> Ver mas</a>
+            </article>
+            <article>
+                <img src="/images/recomendado-6.jpg" alt="" width="100%"></a>
+                <h5>Reseña popular</h5>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
+                <a href="/productDetail">Ver mas</a>
+            </article>
+        </section>     
+        <div class="home__main__continue">
+            <a href="/">Seguir explorando</a><!-- Desplegar más productos o abrir una nueva pág-->
+        </div>
+        <br>
+    </main>
+    <footer class="footer">
+        <section class="footer__section">
+        <div class="footer__section-div">
+            <a href="/"><img src="/images/nuevoLogo.jpg" alt="logo"></a>            
+            <div class="container">
+               <h1 class="neonText">
+                     PIXELSHOP
+               </h1>        
+            </div>
+        </div>
+            <p>Gracias por su visita, esperamos que tenga un buen día</p>
+            <a href="/"><i class="fas fa-arrow-circle-up"></i></a>
+        </section>
+        <nav class="footer__nav">
+            <ul>
+                <li><a href="">Ayuda</a></li>
+                <li><a href="">Cookies</a></li>
+                <li><a href="">Información legal</a></li>                    
+                <li><a href="">Política de privacidad</a></li>
+            </ul>
+            <ul>
+                <li><a href="">Empleo</a></li>
+                <li><a href="">Contactos</a></li>
+                <li><a href="">Preguntas Frecuentes</a></li>
+                <li><a href="">Terminos y condiciones de uso</a></li>
+            </ul>
+                   
+                
+        </nav>
+        <nav class="footer__nav__networks">
+            <div>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>            
+        </nav>
+    </footer>
+</body>
 </html>
