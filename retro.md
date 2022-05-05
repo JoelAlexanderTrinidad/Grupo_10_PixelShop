@@ -35,3 +35,36 @@ Nos dimos cuenta que tendríamos que debatir más acerca de las propuestas de nu
 Deberíamos prestarle atención a las tarjetas en su debido proceso y poniéndoles fechas estipuladas de entrega en Trello.
 
 Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final para poder corregir los errores y unificar todas las partes.
+
+
+
+# **RETROSPECTIVA SPRINT 2:**
+
+### Qué hicimos bien:
+    -Investigamos y aplicamos herramientas nuevas que no nos enseñaron.
+    -Llegar a tiempo con los sprints.
+    -Ayudarnos entre nosotros.
+    -Ser más autocríticos.
+    -
+
+### Qué hicimos mal:
+    -No organizamos todas las clases de los html.
+    -Cambiar a último momento las cosas.
+    -Nos olvidamos de organizar los estilos generales de la página.
+    -Nos dejamos llevar por las primeras ideas que se nos ocurren.
+    -
+    
+### Qué deberíamos empezar a hacer:
+    -Utilizar Trello correctamente y con más frecuencia.
+    -Preguntar más.
+    -Ser más creativos.
+    -Organizar el Trello con fechas.
+    
+### qué deberíamos dejar de hacer:
+    -Inseguridad de probar cosas.
+    -Dejar de tenerle miedo a git.
+    
+    
+### Continuar haciendo:
+    -Continuar reuniéndonos con frecuencia.
+    
