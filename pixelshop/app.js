@@ -28,6 +28,8 @@ app.get('/login',(req,res)=> res.sendFile(path.resolve(__dirname,"views","login.
 app.get('/register',(req,res)=> res.sendFile(path.resolve(__dirname,"views","register.html")));
 app.get('/productCart',(req,res)=> res.sendFile(path.resolve(__dirname,"views","productCart.html")));
 app.get('/productDetail',(req,res)=> res.sendFile(path.resolve(__dirname,"views","productDetail.html")));
+app.get('/formCrear',(req,res)=> res.sendFile(path.resolve(__dirname,"views","formCrear.html")));
+app.get('/formEdit',(req,res)=> res.sendFile(path.resolve(__dirname,"views","formEdit.html")));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
