@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head',{title: 'Editar Producto | Pixel Shop'}) %> 
+<body class="form__body">
+   <%- include('./partials/header') %> 
+    <main class="form__main">
+        <h2>Editar producto</h2>
+        <form class="form" action="" method="get">
+            <div>
+                <label for="producto">Nuevo nombre del producto</label>
+                <input type="text" name="nombre" id="producto" placeholder="Nombre del producto" required>
+            </div>
+            <div class="">
+                <label for="descripcion">Nueva descripción del producto</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción del producto" required></textarea>
+            </div>
+            <div class="">
+                <input type="file" name="file" multiple required>
+            </div>
+            <div>
+                <select class="" name="categorias" id="categorias">
+                    <option value="" hidden selected>Por favor elegí uno...</option>
+                    <option value="accion">Acción</option>
+                    <option value="rpg">Rpg</option>
+                    <option value="aventuras">Aventuras</option>
+                    <option value="terror">Terror</option>
+                    <option value="lucha">Lucha</option>
+                    <option value="aventuras">Aventuras</option>
+                    <option value="estrategia">Estrategia</option>
+                    <option value="deportes">Deportes</option>
+                    <option value="carreras">Carreras</option>
+                    <option value="aventuras">Aventuras</option>
+                    <option value="plataformas">Plataformas</option>
+                    <option value="shooter">Shooter</option>
+                    <option value="puzzle">Puzzle</option>
+                    <option value="multijugador">Multijugador</option>
+                </select>
+            </div>
+            <div>
+                <label for="tamaño">Nuevo tamaño del producto</label>
+                <input type="text" name="tamaño" id="tamaño" placeholder="Tamaño del producto" required>
+            </div>
+            <div>
+                <label for="requisitos">Nuevo requisitos del producto</label>
+                <input class="input-requisitos" type="text" name="requisitos" id="requisitos" placeholder="SO" required>
+                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Procesador" required>
+                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="RAM" required>
+                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Gráfica " required>
+                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Almacenamiento" required>
+            </div>
+            <div class="">
+                <label for="precio">Nuevo precio del producto</label>
+                <input type="text" name="precio" id="precio" placeholder="Precio del producto" required>
+            </div>
+            <div>
+                <button type="submit">Editar</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

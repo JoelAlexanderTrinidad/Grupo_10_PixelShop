@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head',{title: 'Home | Pixel Shop'}) %> 
+    <body>
+       <%- include('./partials/header') %> 
+    
+    <main class="main_login">
+        <h2>Ingresá</h2>
+        <section class="main__login">
+            <form action="" method="get">
+                <div class="datos">
+                    <label for="email"> Usuario/Correo electrónico</label>
+                    <input type="email" name="email" id="email" placeholder=" ususario/email" required>
+                </div>
+                <div class="datos">
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" name="contraseña" id="contraseña" placeholder=" contraseña" required>
+                </div>
+
+            </form>
+          
+            <section class="required">
+                    <input type="checkbox" id="recordame" name="recordame" value="recordarme" required >
+                    <label for="recordame">Recordame</label>                        
+            </section>
+            
+        </section>
+      <section class="section__login">
+        <div class="button">
+            <a href=""><button type="submit">INICIAR SESIÓN</button></a>
+        </div>
+        <a href="¿Has olvidado tu contraseña?"></a>
+        <p>O</p>
+        <div class="button">
+            <a href="/users/register"><button type="submit">REGISTRATE</button></a>
+            
+        </div>
+      </section>
+        <section class="redes">
+        <ul>
+            <li><a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a></li>
+            <li>       <a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a></li>
+            <li>        <a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </section>
+    <section class="section__unirse">
+        <p>Únete a Pixel y descubre miles de títulos de juegos</p>
+        <p>Es gratis y fácil de usar</p>
+    </section>
+    <div class="unete">
+        <a href="/users/register">Únete a Pixel</a>    
+    </div>
+    </main>
+    <%- include('./partials/footer') %> 
+</body>
+</html>
