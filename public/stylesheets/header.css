@@ -22,9 +22,6 @@ header{
     font-size: 11px;
     animation: flicker 1.5s infinite alternate;     
   }
-    .neonText-principal{
-       
-    }
 
   /* Flickering animation */
 @keyframes flicker {
