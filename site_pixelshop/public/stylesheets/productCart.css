@@ -60,7 +60,6 @@ width: 30vw;
     border-radius: 5px;
     box-shadow: 4px 4px 5px #665454;
     text-align: center;
-    display: table;
     border: 2px solid var(--colorCelesteClaro);
 }
 .productCart h2{
