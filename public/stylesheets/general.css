@@ -1,0 +1,28 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+    
+
+}
+a{
+
+    text-decoration: none;
+    font-family: 'Bungee';
+}
+
+/* definir el diseño de los iconos*/
+img {
+    width: 100%;
+}
+body{
+    color: var(--colorLetras);
+}

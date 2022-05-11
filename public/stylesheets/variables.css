@@ -1,0 +1,48 @@
+:root{
+
+    /*bordes */
+    --colorCeleste:#43d4f0;
+    --colorFucsia:#df258f;
+
+    /*fondo botones*/
+ 
+    --colorCelesteClaro:#a9cff1;
+    --colorLetras: #665454;
+
+    /*precios*/
+    
+    --colorVerde:#5bb166; 
+
+    /*fondo secciones*/
+    --colorDegradadoVioleta:linear-gradient(to right, #7404c069, #891b8c91);
+    --colorDegradadoCeleste: linear-gradient(to top, var(--colorCeleste), var(--colorFucsia));
+    --colorTurquesa:#04c4d9;
+    --colorBeige: #febaad;
+
+
+    --colorVerde:#5debcc75;
+    --colorFucsia:#ff00aa;
+    --colorAzul:#0000a2;
+
+    --colorAzulNoche:#1d3d66;
+    --colorRosaBebeOpacity:rgb(221, 108, 152, 0.5);
+    --colorRosaBebe:#dd6c98;
+    --colorAqua:#32dbe9a1;
+    --colorPurpura:#886b94;
+    --colorVerdeOscuro:#176886;
+
+    /* #94e8f2  */
+    --colorVioletaOscuro:#2d204f;
+    --colorLetra: #fa91fd;
+    --colorFondo: #94e8f2;
+    --colorAmarillo: #46a5c94f;
+    --colorBordeSparador: #c2e3e9;
+    --colorBordeRojo: #c13fcb6e;
+
+    --colorBody: #9bf1c81f;
+    --colorPrueba: #b9fff7a1;
+    --colorPrueba2: #f981fd63;
+    --colorPrueba3: #41086cd6;
+    --colorPrueba4: #d540bf59;
+
+}
