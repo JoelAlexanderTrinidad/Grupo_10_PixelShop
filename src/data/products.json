@@ -1,6 +1,486 @@
 [
     {
         "id": 1,
+        "name": "Doom",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    },
+    {
+        "id": 17,
         "name": "Shelbi",
         "price": 9158,
         "discount": 22,

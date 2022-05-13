@@ -16,98 +16,24 @@
         <h4>OFERTAS ESPECIALES <i class="fa-solid fa-tag"></i></h4>
         <!-- Ofertas especiales -->
         <section class="home__main__offer">
+            <% products.forEach(({id, name, price, discount, img}) => { %>             
             <article>
-                <a href="/product/detail"><img src="images/oferta-1.jpg" alt="" width="100%"></a>
+                <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
                 <div class="details">
-                    <p>$960,40</p>
-                    <span>30%OFF</span>
+                    <p>$<%= price %></p>
+                    <span><%= discount %> OFF</span>
                     <div>
                         <i class="fas fa-cart-plus"></i>
                         <i class="fa-regular fa-heart"></i>
                     </div>
                 </div>
             </article>
-            <article>
-                <a href="/product/detail"><img src="/images/oferta-2.jpg" alt="" width="100%"></a>
-                <div class="details">
-                    <p>$1240,50</p>
-                    <span>40%OFF</span>
-                    <div>
-                        <i class="fas fa-cart-plus"></i>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="/images/oferta-3.jpg" alt="" width="100%"></a>
-                <div class="details">
-                    <p>$824,17</p>
-                    <span>50%OFF</span>
-                    <div>
-                        <i class="fas fa-cart-plus"></i>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="/images/oferta-4.jpg" alt="" width="100%"></a>
-                <div class="details">
-                    <p>$328,35</p>
-                    <span>40%OFF</span>
-                    <div>
-                        <i class="fas fa-cart-plus"></i>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="/images/oferta-5.jpg" alt="" width="100%"></a>
-                <div class="details">
-                    <p>$541,19</p>
-                    <span>60%OFF</span>
-                    <div>
-                        <i class="fas fa-cart-plus"></i>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="/images/oferta-6.jpg" alt="" width="100%"></a>
-                <div class="details">
-                    <p>$296,99</p>
-                    <span>40%OFF</span>
-                    <div>
-                        <i class="fas fa-cart-plus"></i>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="images/oferta-7.jpg" alt="" width="100%"></a>
-                <div class="details">
-                    <p>$560,18</p>
-                    <span>50%OFF</span>
-                    <div>
-                        <i class="fas fa-cart-plus"></i>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="images/oferta-8.jpg" alt="" width="100%"></a>
-                <div class="details">
-                    <p>$371,24</p>
-                    <span>40%OFF</span>
-                    <div>
-                        <i class="fas fa-cart-plus"></i>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </article>
+            <% }) %>
         </section>
         <!-- Destacados -->
         <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
         <section class="home__main__featured">
+            <% for( let index = 0; index < 2; index++ ) { %>
             <article>
                 <p>popularidad: 
                     <i class="fas fa-star"></i>
@@ -116,18 +42,9 @@
                     <i class="fas fa-star"></i>
                     <i class="far fa-star"></i>
                 </p>
-                <a href="/product/detail"><img src="/images/destacado-1.jpg" alt="" width="100%"></a>
+                <a href="/product/detail/<%= products.id %>"><img src="images/<%= products.img %>" alt="" width="100%"></a>
             </article>
-            <article>
-                <p>popularidad: 
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </p>
-                <a href="/product/detail"><img src="/images/destacado-2.jpg" alt="" width="100%"></a>
-            </article>
+            <% } %>
             <div class="carousel">
                 <i class="fas fa-dot-circle"></i>
                 <i class="fas fa-circle"></i>
