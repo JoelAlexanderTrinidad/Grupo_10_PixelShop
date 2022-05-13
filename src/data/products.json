@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Shelbi",
+        "price": 9158,
+        "discount": 22,
+        "description": "Female",
+        "gender": "Construction Clean and Final Clean",
+        "img" : "juego-muestra.jpg",
+        "platforms" : [
+            "xbox",
+            "ps3",
+            "ps4",
+            "ps5",
+            "pc"
+        ],
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "categoryGames": [
+            "accion",
+            "rpg",
+            "aventura",
+            "terror",
+            "lucha",
+            "estrategias",
+            "deportes",
+            "carrera",
+            "plataforma",
+            "shooter",
+            "puzzle",
+            "multijugador"
+        ]
+    }
+]
