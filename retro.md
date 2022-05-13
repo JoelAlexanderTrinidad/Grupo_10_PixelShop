@@ -45,7 +45,6 @@ Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final 
     -Llegar a tiempo con los sprints.
     -Ayudarnos entre nosotros.
     -Ser más autocríticos.
-    -
 
 ### Qué hicimos mal:
     -No organizamos todas las clases de los html.
@@ -60,7 +59,7 @@ Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final 
     -Ser más creativos.
     -Organizar el Trello con fechas.
     
-### qué deberíamos dejar de hacer:
+### Qué deberíamos dejar de hacer:
     -Inseguridad de probar cosas.
     -Dejar de tenerle miedo a git.
     
@@ -68,3 +67,34 @@ Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final 
 ### Continuar haciendo:
     -Continuar reuniéndonos con frecuencia.
     
+    
+# **RETROSPECTIVA SPRINT 3:**
+ 
+### Qué hicimos bien:
+    -Trabajar en equipo.
+    -Resolver rápido las cosas.
+ 
+### Qué hicimos mal:
+    -No haberlo revisar el proyecto antes de entregarlo.
+    -El uso de las ramas.
+
+### Qué deberíamos empezar a hacer:
+    -Practicar el uso de ramas de git.
+    -Revisar bien el proyecto antes de entregar.    
+ 
+### Qué deberíamos dejar de hacer:
+    -Dejar de ignorar el Trello.
+    -No presionarnos.
+ 
+### Continuar haciendo:
+    -Continuar reuniéndonos con frecuencia.
+    -Utilizar los recursos prácticos de las clases como ejemplo para realizar el sprint.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
