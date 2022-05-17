@@ -5,7 +5,18 @@ const gender =  require('../data/gender.json');
 
 module.exports={
     productDetail:(req,res)=>{
-        res.render('productDetail')
+        const {id} = req.params;
+        const product = products.find(product => product.id === +id);
+        return res.send()
+        /* const genderId = gender. */
+
+        return res.send(genderId);
+
+        res.render('productDetail',{
+            product,
+            gender,
+            genderId
+        })
     },
     productCart:(req,res)=>{
         res.render('productCart')

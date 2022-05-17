@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 
 router
       .get('/cart',productCart)
-      .get('/detail', productDetail)
+      .get('/detail/:id', productDetail)
       .get('/crear', formCrear)
       .post('/crear',upload.single('img'), store )
       .get('/edit', formEdit)
