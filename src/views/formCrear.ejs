@@ -5,7 +5,7 @@
    <%- include('./partials/header') %> 
     <main class="form__main">
         <h2>Crear producto</h2>
-        <form class="form" action="" method="POST">
+        <form class="form" action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre del producto</label>
                 <input type="text" name="name" id="name" placeholder="Nombre del producto" required>
@@ -27,16 +27,16 @@
                 <% })%>      
             </div>
             <div>
-                <label for="requisitos">Requisitos del producto</label>
-                <input class="input-requisitos" type="text" name="requisitos" id="requisitos" placeholder="SO" >
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Procesador" >
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="RAM" >
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Gráfica " >
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Almacenamiento" >
+                <label for="requeriment">Requisitos del producto</label>
+                <input class="input-requisitos" type="text" name="requeriment" id="requeriment" placeholder="SO" >
+                <input class="input-requisitos"  type="text" name="requeriment" id="requeriment" placeholder="Procesador" >
+                <input class="input-requisitos"  type="text" name="requeriment" id="requeriment" placeholder="RAM" >
+                <input class="input-requisitos"  type="text" name="requeriment" id="requeriment" placeholder="Gráfica " >
+                <input class="input-requisitos"  type="text" name="requeriment" id="requeriment" placeholder="Almacenamiento" >
             </div>
             <div class="">
                 <label for="price">Precio del producto</label>
-                <input type="text" name="price" id="price" placeholder="precio del producto" required>
+                <input type="number" name="price" id="price" placeholder="precio del producto" required>
             </div>
             <div class="">
                 <label for="discount">Descuento</label>

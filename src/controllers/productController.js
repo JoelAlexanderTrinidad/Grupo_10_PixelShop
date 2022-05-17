@@ -23,7 +23,7 @@ module.exports={
         res.render('formEdit')
     },
     store : (req,res) => {
-        const {id, name, price, discount, category, description,  platform, gender} = req.body;
+        const {name, price, discount, category, description, gender,requeriment} = req.body;
 
         let lastId = products[products.length -1].id;
         let newProduct = {
@@ -33,14 +33,14 @@ module.exports={
             discount:+discount,
             category,
             description: description.trim(),
-            platform,
-            gender
-        }
+            img: req.file ? req.file.filename : 'default-image.jpg',
+            gender,
+            requeriment
+        };
         products.push(newProduct);
 
+        fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'),JSON.stringify(products,null, 3),'utf-8');
 
-        return res.send(products)
-     
-        
+        return res.redirect('/');        
     }
 }

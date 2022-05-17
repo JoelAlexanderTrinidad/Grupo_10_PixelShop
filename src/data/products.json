@@ -1,350 +1,371 @@
 [
-    {
-        "id": 1,
-        "name": "Doom",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j1.jpg",
-        "gender": [
-            "accion",
-            "shooter"
-        ],
-        "requeriment":[
-            "Windows 7/10 (64 bits)",
-            "intel 5 / MD ryzen 3",
-            "8 gb",
-            "GTX 670 / AMD Radeon HD 7870",
-            "55 gb"
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Elex",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j2.jpg",
-        "gender": [
-            "accion",
-            "rpg"
-        ],
-        "requeriment":[
-            "Windows 10",
-            "Ryzen 3 / Intel 5",
-            "12 gb",
-            "GTX 1060",
-            "45 gb"
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Mario Kart Deluxe",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j3.jpg",
-        "gender": [
-            "carrera",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows 7",
-            "Intel 5",
-            "8 gb",
-            "G-force 970",
-            "7 gb"
-        ]
-    },
-    {
-        "id": 4,
-        "name": "Mortal Kombat 11",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j4.jpg",
-        "gender": [
-            "lucha",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows 7",
-            "Intel 5 / AMD Phenom 2",
-            "8 gb",
-            "GTX 670 / AMD Radeon HD 7950",
-            "50 gb"
-        ]
-    },
-    {
-        "id": 5,
-        "name": "Red dead redeption II",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j5.jpg",
-        "gender": [
-            "accion",
-            "aventura"
-        ],
-       "requeriment":[
-            "Windows 7",
-            "Intel 5 / AMD FX-6300",
-            "8 gb",
-            "GTX 770 / Radeon R9",
-            "150 gb"
-        ]
-    },
-    {
-        "id": 6,
-        "name": "God of War",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j6.jpg",
-        "gender": [
-            "accion",
-            "aventura"
-        ],
-       "requeriment":[
-            "Windows 10",
-            "Intel 5 / AMD ryzen 3",
-            "8 gb",
-            "GTX 960 / AMD R9",
-            "70 gb"
-        ]
-    },
-    {
-        "id": 7,
-        "name": "Dragon ball xenoverse XV",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j7.jpg",
-        "gender": [
-            "accion",
-            "aventura",
-            "lucha",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows 7",
-            "Intel Pentium / AMD Phenom",
-            "2 gb",
-            "GT 650",
-            "32 gb"
-        ]
-    },
-    {
-        "id": 8,
-        "name": "The last of us",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j8.jpg",
-        "gender": [
-            "accion",
-            "aventura"
-        ],
-       "requeriment":[
-            "Windows 10",
-            "AMD Jaguar",
-            "8 gb",
-            "GTX 1030",
-            "80 gb"
-        ]
-    },
-    {
-        "id": 9,
-        "name": "Grand Theft Auto V",
-        "price": 9158,
-        "discount": 22,
-        "category": "Destacados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j9.jpg",
-        "gender": [
-            "accion",
-            "aventura",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows 7",
-            "Intel Core 2 Quad / AMD Phenom",
-            "4 gb",
-            "98 00GT",
-            "72 gb"
-        ]
-    },
-    {
-        "id": 10,
-        "name": "Dragon ball fighters Z",
-        "price": 9158,
-        "discount": 22,
-        "category": "Destacados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j10.jpg",
-        "gender": [
-            "accion",
-            "lucha",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows 7",
-            "Intel 5 / AMD FX-4350",
-            "4 gb",
-            "GTX 650 TI / Radeon HD 6870",
-            "6 gb"
-        ]
-    },
-    {
-        "id": 11,
-        "name": "Call of Duty Black ops III",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j11.jpg",
-        "gender": [
-            "accion",
-            "shooter",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows 7",
-            "Intel i3/ AMD PHENOM2",
-            "6 gb",
-            "GTX 470/ RADEON HD 6970",
-            "100 gb"
-        ]
-    },
-    {
-        "id": 12,
-        "name": "Resident Evil 2",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j12.jpg",
-        "gender": [
-            "aventura",
-            "terror"           
-        ],
-       "requeriment":[
-            "Windows 7",
-            "Intel i5/ AMD FX6300",
-            "8 gb",
-            "GTX 760/ AMD RADEON R7",
-            "26 gb"
-        ]
-    },
-    {
-        "id": 13,
-        "name": "CyberPunk",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "juego-muestra.jpg",
-        "gender": [
-            "accion",
-            "aventura",
-            "shooter"
-        ],
-       "requeriment":[
-            "Windows 10",
-            "Intel i5/ AMD FX",
-            "8 gb",
-            "GTX 970/ AMD RADEOM RX470",
-            "70 gb"
-        ]
-    },
-    {
-        "id": 14,
-        "name": "Aura Kingdom",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "oferta-1.jpg",
-        "gender": [
-            "rpg",
-            "aventura",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows XP",
-            "Pentium 4/ AMD K8",
-            "4 gb",
-            "GFORCE 6600/ RADEOM X1600",
-            "6 gb"
-        ]
-    },
-    {
-        "id": 15,
-        "name": "Lostrak",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "oferta-2.jpg",
-        "gender": [
-            "rpg",
-            "aventura",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows 10",
-            "Intel i3, AMD RYZEN 3",
-            "8 gb",
-            "GTX 460 / AMD HD 6850",
-            "50 gb "
-        ]
-    },
-    {
-        "id": 16,
-        "name": "Dead by daylight",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "oferta-3.jpg",
-        "gender": [
-            "terror",
-            "multijugador"
-        ],
-       "requeriment":[
-            "Windows 10",
-            "Intel i3/ AMD FX",
-            "8 gb",
-            "GTX 470/ AMD HD 6850",
-            "50 gb"
-        ]
-    },
-    {
-        "id": 17,
-        "name": "Brawlhalla",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "oferta-4.jpg",
-        "gender": [           
-            "lucha",
-            "multijugador"
-        ]
-   ,       "requeriment":[
-            "Windows 7",
-            "Intel i3",
-            "2 gb",
-            "GTX 47O",
-            "800 mb"
-        ]      
-    }
+   {
+      "id": 1,
+      "name": "Doom",
+      "price": 9158,
+      "discount": 22,
+      "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j1.jpg",
+      "gender": [
+         "accion",
+         "shooter"
+      ],
+      "requeriment": [
+         "Windows 7/10 (64 bits)",
+         "intel 5 / MD ryzen 3",
+         "8 gb",
+         "GTX 670 / AMD Radeon HD 7870",
+         "55 gb"
+      ]
+   },
+   {
+      "id": 2,
+      "name": "Elex",
+      "price": 9158,
+      "discount": 22,
+      "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j2.jpg",
+      "gender": [
+         "accion",
+         "rpg"
+      ],
+      "requeriment": [
+         "Windows 10",
+         "Ryzen 3 / Intel 5",
+         "12 gb",
+         "GTX 1060",
+         "45 gb"
+      ]
+   },
+   {
+      "id": 3,
+      "name": "Mario Kart Deluxe",
+      "price": 9158,
+      "discount": 22,
+      "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j3.jpg",
+      "gender": [
+         "carrera",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel 5",
+         "8 gb",
+         "G-force 970",
+         "7 gb"
+      ]
+   },
+   {
+      "id": 4,
+      "name": "Mortal Kombat 11",
+      "price": 9158,
+      "discount": 22,
+      "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j4.jpg",
+      "gender": [
+         "lucha",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel 5 / AMD Phenom 2",
+         "8 gb",
+         "GTX 670 / AMD Radeon HD 7950",
+         "50 gb"
+      ]
+   },
+   {
+      "id": 5,
+      "name": "Red dead redeption II",
+      "price": 9158,
+      "discount": 22,
+      "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j5.jpg",
+      "gender": [
+         "accion",
+         "aventura"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel 5 / AMD FX-6300",
+         "8 gb",
+         "GTX 770 / Radeon R9",
+         "150 gb"
+      ]
+   },
+   {
+      "id": 6,
+      "name": "God of War",
+      "price": 9158,
+      "discount": 22,
+      "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j6.jpg",
+      "gender": [
+         "accion",
+         "aventura"
+      ],
+      "requeriment": [
+         "Windows 10",
+         "Intel 5 / AMD ryzen 3",
+         "8 gb",
+         "GTX 960 / AMD R9",
+         "70 gb"
+      ]
+   },
+   {
+      "id": 7,
+      "name": "Dragon ball xenoverse XV",
+      "price": 9158,
+      "discount": 22,
+      "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j7.jpg",
+      "gender": [
+         "accion",
+         "aventura",
+         "lucha",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel Pentium / AMD Phenom",
+         "2 gb",
+         "GT 650",
+         "32 gb"
+      ]
+   },
+   {
+      "id": 8,
+      "name": "The last of us",
+      "price": 9158,
+      "discount": 22,
+      "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j8.jpg",
+      "gender": [
+         "accion",
+         "aventura"
+      ],
+      "requeriment": [
+         "Windows 10",
+         "AMD Jaguar",
+         "8 gb",
+         "GTX 1030",
+         "80 gb"
+      ]
+   },
+   {
+      "id": 9,
+      "name": "Grand Theft Auto V",
+      "price": 9158,
+      "discount": 22,
+      "category": "Destacados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j9.jpg",
+      "gender": [
+         "accion",
+         "aventura",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel Core 2 Quad / AMD Phenom",
+         "4 gb",
+         "98 00GT",
+         "72 gb"
+      ]
+   },
+   {
+      "id": 10,
+      "name": "Dragon ball fighters Z",
+      "price": 9158,
+      "discount": 22,
+      "category": "Destacados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j10.jpg",
+      "gender": [
+         "accion",
+         "lucha",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel 5 / AMD FX-4350",
+         "4 gb",
+         "GTX 650 TI / Radeon HD 6870",
+         "6 gb"
+      ]
+   },
+   {
+      "id": 11,
+      "name": "Call of Duty Black ops III",
+      "price": 9158,
+      "discount": 22,
+      "category": "Recomendados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j11.jpg",
+      "gender": [
+         "accion",
+         "shooter",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel i3/ AMD PHENOM2",
+         "6 gb",
+         "GTX 470/ RADEON HD 6970",
+         "100 gb"
+      ]
+   },
+   {
+      "id": 12,
+      "name": "Resident Evil 2",
+      "price": 9158,
+      "discount": 22,
+      "category": "Recomendados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j12.jpg",
+      "gender": [
+         "aventura",
+         "terror"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel i5/ AMD FX6300",
+         "8 gb",
+         "GTX 760/ AMD RADEON R7",
+         "26 gb"
+      ]
+   },
+   {
+      "id": 13,
+      "name": "CyberPunk",
+      "price": 9158,
+      "discount": 22,
+      "category": "Recomendados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "juego-muestra.jpg",
+      "gender": [
+         "accion",
+         "aventura",
+         "shooter"
+      ],
+      "requeriment": [
+         "Windows 10",
+         "Intel i5/ AMD FX",
+         "8 gb",
+         "GTX 970/ AMD RADEOM RX470",
+         "70 gb"
+      ]
+   },
+   {
+      "id": 14,
+      "name": "Aura Kingdom",
+      "price": 9158,
+      "discount": 22,
+      "category": "Recomendados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "oferta-1.jpg",
+      "gender": [
+         "rpg",
+         "aventura",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows XP",
+         "Pentium 4/ AMD K8",
+         "4 gb",
+         "GFORCE 6600/ RADEOM X1600",
+         "6 gb"
+      ]
+   },
+   {
+      "id": 15,
+      "name": "Lostrak",
+      "price": 9158,
+      "discount": 22,
+      "category": "Recomendados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "oferta-2.jpg",
+      "gender": [
+         "rpg",
+         "aventura",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 10",
+         "Intel i3, AMD RYZEN 3",
+         "8 gb",
+         "GTX 460 / AMD HD 6850",
+         "50 gb "
+      ]
+   },
+   {
+      "id": 16,
+      "name": "Dead by daylight",
+      "price": 9158,
+      "discount": 22,
+      "category": "Recomendados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "oferta-3.jpg",
+      "gender": [
+         "terror",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 10",
+         "Intel i3/ AMD FX",
+         "8 gb",
+         "GTX 470/ AMD HD 6850",
+         "50 gb"
+      ]
+   },
+   {
+      "id": 17,
+      "name": "Brawlhalla",
+      "price": 9158,
+      "discount": 22,
+      "category": "Recomendados",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "oferta-4.jpg",
+      "gender": [
+         "lucha",
+         "multijugador"
+      ],
+      "requeriment": [
+         "Windows 7",
+         "Intel i3",
+         "2 gb",
+         "GTX 47O",
+         "800 mb"
+      ]
+   },
+   {
+      "id": 18,
+      "name": "dasdas",
+      "price": 132,
+      "discount": 1231,
+      "category": "Ofertas Especiales",
+      "description": "dsasad",
+      "img": "img-1652814433446.jpg",
+      "gender": [
+         "1",
+         "2",
+         "5"
+      ],
+      "requeriment": [
+         "dsadasd",
+         "dasdas",
+         "13",
+         "das",
+         "123"
+      ]
+   }
 ]
