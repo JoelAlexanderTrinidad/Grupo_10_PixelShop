@@ -1,6 +1,7 @@
 const products = require('../data/products.json');
 const path = require('path');
 const fs = require('fs');
+const categories =  require('../data/category.json');
 
 module.exports={
     productDetail:(req,res)=>{
@@ -10,13 +11,12 @@ module.exports={
         res.render('productCart')
     },
     formCrear:(req,res)=>{
-        const categoryGames = products.filter(category=> category === category.categoryGames)
 
-
-        return res.send(categoryGames)
+    
         res.render('formCrear',{
-            categoryGames
+            categories
         })
+       
 
     },
     formEdit:(req,res)=>{

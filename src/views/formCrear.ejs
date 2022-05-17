@@ -18,14 +18,14 @@
                 <input type="file" name="img" multiple >
             </div>
             <div>
-                <% categoryGames.forEach( => category{ %>
-                 
+                              
                     <select class="" name="categoryGames" id="category">
                         <option value="" hidden selected>Por favor elegí uno...</option>
-                        <option value="accion">Acción</option>
-                    
+                        <% categories.forEach( ({id,name}) => { %>
+                        <option value="<%= id %>"><%=name%></option>
+                        <% }) %>
                     </select>
-                <% }) %>
+                
                 
             </div>
             <div>

@@ -1,0 +1,50 @@
+ [
+     {
+         "id": 1,
+         "name" : "accion"
+     },
+     {
+        "id": 2,
+        "name" : "rpg"
+    },
+    {
+        "id": 3,
+        "name" : "aventura"
+    },
+    {
+        "id": 4,
+        "name" : "terror"
+    },
+    {
+        "id": 5,
+        "name" : "lucha"
+    },
+    {
+        "id": 6,
+        "name" : "estrategia"
+    },
+    {
+        "id": 7,
+        "name" : "deportes"
+    },
+    {
+        "id": 8,
+        "name" : "carrera"
+    },
+    {
+        "id": 9,
+        "name" : "plataforma"
+    },
+    {
+        "id": 10,
+        "name" : "shooter"
+    },
+    {
+        "id": 11,
+        "name" : "puzzle"
+    },
+    {
+        "id": 12,
+        "name" : "multijugador"
+    }
+]
