@@ -12,16 +12,16 @@
             "shooter"
         ],
         "requeriment":[
-            "Windows",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7/10 (64 bits)",
+            "intel 5 / MD ryzen 3",
+            "8 gb",
+            "GTX 670 / AMD Radeon HD 7870",
+            "55 gb"
         ]
     },
     {
         "id": 2,
-        "name": "Shelbi",
+        "name": "Elex",
         "price": 9158,
         "discount": 22,
         "category": "Ofertas especiales",
@@ -29,89 +29,59 @@
         "img" : "j2.jpg",
         "gender": [
             "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
+            "rpg"
         ],
         "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 10",
+            "Ryzen 3 / Intel 5",
+            "12 gb",
+            "GTX 1060",
+            "45 gb"
         ]
     },
     {
         "id": 3,
-        "name": "Shelbi",
+        "name": "Mario Kart Deluxe",
         "price": 9158,
         "discount": 22,
         "category": "Ofertas especiales",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "img" : "j3.jpg",
         "gender": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
             "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel 5",
+            "8 gb",
+            "G-force 970",
+            "7 gb"
         ]
     },
     {
         "id": 4,
-        "name": "Shelbi",
+        "name": "Mortal Kombat 11",
         "price": 9158,
         "discount": 22,
         "category": "Ofertas especiales",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "img" : "j4.jpg",
         "gender": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
             "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel 5 / AMD Phenom 2",
+            "8 gb",
+            "GTX 670 / AMD Radeon HD 7950",
+            "50 gb"
         ]
     },
     {
         "id": 5,
-        "name": "Shelbi",
+        "name": "Red dead redeption II",
         "price": 9158,
         "discount": 22,
         "category": "Ofertas especiales",
@@ -119,29 +89,19 @@
         "img" : "j5.jpg",
         "gender": [
             "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
+            "aventura"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel 5 / AMD FX-6300",
+            "8 gb",
+            "GTX 770 / Radeon R9",
+            "150 gb"
         ]
     },
     {
         "id": 6,
-        "name": "Shelbi",
+        "name": "God of War",
         "price": 9158,
         "discount": 22,
         "category": "Ofertas especiales",
@@ -149,29 +109,19 @@
         "img" : "j6.jpg",
         "gender": [
             "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
+            "aventura"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 10",
+            "Intel 5 / AMD ryzen 3",
+            "8 gb",
+            "GTX 960 / AMD R9",
+            "70 gb"
         ]
     },
     {
         "id": 7,
-        "name": "Shelbi",
+        "name": "Dragon ball xenoverse XV",
         "price": 9158,
         "discount": 22,
         "category": "Ofertas especiales",
@@ -179,29 +129,21 @@
         "img" : "j7.jpg",
         "gender": [
             "accion",
-            "rpg",
             "aventura",
-            "terror",
             "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel Pentium / AMD Phenom",
+            "2 gb",
+            "GT 650",
+            "32 gb"
         ]
     },
     {
         "id": 8,
-        "name": "Shelbi",
+        "name": "The last of us",
         "price": 9158,
         "discount": 22,
         "category": "Ofertas especiales",
@@ -209,29 +151,19 @@
         "img" : "j8.jpg",
         "gender": [
             "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
+            "aventura"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 10",
+            "AMD Jaguar",
+            "8 gb",
+            "GTX 1030",
+            "80 gb"
         ]
     },
     {
         "id": 9,
-        "name": "Shelbi",
+        "name": "Grand Theft Auto V",
         "price": 9158,
         "discount": 22,
         "category": "Destacados",
@@ -239,29 +171,20 @@
         "img" : "j9.jpg",
         "gender": [
             "accion",
-            "rpg",
             "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel Core 2 Quad / AMD Phenom",
+            "4 gb",
+            "98 00GT",
+            "72 gb"
         ]
     },
     {
         "id": 10,
-        "name": "Shelbi",
+        "name": "Dragon ball fighters Z",
         "price": 9158,
         "discount": 22,
         "category": "Destacados",
@@ -269,29 +192,20 @@
         "img" : "j10.jpg",
         "gender": [
             "accion",
-            "rpg",
-            "aventura",
-            "terror",
             "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel 5 / AMD FX-4350",
+            "4 gb",
+            "GTX 650 TI / Radeon HD 6870",
+            "6 gb"
         ]
     },
     {
         "id": 11,
-        "name": "Shelbi",
+        "name": "Call of Duty Black ops III",
         "price": 9158,
         "discount": 22,
         "category": "Recomendados",
@@ -299,16 +213,7 @@
         "img" : "j11.jpg",
         "gender": [
             "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
             "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[

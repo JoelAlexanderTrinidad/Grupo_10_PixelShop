@@ -23,7 +23,7 @@ module.exports={
         res.render('formEdit')
     },
     store : (req,res) => {
-        const {id, name, price, discount, category, description,  platform, categoryGames} = req.body;
+        const {id, name, price, discount, category, description,  platform, gender} = req.body;
 
         let lastId = products[products.length -1].id;
         let newProduct = {
@@ -34,7 +34,7 @@ module.exports={
             category,
             description: description.trim(),
             platform,
-            categoryGames
+            gender
         }
         products.push(newProduct);
 
