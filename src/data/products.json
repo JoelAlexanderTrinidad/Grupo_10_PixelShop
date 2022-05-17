@@ -217,46 +217,36 @@
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel i3/ AMD PHENOM2",
+            "6 gb",
+            "GTX 470/ RADEON HD 6970",
+            "100 gb"
         ]
     },
     {
         "id": 12,
-        "name": "Shelbi",
+        "name": "Resident Evil 2",
         "price": 9158,
         "discount": 22,
         "category": "Recomendados",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "img" : "j12.jpg",
         "gender": [
-            "accion",
-            "rpg",
             "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
+            "terror"           
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel i5/ AMD FX6300",
+            "8 gb",
+            "GTX 760/ AMD RADEON R7",
+            "26 gb"
         ]
     },
     {
         "id": 13,
-        "name": "Shelbi",
+        "name": "CyberPunk",
         "price": 9158,
         "discount": 22,
         "category": "Recomendados",
@@ -264,144 +254,97 @@
         "img" : "juego-muestra.jpg",
         "gender": [
             "accion",
-            "rpg",
             "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
+            "shooter"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 10",
+            "Intel i5/ AMD FX",
+            "8 gb",
+            "GTX 970/ AMD RADEOM RX470",
+            "70 gb"
         ]
     },
     {
         "id": 14,
-        "name": "Shelbi",
+        "name": "Aura Kingdom",
         "price": 9158,
         "discount": 22,
         "category": "Recomendados",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "img" : "oferta-1.jpg",
         "gender": [
-            "accion",
             "rpg",
             "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows XP",
+            "Pentium 4/ AMD K8",
+            "4 gb",
+            "GFORCE 6600/ RADEOM X1600",
+            "6 gb"
         ]
     },
     {
         "id": 15,
-        "name": "Shelbi",
+        "name": "Lostrak",
         "price": 9158,
         "discount": 22,
         "category": "Recomendados",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "img" : "oferta-2.jpg",
         "gender": [
-            "accion",
             "rpg",
             "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 10",
+            "Intel i3, AMD RYZEN 3",
+            "8 gb",
+            "GTX 460 / AMD HD 6850",
+            "50 gb "
         ]
     },
     {
         "id": 16,
-        "name": "Shelbi",
+        "name": "Dead by daylight",
         "price": 9158,
         "discount": 22,
         "category": "Recomendados",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "img" : "oferta-3.jpg",
         "gender": [
-            "accion",
-            "rpg",
-            "aventura",
             "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ],
        "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 10",
+            "Intel i3/ AMD FX",
+            "8 gb",
+            "GTX 470/ AMD HD 6850",
+            "50 gb"
         ]
     },
     {
         "id": 17,
-        "name": "Shelbi",
+        "name": "Brawlhalla",
         "price": 9158,
         "discount": 22,
         "category": "Recomendados",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "img" : "oferta-4.jpg",
-        "gender": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
+        "gender": [           
             "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
             "multijugador"
         ]
    ,       "requeriment":[
-            "SO",
-            "procesador",
-            "RAM",
-            "grafica",
-            "almacenamieto"
+            "Windows 7",
+            "Intel i3",
+            "2 gb",
+            "GTX 47O",
+            "800 mb"
         ]      
     }
 ]
