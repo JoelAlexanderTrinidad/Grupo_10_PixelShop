@@ -349,23 +349,23 @@
    },
    {
       "id": 18,
-      "name": "dasdas",
-      "price": 132,
-      "discount": 1231,
+      "name": "dadasd",
+      "price": 21321,
+      "discount": 33112,
       "category": "Ofertas Especiales",
-      "description": "dsasad",
-      "img": "img-1652814433446.jpg",
+      "description": "dads",
+      "img": "img-1652816808368.jpg",
       "gender": [
          "1",
          "2",
-         "5"
+         "3"
       ],
       "requeriment": [
          "dsadasd",
-         "dasdas",
-         "13",
-         "das",
-         "123"
+         "sadsasa",
+         "12321",
+         "asdas",
+         "12321"
       ]
    }
 ]
