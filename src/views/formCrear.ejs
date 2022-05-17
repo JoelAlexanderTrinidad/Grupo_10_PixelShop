@@ -5,52 +5,44 @@
    <%- include('./partials/header') %> 
     <main class="form__main">
         <h2>Crear producto</h2>
-        <form class="form" action="" method="get">
+        <form class="form" action="" method="POST">
             <div>
-                <label for="producto">Nombre del producto</label>
-                <input type="text" name="nombre" id="producto" placeholder="Nombre del producto" required>
+                <label for="name">Nombre del producto</label>
+                <input type="text" name="name" id="name" placeholder="Nombre del producto" required>
             </div>
             <div class="">
-                <label for="descripcion">Descripción del producto</label>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción del producto" required></textarea>
+                <label for="description">Descripción del producto</label>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Descripción del producto" required></textarea>
             </div>
             <div class="">
-                <input type="file" name="file" multiple required>
+                <input type="file" name="img" multiple >
             </div>
             <div>
-                <select class="" name="categorias" id="categorias">
-                    <option value="" hidden selected>Por favor elegí uno...</option>
-                    <option value="accion">Acción</option>
-                    <option value="rpg">Rpg</option>
-                    <option value="aventuras">Aventuras</option>
-                    <option value="terror">Terror</option>
-                    <option value="lucha">Lucha</option>
-                    <option value="aventuras">Aventuras</option>
-                    <option value="estrategia">Estrategia</option>
-                    <option value="deportes">Deportes</option>
-                    <option value="carreras">Carreras</option>
-                    <option value="aventuras">Aventuras</option>
-                    <option value="plataformas">Plataformas</option>
-                    <option value="shooter">Shooter</option>
-                    <option value="puzzle">Puzzle</option>
-                    <option value="multijugador">Multijugador</option>
-                </select>
+                <% categoryGames.forEach( => category{ %>
+                 
+                    <select class="" name="categoryGames" id="category">
+                        <option value="" hidden selected>Por favor elegí uno...</option>
+                        <option value="accion">Acción</option>
+                    
+                    </select>
+                <% }) %>
+                
             </div>
             <div>
                 <label for="tamaño">Tamaño del producto</label>
-                <input type="text" name="tamaño" id="tamaño" placeholder="Tamaño del producto" required>
+                <input type="text" name="tamaño" id="tamaño" placeholder="Tamaño del producto" >
             </div>
             <div>
                 <label for="requisitos">Requisitos del producto</label>
-                <input class="input-requisitos" type="text" name="requisitos" id="requisitos" placeholder="SO" required>
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Procesador" required>
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="RAM" required>
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Gráfica " required>
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Almacenamiento" required>
+                <input class="input-requisitos" type="text" name="requisitos" id="requisitos" placeholder="SO" >
+                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Procesador" >
+                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="RAM" >
+                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Gráfica " >
+                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Almacenamiento" >
             </div>
             <div class="">
-                <label for="precio">Precio del producto</label>
-                <input type="text" name="precio" id="precio" placeholder="Precio del producto" required>
+                <label for="price">Precio del producto</label>
+                <input type="text" name="price" id="price" placeholder="price del producto" required>
             </div>
             <div>
                 <button type="submit">Crear</button>
