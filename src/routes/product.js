@@ -7,7 +7,8 @@ const {productCart,productDetail, formCrear, formEdit}=require('../controllers/p
 router
       .get('/cart',productCart)
       .get('/detail', productDetail)
-      .get('/form/crear', formCrear)
-      .get('/form/edit', formEdit)
+      .get('/crear', formCrear)
+      .post('/crear', )
+      .get('/edit', formEdit)
 
 module.exports = router;
