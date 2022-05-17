@@ -1,7 +1,7 @@
 const products = require('../data/products.json');
 const path = require('path');
 const fs = require('fs');
-const categories =  require('../data/category.json');
+const gender =  require('../data/gender.json');
 
 module.exports={
     productDetail:(req,res)=>{
@@ -14,7 +14,7 @@ module.exports={
 
     
         res.render('formCrear',{
-            categories
+            gender
         })
        
 

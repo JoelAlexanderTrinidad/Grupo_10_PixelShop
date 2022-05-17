@@ -30,6 +30,11 @@
 .form__main button{
     margin: 0 auto;
 }
+.form__main .gender{
+    flex-direction: row;
+    flex-wrap: wrap;
+     width: 45%;
+}
 
 @media (min-width: 768px){
     .form__main{

@@ -17,16 +17,12 @@
             <div class="">
                 <input type="file" name="img" multiple >
             </div>
-            <div>
-                              
-                    <select class="" name="categoryGames" id="category">
-                        <option value="" hidden selected>Por favor elegí uno...</option>
-                        <% categories.forEach( ({id,name}) => { %>
-                        <option value="<%= id %>"><%=name%></option>
-                        <% }) %>
-                    </select>
-                
-                
+            <h4>Géneros de juego</h4>
+            <div class="gender">
+                 <% gender.forEach( ({id,name}) => { %>
+                <input class="" type="checkbox" name="gender" id="gender" value="<%= id %>">
+                <label for="gender"><%=name%></label>
+                <% })%>      
             </div>
             <div>
                 <label for="tamaño">Tamaño del producto</label>
