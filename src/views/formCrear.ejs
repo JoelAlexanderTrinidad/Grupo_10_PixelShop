@@ -27,10 +27,6 @@
                 <% })%>      
             </div>
             <div>
-                <label for="tamaño">Tamaño del producto</label>
-                <input type="text" name="tamaño" id="tamaño" placeholder="Tamaño del producto" >
-            </div>
-            <div>
                 <label for="requisitos">Requisitos del producto</label>
                 <input class="input-requisitos" type="text" name="requisitos" id="requisitos" placeholder="SO" >
                 <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Procesador" >
@@ -40,7 +36,20 @@
             </div>
             <div class="">
                 <label for="price">Precio del producto</label>
-                <input type="text" name="price" id="price" placeholder="price del producto" required>
+                <input type="text" name="price" id="price" placeholder="precio del producto" required>
+            </div>
+            <div class="">
+                <label for="discount">Descuento</label>
+                <input type="number" name="discount" id="discount" placeholder="descuento del producto" >
+            </div>
+            <div class="">
+                <label for="category">Sección</label>
+                <select name="category" id="category">
+                    <option value="" hidden selected>Elige una sección</option>
+                    <option value="Ofertas Especiales">Ofertas Especiales</option>
+                    <option value="Destacados">Destacados</option>
+                    <option value="Recomendados">Recomendados</option>
+                </select>
             </div>
             <div>
                 <button type="submit">Crear</button>
