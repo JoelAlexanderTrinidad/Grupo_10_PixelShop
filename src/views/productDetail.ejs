@@ -46,9 +46,9 @@
                             </ul>
                             <p id="categorias:"><%= product.category %></p>
                             <ul class="main__section-categories">
-                                <% product.gender.forEach(name => { %>
-                                    <li><a href=""><%= name %> </a></li>  
-                                 <% }) %>   
+                                <% genders.forEach(element => { %>
+                                    <li><%= element.id === product.gender ? element.name : null %></li>
+                                <% }) %>
                             </ul>
                         </section>
                     </div>

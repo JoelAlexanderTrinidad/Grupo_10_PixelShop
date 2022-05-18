@@ -2,9 +2,9 @@
    {
       "id": 1,
       "name": "Doom",
-      "price": 9158,
+      "price": 4500,
       "discount": 5,
-      "category": "Recomendados",
+      "category": "Recomendados ",
       "img": "j1.jpg",
       "requeriment": [
          "Windows 7/10 (64 bits)",
@@ -12,6 +12,11 @@
          "8 gb",
          "GTX 670 / AMD Radeon HD 7870",
          "55 gb"
+      ],
+      "gender": [
+         "1",
+         "5",
+         "10"
       ]
    },
    {

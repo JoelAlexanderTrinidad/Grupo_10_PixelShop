@@ -1,39 +1,32 @@
 const products = require('../data/products.json');
 const path = require('path');
 const fs = require('fs');
-const gender =  require('../data/gender.json');
+const genders =  require('../data/genders.json');
 
 module.exports={
     productDetail:(req,res)=>{
         const {id} = req.params;
         const product = products.find(product => product.id === +id);
-
+      
+    
         res.render('productDetail',{
             product,
-            gender,
+            genders,
         })
     },
     productCart:(req,res)=>{
         res.render('productCart')
     },
-    formCrear:(req,res)=>{
+    add:(req,res)=>{
 
     
         res.render('formCrear',{
-            gender
+            genders
         })
        
 
     },
-    formEdit:(req,res)=>{
-        const {id} = req.params;
-        const product = products.find(product=>product.id === +id)
-
-        res.render('formEdit',{
-            product,
-            gender, 
-        })
-    },
+   
     update: (req,res)=>{
         const {id}=req.params;
         const {name, price, category, discount, gender, description, requeriment}= req.body;
@@ -94,10 +87,10 @@ module.exports={
             products : searchProduct, keyword
         })
     },
-    edith : (req,res) => {
+    edit : (req,res) => {
         const {id} = req.params;
         const product = product.find(product => product.id === +id);
 
-        return res.render("formEdit", {product, gender});
+        return res.render("formEdit", {product, genders});
     }
 }
