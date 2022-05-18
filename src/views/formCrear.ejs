@@ -19,7 +19,7 @@
             </div>
             <h4>Géneros de juego</h4>
             <div class="gender">
-                 <% gender.forEach( ({id,name}, index) => { %>
+                 <% genders.forEach( ({id,name}, index) => { %>
                     <div class="gender__div">
                         <input class="" type="checkbox" name="gender" id="<%= index %>" value="<%= id %>">
                         <label for="<%= index %>"><%=name%></label>

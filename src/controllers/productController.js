@@ -89,9 +89,8 @@ module.exports={
         })
     },
     edit : (req,res) => {
-        const {id} = req.params;
-        const product = product.find(product => product.id === +id);
+        const product = products.find(product => product.id === +req.params.id);
 
-        return res.render("formEdit", {product, genders});
+        return res.render('formEdit', {product, genders});
     }
 }
