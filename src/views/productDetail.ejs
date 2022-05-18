@@ -46,10 +46,10 @@
                             </ul>
                             <p id="categorias:"><%= product.category %></p>
                             <ul class="main__section-categories">
-                                <% genders.forEach(element => { %>
-                                    <li><%= element.id === product.gender ? element.name : null %></li>
+                                <% misGeneros.forEach(element => { %>
+                                    <li><%= element %></li>
                                 <% }) %>
-                            </ul>
+                            </ul>                           
                         </section>
                     </div>
                 </div>

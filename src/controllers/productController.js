@@ -7,11 +7,12 @@ module.exports={
     productDetail:(req,res)=>{
         const {id} = req.params;
         const product = products.find(product => product.id === +id);
-      
+        const misGeneros = product.gender;
     
         res.render('productDetail',{
             product,
-            genders,
+            misGeneros,
+            genders
         })
     },
     productCart:(req,res)=>{
