@@ -3,15 +3,9 @@
       "id": 1,
       "name": "Doom",
       "price": 9158,
-      "discount": 22,
-      "category": "Ofertas especiales",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "discount": 5,
+      "category": "Recomendados",
       "img": "j1.jpg",
-      "gender": [
-         "acción",
-         "aventura",
-         "terror"
-      ],
       "requeriment": [
          "Windows 7/10 (64 bits)",
          "intel 5 / MD ryzen 3",
