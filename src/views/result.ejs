@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head',{title: 'Resultados | Pixel Shop'}) %> 
+<body class="home">
+   <%- include('./partials/header') %> 
+    <main class="home__main">
+        <h2>Resultado de la busqueda: "<%= keyword %>"</h2>
+        <section class="home__main__offer">
+            <% if (products.length > 0) { %>             
+                <% products.forEach(({id, name, price, discount, img}) => { %>             
+                    <article>
+                        <a href="/product/detail/<%= id %>"><img src="/images/<%= img %>" alt="" width="100%"></a>
+                        <div class="details">
+                            <p>$<%= price %></p>
+                            <span><%= discount %> OFF</span>
+                            <div>
+                                <i class="fas fa-cart-plus"></i>
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                    </article>
+                    <% }) %>
+                    <% }else{%>
+                        <h4>No se encontraron resultados</h4>
+                    <% } %>
+        </section>
+    </main>
+   <%- include('./partials/footer') %> 
+</body>
+</html>
