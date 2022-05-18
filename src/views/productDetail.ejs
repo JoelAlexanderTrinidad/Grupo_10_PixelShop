@@ -11,7 +11,7 @@
                 <div id="info-principal">
                     <section class="detail__main__section">
                         <div>
-                            <img src="/images/<%= product.img%>" alt="">
+                            <img src="/images/<%= product.img %>" alt="">
                         </div>
                         <div>
                             <img src="/images/carrusel-miniatura.png" alt="">
@@ -46,9 +46,9 @@
                             </ul>
                             <p id="categorias:"><%= product.category %></p>
                             <ul class="main__section-categories">
-                                
-                                    <li><a href=""><%= genderId.name %></a></li>
-                               
+                                <% product.gender.forEach(name => { %>
+                                    <li><a href=""><%= name %> </a></li>  
+                                 <% }) %>   
                             </ul>
                         </section>
                     </div>

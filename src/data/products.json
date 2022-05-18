@@ -8,8 +8,9 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j1.jpg",
       "gender": [
-         "1",
-         "10"
+         "acción",
+         "aventura",
+         "terror"
       ],
       "requeriment": [
          "Windows 7/10 (64 bits)",
