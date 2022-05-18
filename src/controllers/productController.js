@@ -2,7 +2,6 @@ const products = require('../data/products.json');
 const path = require('path');
 const fs = require('fs');
 const gender =  require('../data/gender.json');
-const { search } = require('../routes/product');
 
 module.exports={
     productDetail:(req,res)=>{
@@ -57,5 +56,11 @@ module.exports={
         return res.render("result", {
             products : searchProduct, keyword
         })
+    },
+    edith : (req,res) => {
+        const {id} = req.params;
+        const product = product.find(product => product.id === +id);
+
+        return res.render("formEdit", {product, gender});
     }
 }

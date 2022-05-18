@@ -25,7 +25,7 @@ router
       .get('/detail/:id', productDetail)
       .get('/crear', formCrear)
       .post('/crear',upload.single('img'), store)
-      .get('/edit', formEdit)
+      .get('/edit/:id', formEdit)
       .get('/result', search)
 
 module.exports = router;
