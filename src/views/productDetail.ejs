@@ -55,6 +55,11 @@
                     </div>
                 </div>
             </section>
+
+            <form action="/product/remove/<%= product.id %>?_method=delete" method="post">
+                <button type="submit"><a href=""><i class="fa-solid fa-trash-can">Eliminar</i></button>
+                </form>
+                <button><a href="/product/edit/<%= product.id %>">Editar</a></button>
             
         </section>
         <section class="main__section__articles">

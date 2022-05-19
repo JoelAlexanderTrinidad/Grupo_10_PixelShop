@@ -98,5 +98,14 @@ module.exports={
         const product = products.find(product => product.id === +req.params.id);
 
         return res.render('formEdit', {product, genders});
+    },
+    remove : (req,res) => {
+        const {id} = req.params;
+        const productFilter = products.filter(product => product.id !== +req.params.id);
+        const product = products.find(product => product.id === +req.params.id)
+
+        fs.writeFileSync(path.resolve(__dirname, "..", "data", "products.json"), JSON.stringify(productFilter, null, 3), "utf-8");
+        fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", product.img))
+        return res.redirect("/");
     }
 }

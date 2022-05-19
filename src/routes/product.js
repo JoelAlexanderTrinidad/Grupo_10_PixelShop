@@ -3,7 +3,7 @@ var router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
-const {productCart,productDetail, add, edit, store, search, update}=require('../controllers/productController');
+const {productCart,productDetail, add, edit, store, search, update, remove}=require('../controllers/productController');
 
 const storage = multer.diskStorage({
       destination: (req, file, callback) =>{
@@ -28,5 +28,6 @@ router
       .get('/edit/:id', edit)
       .put('/update/:id', upload.single('img'), update)
       .get('/result', search)
+      .delete('/remove/:id', remove)
 
 module.exports = router;

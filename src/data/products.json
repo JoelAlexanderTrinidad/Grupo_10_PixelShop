@@ -325,22 +325,5 @@
          "GTX 47O",
          "800 mb"
       ]
-   },
-   {
-      "id": 18,
-      "name": "Lalo Garza",
-      "price": 111111,
-      "discount": 2,
-      "category": "Recomendados",
-      "img": "img-1652816808368.jpg",
-      "requeriment": [
-         "dsadasd",
-         "sadsasa",
-         "12321",
-         "asdas",
-         "12321"
-      ],
-      "description": "adsadsadas",
-      "gender": "multijugador"
    }
 ]
