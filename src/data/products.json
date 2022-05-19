@@ -5,6 +5,7 @@
       "price": 4500,
       "discount": 5,
       "category": "Ofertas especiales",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j1.jpg",
       "requeriment": [
          "Windows 7/10 (64 bits)",
@@ -348,15 +349,15 @@
    },
    {
       "id": 18,
-      "name": "dadasd",
+      "name": "Juego de prueba",
       "price": 21321,
       "discount": 33112,
       "category": "Ofertas especiales",
       "img": "img-1652816808368.jpg",
       "gender": [
-         "accion",
-         "aventura",
-         "terror"
+         "terror",
+         "puzzle",
+         "multijugador"
       ],
       "requeriment": [
          "dsadasd",
@@ -364,6 +365,7 @@
          "12321",
          "asdas",
          "12321"
-      ]
+      ],
+      "description": "desc de prueba"
    }
 ]
