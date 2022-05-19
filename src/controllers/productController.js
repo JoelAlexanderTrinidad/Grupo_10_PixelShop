@@ -12,7 +12,8 @@ module.exports={
         res.render('productDetail',{
             product,
             misGeneros,
-            genders
+            genders,
+            products
         })
     },
     productCart:(req,res)=>{
