@@ -8,6 +8,8 @@ module.exports={
         const {id} = req.params;
         const product = products.find(product => product.id === +id);
         const misGeneros = product.gender;
+
+      /*   return res.send(misGeneros); */
     
         res.render('productDetail',{
             product,
@@ -31,10 +33,12 @@ module.exports={
    
     update: (req,res)=>{
         const {id}=req.params;
-        const {name, price, category, discount, gender, description, requeriment}= req.body;
+        const {name, price, category, discount, description, requeriment}= req.body;
+
+        let gender;
        
         let productsModify =  products.map(product =>{
-             if(product.id === +id){
+             if(product.id === +req.params.id){
                  let productModify={
                 ...product,
                 name: name,
@@ -43,20 +47,21 @@ module.exports={
                 category,
                 description: description,
                 img: req.file ? req.file.filename : product.img,
-                gender,
+                gender: !req.body.gender ? gender = product.gender : gender = typeof(req.body.gender) === 'string' ? [req.body.gender] : req.body.gender,
                 requeriment
                  }
              if(req.file){
                 if(fs.existsSync(path.resolve(__dirname,'..','public','images',product.img)) && product.img !== "noimage.jpeg"){
                     fs.unlinkSync(path.resolve(__dirname,'..','public','images',product.img))
                 }
-            }
+            }        
                 return productModify
              }
-            return product     
-    
-        })
-        fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'),JSON.stringify(productsModify, null, 3), 'utf8')
+             return product 
+             
+            })
+
+            fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'),JSON.stringify(productsModify, null, 3), 'utf8')
 
         return res.redirect('/')
     },    

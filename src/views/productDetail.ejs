@@ -46,9 +46,10 @@
                             </ul>
                             <p id="categorias:"><%= product.category %></p>
                             <ul class="main__section-categories">
-                                <% misGeneros.forEach(element => { %>
-                                    <li><%= element %></li>
+                                <% misGeneros.forEach((element, i) => { %>                                 
+                                    <li><%= misGeneros[i] %></li>
                                 <% }) %>
+                                                       
                             </ul>                           
                         </section>
                     </div>
