@@ -22,7 +22,7 @@
             <div class="gender">
                  <% genders.forEach( ({id,name}, index) => { %>
                     <div class="gender__div">
-                        <input class="" type="checkbox" name="gender" id="<%= index %>" value="<%= id %>">
+                        <input class="" type="checkbox" name="gender" id="<%= index %>" value="<%= name %>">
                         <label for="<%= index %>"><%=name%></label>
                     </div>
                 <% })%>      

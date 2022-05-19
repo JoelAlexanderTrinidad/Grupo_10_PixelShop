@@ -4,7 +4,7 @@
       "name": "Doom",
       "price": 4500,
       "discount": 5,
-      "category": "Recomendados ",
+      "category": "Ofertas especiales",
       "img": "j1.jpg",
       "requeriment": [
          "Windows 7/10 (64 bits)",
@@ -14,9 +14,8 @@
          "55 gb"
       ],
       "gender": [
-         "1",
-         "5",
-         "10"
+         "accion",
+         "shooter"
       ]
    },
    {
@@ -352,13 +351,12 @@
       "name": "dadasd",
       "price": 21321,
       "discount": 33112,
-      "category": "Ofertas Especiales",
-      "description": "dads",
+      "category": "Ofertas especiales",
       "img": "img-1652816808368.jpg",
       "gender": [
-         "1",
-         "2",
-         "3"
+         "accion",
+         "aventura",
+         "terror"
       ],
       "requeriment": [
          "dsadasd",
