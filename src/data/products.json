@@ -20,26 +20,6 @@
       ]
    },
    {
-      "id": 3,
-      "name": "Mario Kart Deluxe",
-      "price": 9158,
-      "discount": 22,
-      "category": "Ofertas especiales",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j3.jpg",
-      "gender": [
-         "carrera",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel 5",
-         "8 gb",
-         "G-force 970",
-         "7 gb"
-      ]
-   },
-   {
       "id": 4,
       "name": "Mortal Kombat 11",
       "price": 9158,
