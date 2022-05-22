@@ -4,7 +4,7 @@
       "name": "Doom",
       "price": 360,
       "discount": 10,
-      "category": "Destacados",
+      "category": "Recomendados",
       "description": "a",
       "img": "j1.jpg",
       "requeriment": [
@@ -15,8 +15,9 @@
          "55 gb"
       ],
       "gender": [
-         "shooter",
-         "multijugador"
+         "accion",
+         "aventura",
+         "shooter"
       ]
    },
    {
@@ -229,7 +230,7 @@
       "name": "Aura Kingdom",
       "price": 1500,
       "discount": 40,
-      "category": "Recomendados",
+      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "oferta-1.jpg",
       "gender": [
@@ -247,10 +248,10 @@
    },
    {
       "id": 15,
-      "name": "Lostrak",
+      "name": "Lost arks",
       "price": 2360,
       "discount": 50,
-      "category": "Recomendados",
+      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "oferta-2.jpg",
       "gender": [
@@ -271,7 +272,7 @@
       "name": "Dead by daylight",
       "price": 999,
       "discount": 33,
-      "category": "Recomendados",
+      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "oferta-3.jpg",
       "gender": [
