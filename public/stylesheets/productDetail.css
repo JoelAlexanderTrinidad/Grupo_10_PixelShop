@@ -209,6 +209,19 @@
     margin-right: 8px;
 }
 
+.product__detail__article-price{
+    font-size: 20px;
+    color: #5bb166 ;
+}
+
+.product__detail__article-price span{
+    font-size: 12px;
+
+}
+
+.product__detail__article-name{
+    font-size: 25px;
+}
 
 
 @media(max-width: 767px){
