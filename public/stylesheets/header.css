@@ -80,8 +80,9 @@ header #burger i{
     display: flex;
     justify-content: space-around;
 }
-.header__section__div-user a{
+.header__section__div-user i{
     color: white;
+    font-size: 24px;
 }
 .header__div i{
     background-color: var(--colorMorado);
@@ -157,9 +158,7 @@ header #burger i{
         background-repeat: inherit;
         background-position: center;
     }
-    .header__section__div-user{
-        font-size: 30px;
-    }
+    
     .header__section h3{
         font-size: 60px;
     }
