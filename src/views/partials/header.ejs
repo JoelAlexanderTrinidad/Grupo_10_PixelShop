@@ -28,9 +28,13 @@
                       <i class="fa-solid fa-user"></i>
                  </button>
                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-                       <li><a class="dropdown-item" href="/users/login">Inciar Sesión</a></li>
-                       <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
-                       <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                       <% if (!locals.userLogin) { %>
+                        <li><a class="dropdown-item" href="/users/login">Iniciar Sesión</a></li>
+                        <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
+                        <% }else{ %>
+                        <li><a class="dropdown-item" href="/users/profile">Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="/users/logout">Cerrar Sesión</a></li>
+                        <% } %>
                      </ul>
               </span>
                
