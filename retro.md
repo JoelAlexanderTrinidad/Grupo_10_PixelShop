@@ -108,11 +108,11 @@ Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final 
     -Dejar de recurrir a las actividades resueltas del profesor.
     
 ### Continuar haciendo:
-   -Continuar reuniéndonos con frecuencia.
-   -Seguir prestándole atención al detalle.
-   -Priorizar las tareas.
-   -Seguir escuchándonos y tener empatía entre nosotros.
-   -Seguir complementándonos como equipo.
+    -Continuar reuniéndonos con frecuencia.
+    -Seguir prestándole atención al detalle.
+    -Priorizar las tareas.
+    -Seguir escuchándonos y tener empatía entre nosotros.
+    -Seguir complementándonos como equipo.
    
  
  
