@@ -39,5 +39,18 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "image-1654046158542.jpg"
+   },
+   {
+      "id": 4,
+      "nombre": "Manuel",
+      "apellido": "Ramirez",
+      "tel": 1130442671,
+      "email": "Manuyagami95@gmail.com",
+      "password": "$2a$10$Emu49YVl.EUqqKXokUZiBeLhJXNWhXlo8lzRckh3qm3bWo7fTnr3m",
+      "fecha": "1995-02-02",
+      "genero": "on",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": null
    }
 ]

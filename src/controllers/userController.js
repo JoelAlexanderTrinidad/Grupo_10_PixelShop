@@ -73,20 +73,50 @@ module.exports={
              
     },
     profile: (req,res) => {
-        return res.render ("profile")
-
-        const users = JSON.parse(fs.readFileSync("./data/users.json","utf-8"));
-        const user = users.find(user => user.id === req.session.userLogin.id);
+        const usuarios = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"));
+        const usuario = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
         return res.render("profile",{
-            user
+            usuario
         })
     },
-    
     logout: (req,res) => {
         req.session.destroy();
-        res.cookie("PixelShop", null, {maxAge : -1})
+        res.cookie("Pixel-shop", null, {maxAge : -1})
         return res.redirect("/")
-    }
-    
-};
-  
+    },
+    updateProfile : (req,res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+          const {nombre, apellido, tel, email, password, fecha} = req.body;
+          const {id} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
+          const usuarioModificados = usuarios.map((usuario) => {
+            if (usuario.id === id) {
+              let usuarioModificados = {
+                ...usuario,
+                nombre : nombre.trim(),
+                apellido : apellido.trim(),
+                tel,
+                email,
+                password,
+                fecha
+              }
+              return usuarioModificados;
+            }
+            return usuario;
+          });
+
+          fs.writeFileSync(path.resolve(__dirname, "..", "data", "users.json"), JSON.stringify(usuarioModificados, null, 3), "utf-8");
+          req.session.userLogin = {
+            ...req.session.userLogin, nombre
+          }
+          return res.redirect("/");
+        
+        }else{
+          console.log(errors);
+          return res.render("profile", {
+            usuario : req.body,
+            errors : errors.mapped()
+          });
+        }
+    } 
+}
