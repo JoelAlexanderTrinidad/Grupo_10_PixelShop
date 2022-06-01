@@ -142,7 +142,7 @@
 
     .main_register .button button {
         font-size: 25px;
-        margin-top: 0;
+        margin: 10px;
         padding: 5px 15px;
         
     }

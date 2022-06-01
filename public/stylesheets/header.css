@@ -60,6 +60,7 @@ header{
 
 .header__section-div img{
     width: 70px;
+    margin-left: 10px;
 }
 header #burger {
     background-color: #000000;

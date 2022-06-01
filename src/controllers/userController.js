@@ -10,6 +10,12 @@ module.exports={
         return res.render("profile",{
             user
         })
+    },
+    
+    logout: (req,res) => {
+        req.session.destroy();
+        res.cookie("PixelShop", null, {maxAge : -1})
+        return res.redirect("/")
     }
 }
 
