@@ -88,7 +88,7 @@ module.exports={
     updateProfile : (req,res) => {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-          const {nombre, apellido, tel, email, password, fecha} = req.body;
+          const {nombre, apellido, tel, email, fecha} = req.body;
           const {id} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
           const usuarioModificados = usuarios.map((usuario) => {
             if (usuario.id === id) {
@@ -98,7 +98,7 @@ module.exports={
                 apellido : apellido.trim(),
                 tel,
                 email,
-                password,
+                password: bcryptjs.hashSync(req.body.nuevaPass1, 10),
                 fecha
               }
               return usuarioModificados;
