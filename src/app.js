@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 const methodOverride = require('method-override');
 const session = require('express-session');
-const localCheck = require('./middlewares/localCheck')
+const localCheck = require('./middlewares/localCheck');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -33,11 +33,11 @@ app.use(session({
 
 }))
 
-app.use(localCheck)
+app.use(localCheck);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/product',productRouter)
+app.use('/product',productRouter);
 
 // Rutas //
 /*app.get('/',(req,res)=> res.sendFile(path.resolve(__dirname,"views","index.html")));

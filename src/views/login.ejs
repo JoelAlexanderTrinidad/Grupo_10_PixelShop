@@ -15,7 +15,7 @@
                 <div class="datos">
                     <label for="password">Contraseña</label>
                     <input type="password" name="password" id="password" placeholder=" Contraseña" >
-                    <span><%= locals.errores && errores.password? errores.password.msg : null %> </span>           
+                    <span style="color: #6e0707;"><%= locals.errores && errores.password? errores.password.msg : null %> </span>           
                 </div>
             <section class="required">
                     <input type="checkbox" id="recordame" name="recordame" value="recordarme"  >
@@ -31,7 +31,7 @@
         <a href="¿Has olvidado tu contraseña?"></a>
         <p>O</p>
         <div class="button">
-            <a href="/users/register"><button type="submit">REGISTRATE</button></a>
+            <a href="/users/register">REGISTRATE</a>
             
         </div>
     </form>
