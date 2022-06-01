@@ -7,27 +7,26 @@
     <main class="main_login">
         <h2>Ingresá</h2>
         <section class="main__login">
-            <form action="" method="get">
+            <form action="" method="POST">
                 <div class="datos">
                     <label for="email"> Usuario/Correo electrónico</label>
-                    <input type="email" name="email" id="email" placeholder=" ususario/email" required>
+                    <input type="email" name="email" id="email" placeholder=" usuario/email" >
                 </div>
                 <div class="datos">
-                    <label for="contraseña">Contraseña</label>
-                    <input type="password" name="contraseña" id="contraseña" placeholder=" contraseña" required>
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" placeholder=" Contraseña" >
+                    <span><%= locals.errores && errores.password? errores.password.msg : null %> </span>           
                 </div>
-
-            </form>
-          
             <section class="required">
-                    <input type="checkbox" id="recordame" name="recordame" value="recordarme" required >
-                    <label for="recordame">Recordame</label>                        
+                    <input type="checkbox" id="recordame" name="recordame" value="recordarme"  >
+                    <label for="recordame">Recordame</label>            
+                    
             </section>
             
         </section>
       <section class="section__login">
         <div class="button">
-            <a href=""><button type="submit">INICIAR SESIÓN</button></a>
+           <button type="submit">INICIAR SESIÓN</button>
         </div>
         <a href="¿Has olvidado tu contraseña?"></a>
         <p>O</p>
@@ -35,6 +34,8 @@
             <a href="/users/register"><button type="submit">REGISTRATE</button></a>
             
         </div>
+    </form>
+
       </section>
         <section class="redes">
         <ul>
