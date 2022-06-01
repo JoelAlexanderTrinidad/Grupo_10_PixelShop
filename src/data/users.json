@@ -52,5 +52,17 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": null
+   },
+   {
+      "id": 5,
+      "nombre": "Agustina",
+      "apellido": "Mamani",
+      "tel": "1137733316",
+      "email": "agusflormamani@gmail.com",
+      "fecha": "1998-01-03",
+      "genero": "on",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "image-1654093735066.jpeg"
    }
 ]

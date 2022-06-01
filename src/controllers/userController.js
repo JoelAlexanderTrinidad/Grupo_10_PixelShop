@@ -73,10 +73,11 @@ module.exports={
              
     },
     profile: (req,res) => {
-        const usuarios = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"));
+        const usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
         const usuario = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
         return res.render("profile",{
-            usuario
+            usuario,
+            
         })
     },
     logout: (req,res) => {
