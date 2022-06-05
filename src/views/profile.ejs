@@ -13,7 +13,7 @@
                 <div class="datos">
                     <label for="nombre" >Nombre</label>
                     <input class= "<%= locals.errors && errors.nombre ? 'is-invalid' : null %> " type="text" name="nombre" id="nombre" placeholder=" nombre" value="<%= usuario.nombre %>" >
-                    <p><%= locals.errors && errors.nombre ? errors.nombre.msg : null %></p>
+                    <p><%= errors === true && locals.errors.passAntiguo.msg ? locals.errors.passAntiguo.msg : null %></p>
                 </div>
 
                 <div class="datos">

@@ -28,19 +28,6 @@
       "rol": "user"
    },
    {
-      "id": 3,
-      "nombre": "joel",
-      "apellido": "trinidad",
-      "tel": "12331",
-      "email": "joel@gmail.com",
-      "password": "$2a$10$cB80XuqXTxz2xShb.9Vvp.2Ckjr4pOrubm0HVg5K3NcAx0yChKzZ.",
-      "fecha": "2022-05-31",
-      "genero": "on",
-      "terminos": "on",
-      "privacidad": "on",
-      "imagenPerfil": "image-1654046158542.jpg"
-   },
-   {
       "id": 4,
       "nombre": "Manuel",
       "apellido": "Ramirez",
@@ -64,5 +51,18 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "image-1654093735066.jpeg"
+   },
+   {
+      "id": 6,
+      "nombre": "joel",
+      "apellido": "trinidad",
+      "tel": "123123",
+      "email": "j@gmail.com",
+      "password": "$2a$10$qlaK1tBGuwZ75IeKAon.aufDewLnQ7pK3FcQRcViaSD3SgdlUT8qi",
+      "fecha": "2022-06-03",
+      "genero": "on",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": null
    }
 ]
