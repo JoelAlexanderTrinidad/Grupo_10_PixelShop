@@ -43,8 +43,14 @@ header{
     20%, 24%, 55% {        
         text-shadow: none;
     }    
-  }
+}
+
+button.dropdown-toggle::after{
+    display: none;
+}
+
 /*  */
+
 .header__section {
     display: flex;
     justify-content: space-between;
@@ -102,7 +108,6 @@ header #burger i{
 
 .header__nav{
     display: none;
-    
 }
 
 .header__nav__user{

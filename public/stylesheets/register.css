@@ -64,8 +64,9 @@
 .main_register .button {
     text-align: center;
  }
- .main_register .button button{
+.main_register .button button{
         font-size: 20px;
+        font-family: 'Bungee';
         margin-top: 15px;
         padding: 0 15px;
         border-radius: 5px;
