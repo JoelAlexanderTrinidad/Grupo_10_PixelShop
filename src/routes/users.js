@@ -15,6 +15,6 @@ router
       .post('/login',loginValidator, processLogin)
       .get('/logout', logout)
       .get('/profile',userCheck, profile)
-      .put('/update-profile', profileValidator,updateProfile)
+      .put('/update-profile', profileValidator,userCheck,updateProfile)
 
 module.exports = router;
