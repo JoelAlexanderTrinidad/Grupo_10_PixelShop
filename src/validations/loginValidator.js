@@ -10,12 +10,12 @@ module.exports = [
     
     check('password')
         .notEmpty().withMessage('Debes ingresar tu contraseña').bail()
-        .custom((vaule, {req})=>{
+        .custom((value, {req})=>{
             const usuario = usuarios.find(usuario => usuario.email === req.body.email);
             if (!usuario){
                 return false
             }else{
-                if(!bcryptjs.compareSync(vaule, usuario.password))
+                if(!bcryptjs.compareSync(value, usuario.password))
                     return false
             }
             return true

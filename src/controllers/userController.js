@@ -40,6 +40,12 @@ module.exports={
 
             fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'users.json'), JSON.stringify(usuarios, null, 3), 'utf-8');
 
+            const {id} = nuevoUsuario
+                req.session.userLogin = {
+                id,
+                nombre : nombre.trim(),
+            }
+
             return res.redirect('/');   
         }
         else{
@@ -58,10 +64,8 @@ module.exports={
                 
             req.session.userLogin = {
                id, 
-               nombre,
-               rol
+               nombre
             }
-
             return res.redirect("/");
         }else{
 
@@ -87,9 +91,12 @@ module.exports={
     },
     updateProfile : (req,res) => {
         let errors = validationResult(req);
+        /* console.log(req.session.userLogin)
+        return res.send(req.session.userLogin); */
         if (errors.isEmpty()) {
           const {nombre, apellido, tel, email, fecha} = req.body;
           const {id} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
+          
           const usuarioModificados = usuarios.map((usuario) => {
             if (usuario.id === id) {
               let usuarioModificados = {
@@ -113,7 +120,7 @@ module.exports={
           return res.redirect("/");
         
         }else{
-          console.log(errors);
+        //   console.log(errors);
           return res.render("profile", {
             usuario : req.body,
             errors : errors.mapped()

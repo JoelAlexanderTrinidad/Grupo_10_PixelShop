@@ -3,6 +3,7 @@ var router = express.Router();
 const upload = require('../middlewares/uploadProfilePicture');
 const registerValidator = require('../validations/registerValidator');
 const loginValidator = require ('../validations/loginValidator');
+const profileValidator = require('../validations/profileValidator');
 
 /* /users */
 const {register,login, processLogin, processRegister, profile, logout, updateProfile}=require('../controllers/userController');
@@ -14,6 +15,6 @@ router
       .post('/login',loginValidator, processLogin)
       .get('/logout', logout)
       .get('/profile',userCheck, profile)
-      .put('/update-profile', updateProfile)
+      .put('/update-profile', profileValidator,userCheck,updateProfile)
 
 module.exports = router;
