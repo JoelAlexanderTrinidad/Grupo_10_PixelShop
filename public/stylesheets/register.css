@@ -63,6 +63,7 @@
 }
 .main_register .button {
     text-align: center;
+    margin: 0px auto;
  }
 .main_register .button button{
         font-size: 20px;
