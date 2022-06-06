@@ -28,12 +28,12 @@
                       <i class="fa-solid fa-user"></i>
                  </button>
                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-                       <% if (!locals.userLogin) { %>
-                        <li><a class="dropdown-item" href="/users/login">Iniciar Sesión</a></li>
-                        <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
-                        <% }else{ %>
+                       <% if (locals.userLogin) { %>
                         <li><a class="dropdown-item" href="/users/profile">Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="/users/logout">Cerrar Sesión</a></li>
+                        <% }else{ %>                            
+                            <li><a class="dropdown-item" href="/users/login">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
                         <% } %>
                      </ul>
               </span>
@@ -54,13 +54,13 @@
                  <li> <a href="">Quienes Somos</a></li>
              </ul>
          </nav>
-         <nav class="header__nav__user">        
+         <!-- <nav class="header__nav__user">        
              <ul>
                  <li><a href="/users/login">Ingresa <i class="fa-solid fa-user"></i></a></li>
                  <li><a href="/users/register">Registrate</a></li>
                  <li><a href="/product/cart">Carrito de Compra <i class="fa-solid fa-cart-shopping"></i></a></li>
              </ul>
-         </nav>
+         </nav> -->
          <form action="/product/result">
          <div id="busqueda">
              <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">

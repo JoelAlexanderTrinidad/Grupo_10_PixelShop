@@ -66,6 +66,12 @@ module.exports={
                id, 
                nombre
             }
+           
+
+            if(req.body.recordame){
+                res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*2})
+              }
+
             return res.redirect("/");
         }else{
 
