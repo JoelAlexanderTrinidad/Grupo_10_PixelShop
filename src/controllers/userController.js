@@ -92,7 +92,7 @@ module.exports={
     },
     logout: (req,res) => {
         req.session.destroy();
-        res.cookie("Pixel-shop", null, {maxAge : -1})
+        res.cookie("userPixelShop", null, {maxAge : -1})
         return res.redirect("/")
     },
     updateProfile : (req,res) => {
