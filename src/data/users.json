@@ -64,5 +64,19 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": null
+   },
+   {
+      "id": 7,
+      "nombre": "agustina",
+      "apellido": "mamani",
+      "tel": 1123244,
+      "email": "a@gmail.com",
+      "password": "$2a$10$2ylz9rHHskxgBX.erdp7LeS8Mx0b9B1j0coS/MfyVFAtlN5CEi4A6",
+      "fecha": "1198-01-03",
+      "genero": "on",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": null,
+      "rol": "admin"
    }
 ]

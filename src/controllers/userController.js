@@ -44,6 +44,7 @@ module.exports={
                 req.session.userLogin = {
                 id,
                 nombre : nombre.trim(),
+                rol
             }
 
             return res.redirect('/');   
@@ -64,7 +65,8 @@ module.exports={
                 
             req.session.userLogin = {
                id, 
-               nombre
+               nombre,
+               rol
             }
            
 
