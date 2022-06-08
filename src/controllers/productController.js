@@ -18,7 +18,9 @@ module.exports={
         })
     },
     productCart:(req,res)=>{
-        res.render('productCart')
+        res.render('productCart', {
+            products
+        })
     },
     add:(req,res)=>{
 
