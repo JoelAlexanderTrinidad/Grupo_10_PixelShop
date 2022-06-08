@@ -1,4 +1,5 @@
 const products = require("../data/products.json");
+const adminCheck = require("../middlewares/adminCheck");
 
 module.exports={
     index:(req,res)=> {
@@ -9,6 +10,9 @@ module.exports={
         return res.render('index', {
             products, OfertasEspeciales, Destacados, Recomendados
         })
+    },
+    admin:(req,res)=> {
+        return res.render('admin')
     }
 }
 

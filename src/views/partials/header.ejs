@@ -31,6 +31,9 @@
                        <% if (locals.userLogin) { %>
                         <li><a class="dropdown-item" href="/users/profile">Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="/users/logout">Cerrar Sesión</a></li>
+                        <% if (locals.userLogin?.rol === "admin") { %>
+                            <li><a class="dropdown-item" href="/admin">Administrador</a></li>
+                        <% } %>
                         <% }else{ %>                            
                             <li><a class="dropdown-item" href="/users/login">Iniciar Sesión</a></li>
                             <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
