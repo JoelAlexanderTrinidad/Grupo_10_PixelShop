@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const adminCheck = require('../middlewares/adminCheck');
 
 const {productCart,productDetail, add, edit, store, search, update, remove}=require('../controllers/productController');
 
@@ -23,9 +24,9 @@ const storage = multer.diskStorage({
 router
       .get('/cart',productCart)
       .get('/detail/:id', productDetail)
-      .get('/crear', add)
+      .get('/crear', adminCheck,add)
       .post('/crear',upload.single('img'), store)
-      .get('/edit/:id', edit)
+      .get('/edit/:id', adminCheck,edit)
       .put('/update/:id', upload.single('img'), update)
       .get('/result', search)
       .delete('/remove/:id', remove)

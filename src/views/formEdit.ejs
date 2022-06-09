@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include('./partials/head',{title: 'Editar Producto | Pixel Shop'}) %> 
 <body  class="form__body">
-   <%- include('./partials/header') %> 
+   <%- include('./partials/header') %>
     <main class="form__main">
         <h2>Editar producto</h2>
         <form class="form" method="POST" action="/product/update/<%= product.id %>?_method=PUT"  enctype="multipart/form-data" >
