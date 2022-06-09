@@ -6,7 +6,7 @@ const bcryptjs = require('bcryptjs');
 
 module.exports={
     register:(req,res)=>{
-        return res.render('register')
+            return res.render('register')
     },
     login:(req,res)=>{
         return res.render('login')
@@ -134,5 +134,13 @@ module.exports={
             errors : errors.mapped()
           });
         }
-    } 
+    },
+    removeUser : (req,res) => {
+            const userRemove = users.find(user => user.id === req.session.userLogin.id);
+            const usersFilter = users.filter(user => user.id !== userRemove);
+
+        fs.writeFileSync(path.resolve(__dirname, "..", "data", "users.json"), JSON.stringify(usersFilter, null, 3), "utf-8");
+        req.session.destroy();
+        return res.redirect("/");
+    }
 }

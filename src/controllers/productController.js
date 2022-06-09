@@ -100,7 +100,7 @@ module.exports={
 
         return res.render('formEdit', {product, genders});
     },
-    remove : (req,res) => {
+    removeUser : (req,res) => {
         const {id} = req.params;
         const productFilter = products.filter(product => product.id !== +req.params.id);
         const product = products.find(product => product.id === +req.params.id)
