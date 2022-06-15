@@ -37,6 +37,8 @@ module.exports={
         const {name, price, category, discount, description, requeriment}= req.body;
 
         let gender;
+
+        const product = products.find(product => product.id === +req.params.id)
        
         let productsModify =  products.map(product =>{
              if(product.id === +req.params.id){
@@ -51,17 +53,18 @@ module.exports={
                 gender: !req.body.gender ? gender = product.gender : gender = typeof(req.body.gender) === 'string' ? [req.body.gender] : req.body.gender,
                 requeriment
                  }
-             if(req.file){
-                if(fs.existsSync(path.resolve(__dirname,'..','public','images',product.img)) && product.img !== "noimage.jpeg"){
-                    fs.unlinkSync(path.resolve(__dirname,'..','public','images',product.img))
+                 return productModify
+                 
                 }
-            }        
-                return productModify
-             }
-             return product 
-             
+                return product 
+                
             })
-
+            if(req.file){
+               if(fs.existsSync(path.resolve(__dirname,'..','public','images',product.img)) && product.img !== "noimage.jpeg"){
+                   fs.unlinkSync(path.resolve(__dirname,'..','public','images',product.img))
+               }
+           }        
+            
             fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'),JSON.stringify(productsModify, null, 3), 'utf8')
 
         return res.redirect('/')
@@ -97,16 +100,17 @@ module.exports={
     },
     edit : (req,res) => {
         const product = products.find(product => product.id === +req.params.id);
-
-        return res.render('formEdit', {product, genders});
+       
+            res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
+            res.render('formEdit', {product, genders});
+        
     },
-    removeUser : (req,res) => {
-        const {id} = req.params;
+    remove : (req,res) => {
         const productFilter = products.filter(product => product.id !== +req.params.id);
         const product = products.find(product => product.id === +req.params.id)
 
-        fs.writeFileSync(path.resolve(__dirname, "..", "data", "products.json"), JSON.stringify(productFilter, null, 3), "utf-8");
         fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", product.img))
+        fs.writeFileSync(path.resolve(__dirname, "..", "data", "products.json"), JSON.stringify(productFilter, null, 3), "utf-8");
         return res.redirect("/");
     }
 }

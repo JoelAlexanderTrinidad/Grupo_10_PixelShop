@@ -27,8 +27,8 @@ router
       .get('/crear', adminCheck,add)
       .post('/crear',upload.single('img'), store)
       .get('/edit/:id', adminCheck,edit)
-      .put('/update/:id', upload.single('img'), update)
+      .put('/update/:id', upload.single('img'), adminCheck,update)
       .get('/result', search)
-      .delete('/remove/:id', remove)
+      .delete('/remove/:id', adminCheck,remove)
 
 module.exports = router;

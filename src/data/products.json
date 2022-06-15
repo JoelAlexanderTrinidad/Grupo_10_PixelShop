@@ -257,6 +257,7 @@
       "gender": [
          "rpg",
          "aventura",
+         "shooter",
          "multijugador"
       ],
       "requeriment": [
@@ -265,46 +266,6 @@
          "8 gb",
          "GTX 460 / AMD HD 6850",
          "50 gb "
-      ]
-   },
-   {
-      "id": 16,
-      "name": "Dead by daylight",
-      "price": 999,
-      "discount": 33,
-      "category": "Ofertas especiales",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "oferta-3.jpg",
-      "gender": [
-         "terror",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows 10",
-         "Intel i3/ AMD FX",
-         "8 gb",
-         "GTX 470/ AMD HD 6850",
-         "50 gb"
-      ]
-   },
-   {
-      "id": 17,
-      "name": "Brawlhalla",
-      "price": 360,
-      "discount": 12,
-      "category": "Recomendados",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "oferta-4.jpg",
-      "gender": [
-         "lucha",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel i3",
-         "2 gb",
-         "GTX 47O",
-         "800 mb"
       ]
    }
 ]

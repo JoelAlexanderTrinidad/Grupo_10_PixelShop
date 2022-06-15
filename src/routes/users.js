@@ -7,7 +7,7 @@ const profileValidator = require('../validations/profileValidator');
 
 
 /* /users */
-const {register,login, processLogin, processRegister, profile, logout, updateProfile, removeUser}=require('../controllers/userController');
+const {register,login, processLogin, processRegister, editProfile, logout, updateProfile, removeUser, profile}=require('../controllers/userController');
 const userCheck = require('../middlewares/userCheck');
 const sessionCheck=require('../middlewares/sessionCheck');
 router
@@ -16,8 +16,9 @@ router
       .post('/register', upload.single('image'),registerValidator,processRegister)
       .post('/login',loginValidator, processLogin)
       .get('/logout', logout)
-      .get('/profile',userCheck, profile)
+      .get('/editProfile',userCheck, editProfile)
       .put('/update-profile', profileValidator,userCheck,updateProfile)
       .delete('/deleteUser',removeUser)
+      .get('/profile', profile)
 
 module.exports = router;

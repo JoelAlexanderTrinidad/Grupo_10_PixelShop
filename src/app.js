@@ -38,8 +38,8 @@ app.use(cookieCheck);
 app.use(localCheck);
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/product',productRouter);
+app.use('/users', usersRouter);
 
 // Rutas //
 /*app.get('/',(req,res)=> res.sendFile(path.resolve(__dirname,"views","index.html")));

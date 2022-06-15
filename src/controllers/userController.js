@@ -4,6 +4,8 @@ const path = require('path');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
 
+
+
 module.exports={
     register:(req,res)=>{
             return res.render('register')
@@ -71,7 +73,7 @@ module.exports={
            
 
             if(req.body.recordame){
-                res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*2})
+                res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
               }
 
             return res.redirect("/");
@@ -84,10 +86,10 @@ module.exports={
         }
              
     },
-    profile: (req,res) => {
+    editProfile: (req,res) => {
         const usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
         const usuario = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
-        return res.render("profile",{
+        return res.render("editProfile",{
             usuario,
             
         })
@@ -129,7 +131,7 @@ module.exports={
         
         }else{
         //   console.log(errors);
-          return res.render("profile", {
+          return res.render("editProfile", {
             usuario : req.body,
             errors : errors.mapped()
           });
@@ -142,5 +144,8 @@ module.exports={
         fs.writeFileSync(path.resolve(__dirname, "..", "data", "users.json"), JSON.stringify(usersFilter, null, 3), "utf-8");
         req.session.destroy();
         return res.redirect("/");
+    },
+    profile : (req, res) => {
+        return res.render('profile');
     }
 }
