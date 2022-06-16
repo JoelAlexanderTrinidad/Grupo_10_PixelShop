@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head',{title: 'Home | Pixel Shop'}) %> 
-<body class="home">
+<%- include('./partials/head',{title: 'Perfil | Pixel Shop'}) %> 
+<body>
    <%- include('./partials/header') %> 
   <main >
     <div class="card ol-12 col-md-10 col-lg-8 mx-auto" style="width: 18rem;">
@@ -16,9 +16,10 @@
         <li class="list-group-item">A third item</li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">Editar</a>
-        <span><a class="badge bg-primary rounded-pill" href="/product/remove/"><i class="fa-solid fa-trash-can"></i></a></span>
-        <a href="#" class="card-link">Eliminar</a>
+        <a href="/users/editProfile" class="card-link">Editar</a>
+        <form action="/users/deleteUser?_method=DELETE" method="POST" enctype="multipart/form-data">
+          <button type="submit">Eliminar</button>
+        </form>
       </div>
     </div>
   </main>
