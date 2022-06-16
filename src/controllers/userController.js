@@ -34,7 +34,7 @@ module.exports={
                 genero,
                 terminos,
                 privacidad,
-                imagenPerfil: req.file ? req.file.filename : null,
+                imagenPerfil: req.file ? req.file.filename : 'no-image.png',
                 rol
             };
 
@@ -106,7 +106,8 @@ module.exports={
         return res.send(req.session.userLogin); */
         if (errors.isEmpty()) {
           const {nombre, apellido, tel, email, fecha} = req.body;
-          const {id, password} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
+          const {id, password, imagenPerfil} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
+          
           
           const usuarioModificados = usuarios.map((usuario) => {
             if (usuario.id === id) {
@@ -117,12 +118,19 @@ module.exports={
                 tel,
                 email,
                 password: password && !req.body.nuevaPass1 ? password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
+                imagenPerfil: req.file ? req.file.filename : imagenPerfil,
                 fecha
               }
               return usuarioModificados;
             }
             return usuario;
           });
+
+          if(req.file){
+            if(fs.existsSync(path.resolve(__dirname,'..','public','images',imagenPerfil)) && imagenPerfil !== 'no-image.png'){
+                fs.unlinkSync(path.resolve(__dirname,'..','public','images',imagenPerfil))
+            }
+        } 
 
           fs.writeFileSync(path.resolve(__dirname, "..", "data", "users.json"), JSON.stringify(usuarioModificados, null, 3), "utf-8");
           req.session.userLogin = {
@@ -152,8 +160,9 @@ module.exports={
     removeUser : (req,res) => {
             
             const userDelete = usuarios.filter(user => user.id != req.session.userLogin.id)
+            const user = usuarios.find(user => user.id === req.session.userLogin.id)
 
-        
+        fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", user.imagenPerfil))
         fs.writeFileSync(path.resolve(__dirname, "..", "data", "users.json"), JSON.stringify(userDelete, null, 3), "utf-8");
 
         

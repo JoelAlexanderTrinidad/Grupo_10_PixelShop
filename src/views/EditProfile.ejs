@@ -9,7 +9,7 @@
             <h2>Perfil de usuario</h2>
         </section>
         <section>
-            <form action="/users/update-profile?_method=PUT" method="POST">
+            <form action="/users/update-profile?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="datos">
                     <label for="nombre" >Nombre</label>
                     <input type="text" name="nombre" id="nombre" placeholder=" nombre" value="<%= usuario.nombre %>" >
@@ -52,6 +52,10 @@
                 <div class="datos">
                     <label for="fecha">Fecha de nacimiento</label>
                     <input type="date" name="fecha" id="fecha" value="<%= usuario.fecha %>" >
+                </div>
+
+                <div>
+                    <input type="file" id="" name="image" accept="image/*">
                 </div>
                   
                 <div class="button">

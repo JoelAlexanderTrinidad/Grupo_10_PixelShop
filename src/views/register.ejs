@@ -59,15 +59,15 @@
                     <div id="genero">
                         <div>
                             <label for="fem">Femenino</label>
-                            <input type="radio" name="genero">
+                            <input type="radio" id="fem" name="genero" value="femenino">
                         </div>
                         <div>
                             <label for="mas">Masculino</label>
-                            <input type="radio" name="genero">
+                            <input type="radio" id="mas" name="genero" value="masculino">
                         </div>
                         <div>
                             <label for="otro">Otros</label>
-                            <input type="radio" name="genero">
+                            <input type="radio" id="otro" name="genero" value="otros">
                         </div>
                     </div>
                     <span style="color:#6e0707 ;"><%= locals.errores && errores.genero ? errores.genero.msg : null %></span>

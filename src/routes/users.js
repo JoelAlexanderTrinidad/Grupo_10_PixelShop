@@ -17,7 +17,7 @@ router
       .post('/login',loginValidator, processLogin)
       .get('/logout', logout)
       .get('/editProfile',userCheck, editProfile)
-      .put('/update-profile', profileValidator,userCheck,updateProfile)
+      .put('/update-profile', upload.single('image'), profileValidator, userCheck,updateProfile)
       .delete('/deleteUser',removeUser)
       .get('/profile', profile)
 

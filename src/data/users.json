@@ -79,5 +79,18 @@
       "privacidad": "on",
       "imagenPerfil": "recomendado-2.jpg",
       "rol": "admin"
+   },
+   {
+      "id": 8,
+      "nombre": "dasdasdjda",
+      "apellido": "dhasdhkashks",
+      "tel": "123213123",
+      "email": "chavito@gmail.com",
+      "password": "$2a$10$Yty8bmSbz/O/Aoay6rU6Xeut/BNbEvpVWM1uzyMWUpb74Ul74LDea",
+      "fecha": "2022-06-16",
+      "genero": "femenino",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "image-1655417714966.jpg"
    }
 ]
