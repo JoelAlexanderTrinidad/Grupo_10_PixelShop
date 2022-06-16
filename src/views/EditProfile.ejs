@@ -36,7 +36,7 @@
 
                 <div class="datos">
                     <label for="contraseña">Contraseña antigua</label>
-                    <input type="password" name="passAntiguo" id="contraseña" placeholder=" contraseña antigua" value="" >
+                    <input type="password" name="passAntiguo" id="contraseña" placeholder=" contraseña antigua" >
                     <p style="color: rgb(68, 15, 8);"><%= locals.errors && errors.passAntiguo ? locals.errors.passAntiguo.msg : null %></p>
                 </div>
                 <div class="datos">
@@ -52,7 +52,6 @@
                 <div class="datos">
                     <label for="fecha">Fecha de nacimiento</label>
                     <input type="date" name="fecha" id="fecha" value="<%= usuario.fecha %>" >
-                    <p style="color: rgb(68, 15, 8);"><%= locals.errors && errors.fecha ? locals.errors.fecha.msg : null %></p>
                 </div>
                   
                 <div class="button">

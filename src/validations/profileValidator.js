@@ -31,19 +31,15 @@ module.exports = [
                 return false;
             }
             return true;
-        }).withMessage('DESBES INGRESAR LA CONTRASEÑA ANTIGUA'),
+        }).withMessage('Debes ingresar la contraseña antigua'),
 
     body('nuevaPass1')
-        .notEmpty().withMessage('Desbes ingresar una nueva contraseña!')
         .custom((value, {req}) => {
             if(value !== req.body.nuevaPass2){
                 return false;
             }
             return true;
         }).withMessage('¡Las contraseñas no coinciden!'),
-
-    check('fecha')
-        .notEmpty().withMessage('Debe ingresar su fecha de nacimiento'),
     
 ]
 

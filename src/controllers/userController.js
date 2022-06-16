@@ -106,7 +106,7 @@ module.exports={
         return res.send(req.session.userLogin); */
         if (errors.isEmpty()) {
           const {nombre, apellido, tel, email, fecha} = req.body;
-          const {id} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
+          const {id, password} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
           
           const usuarioModificados = usuarios.map((usuario) => {
             if (usuario.id === id) {
@@ -116,7 +116,7 @@ module.exports={
                 apellido : apellido.trim(),
                 tel,
                 email,
-                password: bcryptjs.hashSync(req.body.nuevaPass1, 10),
+                password: password && !req.body.nuevaPass1 ? password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
                 fecha
               }
               return usuarioModificados;
