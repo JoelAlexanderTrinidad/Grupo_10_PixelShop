@@ -4,21 +4,20 @@
 <body>
    <%- include('./partials/header') %> 
   <main >
-    <div class="card ol-12 col-md-10 col-lg-8 mx-auto" style="width: 18rem;">
-      <img src="/images/no-image.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="card col-12 col-md-10 col-lg-8 mx-auto my-3" style="width: 18rem;">
+      <img src="/images/<%= imagenPerfil %> " class="card-img-top" alt="...">
+      <div class="card-body mx-auto">
+        <h5 class="card-title text-capitalize" ><%= user.nombre %> <%= user.apellido %></h5>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">Tel: <%= tel %> </li>
+        <li class="list-group-item">Email: <%= email %> </li>
+        <li class="list-group-item">Fecha de nacimiento: <%= fecha %> </li>
       </ul>
-      <div class="card-body">
-        <a href="/users/editProfile" class="card-link">Editar</a>
+      <div class="card-body d-flex col-12 justify-content-evenly align-items-center">
+        <a href="/users/editProfile" class="card-link bt-profile">Editar</a>
         <form action="/users/deleteUser?_method=DELETE" method="POST" enctype="multipart/form-data">
-          <button type="submit">Eliminar</button>
+          <button class="bt-profile" type="submit">Eliminar</button>
         </form>
       </div>
     </div>

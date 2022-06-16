@@ -63,12 +63,13 @@ module.exports={
     processLogin:(req,res)=>{
     let errors = validationResult (req);
         if(errors.isEmpty()){
-            const {id, nombre, rol} = usuarios.find(usuario => usuario.email === req.body.email);
-                
+            const {id, nombre, apellido, rol} = usuarios.find(usuario => usuario.email === req.body.email);
+            
             req.session.userLogin = {
-               id, 
-               nombre,
-               rol
+                id, 
+                nombre,
+                apellido,
+                rol
             }
            
 
@@ -138,7 +139,15 @@ module.exports={
         }
     },
     profile : (req, res) => {
-        return res.render('profile');
+        const {tel, email, fecha, imagenPerfil} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
+        const user = req.session.userLogin;
+        return res.render('profile',{
+            user,
+            tel,
+            email,
+            fecha,
+            imagenPerfil        
+        });
     },
     removeUser : (req,res) => {
             
