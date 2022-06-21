@@ -30,8 +30,7 @@ app.use(session({
   secret : 'Pixel-shop',
   resave: false,
   saveUninitialized: true,
-  cookie :{},
-
+  cookie :{}
 }))
 
 app.use(cookieCheck);

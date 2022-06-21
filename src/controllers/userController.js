@@ -154,7 +154,7 @@ module.exports={
             tel,
             email,
             fecha,
-            imagenPerfil        
+            imagenPerfil
         });
     },
     removeUser : (req,res) => {

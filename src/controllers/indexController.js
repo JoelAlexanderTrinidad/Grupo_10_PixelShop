@@ -8,7 +8,7 @@ module.exports={
         const Recomendados = products.filter(product => product.category === "Recomendados");
 
         return res.render('index', {
-            products, OfertasEspeciales, Destacados, Recomendados
+            products, OfertasEspeciales, Destacados, Recomendados, session : req.session
         })
     },
     admin:(req,res)=> {

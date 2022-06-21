@@ -19,6 +19,6 @@ router
       .get('/editProfile',userCheck, editProfile)
       .put('/update-profile', upload.single('image'), profileValidator, userCheck,updateProfile)
       .delete('/deleteUser',removeUser)
-      .get('/profile', profile)
+      .get('/profile',profile)
 
 module.exports = router;
