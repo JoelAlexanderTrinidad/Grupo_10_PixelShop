@@ -52,7 +52,6 @@ module.exports={
             return res.redirect('/');   
         }
         else{
-            return res.send(req.body)
             return res.render('register',{
                
                 old: req.body,
@@ -148,10 +147,10 @@ module.exports={
         }
     },
     profile : (req, res) => {
-        const {tel, email, fecha, imagenPerfil} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
-        const user = req.session.userLogin;
+        const {tel, email, fecha, imagenPerfil, nombre, apellido} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
         return res.render('profile',{
-            user,
+            nombre,
+            apellido,
             tel,
             email,
             fecha,

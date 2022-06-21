@@ -120,5 +120,32 @@
       "privacidad": "on",
       "imagenPerfil": "no-image.png",
       "rol": "admin"
+   },
+   {
+      "id": 11,
+      "nombre": "Florencia",
+      "apellido": "Mamani",
+      "tel": "1231234",
+      "email": "af@gmail.com",
+      "password": "$2a$10$f4LokqjCqRsKHX3LUvZavOtPOF4g2gvoaA2ORBt1Dovmhiep7QAXS",
+      "fecha": "1998-01-03",
+      "genero": "femenino",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "no-image.png"
+   },
+   {
+      "id": 12,
+      "nombre": "Agustina",
+      "apellido": "Mamani",
+      "tel": 123123,
+      "email": "flor@gmail.com",
+      "password": "$2a$10$lrFloRP3PVKw4hW97TPc6.qVH5P57nLjnwX2CRQ77z8KccmIFVwwK",
+      "fecha": "1998-01-03",
+      "genero": "femenino",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "no-image.png",
+      "rol": "admin"
    }
 ]
