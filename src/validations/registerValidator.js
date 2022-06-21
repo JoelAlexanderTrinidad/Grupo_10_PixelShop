@@ -3,9 +3,10 @@ const usuarios = require('../data/users.json');
 
 module.exports = [
     check('nombre')
+        .custom(value => !/\s/.test(value)).withMessage('No se permiten espacios').bail()
         .isLength({min: 2}).withMessage('Debe ingresar como mínimo 2 letras').bail()
         .isAlpha().withMessage('El nombre debe contener solo letras'),
-
+        
     check('apellido')
         .isLength({min: 2}).withMessage('Debe ingresar como mínimo 2 letras').bail()
         .isAlpha().withMessage('El apellido debe contener solo letras'),

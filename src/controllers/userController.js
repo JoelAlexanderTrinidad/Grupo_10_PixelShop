@@ -52,6 +52,7 @@ module.exports={
             return res.redirect('/');   
         }
         else{
+            return res.send(req.body)
             return res.render('register',{
                
                 old: req.body,
