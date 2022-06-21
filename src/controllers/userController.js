@@ -163,10 +163,11 @@ module.exports={
             const userDelete = usuarios.filter(user => user.id != req.session.userLogin.id)
             const user = usuarios.find(user => user.id === req.session.userLogin.id)
 
-        fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", user.imagenPerfil))
+        if(user.imagenPerfil !== "no-image.png") {
+            fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", user.imagenPerfil))
+        }
         fs.writeFileSync(path.resolve(__dirname, "..", "data", "users.json"), JSON.stringify(userDelete, null, 3), "utf-8");
-
-        
+  
         req.session.destroy();
         res.cookie("userPixelShop", null, {maxAge : -1})
        

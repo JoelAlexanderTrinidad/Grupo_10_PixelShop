@@ -35,10 +35,11 @@
       "email": "Manuyagami95@gmail.com",
       "password": "$2a$10$Emu49YVl.EUqqKXokUZiBeLhJXNWhXlo8lzRckh3qm3bWo7fTnr3m",
       "fecha": "1995-02-02",
-      "genero": "on",
+      "genero": "masculino",
       "terminos": "on",
       "privacidad": "on",
-      "imagenPerfil": null
+      "imagenPerfil": "no-image.png",
+      "rol": "admin"
    },
    {
       "id": 5,
@@ -105,5 +106,19 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "no-image.png"
+   },
+   {
+      "id": 10,
+      "nombre": "Manuel",
+      "apellido": "Ramirez",
+      "tel": 1125373988,
+      "email": "m@gmail.com",
+      "password": "$2a$10$eucCojrVb6bT0mmpCKUZ5enjLQZDHgkxK.uFebifEOBcUSwUyhk7e",
+      "fecha": "1995-02-02",
+      "genero": "masculino",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "no-image.png",
+      "rol": "admin"
    }
 ]
