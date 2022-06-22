@@ -69,7 +69,7 @@ module.exports={
             
             fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'),JSON.stringify(productsModify, null, 3), 'utf8')
 
-        return res.redirect('/')
+        return res.redirect('/product/detail/' + product.id);
     },    
     store: (req,res) => {
         const {name, price, discount, category, description, gender,requeriment} = req.body;
@@ -101,7 +101,9 @@ module.exports={
         })
     },
     edit : (req,res) => {
-        const product = products.find(product => product.id === +req.params.id);
+        const producto = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "products.json"), "utf-8"));
+
+        const product = producto.find(product => product.id === +req.params.id);
        
             res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
             res.render('formEdit', {product, genders});   
