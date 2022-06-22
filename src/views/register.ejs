@@ -11,6 +11,7 @@
         </section>
         <section>
             <form action="" method="POST" enctype="multipart/form-data">
+              <div class="forms-datos">
                 <div class="datos">
                     <label for="nombre" >Nombre</label>
                     <input type="text" name="nombre" id="nombre" placeholder=" nombre" value="<%= locals.old && old.nombre ? old.nombre : null %>">
@@ -45,57 +46,27 @@
                     <label for="contraseña">Confirmar contraseña</label>
                     <input type="password" name="password2" id="contraseña" placeholder="vuelva a escribir la contraseña" >
                     <span style="color: #6e0707;"><%= locals.errores && errores.password2 ? errores.password2.msg : null %></span>
-                </div>
-
-                <div class="datos">
-                    <label for="fecha">Fecha de nacimiento</label>
-                    <input type="date" name="fecha" id="fecha" value="<%= locals.old && old.fecha ? old.fecha : null %>">
-                    <span style="color:#6e0707 ;"><%= locals.errores && errores.fecha ? errores.fecha.msg : null %></span>
-                </div>
-                <div class="datos">
-                    <h3>Género</h3>
-                <section class="section__genero">
+                </div> 
+              </div>        
+                <div class="register__imagen-perfil">
+                    <label for="image">Subir imágen de perfil</label>
+                    <input type="file" id="imagenPerfil" name="image" accept="image/*">
+                    <div>(opcional)</div>
                     
-                    <div id="genero">
-                        <div>
-                            <label for="fem">Femenino</label>
-                            <input type="radio" id="fem" name="genero" value="femenino">
-                        </div>
-                        <div>
-                            <label for="mas">Masculino</label>
-                            <input type="radio" id="mas" name="genero" value="masculino">
-                        </div>
-                        <div>
-                            <label for="otro">Otros</label>
-                            <input type="radio" id="otro" name="genero" value="otros">
-                        </div>
-                    </div>
-                    <span style="color:#6e0707 ;"><%= locals.errores && errores.genero ? errores.genero.msg : null %></span>
                 </div>
-                
-                </section>
-           
-          
                 <section class="requied">
                     <div >
                         <input type="checkbox" id="terminos" name="terminos"  <%= locals.old && old.terminos ? 'checked' : null %>>
-                        <label for="terminos">He leído y estoy de acuerdo con los <span>términos y condiciones de uso</span></label>
+                        <label for="terminos">Acepto los términos y condiciones de uso</label>
                         <span style="color: #6e0707;"><%= locals.errores && errores.terminos ? errores.terminos.msg : null %></span>
                     </div>
                     <div>
                         <input type="checkbox" id="privacidad" name="privacidad"  <%= locals.old && old.privacidad ? 'checked' : null %>>
-                        <label for="privacidad">He leído y acepto las <span>políticas de privacidad</span></label>
+                        <label for="privacidad">He leído y acepto las políticas de privacidad</label>
                         <span style="color:#6e0707;"><%= locals.errores && errores.privacidad ? errores.privacidad.msg : null %></span>
                     </div>
                 </section>
-
-                    <div class="register__imagen-perfil">
-                        <label for="image">Subir imágen de perfil</label>
-                        <input type="file" id="imagenPerfil" name="image" accept="image/*">
-                        <div>(opcional)</div>
-                        
-                    </div>
-            
+           
                     <div class="button">
                         <button type="submit">REGISTRATE</button>
                 </div>

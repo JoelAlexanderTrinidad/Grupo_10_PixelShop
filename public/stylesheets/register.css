@@ -20,7 +20,7 @@
     flex-direction: column;
 }
 
-.main_register form .datos{
+.main_register .forms-datos .datos{
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -79,9 +79,6 @@
     background-color: rgba(255, 255, 255, 0)
 }
 
-.register__imagen-perfil{
-    margin: 50px 0 ;
-}
 
 .register__imagen-perfil div{
     color: violet;
@@ -92,11 +89,11 @@
         background-size: cover;
     }
     
-    .main_register form {
+    .main_register .forms-datos {
         display: flex;
         flex-wrap: wrap;
     }
-    .main_register form .datos {
+    .main_register .forms-datos .datos {
         display: flex;
         flex-direction: column;
         padding: 0px 15px;

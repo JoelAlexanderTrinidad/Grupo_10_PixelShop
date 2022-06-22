@@ -38,12 +38,6 @@ module.exports = [
             return true;
         }).withMessage('¡Las contraseñas no coinciden!'),
 
-    check('fecha')
-        .notEmpty().withMessage('Debe ingresar su fecha de nacimiento'),
-    
-    check('genero')
-        .isString('m' || 'f' || 'otros').withMessage('Debes elegir un género'),
-
     check('terminos')
         .isString('on').withMessage('Debes aceptar los términos y condiciones'),
 

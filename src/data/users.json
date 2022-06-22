@@ -147,5 +147,17 @@
       "privacidad": "on",
       "imagenPerfil": "no-image.png",
       "rol": "admin"
+   },
+   {
+      "id": 13,
+      "nombre": "laura",
+      "apellido": "akkad",
+      "tel": 135421,
+      "email": "d@gmail.com",
+      "password": "$2a$10$6HNxFPwOdjMWc.geJ5PAQOZ5.rH8dv/TkWCMXwg9MCAPTOHtGAOES",
+      "fecha": "1998-01-03",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "no-image.png"
    }
 ]

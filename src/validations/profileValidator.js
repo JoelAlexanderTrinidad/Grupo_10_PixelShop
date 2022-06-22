@@ -17,8 +17,7 @@ module.exports = [
     check('email')
         .notEmpty().withMessage('Debes ingresar un email').bail()
         .isEmail().withMessage('Email inválido'),
-        
-
+    
     body('passAntiguo')
         .notEmpty().withMessage('Debes ingresar la contraseña antigua')
         .custom((value, {req}) =>{
