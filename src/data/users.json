@@ -105,7 +105,8 @@
       "genero": "masculino",
       "terminos": "on",
       "privacidad": "on",
-      "imagenPerfil": "no-image.png"
+      "imagenPerfil": "no-image.png",
+      "rol": "admin"
    },
    {
       "id": 10,

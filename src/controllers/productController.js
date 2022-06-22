@@ -5,10 +5,11 @@ const genders =  require('../data/genders.json');
 
 module.exports={
     productDetail:(req,res)=>{
+        const producto = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "products.json"), "utf-8"));
+
         const {id} = req.params;
-        const product = products.find(product => product.id === +id);
+        const product = producto.find(product => product.id === +id);
         const misGeneros = product.gender;
-    
     
         res.render('productDetail',{
             product,
@@ -59,6 +60,7 @@ module.exports={
                 return product 
                 
             })
+
             if(req.file){
                if(fs.existsSync(path.resolve(__dirname,'..','public','images',product.img)) && product.img !== "noimage.jpeg"){
                    fs.unlinkSync(path.resolve(__dirname,'..','public','images',product.img))
@@ -102,8 +104,7 @@ module.exports={
         const product = products.find(product => product.id === +req.params.id);
        
             res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
-            res.render('formEdit', {product, genders});
-        
+            res.render('formEdit', {product, genders});   
     },
     remove : (req,res) => {
         const productFilter = products.filter(product => product.id !== +req.params.id);
