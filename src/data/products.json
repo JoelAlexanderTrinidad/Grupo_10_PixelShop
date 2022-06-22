@@ -2,10 +2,10 @@
    {
       "id": 1,
       "name": "Doom",
-      "price": 360,
+      "price": 3600,
       "discount": 10,
       "category": "Recomendados",
-      "description": "Qué onda gato si anda deaa",
+      "description": "Qué onda gato si anda deaah",
       "img": "j1.jpg",
       "requeriment": [
          "Windows 7/10 (64 bits)",
@@ -17,7 +17,7 @@
       "gender": [
          "accion",
          "aventura",
-         "shooter"
+         "multijugador"
       ]
    },
    {

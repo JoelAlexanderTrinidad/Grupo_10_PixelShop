@@ -105,7 +105,6 @@ module.exports={
 
         const product = producto.find(product => product.id === +req.params.id);
        
-            res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
             res.render('formEdit', {product, genders});   
     },
     remove : (req,res) => {

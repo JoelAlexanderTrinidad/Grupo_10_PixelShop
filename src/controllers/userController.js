@@ -136,7 +136,7 @@ module.exports={
           req.session.userLogin = {
             ...req.session.userLogin, nombre
           }
-          return res.redirect("/");
+          return res.redirect("/users/profile");
         
         }else{
         //   console.log(errors);
@@ -159,8 +159,8 @@ module.exports={
         });
     },
     removeUser : (req,res) => {
-            
-            const userDelete = usuarios.filter(user => user.id != req.session.userLogin.id)
+        const usuario = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
+            const userDelete = usuario.filter(user => user.id != req.session.userLogin.id)
             const user = usuarios.find(user => user.id === req.session.userLogin.id)
 
         if(user.imagenPerfil !== "no-image.png") {
