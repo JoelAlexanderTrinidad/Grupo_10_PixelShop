@@ -113,11 +113,38 @@ Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final 
     -Priorizar las tareas.
     -Seguir escuchándonos y tener empatía entre nosotros.
     -Seguir complementándonos como equipo.
+    
+    
+ # **RETROSPECTIVA SPRINT 5:**
+
+### Hacer más:
+
+    -Testear que todo funcione correctamente
+    -Implementar funciones extras.
+    -Trabajar en ramas. 
+
+### Hacer menos:
+
+    -Dejar de lado los detalles menores. 
+       
+### Dejar de hacer:
+
+    - Dejar de trabajar todos en la misma rama. 
+        
+### Comenzar a hacer:
+
+    -Organización con fechas estipuladas para saber como viene la entrega.
+    -Explicar los procesos de las tareas asignadas. 
+    - Planificación de ideas para el meet, para la optimización del tiempo. 
  
- 
- 
- 
- 
+### Continuar haciendo:
+    
+    -Debatir acerca de las propuestas de nuestros compañeros.
+    -Seguir consultando a los profes.
+    -Conectarnos a clase de apoyo para preguntar dudas.
+    -Solucionar los conflictos imprevistos.
+    -Seguir juntandonos con la misma frecuencia.
+    -Seguir complementándonos como equipo.
  
  
  
