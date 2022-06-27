@@ -22,7 +22,12 @@
                     <hr>
                     <div id="buy-info">
                         <section class="main__section-buy">
-                            <h2>$<%= product.price %> <span>ARS</span></h2>
+                            <% if (+product.discount !== 0) { %>
+                                <h2>$<%= product.price - (product.price * product.discount) / 100 %><span>ARS</span></h2>
+                                <h4 class="precioAnterior"><strike>$<%= product.price %></strike> <span><%= product.discount %>% OFF</span></h4>
+                            <% }else{ %>
+                                <h2><%= product.discount %></h2> 
+                                <% } %>
                             <div>
                                 <button><a href="/product/cart/"><i class="fa-solid fa-cart-shopping"></i>COMPRAR</a></button> 
                                 <button><a href=""><i class="fa-brands fa-whatsapp"></i>Asesor de ventas</a></button> 
@@ -33,7 +38,7 @@
                             <h3>Resumen</h3>
                             <p class="main__section-resumen"><%= product.description %></p>
                             <ul id="especificaciones">
-                                <li>Precio: <%= product.price %> </li>
+                                <li>Precio: $<%= product.price - (product.price * product.discount) / 100 %> (<%= product.discount %>%OFF)</li>
                                 <li></li>
                                 <li>Idioma texto: xxxx</li>
                                 <li>Idioma voz: xxxx</li>
