@@ -15,7 +15,10 @@ let cols={
 };
 let config ={
     tableName : "genders",
-    underscored :true
+    timestamps: true,
+        createdAt: 'created_at',
+        updateAt: 'update_at',
+        deleteAt: 'deleted_at'
 };
 const Gender = sequelize.difine(alias, cols, config)
     return Gender 
