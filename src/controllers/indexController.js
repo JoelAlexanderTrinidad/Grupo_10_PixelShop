@@ -1,19 +1,46 @@
-const products = require("../data/products.json");
-const adminCheck = require("../middlewares/adminCheck");
+// const products = require("../data/products.json");
+// const adminCheck = require("../middlewares/adminCheck");
+const db = require('../database/models');
+const { Op } = require("sequelize");
 
 module.exports={
     index:(req,res)=> {
-        const OfertasEspeciales = products.filter(product => product.category.toLocaleLowerCase() === "ofertas especiales");
+        /* const OfertasEspeciales = products.filter(product => product.category.toLocaleLowerCase() === "ofertas especiales");
         const Destacados = products.filter(product => product.category === "Destacados");
-        const Recomendados = products.filter(product => product.category === "Recomendados");
+        const Recomendados = products.filter(product => product.category === "Recomendados"); */
 
-        return res.render('index', {
-            products, OfertasEspeciales, Destacados, Recomendados, session : req.session
+        let destacados = db.Product.findAll({
+            where: {
+                category: 'Destacados'
+            }
         })
+        let ofertasEpeciales = db.Product.findAll({
+            where: {
+                category: 'Ofertas especiales'
+            }
+        })
+        let recomendados = db.Product.findAll({
+            where: {
+                category: 'Recomendados'
+            }
+        })
+        Promise.all([destacados, ofertasEpeciales, recomendados])
+            .then(([destacados, ofertasEpeciales, recomendados]) => {
+                return res.render('index', {
+                    destacados,
+                    ofertasEpeciales,
+                    recomendados
+                })
+            })
+            .catch(error => console.log(error))        
     },
     admin:(req,res)=> {
-        return res.render('admin', {
-            products
-        })
+        db.Product.findAll()
+            .then(products => {
+                return res.render('admin', {
+                    products
+                })
+            })
+            .catch(error => console.log(error))
     }
 }

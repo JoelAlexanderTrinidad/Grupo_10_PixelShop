@@ -1,16 +1,21 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'Users';
+    const alias = 'User';
     const cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         nombre: {
             type: dataTypes.STRING(45),
             allowNull: false
         },
         apellido: {
+            type: dataTypes.STRING(45),
+            allowNull: false
+        },
+        tel: {
             type: dataTypes.STRING(45),
             allowNull: false
         },
@@ -49,7 +54,7 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     const config = {
-        tableName: 'usuarios',
+        tableName: 'users',
         timestamps: true,
         createdAt: 'created_at',
         updateAt: 'update_at',
@@ -57,6 +62,16 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const User = sequelize.define(alias, cols, config);
+
+    /* User.associate = function(modelos) {
+        User.belongsToMany(modelos.Product,{
+            as: 'products',
+            through: 'orders',
+            foreignKey: 'users_id',
+            otherKey: 'products_id',
+            timestamps: false
+        })
+    } */
 
     return User;
 }

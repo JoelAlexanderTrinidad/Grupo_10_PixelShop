@@ -30,12 +30,19 @@ module.exports = (sequelize, datatypes) => {
     let config = {
         tableName : "products",
         timestamps : true,
-        createdAt : "created_at",
-        updateAt : "update_at",
-        deleteAt : "deleted_at"
-
+        underscore : true
     }
-    const product = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(alias, cols, config);
+/* 
+    Product.associate = function(modelos) {
+        Product.belongsToMany(modelos.User,{
+            as: 'users',
+            through: 'orders',
+            foreignKey: 'products_id',
+            otherKey: 'users_id',
+            timestamps: false
+        })
+    } */
 
-    return product
+    return Product
 }

@@ -6,266 +6,115 @@
       "discount": 10,
       "category": "Recomendados",
       "description": "Qué onda gato si anda deaah",
-      "img": "j1.jpg",
-      "requeriment": [
-         "Windows 7/10 (64 bits)",
-         "intel 5 / MD ryzen 3",
-         "8 gb",
-         "GTX 670 / AMD Radeon HD 7870",
-         "55 gb"
-      ],
-      "gender": [
-         "accion",
-         "aventura",
-         "multijugador"
-      ]
+      "img": "j1.jpg"
    },
    {
-      "id": 4,
+      "id": 2,
       "name": "Mortal Kombat 11",
       "price": 1199,
       "discount": 22,
       "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j4.jpg",
-      "gender": [
-         "lucha",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel 5 / AMD Phenom 2",
-         "8 gb",
-         "GTX 670 / AMD Radeon HD 7950",
-         "50 gb"
-      ]
+      "img": "j4.jpg" 
    },
    {
-      "id": 5,
+      "id": 3,
       "name": "Red dead redeption II",
       "price": 2499,
       "discount": 30,
       "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j5.jpg",
-      "gender": [
-         "accion",
-         "aventura"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel 5 / AMD FX-6300",
-         "8 gb",
-         "GTX 770 / Radeon R9",
-         "150 gb"
-      ]
+      "img": "j5.jpg"  
    },
    {
-      "id": 6,
+      "id": 4,
       "name": "God of War",
       "price": 4199,
       "discount": 25,
       "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j6.jpg",
-      "gender": [
-         "accion",
-         "aventura"
-      ],
-      "requeriment": [
-         "Windows 10",
-         "Intel 5 / AMD ryzen 3",
-         "8 gb",
-         "GTX 960 / AMD R9",
-         "70 gb"
-      ]
+      "img": "j6.jpg"   
    },
    {
-      "id": 7,
+      "id": 5,
       "name": "Dragon ball xenoverse XV",
-      "price": 439.99,
+      "price": 43999,
       "discount": 22,
       "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j7.jpg",
-      "gender": [
-         "accion",
-         "rpg",
-         "aventura"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel Pentium / AMD Phenom",
-         "2 gb",
-         "GT 650",
-         "32 gb"
-      ]
+      "img": "j7.jpg"
    },
    {
-      "id": 8,
+      "id": 6,
       "name": "The last of us",
-      "price": 399.99,
+      "price": 39999,
       "discount": 15,
       "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j8.jpg",
-      "gender": [
-         "accion",
-         "aventura"
-      ],
-      "requeriment": [
-         "Windows 10",
-         "AMD Jaguar",
-         "8 gb",
-         "GTX 1030",
-         "80 gb"
-      ]
+      "img": "j8.jpg"
+
    },
    {
-      "id": 9,
+      "id": 7,
       "name": "Grand Theft Auto V",
-      "price": 541.88,
+      "price": 54188,
       "discount": 20,
       "category": "Destacados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j9.jpg",
-      "gender": [
-         "accion",
-         "aventura",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel Core 2 Quad / AMD Phenom",
-         "4 gb",
-         "98 00GT",
-         "72 gb"
-      ]
+      "img": "j9.jpg"
    },
    {
-      "id": 10,
+      "id": 8,
       "name": "Dragon ball fighters Z",
       "price": 3000,
       "discount": 40,
       "category": "Destacados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j10.jpg",
-      "gender": [
-         "accion",
-         "lucha",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel 5 / AMD FX-4350",
-         "4 gb",
-         "GTX 650 TI / Radeon HD 6870",
-         "6 gb"
-      ]
+      "img": "j10.jpg"
    },
    {
-      "id": 11,
+      "id": 9,
       "name": "Call of Duty Black ops III",
-      "price": 260.08,
+      "price": 26008,
       "discount": 10,
       "category": "Recomendados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j11.jpg",
-      "gender": [
-         "accion",
-         "shooter",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel i3/ AMD PHENOM2",
-         "6 gb",
-         "GTX 470/ RADEON HD 6970",
-         "100 gb"
-      ]
+      "img": "j11.jpg"
    },
    {
-      "id": 12,
+      "id": 10,
       "name": "Resident Evil 2",
-      "price": 819.99,
+      "price": 81999,
       "discount": 22,
       "category": "Recomendados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "j12.jpg",
-      "gender": [
-         "aventura",
-         "terror"
-      ],
-      "requeriment": [
-         "Windows 7",
-         "Intel i5/ AMD FX6300",
-         "8 gb",
-         "GTX 760/ AMD RADEON R7",
-         "26 gb"
-      ]
+      "img": "j12.jpg"
    },
    {
-      "id": 13,
+      "id": 11,
       "name": "CyberPunk",
       "price": 2199,
       "discount": 25,
       "category": "Recomendados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "juego-muestra.jpg",
-      "gender": [
-         "accion",
-         "aventura",
-         "shooter"
-      ],
-      "requeriment": [
-         "Windows 10",
-         "Intel i5/ AMD FX",
-         "8 gb",
-         "GTX 970/ AMD RADEOM RX470",
-         "70 gb"
-      ]
+      "img": "juego-muestra.jpg"
    },
    {
-      "id": 14,
+      "id": 12,
       "name": "Aura Kingdom",
       "price": 1500,
       "discount": 40,
       "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "oferta-1.jpg",
-      "gender": [
-         "rpg",
-         "aventura",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows XP",
-         "Pentium 4/ AMD K8",
-         "4 gb",
-         "GFORCE 6600/ RADEOM X1600",
-         "6 gb"
-      ]
+      "img": "oferta-1.jpg"
    },
    {
-      "id": 15,
+      "id": 13,
       "name": "Lost arks",
       "price": 2360,
       "discount": 50,
       "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "img": "oferta-2.jpg",
-      "gender": [
-         "rpg",
-         "aventura",
-         "shooter",
-         "multijugador"
-      ],
-      "requeriment": [
-         "Windows 10",
-         "Intel i3, AMD RYZEN 3",
-         "8 gb",
-         "GTX 460 / AMD HD 6850",
-         "50 gb "
-      ]
+      "img": "oferta-2.jpg"
    }
 ]

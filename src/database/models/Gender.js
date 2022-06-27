@@ -20,6 +20,7 @@ let config ={
         updateAt: 'update_at',
         deleteAt: 'deleted_at'
 };
-const Gender = sequelize.difine(alias, cols, config)
+
+const Gender = sequelize.define(alias, cols, config);
     return Gender 
 }
