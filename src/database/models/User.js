@@ -27,14 +27,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        fecha: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        genero: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
         terminos: {
             type: dataTypes.STRING(45),
             allowNull: false
@@ -55,10 +47,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     const config = {
         tableName: 'users',
-        timestamps: true,
-        createdAt: 'created_at',
-        updateAt: 'update_at',
-        deleteAt: 'deleted_at'
+        timestamps: false,
     }
 
     const User = sequelize.define(alias, cols, config);

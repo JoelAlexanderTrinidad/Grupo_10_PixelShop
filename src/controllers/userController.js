@@ -1,4 +1,4 @@
-const usuarios = require('../data/users.json');
+const { User } = require('../database/models');
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
@@ -16,84 +16,76 @@ module.exports={
     processRegister:(req, res)=>{
         const errors = validationResult(req);
         
-
         if(errors.isEmpty()){
             
-            const {nombre, apellido, tel, email, password, fecha, genero, terminos, privacidad,rol} = req.body;
-    
-            const lastId = usuarios.length !== 0 ? usuarios[usuarios.length - 1].id : 0;
-           
-            const nuevoUsuario = {
-                id: +lastId + 1,
-                nombre: nombre.trim(),
-                apellido: apellido.trim(),
-                tel: +tel.trim(),
+            let {id, nombre, apellido, tel, email, password, terminos, privacidad} = req.body;
+
+            User.create({
+                id,
+                nombre,
+                apellido,
+                tel,
                 email,
                 password: bcryptjs.hashSync(password, 10),
-                fecha,
-                genero,
                 terminos,
                 privacidad,
                 imagenPerfil: req.file ? req.file.filename : 'no-image.png',
-                rol
-            };
-
-            usuarios.push(nuevoUsuario);
-
-            fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'users.json'), JSON.stringify(usuarios, null, 3), 'utf-8');
-
-            const {id} = nuevoUsuario
+                rol : 'user'
+            })
+            .then(usuarioNuevo => {
                 req.session.userLogin = {
-                id,
-                nombre : nombre.trim(),
-                rol
-            }
-
-            return res.redirect('/');   
-        }
-        else{
-            return res.render('register',{
-               
-                old: req.body,
-                errores: errors.mapped()
+                    id : usuarioNuevo.id,
+                    nombre : usuarioNuevo.nombre,
+                    apellido : usuarioNuevo.apellido,
+                    imagenPerfil : usuarioNuevo.imagenPerfil,
+                    rol : usuarioNuevo.rol
+                }
+                res.locals.user = req.session.userLogin;
+                res.redirect('/');
+            })
+            .catch(error => console.log(error))
+        }else{
+            res.render('register',{
+                errors: errors.mapped(),
+                old: req.body
             });
         }
-       
     },
     processLogin:(req,res)=>{
     let errors = validationResult (req);
         if(errors.isEmpty()){
-            const {id, nombre, apellido, rol} = usuarios.find(usuario => usuario.email === req.body.email);
-            
-            req.session.userLogin = {
-                id, 
-                nombre,
-                apellido,
-                rol
-            }
-           
-
-            if(req.body.recordame){
-                res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
-              }
-
-            return res.redirect("/");
+            User.findOne({
+                where : { email : req.body.email }
+            })           
+            .then(usuario => {
+                req.session.userLogin = {
+                    id : usuario.id,
+                    nombre : usuario.nombre,
+                    apellido : usuario.apellido,
+                    rol : usuario.rol
+                }
+                if(req.body.recordame){
+                    res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
+                }
+                res.locals.user = req.session.user;
+                res.redirect("/");
+            })
+            .catch(error => console.log(error))
         }else{
-
-            return res.render('login',{
-                errores :errors.mapped(),
+            res.render('login',{
+                errors :errors.mapped(),
                 old: req.body
             });
-        }
-             
+        }         
     },
     editProfile: (req,res) => {
-        const usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
-        const usuario = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
-        return res.render("editProfile",{
-            usuario,
-            
+        User.findByPk(req.session.userLogin.id)
+        .then(usuario => {
+            return res.render("editProfile", {
+                usuario
+            })
         })
+        .catch(error => console.log(error))
     },
     logout: (req,res) => {
         req.session.destroy();
@@ -102,14 +94,19 @@ module.exports={
     },
     updateProfile : (req,res) => {
         let errors = validationResult(req);
-        /* console.log(req.session.userLogin)
-        return res.send(req.session.userLogin); */
         if (errors.isEmpty()) {
-          const {nombre, apellido, tel, email, fecha} = req.body;
-          const {id, password, imagenPerfil} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
-          
-          
-          const usuarioModificados = usuarios.map((usuario) => {
+            
+            User.update({
+                ...req.body,
+            },{
+                where : { id : req.session.userLogin.id}
+            })
+            .then(() => {
+                return res.redirect("users/profile")
+            })
+            .catch(error => console.log(error))
+
+     /*      const usuarioModificados = usuarios.map((usuario) => {
             if (usuario.id === id) {
               let usuarioModificados = {
                 ...usuario,
@@ -144,8 +141,8 @@ module.exports={
             usuario : req.body,
             errors : errors.mapped()
           });
-        }
-    },
+        } */
+    }},
     profile : (req, res) => {
         const usuario = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
         const {tel, email, fecha, imagenPerfil, nombre, apellido} = usuario.find(usuario => usuario.id === req.session.userLogin.id);
