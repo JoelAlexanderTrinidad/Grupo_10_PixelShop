@@ -93,20 +93,14 @@ module.exports={
         return res.redirect("/")
     },
     updateProfile : (req,res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            
             User.update({
                 ...req.body,
                 imagenPerfil: req.file ? req.file.filename : req.session.userLogin.imagenPerfil
             },{
-                where : { id : req.session.userLogin.id}
+                where : { id : req.session.userLogin.id }
             })
-            .then((usuario) => {
-                return res.send(usuario)
-                return res.redirect('profile',{
-                    usuario
-                })
+            .then(() => {
+                res.redirect("profile")
             })
             .catch(error => console.log(error))
 
@@ -146,18 +140,15 @@ module.exports={
             errors : errors.mapped()
           });
         } */
-    }},
+    },
     profile : (req, res) => {
-        const usuario = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
-        const {tel, email, fecha, imagenPerfil, nombre, apellido} = usuario.find(usuario => usuario.id === req.session.userLogin.id);
-        return res.render('profile',{
-            nombre,
-            apellido,
-            tel,
-            email,
-            fecha,
-            imagenPerfil
-        });
+        User.findByPk(req.session.userLogin.id)
+        .then(user => {
+            res.render("profile", {
+                user
+            })
+        })
+        .catch(error => console.log(error))
     },
     removeUser : (req,res) => {
         const usuario = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
