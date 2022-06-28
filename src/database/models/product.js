@@ -8,15 +8,19 @@ module.exports = (sequelize, datatypes) => {
             allowNull : false
         },
         name : {
-            type : datatypes.STRING(45),
+            type : datatypes.STRING(100),
             allowNull : false,
         },
         price : {
-            type : datatypes.INTEGER,
+            type : datatypes.DECIMAL(10,0),
             allowNull : false,
         },
         discount : {
             type : datatypes.INTEGER,
+            allowNull : false,
+        },
+        category : {
+            type : datatypes.STRING(100),
             allowNull : false,
         },
         description : {
@@ -29,8 +33,7 @@ module.exports = (sequelize, datatypes) => {
     }
     let config = {
         tableName : "products",
-        timestamps : true,
-        underscore : true
+        timestamps : true
     }
     const Product = sequelize.define(alias, cols, config);
 /* 

@@ -46,13 +46,13 @@ module.exports={
         .catch(error=> console.log(error))
     },
     store: (req,res) => {
-        const {name, price, discount,category, description} = req.body;
+        const {id, name, price, discount,category, description } = req.body;
         db.Product.create(
-        {
+        {   id : id, 
             name: name.trim(),
             price: +price,
             discount:+discount,
-            category,
+            category: category,
             description: description.trim(),
             img: req.file ? req.file.filename : 'default-image.jpg',
         })
