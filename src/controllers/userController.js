@@ -98,11 +98,15 @@ module.exports={
             
             User.update({
                 ...req.body,
+                imagenPerfil: req.file ? req.file.filename : req.session.userLogin.imagenPerfil
             },{
                 where : { id : req.session.userLogin.id}
             })
-            .then(() => {
-                return res.redirect("users/profile")
+            .then((usuario) => {
+                return res.send(usuario)
+                return res.redirect('profile',{
+                    usuario
+                })
             })
             .catch(error => console.log(error))
 
