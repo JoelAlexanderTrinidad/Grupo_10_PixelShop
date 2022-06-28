@@ -36,6 +36,7 @@
       "password": "$2a$10$5j6XydsjaPxUv0EPNXhYRO6vap4hV5eRX5vSOJTjaxnMq5.7qiQDW",
       "terminos": "on",
       "privacidad": "on",
-      "imagenPerfil": "no-image.png"
+      "imagenPerfil": "no-image.png",
+      "rol": "admin"
    }
 ]

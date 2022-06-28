@@ -98,10 +98,12 @@ module.exports={
     },    
 
     search : (req,res) => {
-        let keyword = req.query
+        let {keyword} = req.query
         db.Product.findAll({
             where:{
-                [Op.substring]:[keyword]
+                name: {
+                    [Op.substring]:[keyword]
+                }
             }
         })
         .then(products=>{
