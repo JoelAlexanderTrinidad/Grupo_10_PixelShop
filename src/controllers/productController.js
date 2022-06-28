@@ -102,7 +102,7 @@ module.exports={
         db.Product.findAll({
             where:{
                 name: {
-                    [Op.substring]:[keyword]
+                    [Op.substring]:[keyword.toLowerCase()]
                 }
             }
         })
@@ -115,11 +115,12 @@ module.exports={
     },
     
     remove : (req,res) => {
-        const productFilter = products.filter(product => product.id !== +req.params.id);
-        const product = products.find(product => product.id === +req.params.id)
-
-        fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", product.img))
-        fs.writeFileSync(path.resolve(__dirname, "..", "data", "products.json"), JSON.stringify(productFilter, null, 3), "utf-8");
-        return res.redirect("/");
+        db.Product.destroy({
+            where : { id : req.params.id}
+        })
+        .then(() => {
+            return res.redirect("/");
+        })
+        .catch(error => console.log(error))
     }
 }
