@@ -1,36 +1,63 @@
-const products = require('../data/products.json');
+const db = require('../database/models');
+const { Op } = require("sequelize");
+/* const products = require('../data/products.json'); */
 const path = require('path');
-const fs = require('fs');
-const genders =  require('../data/genders.json');
+/* const fs = require('fs'); */
+/* const genders =  require('../data/genders.json'); */
 
 module.exports={
     productDetail:(req,res)=>{
-        const producto = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "products.json"), "utf-8"));
+        /* const producto = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "products.json"), "utf-8"));
 
         const {id} = req.params;
         const product = producto.find(product => product.id === +id);
-        const misGeneros = product.gender;
-    
-        res.render('productDetail',{
-            product,
-            misGeneros,
-            genders,
-            products,
-        })
+        const misGeneros = product.gender; */
+
+        const product = db.Product.findByPk(req.params.id);
+        const misGeneros = db.Gender.findAll();
+        const products = db.Product.findAll();
+        Promise.all([product, misGeneros, products])
+        .then(([product, misGeneros, products])=> {
+            return res.render('productDetail',{
+                product,
+                misGeneros, //FALTA ASOCIAR LOS GENEROS!!!
+                products
+            })
+        }
+        )
+        .catch(error=> console.log(error))
+        
     },
     productCart:(req,res)=>{
-        res.render('productCart', {
-            products
+        db.Product.findAll()
+        .then(products => {
+            return  res.render('productCart', {
+                products})
         })
+        .catch(error=> console.log(error))
     },
     add:(req,res)=>{
-
-    
-        res.render('formCrear',{
-            genders
+        db.Gender.findAll()
+        .then(genders =>{
+            return  res.render('formCrear',{
+                genders
+            })    
         })
-       
-
+        .catch(error=> console.log(error))
+    },
+    store: (req,res) => {
+        const {name, price, discount,category, description} = req.body;
+        db.Product.create(
+        {
+            name: name.trim(),
+            price: +price,
+            discount:+discount,
+            category,
+            description: description.trim(),
+            img: req.file ? req.file.filename : 'default-image.jpg',
+        })
+        .then(res.redirect('/'))
+        .catch(error=> console.log(error))          
     },
    
     update: (req,res)=>{
@@ -71,27 +98,7 @@ module.exports={
 
         return res.redirect('/product/detail/' + product.id);
     },    
-    store: (req,res) => {
-        const {name, price, discount, category, description, gender,requeriment} = req.body;
 
-        let lastId = products[products.length -1].id;
-        let newProduct = {
-            id : +lastId +1,
-            name: name.trim(),
-            price: +price,
-            discount:+discount,
-            category,
-            description: description.trim(),
-            img: req.file ? req.file.filename : 'default-image.jpg',
-            gender,
-            requeriment
-        };
-        products.push(newProduct);
-
-        fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'),JSON.stringify(products,null, 3),'utf-8');
-
-        return res.redirect('/');        
-    },
     search : (req,res) => {
         const {keyword} = req.query;
         const searchProduct = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()));
