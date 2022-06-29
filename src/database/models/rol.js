@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Rol.init({
     name: {
     allowNull: false,
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   }}, {
     sequelize,
     modelName: 'Rol',

@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Gender.init({
     name: {
       allowNull: false,
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     }
   }, {
     sequelize,
