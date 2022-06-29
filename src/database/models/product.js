@@ -1,51 +1,28 @@
-module.exports = (sequelize, datatypes) => {
-    let alias = "Product";
-    let cols = {
-        id: {
-            type : datatypes.INTEGER,
-            primaryKey : true,
-            autoIncrement : true,
-            allowNull : false
-        },
-        name : {
-            type : datatypes.STRING(100),
-            allowNull : false,
-        },
-        price : {
-            type : datatypes.DECIMAL(10,0),
-            allowNull : false,
-        },
-        discount : {
-            type : datatypes.INTEGER,
-            allowNull : false,
-        },
-        category : {
-            type : datatypes.STRING(100),
-            allowNull : false,
-        },
-        description : {
-            type : datatypes.TEXT,
-            allowNull : false
-        },
-        img : {
-            type : datatypes.STRING(100),
-        }
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Product extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
     }
-    let config = {
-        tableName : "products",
-        timestamps : true
-    }
-    const Product = sequelize.define(alias, cols, config);
-/* 
-    Product.associate = function(modelos) {
-        Product.belongsToMany(modelos.User,{
-            as: 'users',
-            through: 'orders',
-            foreignKey: 'products_id',
-            otherKey: 'users_id',
-            timestamps: false
-        })
-    } */
-
-    return Product
-}
+  }
+  Product.init({
+    name: DataTypes.STRING,
+    price: DataTypes.DECIMAL,
+    discount: DataTypes.INTEGER,
+    category: DataTypes.STRING,
+    description: DataTypes.TEXT,
+    img: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Product',
+  });
+  return Product;
+};
