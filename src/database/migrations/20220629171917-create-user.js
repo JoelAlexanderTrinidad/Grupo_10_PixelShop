@@ -42,7 +42,13 @@ module.exports = {
       },
       rolId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'rols'
+          },
+          key : 'id'
+        }
       },
       createdAt: {
         allowNull: false,
