@@ -9,7 +9,7 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "image-1654029888549.jpg",
-      "rol": "admin"
+      "rolId": 1
    },
    {
       "id": 2,
@@ -21,7 +21,7 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "no-image.png",
-      "rol": "admin"
+      "rolId": 2
    },
    {
       "id": 3,
@@ -33,6 +33,6 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "no-image.png",
-      "rol": "admin"
+      "rolId": 2
    }
 ]

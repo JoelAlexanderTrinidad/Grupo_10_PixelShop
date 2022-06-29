@@ -30,7 +30,7 @@ module.exports={
                 terminos,
                 privacidad,
                 imagenPerfil: req.file ? req.file.filename : 'no-image.png',
-                rol : 'user'
+                rolId : '1'
             })
             .then(usuarioNuevo => {
                 req.session.userLogin = {
@@ -38,7 +38,7 @@ module.exports={
                     nombre : usuarioNuevo.nombre,
                     apellido : usuarioNuevo.apellido,
                     imagenPerfil : usuarioNuevo.imagenPerfil,
-                    rol : usuarioNuevo.rol
+                    rolId : usuarioNuevo.rolId
                 }
                 res.locals.user = req.session.userLogin;
                 res.redirect('/');
@@ -62,7 +62,7 @@ module.exports={
                     id : usuario.id,
                     nombre : usuario.nombre,
                     apellido : usuario.apellido,
-                    rol : usuario.rol
+                    rolId : usuario.rolId
                 }
                 if(req.body.recordame){
                     res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
