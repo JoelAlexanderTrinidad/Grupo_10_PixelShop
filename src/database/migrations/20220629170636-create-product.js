@@ -27,6 +27,10 @@ module.exports = {
       img: {
         type: Sequelize.STRING
       },
+      ranking: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

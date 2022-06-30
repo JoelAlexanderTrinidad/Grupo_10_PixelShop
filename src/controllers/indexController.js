@@ -11,8 +11,12 @@ module.exports={
 
         let destacados = db.Product.findAll({
             where: {
-                category: 'Destacados'
-            }
+                ranking: {
+                    [Op.gte] : 8
+                }
+            },
+			order : [['ranking','DESC']],
+            limit: 2
         })
         let ofertasEpeciales = db.Product.findAll({
             where: {
@@ -24,10 +28,16 @@ module.exports={
 			limit : 6
             }
         )
+        /* >>>>>>>>> CHECKEAR RECOMENDADOS <<<<<<<<<<<< >:C*/
         let recomendados = db.Product.findAll({
             where: {
-                
-            }
+                createdAt: {
+                    [Op.lt]: new Date(),
+                    [Op.gt]: new Date(new Date() - 24 * 60 * 60 * 1000)
+                  }
+                },
+                order: [['createdAt', 'ASC']],
+                limit: 6
         })
         Promise.all([destacados, ofertasEpeciales, recomendados])
             .then(([destacados, ofertasEpeciales, recomendados]) => {
