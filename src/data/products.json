@@ -4,7 +4,6 @@
       "name": "Doom",
       "price": 3600,
       "discount": 10,
-      "category": "Recomendados",
       "description": "Qué onda gato si anda deaah",
       "img": "j1.jpg"
    },
@@ -13,7 +12,6 @@
       "name": "Mortal Kombat 11",
       "price": 1199,
       "discount": 22,
-      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j4.jpg" 
    },
@@ -22,7 +20,6 @@
       "name": "Red dead redeption II",
       "price": 2499,
       "discount": 30,
-      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j5.jpg"  
    },
@@ -31,7 +28,6 @@
       "name": "God of War",
       "price": 4199,
       "discount": 25,
-      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j6.jpg"   
    },
@@ -40,7 +36,6 @@
       "name": "Dragon ball xenoverse XV",
       "price": 43999,
       "discount": 22,
-      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j7.jpg"
    },
@@ -49,7 +44,6 @@
       "name": "The last of us",
       "price": 39999,
       "discount": 15,
-      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j8.jpg"
 
@@ -59,7 +53,6 @@
       "name": "Grand Theft Auto V",
       "price": 54188,
       "discount": 20,
-      "category": "Destacados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j9.jpg"
    },
@@ -68,7 +61,6 @@
       "name": "Dragon ball fighters Z",
       "price": 3000,
       "discount": 40,
-      "category": "Destacados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j10.jpg"
    },
@@ -77,7 +69,6 @@
       "name": "Call of Duty Black ops III",
       "price": 26008,
       "discount": 10,
-      "category": "Recomendados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j11.jpg"
    },
@@ -86,7 +77,6 @@
       "name": "Resident Evil 2",
       "price": 81999,
       "discount": 22,
-      "category": "Recomendados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "j12.jpg"
    },
@@ -95,7 +85,6 @@
       "name": "CyberPunk",
       "price": 2199,
       "discount": 25,
-      "category": "Recomendados",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "juego-muestra.jpg"
    },
@@ -104,7 +93,6 @@
       "name": "Aura Kingdom",
       "price": 1500,
       "discount": 40,
-      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "oferta-1.jpg"
    },
@@ -113,7 +101,6 @@
       "name": "Lost arks",
       "price": 2360,
       "discount": 50,
-      "category": "Ofertas especiales",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "img": "oferta-2.jpg"
    }

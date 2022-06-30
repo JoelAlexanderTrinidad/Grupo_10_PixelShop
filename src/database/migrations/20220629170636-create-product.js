@@ -20,10 +20,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      category: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
       description: {
         allowNull: false,
         type: Sequelize.TEXT

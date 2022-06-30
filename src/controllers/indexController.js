@@ -16,12 +16,17 @@ module.exports={
         })
         let ofertasEpeciales = db.Product.findAll({
             where: {
-                category: 'Ofertas especiales'
+                discount : {
+					[Op.gte] : 20
+				}
+			},
+			order : [['id','DESC']],
+			limit : 6
             }
-        })
+        )
         let recomendados = db.Product.findAll({
             where: {
-                category: 'Recomendados'
+                
             }
         })
         Promise.all([destacados, ofertasEpeciales, recomendados])
