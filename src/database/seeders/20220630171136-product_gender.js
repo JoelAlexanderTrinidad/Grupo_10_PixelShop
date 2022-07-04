@@ -1,9 +1,16 @@
 "use strict";
-const productsDB = require('../../data/products.json')
+const productsDB = require('../../data/products.json');
 
 const product_genders = [];
 
-productsDB.forEach(product => {
+const products = productsDB.map(({id, genres})=> {
+  return {
+    id: id,
+    genres: JSON.parse( "[" + genres +"]")
+  }
+} ) 
+
+products.forEach(product => {
     product.genres.forEach(gender => {
       product_genders.push({
           productId : product.id,

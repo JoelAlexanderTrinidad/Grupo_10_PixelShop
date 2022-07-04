@@ -7,18 +7,14 @@ const path = require('path');
 
 module.exports={
     productDetail:(req,res)=>{
-        /* const producto = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "products.json"), "utf-8"));
-
-        const {id} = req.params;
-        const product = producto.find(product => product.id === +id);
-        const misGeneros = product.gender; */
-
+            
         const product = db.Product.findByPk(req.params.id);
         const misGeneros = db.Gender.findAll();
         const products = db.Product.findAll();
+
         Promise.all([product, misGeneros, products])
         .then(([product, misGeneros, products])=> {
-            return res.render('productDetail',{
+            res.render('productDetail',{
                 product,
                 misGeneros, //FALTA ASOCIAR LOS GENEROS!!!
                 products
