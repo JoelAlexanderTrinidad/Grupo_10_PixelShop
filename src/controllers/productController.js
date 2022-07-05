@@ -7,20 +7,34 @@ const path = require('path');
 
 module.exports={
     productDetail:(req,res)=>{
-            
-        const product = db.Product.findByPk(req.params.id);
-        const misGeneros = db.Gender.findAll();
-        const products = db.Product.findAll();
+        
+        const generosP = db.Product_gender.findAll(
+             {
+                where :{
+                    productId: req.params.id
+                } // esto trae el product id 
+            })
+        
+        let generosJuego = []
 
-        Promise.all([product, misGeneros, products])
-        .then(([product, misGeneros, products])=> {
+        for (let i = 1; i< generosP.length; i++) {
+            generosJuego.push(generosP[i])       
+        }
+        console.log(generosJuego)
+        const products = db.Product.findAll();  
+        const product = db.Product.findByPk(req.params.id);
+    
+        Promise.all([product, generosP, , products])
+        .then(([product, generosP, products])=> {
+           return  res.send(generosP)
             res.render('productDetail',{
                 product,
-                misGeneros, //FALTA ASOCIAR LOS GENEROS!!!
+                generos, //FALTA ASOCIAR LOS GENEROS!!!
                 products
             })
         }
         )
+        
         .catch(error=> console.log(error))
         
     },
