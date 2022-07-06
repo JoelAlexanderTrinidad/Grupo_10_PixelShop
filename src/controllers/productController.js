@@ -8,26 +8,37 @@ const path = require('path');
 module.exports={
     productDetail:(req,res)=>{
         
-    const generosJ = db.Gender.findAll()
+    const juegoGen = db.Gender.findAll({
+        attributes : ['id','name']
+    })
     const generos = db.Product_gender.findAll(
              {
                 where :{
                     productId: req.params.id
                 } // esto trae el product id 
             })
-            Promise.all([generosJ, generos])
-            .then(([generosJ, generos])=> {
-                let generosJuego = []
+            Promise.all([juegoGen, generos])
+            .then(([juegoGen, generos])=> {
+                let generoJuego = []
                 for (let i=0; i<generos.length; i++) {
-                    generosJuego.push(generos[i].genderId)       
+                    generoJuego.push(generos[i].genderId)       
                 }
-                let generosA = []
-                for (let i=0; i<generosJ.length; i++) {
-                    generosA.push(generosJ[i])       
+                let generosAsociados = []
+                for (let i=0; i<juegoGen.length; i++) {
+                    generosAsociados.push(juegoGen[i].name)
                 }
-            let misGeneros = generosA.filter()
+                let a=[]
+                for(let i=0; i<generoJuego.length; i++){
+                    for (let j=0; j<12; j++) {
+                        if(generoJuego[i]===j){
+                            a.push(generosAsociados[j-1])
+                        }
+                    }
+                //    a.push(i)
+                }
+                
     
-                return res.send(misGeneros)
+                return res.send(a)
             })
             
         
