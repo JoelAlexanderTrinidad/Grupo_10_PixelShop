@@ -7,18 +7,21 @@ const path = require('path');
 
 module.exports={
     productDetail:(req,res)=>{
+        const product = db.Product.findByPk(req.params.id);
         
-    const juegoGen = db.Gender.findAll({
-        attributes : ['id','name']
-    })
-    const generos = db.Product_gender.findAll(
+        const products = db.Product.findAll();
+               
+        const juegoGen = db.Gender.findAll({
+            attributes : ['id','name']
+            })
+        const generos = db.Product_gender.findAll(
              {
                 where :{
                     productId: req.params.id
                 } // esto trae el product id 
             })
-            Promise.all([juegoGen, generos])
-            .then(([juegoGen, generos])=> {
+        Promise.all([juegoGen, generos, product, products])
+        .then(([juegoGen, generos, product, products])=> {
                 let generoJuego = []
                 for (let i=0; i<generos.length; i++) {
                     generoJuego.push(generos[i].genderId)       
@@ -27,18 +30,20 @@ module.exports={
                 for (let i=0; i<juegoGen.length; i++) {
                     generosAsociados.push(juegoGen[i].name)
                 }
-                let a=[]
+                let misGeneros=[]
                 for(let i=0; i<generoJuego.length; i++){
                     for (let j=0; j<12; j++) {
                         if(generoJuego[i]===j){
-                            a.push(generosAsociados[j-1])
+                            misGeneros.push(generosAsociados[j-1])
                         }
                     }
                 //    a.push(i)
                 }
-                
-    
-                return res.send(a)
+                return res.render('productDetail',{
+                    product,
+                    misGeneros,
+                    products
+                })
             })
             
         

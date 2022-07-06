@@ -48,11 +48,11 @@
                                     <li><b>Entrega inmediata</b></li>
                                 </div>
                             </ul>
-                            <p id="rankig:"> RANKIG:<%= rankig %></p>
                             <ul class="main__section-categories">
-                                <% productGender.forEach((element, i) => { %>                                 
-                                    <li></li>
-                                <% }) %>
+                                <ul class="main__section-categories">
+                                    <% misGeneros.forEach((element, i) => { %>                                 
+                                        <li><%= misGeneros[i] %></li>
+                                    <% }) %>
                                                        
                             </ul>                           
                         </section>
