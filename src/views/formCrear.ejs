@@ -19,10 +19,10 @@
             </div>
             <h4>Géneros de juego</h4>
             <div class="gender">
-                 <% genders.forEach( ({id,name}, index) => { %>
+                 <% genders.forEach( ({name, id}) => { %>
                     <div class="gender__div">
-                        <input class="" type="checkbox" name="gender" id="<%= index %>" value="<%= id %>">
-                        <label for="<%= index %>"><%=name%></label>
+                        <input   type="checkbox" name="genres" id="genres" value="<%= id%>">
+                        <label for="genres"><%=name%></label>
                     </div>
                 <% })%>      
             </div>
@@ -35,13 +35,8 @@
                 <input type="number" name="discount" id="discount" placeholder="descuento del producto" >
             </div>
             <div class="">
-                <label for="category">Sección</label>
-                <select name="category" id="category">
-                    <option value="" hidden selected>Elige una sección</option>
-                    <option value="Ofertas especiales">Ofertas Especiales</option>
-                    <option value="Destacados">Destacados</option>
-                    <option value="Recomendados">Recomendados</option>
-                </select>
+                <label for="ranking">Ranking</label>
+                <input type="number" name="ranking" id="ranking" placeholder="Ranking" required>
             </div>
             <div>
                 <button type="submit">Crear</button>

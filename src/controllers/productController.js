@@ -44,12 +44,7 @@ module.exports={
                     misGeneros,
                     products
                 })
-            })
-            
-        
-        
-        
-        
+            }) 
     },
     productCart:(req,res)=>{
         db.Product.findAll()
@@ -69,15 +64,16 @@ module.exports={
         .catch(error=> console.log(error))
     },
     store: (req,res) => {
-        const {id, name, price, discount,category, description } = req.body;
+        const {id, name, price, discount, description, ranking, genres} = req.body;
         db.Product.create(
         {   id : id, 
             name: name.trim(),
             price: +price,
             discount:+discount,
-            category: category,
             description: description.trim(),
             img: req.file ? req.file.filename : 'default-image.jpg',
+            ranking : ranking,
+            genres : genres
         })
         .then(res.redirect('/'))
         .catch(error=> console.log(error))          
