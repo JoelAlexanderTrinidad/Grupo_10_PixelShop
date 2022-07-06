@@ -65,7 +65,8 @@ module.exports={
     },
     store: (req,res) => {
         const {id, name, price, discount, description, ranking, genres} = req.body;
-        db.Product.create(
+    
+       const nuevoProduct = db.Product.create(
         {   id : id, 
             name: name.trim(),
             price: +price,
@@ -73,9 +74,10 @@ module.exports={
             description: description.trim(),
             img: req.file ? req.file.filename : 'default-image.jpg',
             ranking : ranking,
-            genres : genres
+            genres : +genres
         })
-        .then(res.redirect('/'))
+        .then(nuevoProduct =>{
+             res.send(nuevoProduct)})
         .catch(error=> console.log(error))          
     },
 
