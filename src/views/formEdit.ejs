@@ -20,22 +20,12 @@
             </div>
             <h4>Géneros de juego</h4>
             <div class="gender">
-                 <% genders.forEach( ({id,name}, index) => { %>
+                <% genders.forEach( ({id,name}, index) => { %>
                     <div class="gender__div">
-                        <input class="" type="checkbox" name="gender" id="<%= index %>" value="<%= name %>" <% product.gender.forEach((element, i) => { %>
-                                                                                                                    <%= product.gender[i] === name && 'checked' %>
-                                                                                                            <% }) %>>
+                        <input class="" type="checkbox" name="gender" id="<%= index %>" value="<%= name %>" <%= product.genres = genres ? "checked" : null %>>
                         <label for="<%= index %>"><%=name%></label>
                     </div>
-                <% })%>      
-            </div>
-            <div>
-                <label for="requeriment">Requisitos del producto</label>
-                <input class="input-requisitos" type="text" name="requeriment" id="requeriment" value="<%=product.requeriment[0]%>" >
-                <input class="input-requisitos"  type="text" name="requeriment" id="requeriment" value="<%=product.requeriment[1]%>" >
-                <input class="input-requisitos"  type="text" name="requeriment" id="requeriment" value="<%=product.requeriment[2]%>" >
-                <input class="input-requisitos"  type="text" name="requeriment" id="requeriment" value="<%=product.requeriment[3]%>" >
-                <input class="input-requisitos"  type="text" name="requeriment" id="requeriment" value="<%=product.requeriment[4]%>" >
+                <% })%>
             </div>
             <div class="">
                 <label for="price">Precio del producto</label>
@@ -46,14 +36,8 @@
                 <input type="number" name="discount" id="discount" value="<%= product.discount %>">
             </div>
             <div class="">
-                <label for="category">Sección</label>
-                <select name="category" id="category">
-                    <option value="<%= product.category %>" hidden selected><%= product.category %> </option>
-                    
-                    <option value="Ofertas especiales">Ofertas especiales</option>
-                    <option value="Destacados">Destacados</option>
-                    <option value="Recomendados">Recomendados</option>
-                </select>
+                <label for="ranking">Ranking</label>
+                <input type="number" name="ranking" id="ranking" value="<%= product.ranking %>" max="10" min="0" required>
             </div>
             <div>
                 <button type="submit">Editar</button>
