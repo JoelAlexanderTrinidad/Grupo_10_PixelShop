@@ -2,9 +2,7 @@ const db = require('../database/models');
 const { Op } = require("sequelize");
 /* const products = require('../data/products.json'); */
 const path = require('path');
-const { addAbortSignal } = require('stream');
-/* const fs = require('fs'); */
-/* const genders =  require('../data/genders.json'); */
+
 
 module.exports={
     productDetail:(req,res)=>{
@@ -19,7 +17,7 @@ module.exports={
              {
                 where :{
                     productId: req.params.id
-                } // esto trae el product id 
+                } 
             })
         Promise.all([juegoGen, generos, product, products])
         .then(([juegoGen, generos, product, products])=> {
