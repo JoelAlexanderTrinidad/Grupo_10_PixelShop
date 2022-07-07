@@ -2,6 +2,7 @@ const db = require('../database/models');
 const { Op } = require("sequelize");
 /* const products = require('../data/products.json'); */
 const path = require('path');
+const { addAbortSignal } = require('stream');
 /* const fs = require('fs'); */
 /* const genders =  require('../data/genders.json'); */
 
@@ -32,7 +33,7 @@ module.exports={
                 }
                 let misGeneros=[]
                 for(let i=0; i<generoJuego.length; i++){
-                    for (let j=0; j<12; j++) {
+                    for (let j=0; j<=12; j++) {
                         if(generoJuego[i]===j){
                             misGeneros.push(generosAsociados[j-1])
                         }
@@ -63,22 +64,41 @@ module.exports={
         })
         .catch(error=> console.log(error))
     },
-    store: (req,res) => {
-        const {id, name, price, discount, description, ranking, genres} = req.body;
-    
-       const nuevoProduct = db.Product.create(
-        {   id : id, 
-            name: name.trim(),
-            price: +price,
-            discount:+discount,
-            description: description.trim(),
-            img: req.file ? req.file.filename : 'default-image.jpg',
-            ranking : ranking,
-            genres : +genres
-        })
-        .then(nuevoProduct =>{
-             res.send(nuevoProduct)})
-        .catch(error=> console.log(error))          
+    store: async (req,res) => {
+
+        try {
+            const {id, name, price, discount, description, ranking, genres} = req.body;
+            // console.log(genres)
+            
+            let nuevoProducto = await db.Product.create(
+                {   id : id, 
+                    name: name.trim(),
+                    price: +price,
+                    discount:+discount,
+                    description: description.trim(),
+                    img: req.file ? req.file.filename : 'default-image.jpg',
+                    ranking : ranking,
+                    genres : genres.join()
+                })
+
+            let nuevoProductArray = JSON.parse("[" + genres + "]");
+
+            for (let index = 0; index < nuevoProductArray.length; index++) {
+               
+                    await db.Product_gender.create({
+                    
+                    genderId: nuevoProductArray[index],
+                    productId: nuevoProducto.id,
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                })
+            }
+            return res.redirect('/admin')
+
+        } catch (error) {
+            console.log(error)
+        }
+            
     },
 
     //FALTA EDIT Y UPDATE ----> asociacion de genders
@@ -140,7 +160,7 @@ module.exports={
             where : { id : req.params.id}
         })
         .then(() => {
-            return res.redirect("/");
+            return res.redirect("/admin");
         })
         .catch(error => console.log(error))
     }
