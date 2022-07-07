@@ -20,10 +20,12 @@
             </div>
             <h4>Géneros de juego</h4>
             <div class="gender">
-                <% genders.forEach( ({id,name}, index) => { %>
+                <% genders.forEach( ({id,name}) => { %>
                     <div class="gender__div">
-                        <input class="" type="checkbox" name="gender" id="<%= index %>" value="<%= name %>">
-                        <label for="<%= index %>"><%=name%></label>
+                        <input class="" type="checkbox" name="gender" id="gender" value="<%= id %>" <% generosJ.forEach((element) => { %>
+                            <%= element.genderId === id && 'checked' %>
+                    <% }) %>>
+                        <label for="gender"><%=name%></label>
                     </div>
                 <% }) %>
             </div>

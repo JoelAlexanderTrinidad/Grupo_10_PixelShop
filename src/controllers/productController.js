@@ -102,38 +102,49 @@ module.exports={
     //FALTA EDIT Y UPDATE ----> asociacion de genders
     edit : (req,res) => {
         const product = db.Product.findByPk(req.params.id);
-        const genders = db.Gender.findAll();
-        Promise.all([product, genders])
-        .then(([product,genders])=> {
-            return res.render('formEdit',{
+        const genders = db.Gender.findAll({
+           
+        });
+        const generosJ = db.Product_gender.findAll({
+            where :{
+                productId : req.params.id
+            }
+        })
+        Promise.all([product, genders,generosJ])
+        .then(([product,genders,generosJ])=> {
+            res.render('formEdit',{
                 product,
-                genders//FALTA ASOCIAR LOS GENEROS!!!
+                genders,
+                generosJ
             })
         })
         .catch(error=>console.log(error))
     },   
-    update: (req,res)=>{
-        const {name, price, ranking, discount, description, genres }= req.body;
+    update:  async (req,res) => {
 
-        db.Product.update({
-                name: name,
-                price: +price,
-                discount:+discount,
-                ranking,
-                description: description,
-                img: req.file ? req.file.filename : product.img,
-               genres: !req.body.gender ? gender = product.gender : gender = typeof(req.body.gender) === 'string' ? [req.body.gender] : req.body.gender
-                
-        },{
-            where: {
-                id: req.params.idnode
-            }
-        })
-        .then( res.redirect('/product/detail/' + product.id))
-        .catch(error=> console.log(error))
-        
-       
+        try {
+            const { name, price, discount, description, ranking, genres} = req.body;
+            const producto = await db.Product.findByPk(req.params.id)
+                                    
+            await db.Product.update(
+                {   
+                    name: name.trim(),
+                    price: +price,
+                    discount:+discount,
+                    description: description.trim(),
+                    img: req.file ? req.file.filename : producto.img,
+                    ranking : ranking,
+                    genres : !req.body.genres? producto.genres : req.body.genres
+                },{
+                    where :{
+                        id : req.params.id
+                    }
+                }) 
 
+        } catch (error) {
+            console.log(error)
+        }
+            
     },    
 
     search : (req,res) => {
