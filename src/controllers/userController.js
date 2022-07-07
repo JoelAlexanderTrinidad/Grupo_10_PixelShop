@@ -8,7 +8,7 @@ const bcryptjs = require('bcryptjs');
 
 module.exports={
     register:(req,res)=>{
-            return res.render('register')
+        return res.render('register')
     },
     login:(req,res)=>{
         return res.render('login')
@@ -150,20 +150,27 @@ module.exports={
         })
         .catch(error => console.log(error))
     },
-    removeUser : (req,res) => {
-        const usuario = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
-            const userDelete = usuario.filter(user => user.id != req.session.userLogin.id)
-            const user = usuarios.find(user => user.id === req.session.userLogin.id)
-
-        if(user.imagenPerfil !== "no-image.png") {
-            fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", user.imagenPerfil))
+    removeUser : async (req,res) => {
+        try {
+            const user = await User.findAll({
+                where : {
+                    id : req.session.userLogin.id
+                },
+                attributes: ['imagenPerfil']
+            })
+            User.destroy({
+                where : {
+                    id : req.session.userLogin.id
+                }
+            })
+            if(user[0].imagenPerfil !== 'no-image.png') {
+                fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", user[0].imagenPerfil))
+            }
+            res.cookie("userPixelShop", null, {maxAge : -1})
+            req.session.destroy();
+            return res.redirect("/");
+        } catch (error) {
+            console.log(error)
         }
-        fs.writeFileSync(path.resolve(__dirname, "..", "data", "users.json"), JSON.stringify(userDelete, null, 3), "utf-8");
-  
-        req.session.destroy();
-        res.cookie("userPixelShop", null, {maxAge : -1})
-       
-        return res.redirect("/");
     },
-    
 }
