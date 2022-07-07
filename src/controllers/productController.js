@@ -1,7 +1,7 @@
 const db = require('../database/models');
 const { Op } = require("sequelize");
-/* const products = require('../data/products.json'); */
 const path = require('path');
+const fs = require('fs')
 
 
 module.exports={
@@ -131,9 +131,6 @@ module.exports={
         })
         .then( res.redirect('/product/detail/' + product.id))
         .catch(error=> console.log(error))
-        
-       
-
     },    
 
     search : (req,res) => {
@@ -155,25 +152,30 @@ module.exports={
     
     remove : async (req,res) =>  { 
         try {
-            
-            const eliminarProduct= await db.Product.destroy({
-                where : { id : req.params.id}
+            const product = await db.Product.findAll({
+                where :{
+                    id : req.params.id
+                },
+                attributes: ['img']
             })
-            const eliminarGender = await db.Product_gender.destroy({
+
+            if(product[0].img !== 'default-image.jpg') {
+                fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", product[0].img))
+            }
+
+            await db.Product_gender.destroy({
                 where : {
                     productId : req.params.id
                 }
             })
-            if(eliminarProduct.img !== 'default-image.jpg') {
-                fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", eliminarProduct.img))
-            }
-            
-            return  console.log(eliminarGender)
-            res.redirect("/admin");
+            await db.Product.destroy({
+                where : { id : req.params.id}
+            })
+
+            return res.redirect("/admin");
         } 
         catch (error) {
             console.log(error)
-            
         }
     }
 }
