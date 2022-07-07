@@ -125,8 +125,8 @@ module.exports={
         try {
             const { name, price, discount, description, ranking, genres} = req.body;
             const producto = await db.Product.findByPk(req.params.id)
-                                    
-            await db.Product.update(
+                              
+            const productoModificado = await db.Product.update(
                 {   
                     name: name.trim(),
                     price: +price,
@@ -134,13 +134,30 @@ module.exports={
                     description: description.trim(),
                     img: req.file ? req.file.filename : producto.img,
                     ranking : ranking,
-                    genres : !req.body.genres? producto.genres : req.body.genres
+                    genres : genres
                 },{
                     where :{
-                        id : req.params.id
+                        id : producto.id
                     }
                 }) 
+            
+            
+            
 
+            console.log(img)
+            return res.send(img)
+            let generosJ = JSON.parse("["+ prod.genres +"]")
+
+            for (let i = 0; i < generoJ.length; i++) {
+
+                await db.Product_gender.update(
+                    {   
+                        genderId: generosJ[i],
+                        productId: producto.id
+                    })
+                
+            }
+           
         } catch (error) {
             console.log(error)
         }
