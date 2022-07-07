@@ -87,12 +87,13 @@ module.exports={
                
                     await db.Product_gender.create({
                     
-                    genderId: 2,
-                    productId: 2,
+                    genderId: nuevoProductArray[index],
+                    productId: nuevoProducto.id,
                     createdAt: new Date(),
                     updatedAt: new Date(),
                 })
             }
+            return res.redirect('/admin')
 
         } catch (error) {
             console.log(error)
