@@ -123,10 +123,10 @@ module.exports={
     update:  async (req,res) => {
 
         try {
-            const { name, price, discount, description, ranking, genres} = req.body;
+            const { name, price, discount, description, ranking} = req.body;
             const producto = await db.Product.findByPk(req.params.id)
-                              
-            const productoModificado = await db.Product.update(
+                                          
+            await db.Product.update(
                 {   
                     name: name.trim(),
                     price: +price,
@@ -134,30 +134,26 @@ module.exports={
                     description: description.trim(),
                     img: req.file ? req.file.filename : producto.img,
                     ranking : ranking,
-                    genres : genres
+                    genres : !req.body.genres ? producto.genres : req.body.genres.join()
                 },{
                     where :{
                         id : producto.id
                     }
                 }) 
             
-            
-            
+                            
+                let generosJ = req.body.genres  
 
-            console.log(img)
-            return res.send(img)
-            let generosJ = JSON.parse("["+ prod.genres +"]")
+        
+            for (let i = 0; i < generosJ.length; i++) {
 
-            for (let i = 0; i < generoJ.length; i++) {
-
-                await db.Product_gender.update(
+             await db.Product_gender.update(
                     {   
                         genderId: generosJ[i],
                         productId: producto.id
                     })
-                
             }
-           
+         return res.redirect('/detail/'+req.params.id)  
         } catch (error) {
             console.log(error)
         }

@@ -22,10 +22,10 @@
             <div class="gender">
                 <% genders.forEach( ({id,name}) => { %>
                     <div class="gender__div">
-                        <input class="" type="checkbox" name="gender" id="gender" value="<%= id %>" <% generosJ.forEach((element) => { %>
+                        <input class="" type="checkbox" name="genres" id="genres" value="<%= id %>" <% generosJ.forEach((element) => { %>
                             <%= element.genderId === id && 'checked' %>
                     <% }) %>>
-                        <label for="gender"><%=name%></label>
+                        <label for="genres"><%=name%></label>
                     </div>
                 <% }) %>
             </div>
