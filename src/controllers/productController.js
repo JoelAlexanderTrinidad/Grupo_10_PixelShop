@@ -115,20 +115,20 @@ module.exports={
         .catch(error=>console.log(error))
     },   
     update: (req,res)=>{
-        const {name, price, category, discount, description, }= req.body;
+        const {name, price, ranking, discount, description, genres }= req.body;
 
         db.Product.update({
                 name: name,
                 price: +price,
                 discount:+discount,
-                category,
+                ranking,
                 description: description,
                 img: req.file ? req.file.filename : product.img,
-               /*  gender: !req.body.gender ? gender = product.gender : gender = typeof(req.body.gender) === 'string' ? [req.body.gender] : req.body.gender, */
+               genres: !req.body.gender ? gender = product.gender : gender = typeof(req.body.gender) === 'string' ? [req.body.gender] : req.body.gender
                 
         },{
             where: {
-                id: req.params.id
+                id: req.params.idnode
             }
         })
         .then( res.redirect('/product/detail/' + product.id))
@@ -155,13 +155,30 @@ module.exports={
         })
     },
     
-    remove : (req,res) => {
-        db.Product.destroy({
-            where : { id : req.params.id}
-        })
-        .then(() => {
-            return res.redirect("/admin");
-        })
-        .catch(error => console.log(error))
+    remove : async (req,res) =>  { 
+        try {
+            
+            const eliminarProduct= await db.Product.destroy({
+                where : { id : req.params.id}
+            })
+            const eliminarGender = await db.Product_gender.destroy({
+                where : {
+                    productId : req.params.id
+                }
+            })
+            if(eliminarProduct.img !== 'default-image.jpg') {
+                fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", eliminarProduct.img))
+            }
+            
+            return  console.log(eliminarGender)
+            res.redirect("/admin");
+        } 
+        catch (error) {
+            console.log(error)
+            
+        }
     }
 }
+
+
+    
