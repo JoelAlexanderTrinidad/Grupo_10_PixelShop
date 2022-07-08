@@ -18,26 +18,19 @@ module.exports = [
     check('email')
         .notEmpty().withMessage('Debes ingresar un email').bail()
         .isEmail().withMessage('Email inválido').bail()
-        .custom( async (value) =>{
-
-            try {
-                const usuario = await db.User.findAll({
-                    where : {
-                        email: value
-                    }
-                })
-
-                if(usuario){
-                    return false;
+        .custom( value => {
+            return db.User.findOne({
+                where : {
+                    email : value
                 }
-                else{
-                    return true;
+            })
+            .then(user => {
+                if (user) {
+                    return Promise.reject()
                 }
-            } catch (error) {
-                console.log(error)
-            }
-            
-        }).withMessage('El mail ya se encuentra registrado'),
+            })
+            .catch(() => Promise.reject('El mail ya se encuentra registrado'))
+        }),
 
     check('password')
         .isLength({min: 4, max: 12}).withMessage('La contraseña debe tener entre 4 y 12 caracteres'),

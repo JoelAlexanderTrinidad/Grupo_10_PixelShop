@@ -4,8 +4,6 @@ const path = require('path');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
 
-
-
 module.exports={
     register:(req,res)=>{
         return res.render('register')
@@ -14,9 +12,9 @@ module.exports={
         return res.render('login')
     },
     processRegister:(req, res)=>{
-        const errors = validationResult(req);
+        const errores = validationResult(req);
         
-        if(errors.isEmpty()){
+        if(errores.isEmpty()){
             
             let {id, nombre, apellido, tel, email, password, terminos, privacidad} = req.body;
 
@@ -46,15 +44,15 @@ module.exports={
             .catch(error => console.log(error))
         }else{
             res.render('register',{
-                errors: errors.mapped(),
+                errores: errores.mapped(),
                 old: req.body
             });
         }
     },
     processLogin:(req,res)=>{
-    let errors = validationResult (req);
+    let errores = validationResult (req);
 
-        if(errors.isEmpty()){
+        if(errores.isEmpty()){
             User.findOne({
                 where : { email : req.body.email }
             })
@@ -75,7 +73,7 @@ module.exports={
             .catch(error => console.log(error))
         }else{
             res.render('login',{
-                errors :errors.mapped(),
+                errores :errores.mapped(),
                 old: req.body
             });
         }
@@ -97,14 +95,14 @@ module.exports={
     updateProfile : async (req,res) => {
        
         try {
-            let errors = validationResult(req);
+            let errores = validationResult(req);
             const usuario = User.findAll({
                 where : {
                     id: req.session.userLogin.id
                 },
                 attributes : ['imagenPerfil', 'password']
             })
-            if(errors.isEmpty()){
+            if(errores.isEmpty()){
                 User.update({
                     ...req.body,
                     password: usuario.password && !req.body.nuevaPass1 ? usuario.password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
@@ -124,7 +122,7 @@ module.exports={
             }else{
                 return res.render("editProfile", {
                     usuario : req.body,
-                    errors : errors.mapped()
+                    errores : errores.mapped()
                   });
             }
 
@@ -162,10 +160,10 @@ module.exports={
           return res.redirect("/users/profile");
         
         }else{
-        //   console.log(errors);
+        //   console.log(errores);
           return res.render("editProfile", {
             usuario : req.body,
-            errors : errors.mapped()
+            errores : errores.mapped()
           });
         } */
     },
