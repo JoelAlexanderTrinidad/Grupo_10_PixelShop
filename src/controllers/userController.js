@@ -53,13 +53,15 @@ module.exports={
     },
     processLogin:(req,res)=>{
     let errors = validationResult (req);
+
         if(errors.isEmpty()){
             User.findOne({
                 where : { email : req.body.email }
-            })           
+            })
             .then(usuario => {
+                
                 req.session.userLogin = {
-                    id : usuario.id,
+                   
                     nombre : usuario.nombre,
                     apellido : usuario.apellido,
                     rolId : usuario.rolId
@@ -76,7 +78,7 @@ module.exports={
                 errors :errors.mapped(),
                 old: req.body
             });
-        }         
+        }
     },
     editProfile: (req,res) => {
         User.findByPk(req.session.userLogin.id)
@@ -92,17 +94,43 @@ module.exports={
         res.cookie("userPixelShop", null, {maxAge : -1})
         return res.redirect("/")
     },
-    updateProfile : (req,res) => {
-            User.update({
-                ...req.body,
-                imagenPerfil: req.file ? req.file.filename : req.session.userLogin.imagenPerfil
-            },{
-                where : { id : req.session.userLogin.id }
+    updateProfile : async (req,res) => {
+       
+        try {
+            let errors = validationResult(req);
+            const usuario = User.findAll({
+                where : {
+                    id: req.session.userLogin.id
+                },
+                attributes : ['imagenPerfil', 'password']
             })
-            .then(() => {
-                res.redirect("profile")
-            })
-            .catch(error => console.log(error))
+            if(errors.isEmpty()){
+                User.update({
+                    ...req.body,
+                    password: usuario.password && !req.body.nuevaPass1 ? usuario.password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
+                    imagenPerfil: req.file ? req.file.filename : usuario.imagenPerfil
+                },{
+                    where : { id : req.session.userLogin.id }
+                });
+                if(req.file){
+                    if(fs.existsSync(path.resolve(__dirname,'..','public','images',imagenPerfil)) && imagenPerfil !== 'no-image.png'){
+                        fs.unlinkSync(path.resolve(__dirname,'..','public','images',imagenPerfil))
+                    }
+                }
+                req.session.userLogin = {
+                    ...req.session.userLogin
+                  }
+                  return res.redirect("/users/profile");
+            }else{
+                return res.render("editProfile", {
+                    usuario : req.body,
+                    errors : errors.mapped()
+                  });
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
 
      /*      const usuarioModificados = usuarios.map((usuario) => {
             if (usuario.id === id) {
