@@ -125,7 +125,24 @@ module.exports={
         try {
             const { name, price, discount, description, ranking} = req.body;
             const producto = await db.Product.findByPk(req.params.id)
-                                          
+
+            await db.Product_gender.destroy({
+                where: {
+                    productId: req.params.id
+                },
+            })
+            let generosJ = req.body.genres 
+
+            for (let index = 0; index < generosJ.length; index++) {
+               
+                await db.Product_gender.create({
+                    genderId: generosJ[index],
+                    productId: producto.id,
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                })
+            }
+            
             await db.Product.update(
                 {   
                     name: name.trim(),
@@ -141,19 +158,7 @@ module.exports={
                     }
                 }) 
             
-                            
-                let generosJ = req.body.genres  
-
-        
-            for (let i = 0; i < generosJ.length; i++) {
-
-             await db.Product_gender.update(
-                    {   
-                        genderId: generosJ[i],
-                        productId: producto.id
-                    })
-            }
-         return res.redirect('/detail/'+req.params.id)  
+         return res.redirect('/admin/')  
         } catch (error) {
             console.log(error)
         }
