@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
+const moment = require('moment');
 
 module.exports={
     register:(req,res)=>{
@@ -59,10 +60,11 @@ module.exports={
             .then(usuario => {
                 
                 req.session.userLogin = {
-                   
+                    id: usuario.id,
                     nombre : usuario.nombre,
                     apellido : usuario.apellido,
-                    rolId : usuario.rolId
+                    rolId : usuario.rolId,
+                    fecha: usuario.fecha
                 }
                 if(req.body.recordame){
                     res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
@@ -96,25 +98,25 @@ module.exports={
        
         try {
             let errores = validationResult(req);
-            const usuario = User.findAll({
+            const usuario = await User.findAll({
                 where : {
                     id: req.session.userLogin.id
                 },
                 attributes : ['imagenPerfil', 'password']
             })
             if(errores.isEmpty()){
+                if(req.file){
+                        fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',usuario[0].imagenPerfil))
+                    }
+
                 User.update({
                     ...req.body,
-                    password: usuario.password && !req.body.nuevaPass1 ? usuario.password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
-                    imagenPerfil: req.file ? req.file.filename : usuario.imagenPerfil
+                    password: usuario[0].password && !req.body.nuevaPass1 ? usuario[0].password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
+                    imagenPerfil: req.file ? req.file.filename : usuario[0].imagenPerfil
                 },{
                     where : { id : req.session.userLogin.id }
                 });
-                if(req.file){
-                    if(fs.existsSync(path.resolve(__dirname,'..','public','images',imagenPerfil)) && imagenPerfil !== 'no-image.png'){
-                        fs.unlinkSync(path.resolve(__dirname,'..','public','images',imagenPerfil))
-                    }
-                }
+                
                 req.session.userLogin = {
                     ...req.session.userLogin
                   }
@@ -170,6 +172,7 @@ module.exports={
     profile : (req, res) => {
         User.findByPk(req.session.userLogin.id)
         .then(user => {
+            user.fecha = moment().format('YYYY-MM-DD');
             res.render("profile", {
                 user
             })

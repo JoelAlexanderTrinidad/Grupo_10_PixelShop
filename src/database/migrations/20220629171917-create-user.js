@@ -50,6 +50,14 @@ module.exports = {
           key : 'id'
         }
       },
+      fecha: {
+        allowNull: true,
+        type: Sequelize.DATE
+      },
+      genero: {
+        allowNull: true,
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

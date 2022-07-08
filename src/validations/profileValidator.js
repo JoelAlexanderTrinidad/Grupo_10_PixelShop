@@ -21,30 +21,20 @@ module.exports = [
     
     body('passAntiguo')
         .notEmpty().withMessage('Debes ingresar la contraseña antigua')
-        .custom( async (value, {req}) =>{
-
-            try {
-                const usuario = db.User.findAll({
-                    where : {
-                        email : req.body.email
-                    }
-                })
-                if(!usuario){
-                    return false;
+        .custom((value, {req}) =>{
+            return db.User.findOne({
+                where : {
+                  email : req.body.email
                 }
-                else{
-                    if(!bcryptjs.compareSync(value, usuario.password))
-                    return false;
+              }).then(user => {
+                if(!user || !bcryptjs.compareSync(value, user.password)){
+                  return Promise.reject()
                 }
-                return true;
-            } catch (error) {
-                console.log(error)
-            }
-           
-        }).withMessage('Debes ingresar la contraseña antigua'),
+              }).catch(() => Promise.reject('Debes ingresar la contraseña antigua'))
+            }),
 
     body('nuevaPass1')
-        .custom( async (value, {req}) => {
+        .custom((value, {req}) => {
             if(value !== req.body.nuevaPass2){
                 return false;
             }

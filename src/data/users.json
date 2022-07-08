@@ -9,7 +9,9 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "image-1654029888549.jpg",
-      "rolId": 1
+      "rolId": 1,
+      "fecha": null,
+      "genero" : ""
    },
    {
       "id": 2,
@@ -21,7 +23,9 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "no-image.png",
-      "rolId": 2
+      "rolId": 2,
+      "fecha": null,
+      "genero" : ""
    },
    {
       "id": 3,
@@ -33,6 +37,8 @@
       "terminos": "on",
       "privacidad": "on",
       "imagenPerfil": "no-image.png",
-      "rolId": 2
+      "rolId": 2,
+      "fecha": null,
+      "genero" : ""
    }
 ]
