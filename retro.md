@@ -91,7 +91,29 @@ Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final 
     -Utilizar los recursos prácticos de las clases como ejemplo para realizar el sprint.
  
  
+ # **RETROSPECTIVA SPRINT 4:**
  
+### Qué hicimos bien:
+    -Trabajar en las ramas correctamente.
+    
+### Qué hicimos mal:
+    -No haber dividido las tareas.
+    
+### Qué deberíamos empezar a hacer:
+    -Usar Bootstrap.
+    -Empezar a usar ramas
+    -Poner fecha de entrega y marcarlas cuando estén terminadas.
+    
+### Qué deberíamos dejar de hacer:
+    -Dejar de recurrir a las actividades resueltas del profesor.
+    
+### Continuar haciendo:
+    -Continuar reuniéndonos con frecuencia.
+    -Seguir prestándole atención al detalle.
+    -Priorizar las tareas.
+    -Seguir escuchándonos y tener empatía entre nosotros.
+    -Seguir complementándonos como equipo.
+   
  
  
  

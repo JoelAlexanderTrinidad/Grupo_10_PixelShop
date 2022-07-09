@@ -1,12 +1,20 @@
-[{
+[
+  {
     "id": 1,
     "name": "Norean",
     "last-name": "Arons",
     "email": "narons0@google.de",
     "password": "2xNBwr3",
     "images": "",
-    "categoryUsers":[
-      "admin",
-      "client"
-  ]
-  }]
+    "categoryUsers": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Alberto",
+    "last-name": "Fernandez",
+    "email": "AlbertoFernandez@google.de",
+    "password": "Dilam456",
+    "images": "",
+    "categoryUsers": "client"
+  }
+]
