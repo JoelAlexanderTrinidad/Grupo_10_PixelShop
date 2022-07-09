@@ -172,9 +172,10 @@ module.exports={
     profile : (req, res) => {
         User.findByPk(req.session.userLogin.id)
         .then(user => {
-            user.fecha = moment().format('YYYY-MM-DD');
+            const fecha = user.fecha = moment().format('DD-MM-YYYY');
             res.render("profile", {
-                user
+                user,
+                fecha
             })
         })
         .catch(error => console.log(error))
