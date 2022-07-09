@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include('./partials/head',{title: 'Perfil | Pixel Shop'}) %> 
 
-<body class="register" >
+<body class="" >
     <%- include('./partials/header') %> 
     <main class="main_register">
         <section>
@@ -50,15 +50,15 @@
                         
                         <div id="genero">
                             <div>
-                                <input type="radio" id="fem" name="genero" value="femenino">
+                                <input type="radio" id="fem" name="genero" value="femenino" <%= usuario.genero && usuario.genero === "femenino" ? 'checked' : null %>>
                                 <label for="fem">Femenino</label>
                             </div>
                             <div>
-                                <input type="radio" id="mas" name="genero" value="masculino">
+                                <input type="radio" id="mas" name="genero" value="masculino" <%= usuario.genero && usuario.genero === "masculino" ? 'checked' : null %>>
                                 <label for="mas">Masculino</label>
                             </div>
                             <div>
-                                <input type="radio" id="otro" name="genero" value="otros">
+                                <input type="radio" id="otro" name="genero" value="otros" <%= usuario.genero && usuario.genero === "otros" ? 'checked' : null %>>
                                 <label for="otro">Otros</label>
                             </div>
                         </div>
@@ -80,8 +80,8 @@
                 </div>
                 
                 <div class="button">
-                    <button type="submit">Guardar</button>
-                    <button class="bt-profile"><a href="/">Cancelar</a></button>                    
+                    <button  type="submit">Guardar</button>
+                   <button><a href="/"></a>Cancelar</button>      
                 </div>
     </form>
     </section>

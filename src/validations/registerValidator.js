@@ -1,5 +1,6 @@
 const {check, body} = require('express-validator');
-const usuarios = require('../data/users.json');
+// const usuarios = require('../data/users.json');
+const db = require('../database/models')
 
 module.exports = [
     check('nombre')
@@ -17,15 +18,19 @@ module.exports = [
     check('email')
         .notEmpty().withMessage('Debes ingresar un email').bail()
         .isEmail().withMessage('Email inválido').bail()
-        .custom((value) =>{
-            const usuario = usuarios.find(usuario => usuario.email === value);
-            if(usuario){
-                return false;
-            }
-            else{
-                return true;
-            }
-        }).withMessage('El mail ya se encuentra registrado'),
+        .custom( value => {
+            return db.User.findOne({
+                where : {
+                    email : value
+                }
+            })
+            .then(user => {
+                if (user) {
+                    return Promise.reject()
+                }
+            })
+            .catch(() => Promise.reject('El mail ya se encuentra registrado'))
+        }),
 
     check('password')
         .isLength({min: 4, max: 12}).withMessage('La contraseña debe tener entre 4 y 12 caracteres'),

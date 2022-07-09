@@ -1,118 +1,221 @@
-const products = require('../data/products.json');
+const db = require('../database/models');
+const { Op } = require("sequelize");
 const path = require('path');
-const fs = require('fs');
-const genders =  require('../data/genders.json');
+const fs = require('fs')
+
 
 module.exports={
     productDetail:(req,res)=>{
-        const producto = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "products.json"), "utf-8"));
-
-        const {id} = req.params;
-        const product = producto.find(product => product.id === +id);
-        const misGeneros = product.gender;
-    
-        res.render('productDetail',{
-            product,
-            misGeneros,
-            genders,
-            products,
-        })
+        const product = db.Product.findByPk(req.params.id);
+        
+        const products = db.Product.findAll();
+               
+        const juegoGen = db.Gender.findAll({
+            attributes : ['id','name']
+            })
+        const generos = db.Product_gender.findAll(
+             {
+                where :{
+                    productId: req.params.id
+                } 
+            })
+        Promise.all([juegoGen, generos, product, products])
+        .then(([juegoGen, generos, product, products])=> {
+                let generoJuego = []
+                for (let i=0; i<generos.length; i++) {
+                    generoJuego.push(generos[i].genderId)       
+                }
+                let generosAsociados = []
+                for (let i=0; i<juegoGen.length; i++) {
+                    generosAsociados.push(juegoGen[i].name)
+                }
+                let misGeneros=[]
+                for(let i=0; i<generoJuego.length; i++){
+                    for (let j=0; j<=12; j++) {
+                        if(generoJuego[i]===j){
+                            misGeneros.push(generosAsociados[j-1])
+                        }
+                    }
+                //    a.push(i)
+                }
+                return res.render('productDetail',{
+                    product,
+                    misGeneros,
+                    products
+                })
+            }) 
     },
     productCart:(req,res)=>{
-        res.render('productCart', {
-            products
+        db.Product.findAll()
+        .then(products => {
+            return  res.render('productCart', {
+                products})
         })
+        .catch(error=> console.log(error))
     },
     add:(req,res)=>{
-
-    
-        res.render('formCrear',{
-            genders
+        db.Gender.findAll()
+        .then(genders =>{
+            return  res.render('formCrear',{
+                genders
+            })    
         })
-       
-
+        .catch(error=> console.log(error))
     },
-   
-    update: (req,res)=>{
-        const {id}=req.params;
-        const {name, price, category, discount, description, requeriment}= req.body;
+    store: async (req,res) => {
 
-        let gender;
+        try {
+            const {id, name, price, discount, description, ranking, genres} = req.body;
+            // console.log(genres)
+            
+            let nuevoProducto = await db.Product.create(
+                {   id : id, 
+                    name: name.trim(),
+                    price: +price,
+                    discount:+discount,
+                    description: description.trim(),
+                    img: req.file ? req.file.filename : 'default-image.jpg',
+                    ranking : ranking,
+                    genres : genres.join()
+                })
 
-        const product = products.find(product => product.id === +req.params.id)
-       
-        let productsModify =  products.map(product =>{
-             if(product.id === +req.params.id){
-                 let productModify={
-                ...product,
-                name: name,
-                price: +price,
-                discount:+discount,
-                category,
-                description: description,
-                img: req.file ? req.file.filename : product.img,
-                gender: !req.body.gender ? gender = product.gender : gender = typeof(req.body.gender) === 'string' ? [req.body.gender] : req.body.gender,
-                requeriment
-                 }
-                 return productModify
-                 
-                }
-                return product 
-                
+            let nuevoProductArray = JSON.parse("[" + genres + "]");
+
+            for (let index = 0; index < nuevoProductArray.length; index++) {
+               
+                    await db.Product_gender.create({
+                    
+                    genderId: nuevoProductArray[index],
+                    productId: nuevoProducto.id,
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                })
+            }
+            return res.redirect('/admin')
+
+        } catch (error) {
+            console.log(error)
+        }
+            
+    },
+
+    //FALTA EDIT Y UPDATE ----> asociacion de genders
+    edit : (req,res) => {
+        const product = db.Product.findByPk(req.params.id);
+        const genders = db.Gender.findAll({
+           
+        });
+        const generosJ = db.Product_gender.findAll({
+            where :{
+                productId : req.params.id
+            }
+        })
+        Promise.all([product, genders,generosJ])
+        .then(([product,genders,generosJ])=> {
+            res.render('formEdit',{
+                product,
+                genders,
+                generosJ
             })
+        })
+        .catch(error=>console.log(error))
+    },   
+    update:  async (req,res) => {
+
+        try {
+            const { name, price, discount, description, ranking} = req.body;
+            return res.send(req.body)
+            const producto = await db.Product.findByPk(req.params.id)
 
             if(req.file){
-               if(fs.existsSync(path.resolve(__dirname,'..','public','images',product.img)) && product.img !== "noimage.jpeg"){
-                   fs.unlinkSync(path.resolve(__dirname,'..','public','images',product.img))
-               }
-           }        
+                fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',producto[0].img))
+            }
+
+            await db.Product_gender.destroy({
+                where: {
+                    productId: req.params.id
+                },
+            })
+            let generosJ = req.body.genres 
+
+            for (let index = 0; index < generosJ.length; index++) {
+               
+                await db.Product_gender.create({
+                    genderId: generosJ[index],
+                    productId: producto.id,
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                })
+            }
             
-            fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'),JSON.stringify(productsModify, null, 3), 'utf8')
-
-        return res.redirect('/product/detail/' + product.id);
+            await db.Product.update(
+                {   
+                    name: name.trim(),
+                    price: +price,
+                    discount:+discount,
+                    description: description.trim(),
+                    img: req.file ? req.file.filename : producto.img,
+                    ranking : ranking,
+                    genres : !req.body.genres ? producto.genres : req.body.genres.join()
+                },{
+                    where :{
+                        id : producto.id
+                    }
+                }) 
+            
+         return res.redirect('/admin/')  
+        } catch (error) {
+            console.log(error)
+        }
+            
     },    
-    store: (req,res) => {
-        const {name, price, discount, category, description, gender,requeriment} = req.body;
 
-        let lastId = products[products.length -1].id;
-        let newProduct = {
-            id : +lastId +1,
-            name: name.trim(),
-            price: +price,
-            discount:+discount,
-            category,
-            description: description.trim(),
-            img: req.file ? req.file.filename : 'default-image.jpg',
-            gender,
-            requeriment
-        };
-        products.push(newProduct);
-
-        fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'products.json'),JSON.stringify(products,null, 3),'utf-8');
-
-        return res.redirect('/');        
-    },
     search : (req,res) => {
-        const {keyword} = req.query;
-        const searchProduct = products.filter(product => product.name.toLowerCase().includes(keyword.toLowerCase()));
-
-        return res.render("result", {
-            products : searchProduct, keyword
+        let {keyword} = req.query
+        db.Product.findAll({
+            where:{
+                name: {
+                    [Op.substring]:[keyword.toLowerCase()]
+                }
+            }
+        })
+        .then(products=>{
+            return res.render('result',{
+                products,
+                keyword
+            })
         })
     },
-    edit : (req,res) => {
-        const producto = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "products.json"), "utf-8"));
+    
+    remove : async (req,res) =>  { 
+        try {
+            const product = await db.Product.findAll({
+                where :{
+                    id : req.params.id
+                },
+                attributes: ['img']
+            })
 
-        const product = producto.find(product => product.id === +req.params.id);
-       
-            res.render('formEdit', {product, genders});   
-    },
-    remove : (req,res) => {
-        const productFilter = products.filter(product => product.id !== +req.params.id);
-        const product = products.find(product => product.id === +req.params.id)
+            if(product[0].img !== 'default-image.jpg') {
+                fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", product[0].img))
+            }
 
-        fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", product.img))
-        fs.writeFileSync(path.resolve(__dirname, "..", "data", "products.json"), JSON.stringify(productFilter, null, 3), "utf-8");
-        return res.redirect("/");
+            await db.Product_gender.destroy({
+                where : {
+                    productId : req.params.id
+                }
+            })
+            await db.Product.destroy({
+                where : { id : req.params.id}
+            })
+
+            return res.redirect("/admin");
+        } 
+        catch (error) {
+            console.log(error)
+        }
     }
 }
+
+
+    

@@ -31,7 +31,7 @@
                        <% if (locals.userLogin) { %>
                         <li><a class="dropdown-item" href="/users/profile">Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="/users/logout">Cerrar Sesión</a></li>
-                        <% if (locals.userLogin?.rol === "admin") { %>
+                        <% if (locals.userLogin?.rolId === 2) { %>
                             <li><a class="dropdown-item" href="/admin">Administrador</a></li>
                         <% } %>
                         <% }else{ %>                            
@@ -63,7 +63,7 @@
                  <li><a href="/product/cart">Carrito de Compra <i class="fa-solid fa-cart-shopping"></i></a></li>
              </ul>
          </nav> -->
-         <form action="/product/result">
+         <form action="/product/result" method="GET">
          <div id="busqueda">
              <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
               <button><i class="fa-solid fa-magnifying-glass"></i></button>

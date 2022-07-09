@@ -16,7 +16,7 @@
         <h4>OFERTAS ESPECIALES <i class="fa-solid fa-tag"></i></h4>
         <!-- Ofertas especiales -->
         <section class="home__main__offer">
-            <% OfertasEspeciales.forEach(({id, name, price, discount, img}) => { %>             
+            <% ofertasEpeciales.forEach(({id, name, price, discount, img}) => { %>             
             <article>
                 <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
                 <div class="details">
@@ -33,7 +33,7 @@
         <!-- Destacados -->
         <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
         <section class="home__main__featured">
-            <% Destacados.forEach(({id,name, price, discount, img}) => { %>
+            <% destacados.forEach(({id,name, price, discount, img}) => { %>
             <article>
                 <p>popularidad: 
                     <i class="fas fa-star"></i>
@@ -60,7 +60,7 @@
         <!-- Recomendados -->
         <h4>RECOMENDADOS <i class="fa-solid fa-thumbs-up"></i></h4>
         <section class="home__main__recommended">
-            <% Recomendados.forEach(({id,name, price, discount, img}) => { %>        
+            <% recomendados.forEach(({id,name, price, discount, img}) => { %>        
                 <article>
                     <img src="/images/<%= img %>" alt="" width="100%"></a>
                     <h5>Reseña popular</h5>

@@ -1,6 +1,7 @@
 const bcryptjs = require('bcryptjs');
 const {check, body} = require('express-validator');
-const usuarios = require('../data/users.json');
+// const usuarios = require('../data/users.json');
+const db = require('../database/models')
 
 module.exports = [
     check('nombre')
@@ -21,16 +22,16 @@ module.exports = [
     body('passAntiguo')
         .notEmpty().withMessage('Debes ingresar la contraseña antigua')
         .custom((value, {req}) =>{
-            const usuario = usuarios.find(usuario => usuario.email === req.body.email);
-            if(!usuario){
-                return false;
-            }
-            else{
-                if(!bcryptjs.compareSync(value, usuario.password))
-                return false;
-            }
-            return true;
-        }).withMessage('Debes ingresar la contraseña antigua'),
+            return db.User.findOne({
+                where : {
+                  email : req.body.email
+                }
+              }).then(user => {
+                if(!user || !bcryptjs.compareSync(value, user.password)){
+                  return Promise.reject()
+                }
+              }).catch(() => Promise.reject('Debes ingresar la contraseña antigua'))
+            }),
 
     body('nuevaPass1')
         .custom((value, {req}) => {

@@ -1,115 +1,138 @@
-const usuarios = require('../data/users.json');
+const { User } = require('../database/models');
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
-
-
+const moment = require('moment');
 
 module.exports={
     register:(req,res)=>{
-            return res.render('register')
+        return res.render('register')
     },
     login:(req,res)=>{
         return res.render('login')
     },
     processRegister:(req, res)=>{
-        const errors = validationResult(req);
+        const errores = validationResult(req);
         
-
-        if(errors.isEmpty()){
+        if(errores.isEmpty()){
             
-            const {nombre, apellido, tel, email, password, fecha, genero, terminos, privacidad,rol} = req.body;
-    
-            const lastId = usuarios.length !== 0 ? usuarios[usuarios.length - 1].id : 0;
-           
-            const nuevoUsuario = {
-                id: +lastId + 1,
-                nombre: nombre.trim(),
-                apellido: apellido.trim(),
-                tel: +tel.trim(),
+            let {id, nombre, apellido, tel, email, password, terminos, privacidad} = req.body;
+
+            User.create({
+                id,
+                nombre,
+                apellido,
+                tel,
                 email,
                 password: bcryptjs.hashSync(password, 10),
-                fecha,
-                genero,
                 terminos,
                 privacidad,
                 imagenPerfil: req.file ? req.file.filename : 'no-image.png',
-                rol
-            };
-
-            usuarios.push(nuevoUsuario);
-
-            fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'users.json'), JSON.stringify(usuarios, null, 3), 'utf-8');
-
-            const {id} = nuevoUsuario
+                rolId : '1'
+            })
+            .then(usuarioNuevo => {
                 req.session.userLogin = {
-                id,
-                nombre : nombre.trim(),
-                rol
-            }
-
-            return res.redirect('/');   
-        }
-        else{
-            return res.render('register',{
-               
-                old: req.body,
-                errores: errors.mapped()
-            });
-        }
-       
-    },
-    processLogin:(req,res)=>{
-    let errors = validationResult (req);
-        if(errors.isEmpty()){
-            const {id, nombre, apellido, rol} = usuarios.find(usuario => usuario.email === req.body.email);
-            
-            req.session.userLogin = {
-                id, 
-                nombre,
-                apellido,
-                rol
-            }
-           
-
-            if(req.body.recordame){
-                res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
-              }
-
-            return res.redirect("/");
+                    id : usuarioNuevo.id,
+                    nombre : usuarioNuevo.nombre,
+                    apellido : usuarioNuevo.apellido,
+                    imagenPerfil : usuarioNuevo.imagenPerfil,
+                    rolId : usuarioNuevo.rolId
+                }
+                res.locals.user = req.session.userLogin;
+                res.redirect('/');
+            })
+            .catch(error => console.log(error))
         }else{
-
-            return res.render('login',{
-                errores :errors.mapped(),
+            res.render('register',{
+                errores: errores.mapped(),
                 old: req.body
             });
         }
-             
+    },
+    processLogin:(req,res)=>{
+    let errores = validationResult (req);
+
+        if(errores.isEmpty()){
+            User.findOne({
+                where : { email : req.body.email }
+            })
+            .then(usuario => {
+                
+                req.session.userLogin = {
+                    id: usuario.id,
+                    nombre : usuario.nombre,
+                    apellido : usuario.apellido,
+                    rolId : usuario.rolId,
+                    fecha: usuario.fecha
+                }
+                if(req.body.recordame){
+                    res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
+                }
+                res.locals.user = req.session.user;
+                res.redirect("/");
+            })
+            .catch(error => console.log(error))
+        }else{
+            res.render('login',{
+                errores :errores.mapped(),
+                old: req.body
+            });
+        }
     },
     editProfile: (req,res) => {
-        const usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
-        const usuario = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
-        return res.render("editProfile",{
-            usuario,
-            
+        User.findByPk(req.session.userLogin.id)
+        .then(usuario => {
+            return res.render("editProfile", {
+                usuario
+            })
         })
+        .catch(error => console.log(error))
     },
     logout: (req,res) => {
         req.session.destroy();
         res.cookie("userPixelShop", null, {maxAge : -1})
         return res.redirect("/")
     },
-    updateProfile : (req,res) => {
-        let errors = validationResult(req);
-        /* console.log(req.session.userLogin)
-        return res.send(req.session.userLogin); */
-        if (errors.isEmpty()) {
-          const {nombre, apellido, tel, email, fecha} = req.body;
-          const {id, password, imagenPerfil} = usuarios.find(usuario => usuario.id === req.session.userLogin.id);
-          
-          
-          const usuarioModificados = usuarios.map((usuario) => {
+    updateProfile : async (req,res) => {
+       
+        try {
+            let errores = validationResult(req);
+            const usuario = await User.findAll({
+                where : {
+                    id: req.session.userLogin.id
+                },
+                attributes : ['imagenPerfil', 'password']
+            })
+            if(errores.isEmpty()){
+                if(req.file){
+                        fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',usuario[0].imagenPerfil))
+                    }
+
+                User.update({
+                    ...req.body,
+                    password: usuario[0].password && !req.body.nuevaPass1 ? usuario[0].password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
+                    imagenPerfil: req.file ? req.file.filename : usuario[0].imagenPerfil
+                },{
+                    where : { id : req.session.userLogin.id }
+                });
+                
+                req.session.userLogin = {
+                    ...req.session.userLogin
+                  }
+                  return res.redirect("/users/profile");
+            }else{
+                return res.render("editProfile", {
+                    usuario : req.body,
+                    errores : errores.mapped()
+                  });
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
+
+     /*      const usuarioModificados = usuarios.map((usuario) => {
             if (usuario.id === id) {
               let usuarioModificados = {
                 ...usuario,
@@ -139,39 +162,45 @@ module.exports={
           return res.redirect("/users/profile");
         
         }else{
-        //   console.log(errors);
+        //   console.log(errores);
           return res.render("editProfile", {
             usuario : req.body,
-            errors : errors.mapped()
+            errores : errores.mapped()
           });
-        }
+        } */
     },
     profile : (req, res) => {
-        const usuario = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
-        const {tel, email, fecha, imagenPerfil, nombre, apellido} = usuario.find(usuario => usuario.id === req.session.userLogin.id);
-        return res.render('profile',{
-            nombre,
-            apellido,
-            tel,
-            email,
-            fecha,
-            imagenPerfil
-        });
+        User.findByPk(req.session.userLogin.id)
+        .then(user => {
+            const fecha = user.fecha = moment().format('DD-MM-YYYY');
+            res.render("profile", {
+                user,
+                fecha
+            })
+        })
+        .catch(error => console.log(error))
     },
-    removeUser : (req,res) => {
-        const usuario = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "users.json"), "utf-8"));
-            const userDelete = usuario.filter(user => user.id != req.session.userLogin.id)
-            const user = usuarios.find(user => user.id === req.session.userLogin.id)
-
-        if(user.imagenPerfil !== "no-image.png") {
-            fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", user.imagenPerfil))
+    removeUser : async (req,res) => {
+        try {
+            const user = await User.findAll({
+                where : {
+                    id : req.session.userLogin.id
+                },
+                attributes: ['imagenPerfil']
+            })
+            User.destroy({
+                where : {
+                    id : req.session.userLogin.id
+                }
+            })
+            if(user[0].imagenPerfil !== 'no-image.png') {
+                fs.unlinkSync(path.resolve(__dirname, "..", "..", "public", "images", user[0].imagenPerfil))
+            }
+            res.cookie("userPixelShop", null, {maxAge : -1})
+            req.session.destroy();
+            return res.redirect("/");
+        } catch (error) {
+            console.log(error)
         }
-        fs.writeFileSync(path.resolve(__dirname, "..", "data", "users.json"), JSON.stringify(userDelete, null, 3), "utf-8");
-  
-        req.session.destroy();
-        res.cookie("userPixelShop", null, {maxAge : -1})
-       
-        return res.redirect("/");
     },
-    
 }
