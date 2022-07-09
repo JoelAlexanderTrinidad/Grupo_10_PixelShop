@@ -124,6 +124,7 @@ module.exports={
 
         try {
             const { name, price, discount, description, ranking} = req.body;
+            return res.send(req.body)
             const producto = await db.Product.findByPk(req.params.id)
 
             if(req.file){
