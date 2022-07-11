@@ -76,7 +76,7 @@ module.exports={
                     description: description.trim(),
                     img: req.file ? req.file.filename : 'default-image.jpg',
                     ranking : ranking,
-                    genres : genres.join()
+                    genres : genres.toString()
                 })
 
             let nuevoProductArray = JSON.parse("[" + genres + "]");
@@ -99,7 +99,6 @@ module.exports={
             
     },
 
-    //FALTA EDIT Y UPDATE ----> asociacion de genders
     edit : (req,res) => {
         const product = db.Product.findByPk(req.params.id);
         const genders = db.Gender.findAll({
@@ -124,7 +123,6 @@ module.exports={
 
         try {
             const { name, price, discount, description, ranking} = req.body;
-            return res.send(req.body)
             const producto = await db.Product.findByPk(req.params.id)
 
             if(req.file){
@@ -156,7 +154,7 @@ module.exports={
                     description: description.trim(),
                     img: req.file ? req.file.filename : producto.img,
                     ranking : ranking,
-                    genres : !req.body.genres ? producto.genres : req.body.genres.join()
+                    genres : !req.body.genres ? producto.genres : req.body.genres.toString()
                 },{
                     where :{
                         id : producto.id
@@ -216,6 +214,3 @@ module.exports={
         }
     }
 }
-
-
-    

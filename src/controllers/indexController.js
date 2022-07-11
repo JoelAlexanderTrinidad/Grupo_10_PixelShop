@@ -5,9 +5,6 @@ const { Op } = require("sequelize");
 
 module.exports={
     index:(req,res)=> {
-        /* const OfertasEspeciales = products.filter(product => product.category.toLocaleLowerCase() === "ofertas especiales");
-        const Destacados = products.filter(product => product.category === "Destacados");
-        const Recomendados = products.filter(product => product.category === "Recomendados"); */
 
         let destacados = db.Product.findAll({
             where: {
@@ -21,20 +18,21 @@ module.exports={
         let ofertasEpeciales = db.Product.findAll({
             where: {
                 discount : {
-					[Op.gte] : 20
+					[Op.gte] : 40
 				}
 			},
 			order : [['id','DESC']],
 			limit : 6
             }
         )
-        /* >>>>>>>>> CHECKEAR RECOMENDADOS <<<<<<<<<<<< >:C*/
         let recomendados = db.Product.findAll({
             where: {
-                createdAt: {
-                    [Op.lt]: new Date(),
-                    [Op.gt]: new Date(new Date() - 24 * 60 * 60 * 1000)
-                  }
+                  discount : {
+					[Op.gte] : 5
+				},
+                ranking: {
+                    [Op.gte] : 6
+                }
                 },
                 order: [['createdAt', 'ASC']],
                 limit: 6
