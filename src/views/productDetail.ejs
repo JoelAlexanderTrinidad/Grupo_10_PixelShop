@@ -11,30 +11,35 @@
                 <div id="info-principal">
                     <section class="detail__main__section">
                         <div>
-                            <img src="/images/juego-muestra.jpg" alt="">
+                            <img src="/images/<%= product.img %>" alt="">
                         </div>
                         <div>
                             <img src="/images/carrusel-miniatura.png" alt="">
                         </div>
-                        <h3>Cyberpunk 2077 / <span>Digital</span></h3>
+                        <h3><%= product.name %> / <span>Digital</span></h3>
                         
                     </section>
                     <hr>
                     <div id="buy-info">
                         <section class="main__section-buy">
-                            <h2>$2.890 <span>ARS</span></h2>                    
+                            <% if (+product.discount !== 0) { %>
+                                <h2>$<%= product.price - (product.price * product.discount) / 100 %><span>ARS</span></h2>
+                                <h4 class="precioAnterior"><strike>$<%= product.price %></strike> <span><%= product.discount %>% OFF</span></h4>
+                            <% }else{ %>
+                                <h2><%= product.discount %></h2> 
+                                <% } %>
                             <div>
-                                <!-- <a href="http://google.com" class="button">Go to Google</a> -->
-                                <button><a href="/product/cart"><i class="fa-solid fa-cart-shopping"></i>COMPRAR</a></button> 
+                                <button><a href="/product/cart/"><i class="fa-solid fa-cart-shopping"></i>COMPRAR</a></button> 
                                 <button><a href=""><i class="fa-brands fa-whatsapp"></i>Asesor de ventas</a></button> 
                             </div>                    
                         </section>
                         <img src="/images/metodos_de_pago.jpg" alt="">
                         <section class="main__section-info">                
                             <h3>Resumen</h3>
-                            <p class="main__section-resumen">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, aperiam doloribus architecto, ab, libero blanditiis ratione quo rerum aliquam animi recusandae. Laborum accusantium temporibus perspiciatis corporis exercitationem, illo maiores in sunt nam hic, quidem iusto eum magnam aut, architecto optio delectus! Deleniti voluptatibus quas eius maxime ut quis id quaerat?</p>
+                            <p class="main__section-resumen"><%= product.description %></p>
                             <ul id="especificaciones">
-                                <li>Precio: xxxx</li>
+                                <li>Precio: $<%= product.price - (product.price * product.discount) / 100 %> (<%= product.discount %>%OFF)</li>
+                                <li></li>
                                 <li>Idioma texto: xxxx</li>
                                 <li>Idioma voz: xxxx</li>
                                 <div class="main__section-info-div">
@@ -43,121 +48,37 @@
                                     <li><b>Entrega inmediata</b></li>
                                 </div>
                             </ul>
-                            <p id="categorias:">Categorías</p>
                             <ul class="main__section-categories">
-                                <li><a href="">Loremasds.</a></li>
-                                <li><a href="">Lorem.</a></li>
-                                <li><a href="">Lorem.</a></li>
-                                <li><a href="">Lorem.</a></li>
-                                <li><a href="">Lorem.</a></li>
-                                <li><a href="">Lorem.</a></li>
-                            </ul>
+                                <ul class="main__section-categories">
+                                    <% misGeneros.forEach((element, i) => { %>                                 
+                                        <li><%= misGeneros[i] %></li>
+                                    <% }) %>
+                                                       
+                            </ul>                           
                         </section>
                     </div>
                 </div>
             </section>
-            
+           
         </section>
         <section class="main__section__articles">
                 <div>            
                     <h3 id="more">Más productos</h3>
                 </div>
+                <% products.forEach(({id,img, name, price, category}) => { %>
                 <article>
-                    <img src="/images/j1.jpg" alt="">
+                    <a href="/product/detail/<%= id %>"><img src="/images/<%=img %>" alt=""></a>
                     <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
+                        <h4 class="product__detail__article-name"><%= name %></h4>
+                        <h4 class="product__detail__article-price">$<%= price %> <span>ARS</span></h4>
+                        <p><%= category %></p>
                     </div>
+                    
                 </article>
-                <article>
-                    <img src="/images/j2.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j3.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j4.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j5.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j6.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j7.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j8.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j9.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j10.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j11.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/j12.jpg" alt="">
-                    <div>
-                        <h4>nombre del juego</h4>
-                        <h4>precio $xxxx</h4>
-                        <p>categoría</p>
-                    </div>
-                </article>
+                   <% }) %>
+                    
+
+               
             </section>
         </div>
 

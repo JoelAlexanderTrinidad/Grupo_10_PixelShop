@@ -16,12 +16,12 @@
         <h4>OFERTAS ESPECIALES <i class="fa-solid fa-tag"></i></h4>
         <!-- Ofertas especiales -->
         <section class="home__main__offer">
-            <% products.forEach(({id, name, price, discount, img}) => { %>             
+            <% ofertasEpeciales.forEach(({id, name, price, discount, img}) => { %>             
             <article>
                 <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
                 <div class="details">
                     <p>$<%= price %></p>
-                    <span><%= discount %> OFF</span>
+                    <span><%= discount %> %OFF</span>
                     <div>
                         <i class="fas fa-cart-plus"></i>
                         <i class="fa-regular fa-heart"></i>
@@ -33,7 +33,7 @@
         <!-- Destacados -->
         <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
         <section class="home__main__featured">
-            <% for( let index = 0; index < 2; index++ ) { %>
+            <% destacados.forEach(({id,name, price, discount, img}) => { %>
             <article>
                 <p>popularidad: 
                     <i class="fas fa-star"></i>
@@ -42,9 +42,9 @@
                     <i class="fas fa-star"></i>
                     <i class="far fa-star"></i>
                 </p>
-                <a href="/product/detail/<%= products.id %>"><img src="images/<%= products[index].img %>" alt="" width="100%"></a>
+                <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
             </article>
-            <% } %>
+            <% }) %>
             <div class="carousel">
                 <i class="fas fa-dot-circle"></i>
                 <i class="fas fa-circle"></i>
@@ -60,42 +60,14 @@
         <!-- Recomendados -->
         <h4>RECOMENDADOS <i class="fa-solid fa-thumbs-up"></i></h4>
         <section class="home__main__recommended">
-            <article>
-                <img src="/images/recomendado-1.jpg" alt="" width="100%"></a>
-                <h5>Reseña popular</h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
-                <a href="/product/detail">Ver mas</a>
-            </article>
-            <article>
-                <img src="/images/recomendado-2.jpg" alt="" width="100%"></a>
-                <h5>Reseña popular</h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
-                <a href="/product/detail">Ver mas</a>
-            </article>
-            <article>
-                <img src="/images/recomendado-3.jpg" alt="" width="100%"></a>
-                <h5>Reseña popular</h4>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
-                <a href="/product/detail">Ver mas</a>
-            </article>
-            <article>
-                <img src="/images/recomendado-4.jpg" alt="" width="100%"></a>
-                <h5>Reseña popular</h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
-                <a href="/product/detail">Ver mas</a>
-            </article>
-            <article>
-                <img src="/images/recomendado-5.jpg" alt="" width="100%"></a>
-                <h5>Reseña popular</h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
-                <a href="/product/detail"> Ver mas</a>
-            </article>
-            <article>
-                <img src="/images/recomendado-6.jpg" alt="" width="100%"></a>
-                <h5>Reseña popular</h5>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
-                <a href="/product/detail">Ver mas</a>
-            </article>
+            <% recomendados.forEach(({id,name, price, discount, img}) => { %>        
+                <article>
+                    <img src="/images/<%= img %>" alt="" width="100%"></a>
+                    <h5>Reseña popular</h5>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
+                    <a href="/product/detail/<%= id %>">Ver mas</a>
+                </article>
+            <% }) %>
         </section>     
         <div class="home__main__continue">
             <a href="/">Seguir explorando</a><!-- Desplegar más productos o abrir una nueva pág-->

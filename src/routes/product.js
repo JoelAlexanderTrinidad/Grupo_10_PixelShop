@@ -1,13 +1,34 @@
 var express = require('express');
 var router = express.Router();
-const {productCart,productDetail, formCrear, formEdit}=require('../controllers/productController')
+const multer = require('multer');
+const path = require('path');
+const adminCheck = require('../middlewares/adminCheck');
+
+const {productCart,productDetail, add, edit, store, search, update, remove}=require('../controllers/productController');
+
+const storage = multer.diskStorage({
+      destination: (req, file, callback) =>{
+          callback(null, 'public/images')
+      },
+      filename: (req, file, callback) =>{
+          callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+      }
+  });
+
+  const upload = multer({
+      storage
+  })
 
 /* /product */
 
 router
       .get('/cart',productCart)
-      .get('/detail', productDetail)
-      .get('/form/crear', formCrear)
-      .get('/form/edit', formEdit)
+      .get('/detail/:id', productDetail)
+      .get('/crear', adminCheck,add)
+      .post('/crear',upload.single('img'), store)
+      .get('/edit/:id', adminCheck,edit)
+      .put('/update/:id', upload.single('img'), adminCheck,update)
+      .get('/result', search)
+      .delete('/remove/:id', adminCheck,remove)
 
 module.exports = router;

@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head',{title: 'Editar Producto | Pixel Shop'}) %> 
-<body class="form__body">
-   <%- include('./partials/header') %> 
+<body  class="form__body">
+   <%- include('./partials/header') %>
     <main class="form__main">
         <h2>Editar producto</h2>
-        <form class="form" action="" method="get">
+        <form class="form" method="POST" action="/product/update/<%= product.id %>?_method=PUT"  enctype="multipart/form-data" >
             <div>
-                <label for="producto">Nuevo nombre del producto</label>
-                <input type="text" name="nombre" id="producto" placeholder="Nombre del producto" required>
+                <label for="name">Nombre del producto</label>
+                <input type="text" name="name" id="name" value="<%= product.name %>" required>
             </div>
             <div class="">
-                <label for="descripcion">Nueva descripción del producto</label>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción del producto" required></textarea>
+                <label for="description">Descripción del producto</label>
+                <textarea type="text"id="description" name="description" cols="30" rows="10" required><%= product.description %></textarea>
             </div>
             <div class="">
-                <input type="file" name="file" multiple required>
+                <input type="file" name="img" multiple >
+                <img src="/images/<%= product.img %>" alt="">
             </div>
-            <div>
-                <select class="" name="categorias" id="categorias">
-                    <option value="" hidden selected>Por favor elegí uno...</option>
-                    <option value="accion">Acción</option>
-                    <option value="rpg">Rpg</option>
-                    <option value="aventuras">Aventuras</option>
-                    <option value="terror">Terror</option>
-                    <option value="lucha">Lucha</option>
-                    <option value="aventuras">Aventuras</option>
-                    <option value="estrategia">Estrategia</option>
-                    <option value="deportes">Deportes</option>
-                    <option value="carreras">Carreras</option>
-                    <option value="aventuras">Aventuras</option>
-                    <option value="plataformas">Plataformas</option>
-                    <option value="shooter">Shooter</option>
-                    <option value="puzzle">Puzzle</option>
-                    <option value="multijugador">Multijugador</option>
-                </select>
-            </div>
-            <div>
-                <label for="tamaño">Nuevo tamaño del producto</label>
-                <input type="text" name="tamaño" id="tamaño" placeholder="Tamaño del producto" required>
-            </div>
-            <div>
-                <label for="requisitos">Nuevo requisitos del producto</label>
-                <input class="input-requisitos" type="text" name="requisitos" id="requisitos" placeholder="SO" required>
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Procesador" required>
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="RAM" required>
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Gráfica " required>
-                <input class="input-requisitos"  type="text" name="requisitos" id="requisitos" placeholder="Almacenamiento" required>
+            <h4>Géneros de juego</h4>
+            <div class="gender">
+                <% genders.forEach( ({id,name}) => { %>
+                    <div class="gender__div">
+                        <input class="" type="checkbox" name="genres" id="genres" value="<%= id %>" <% generosJ.forEach((element) => { %>
+                            <%= element.genderId === id && 'checked' %>
+                    <% }) %>>
+                        <label for="genres"><%=name%></label>
+                    </div>
+                <% }) %>
             </div>
             <div class="">
-                <label for="precio">Nuevo precio del producto</label>
-                <input type="text" name="precio" id="precio" placeholder="Precio del producto" required>
+                <label for="price">Precio del producto</label>
+                <input type="number" name="price" id="price" value="<%= product.price %>" required>
+            </div>
+            <div class="">
+                <label for="discount">Descuento</label>
+                <input type="number" name="discount" id="discount" value="<%= product.discount %>">
+            </div>
+            <div class="">
+                <label for="ranking">Ranking</label>
+                <input type="number" name="ranking" id="ranking" value="<%= product.ranking %>" max="10" min="0" required>
             </div>
             <div>
                 <button type="submit">Editar</button>

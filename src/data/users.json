@@ -1,20 +1,44 @@
 [
-  {
-    "id": 1,
-    "name": "Norean",
-    "last-name": "Arons",
-    "email": "narons0@google.de",
-    "password": "2xNBwr3",
-    "images": "",
-    "categoryUsers": "admin"
-  },
-  {
-    "id": 2,
-    "name": "Alberto",
-    "last-name": "Fernandez",
-    "email": "AlbertoFernandez@google.de",
-    "password": "Dilam456",
-    "images": "",
-    "categoryUsers": "client"
-  }
+   {
+      "id": 1,
+      "nombre": "Elver",
+      "apellido": "García",
+      "tel": "123123",
+      "email": "tuvieja@gmail.com",
+      "password": "123123",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "image-1654029888549.jpg",
+      "rolId": 1,
+      "fecha": null,
+      "genero" : ""
+   },
+   {
+      "id": 2,
+      "nombre": "Manuel",
+      "apellido": "Ramirez",
+      "tel": "1130442671",
+      "email": "Manuyagami95@gmail.com",
+      "password": "$2a$10$Emu49YVl.EUqqKXokUZiBeLhJXNWhXlo8lzRckh3qm3bWo7fTnr3m",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "no-image.png",
+      "rolId": 2,
+      "fecha": null,
+      "genero" : ""
+   },
+   {
+      "id": 3,
+      "nombre": "alex",
+      "apellido": "trinidad",
+      "tel": 13232131,
+      "email": "a@gmail.com",
+      "password": "$2a$10$5j6XydsjaPxUv0EPNXhYRO6vap4hV5eRX5vSOJTjaxnMq5.7qiQDW",
+      "terminos": "on",
+      "privacidad": "on",
+      "imagenPerfil": "no-image.png",
+      "rolId": 2,
+      "fecha": null,
+      "genero" : ""
+   }
 ]

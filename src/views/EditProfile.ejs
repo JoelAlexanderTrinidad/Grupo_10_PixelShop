@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head',{title: 'Perfil | Pixel Shop'}) %> 
+
+<body class="" >
+    <%- include('./partials/header') %> 
+    <main class="main_register">
+        <section>
+            <h2>Perfil de usuario</h2>
+        </section>
+        <section>
+            <form action="/users/update-profile?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="forms-datos">
+                    <div class="datos">
+                        <label for="nombre" >Nombre</label>
+                        <input type="text" name="nombre" id="nombre" placeholder=" nombre" value="<%= usuario.nombre %>" >
+                        <p style="color: rgb(68, 15, 8);"><%= locals.errors && errors.nombre ? locals.errors.nombre.msg : null %></p>
+                    </div>
+    
+                    <div class="datos">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" placeholder=" apellido" value="<%= usuario.apellido %>" >
+                        <p style="color: rgb(68, 15, 8);"><%= locals.errors && errors.apellido ? locals.errors.apellido.msg : null %></p>
+                    </div>
+    
+                    <div class="datos">
+                        <label for="tel">Número de celular </label>
+                        <input type="tel" name="tel" id="tel" placeholder=" número de celular" value="<%= usuario.tel %>">
+                        <p style="color: rgb(68, 15, 8);"><%= locals.errors && errors.tel ? locals.errors.tel.msg : null %></p>
+                    </div>
+    
+                    <div class="datos">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" name="email" id="email" placeholder=" email" value="<%= usuario.email %>" >
+                        <p style="color: rgb(68, 15, 8);"><%= locals.errors && errors.email ? locals.errors.email.msg : null %></p>
+                    </div>
+    
+                    <div class="datos">
+                        <label for="contraseña">Contraseña antigua</label>
+                        <input type="password" name="passAntiguo" id="contraseña" placeholder=" contraseña antigua" >
+                        <p style="color: rgb(68, 15, 8);"><%= locals.errors && errors.passAntiguo ? locals.errors.passAntiguo.msg : null %></p>
+                    </div>
+                    <div class="datos">
+                        <label for="fecha">Fecha de nacimiento</label>
+                        <input type="date" name="fecha" id="fecha" value="<%= usuario.fecha %>" >
+                    </div>
+                    <div class="datos">
+                   <label for="">Género</label>
+                    <section class="section__genero">
+                        
+                        <div id="genero">
+                            <div>
+                                <input type="radio" id="fem" name="genero" value="femenino" <%= usuario.genero && usuario.genero === "femenino" ? 'checked' : null %>>
+                                <label for="fem">Femenino</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="mas" name="genero" value="masculino" <%= usuario.genero && usuario.genero === "masculino" ? 'checked' : null %>>
+                                <label for="mas">Masculino</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="otro" name="genero" value="otros" <%= usuario.genero && usuario.genero === "otros" ? 'checked' : null %>>
+                                <label for="otro">Otros</label>
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                    <div  class="datos">
+                        <label for="imagenPerfil">Foto de perfil</label>
+                        <input type="file" id="" name="image" accept="image/*">
+                    </div>
+                    <div class="datos">
+                        <label for="contraseña">Contraseña nueva</label>
+                        <input  type="password" name="nuevaPass1" id="contraseña" placeholder=" contraseña nueva" value="" >
+                        <p style="color: rgb(68, 15, 8);"><%= locals.errors && errors.nuevaPass1 ? locals.errors.nuevaPass1.msg : null %></p>
+                    </div>
+                    <div class="datos">
+                        <label for="contraseña">Repite tu contraseña nueva</label>
+                        <input type="password" name="nuevaPass2" id="contraseña" placeholder=" Repite tu contraseña" value="" >
+                    </div>
+                </div>
+                
+                <div class="button">
+                    <button  type="submit">Guardar</button>
+                   <button><a href="/"></a>Cancelar</button>      
+                </div>
+    </form>
+    </section>
+    </main>
+    <%- include('./partials/footer') %> 
+</body>
+</html>

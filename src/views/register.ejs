@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head',{title: 'Registro| Pixel Shop'}) %> 
+    <%- include('./partials/head',{title: 'Registro | Pixel Shop'}) %> 
 
 <body class="register" >
     <%- include('./partials/header') %> 
@@ -10,84 +10,76 @@
             <h4>Es fácil y rápido</h4>
         </section>
         <section>
-            <form action="" method="get">
+            <form action="" method="POST" enctype="multipart/form-data">
+              <div class="forms-datos">
                 <div class="datos">
                     <label for="nombre" >Nombre</label>
-                    <input type="text" name="nombre" id="nombre" placeholder=" nombre" required>
+                    <input type="text" name="nombre" id="nombre" placeholder=" nombre" value="<%= locals.old && old.nombre ? old.nombre : null %>">
+                    <span style="color: #6e0707;"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %></span>
                 </div>
 
                 <div class="datos">
                     <label for="apellido">Apellido</label>
-                    <input type="text" name="apellido" id="apellido" placeholder=" apellido" required>
+                    <input type="text" name="apellido" id="apellido" placeholder="apellido" value="<%= locals.old && old.apellido ? old.apellido : null %>">
+                    <span style="color: #6e0707;"><%= locals.errores && errores.apellido ? errores.apellido.msg : null %></span>
                 </div>
 
                 <div class="datos">
                     <label for="tel">Número de celular </label>
-                    <input type="tel" name="tel" id="tel" placeholder=" número de celular">
+                    <input type="number" name="tel" id="tel" placeholder=" número de celular" value="<%= locals.old && old.tel ? old.tel : null %>">
+                    <span style="color: #6e0707;"><%= locals.errores && errores.tel ? errores.tel.msg : null %></span>
                 </div>
 
                 <div class="datos">
                     <label for="email">Correo electrónico</label>
-                    <input type="email" name="email" id="email" placeholder=" email" required>
+                    <input type="email" name="email" id="email" placeholder=" email" value="<%= locals.old && old.email ? old.email : null %>">
+                    <span style="color: #6e0707;"><%= locals.errores && errores.email ? errores.email.msg : null %></span>
                 </div>
 
                 <div class="datos">
                     <label for="contraseña">Contraseña</label>
-                    <input type="password" name="contraseña" id="contraseña" placeholder=" contraseña" required>
+                    <input type="password" name="password" id="contraseña" placeholder=" contraseña" >
+                    <span style="color: #6e0707;"><%= locals.errores && errores.password ? errores.password.msg : null %></span>
                 </div>
 
                 <div class="datos">
-                    <label for="fecha">Fecha de nacimiento</label>
-                    <input type="date" name="fecha" id="fecha" required>
-                </div>
-                <div class="datos">
-                    <h3>Género</h3>
-                <section class="section__genero">
+                    <label for="contraseña">Confirmar contraseña</label>
+                    <input type="password" name="password2" id="contraseña" placeholder="vuelva a escribir la contraseña" >
+                    <span style="color: #6e0707;"><%= locals.errores && errores.password2 ? errores.password2.msg : null %></span>
+                </div> 
+              </div>        
+                <div class="register__imagen-perfil">
+                    <label for="image">Subir imágen de perfil</label>
+                    <input type="file" id="imagenPerfil" name="image" accept="image/*">
+                    <div>(opcional)</div>
                     
-                    <div id="genero">
-                        <div>
-                            <label for="fem">Femenino</label>
-                            <input type="radio" name="genero" value="f" id="fem">
-                        </div>
-                        <div>
-                            <label for="mas">Masculino</label>
-                            <input type="radio" name="genero" value="m" id="mas">
-                        </div>
-                        <div>
-                            <label for="otro">Otros</label>
-                            <input type="radio" name="genero" value="o" id="otro">
-                        </div>
-                    </div>
                 </div>
-                
+                <section class="requied">
+                    <div >
+                        <input type="checkbox" id="terminos" name="terminos"  <%= locals.old && old.terminos ? 'checked' : null %>>
+                        <label for="terminos">Acepto los términos y condiciones de uso</label>
+                        <span style="color: #6e0707;"><%= locals.errores && errores.terminos ? errores.terminos.msg : null %></span>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="privacidad" name="privacidad"  <%= locals.old && old.privacidad ? 'checked' : null %>>
+                        <label for="privacidad">He leído y acepto las políticas de privacidad</label>
+                        <span style="color:#6e0707;"><%= locals.errores && errores.privacidad ? errores.privacidad.msg : null %></span>
+                    </div>
+                </section>
+           
+                    <div class="button">
+                        <button type="submit">REGISTRATE</button>
+                </div>
+                <section class="redes">
+                    <h4>O registrate con</h4>
+                    <ul>
+                        <li><a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a></li>
+                        <li><a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
                 </section>
             </form>
-          
-            <section class="required">
-                <div >
-                    <input type="checkbox" id="terminos" name="terminos" required >
-                    <label for="terminos">He leído y estoy de acuerdo con los <span>términos y condiciones de uso</span></label>
-                    
-                </div>
-                <div>
-                    <input type="checkbox" id="privacidad" name="privacidad" required >
-                    <label for="privacidad">He leído y acepto las <span>políticas de privacidad</span></label>
-                    
-                </div>
-            </section>
-            
         </section>
-        <div class="button">
-            <a href=""><button type="submit">REGISTRATE</button></a>
-        </div>
-        <section class="redes">
-        <h4>O registrate con</h4>
-        <ul>
-            <li><a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a></li>
-            <li>       <a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a></li>
-            <li>        <a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a></li>
-        </ul>
-    </section>
     </main>
     <%- include('./partials/footer') %> 
 </body>

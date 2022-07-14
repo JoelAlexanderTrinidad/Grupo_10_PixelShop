@@ -1,23 +1,47 @@
 <header >
         <section class="header__section">
-         <div class="header__section-div">
-             <a href="/"><img src="/images/nuevoLogo.jpg" alt="logo"></a>            
-             <div class="container">
-                <h1 class="neonText">
-                      PIXELSHOP
-                </h1>        
-             </div>
-         </div>
-         <h1 class="neonText-principal">
-            PIXELSHOP
-        </h1> 
-         <div id="burger">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-         <div  class="header__section__div-user">
-            <a href="/product/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-         </div>
+            <div class="header__section-div">
+                <a href="/"><img src="/images/nuevoLogo.jpg" alt="logo"></a>            
+                <div class="container">
+                    <h1 class="neonText">
+                        PIXELSHOP
+                    </h1>        
+                </div>
+            </div>
+            <h1 class="neonText-principal">PIXELSHOP</h1> 
+            <div id="burger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div  class="header__section__div-user">
+              <span>
+                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                          <li><a class="dropdown-item" >Favoritos</a></li>
+                          <li><a class="dropdown-item" href="/product/cart">Carrito</a></li>
+                      </ul>
+              </span>
+                
+              <span>
+                  <button class="btn  dropdown-toggle" type="button"  data-bs-toggle="dropdown" aria-expanded="false"> 
+                      <i class="fa-solid fa-user"></i>
+                 </button>
+                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                       <% if (locals.userLogin) { %>
+                        <li><a class="dropdown-item" href="/users/profile">Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="/users/logout">Cerrar Sesión</a></li>
+                        <% if (locals.userLogin?.rolId === 2) { %>
+                            <li><a class="dropdown-item" href="/admin">Administrador</a></li>
+                        <% } %>
+                        <% }else{ %>                            
+                            <li><a class="dropdown-item" href="/users/login">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
+                        <% } %>
+                     </ul>
+              </span>
+               
+            </div>
         </section>
        
          <nav class="header__nav">
@@ -28,20 +52,21 @@
                  <li><a href="">Idioma</a></li>
              </ul>
              <ul>
-                 <li> <a href="">Tendencias y Novedades</a></li>
                  <li> <a href="">Suscripción Premium</a></li>
                  <li> <a href="">Quienes Somos</a></li>
              </ul>
          </nav>
-         <nav class="header__nav__user">        
+         <!-- <nav class="header__nav__user">        
              <ul>
                  <li><a href="/users/login">Ingresa <i class="fa-solid fa-user"></i></a></li>
                  <li><a href="/users/register">Registrate</a></li>
                  <li><a href="/product/cart">Carrito de Compra <i class="fa-solid fa-cart-shopping"></i></a></li>
              </ul>
-         </nav>
+         </nav> -->
+         <form action="/product/result" method="GET">
          <div id="busqueda">
-             <input type="search" placeholder="Buscar videojuegos, marcas...">
+             <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
               <button><i class="fa-solid fa-magnifying-glass"></i></button>
-         </div>
+            </div>
+        </form>
      </header>

@@ -1,14 +1,15 @@
 ### Tareas completadas:
     -Actualizar Trello.
-    -Actualizar retro.
-    -Creación JSON.        
+    -Actualizar retro.        
 
 ### Impedimentos encontrados:
-    -Cómo dividir categorías.    
+    -La división de tareas por tener tareas correlativas.
+    -Al actualizar los usuarios y productos se reiniciaba nodemon y nos cerraba la sesión del usuario. 
   
 ### Soluciones propuestas:
-    -Integrar las categorías dentro del mismo archivo JSON.
+    - Se solucionó con la configuración de nodemon en el package.json.
 
 ### Tareas pendientes:
-    -Realizar CRUD.
+    - Ver detalles de maquetados.
+    - Actualizar los json de Usuarios. 
 

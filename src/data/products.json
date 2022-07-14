@@ -1,512 +1,133 @@
 [
-    {
-        "id": 1,
-        "name": "Doom",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j1.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j2.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j3.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 4,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j4.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 5,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j5.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 6,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j6.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 7,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j7.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 8,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Ofertas especiales",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j8.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 9,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Destacados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j9.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 10,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Destacados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j10.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 11,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j11.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 12,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "j12.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 13,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "juego-muestra.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 14,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "oferta-1.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 15,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "oferta-2.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 16,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "oferta-3.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    },
-    {
-        "id": 17,
-        "name": "Shelbi",
-        "price": 9158,
-        "discount": 22,
-        "category": "Recomendados",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        "img" : "oferta-4.jpg",
-        "platforms" : [
-            "xbox",
-            "ps3",
-            "ps4",
-            "ps5",
-            "pc"
-        ],
-        "categoryGames": [
-            "accion",
-            "rpg",
-            "aventura",
-            "terror",
-            "lucha",
-            "estrategias",
-            "deportes",
-            "carrera",
-            "plataforma",
-            "shooter",
-            "puzzle",
-            "multijugador"
-        ]
-    }
+   {
+      "id": 1,
+      "name": "Doom",
+      "price": 3600,
+      "discount": 10,
+      "description": "Qué onda gato si anda deaah",
+      "img": "j1.jpg",
+      "ranking": 8,
+      "genres": "1,3,12"
+   },
+   {
+      "id": 2,
+      "name": "Mortal Kombat 11",
+      "price": 1199,
+      "discount": 22,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j4.jpg",
+      "ranking": 5,
+      "genres": "2,5"
+   },
+   {
+      "id": 3,
+      "name": "Red dead redeption II",
+      "price": 2499,
+      "discount": 30,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j5.jpg",
+      "ranking": 2,
+      "genres": "11,6"
+   },
+   {
+      "id": 4,
+      "name": "God of War",
+      "price": 4199,
+      "discount": 25,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j6.jpg"   ,
+      "ranking": 10,
+      "genres": "4,7,8,9"
+   },
+   {
+      "id": 5,
+      "name": "Dragon ball xenoverse XV",
+      "price": 43999,
+      "discount": 22,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j7.jpg",
+      "ranking": 10,
+      "genres": "2"
+   },
+   {
+      "id": 6,
+      "name": "The last of us",
+      "price": 39999,
+      "discount": 15,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j8.jpg",
+      "ranking": 7,
+      "genres": "2,4,5"
+
+   },
+   {
+      "id": 7,
+      "name": "Grand Theft Auto V",
+      "price": 54188,
+      "discount": 20,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j9.jpg",
+      "ranking": 9,
+      "genres": "9,8,3"
+   },
+   {
+      "id": 8,
+      "name": "Dragon ball fighters Z",
+      "price": 3000,
+      "discount": 40,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j10.jpg",
+      "ranking": 1,
+      "genres": "5,6,2"
+   },
+   {
+      "id": 9,
+      "name": "Call of Duty Black ops III",
+      "price": 26008,
+      "discount": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j11.jpg",
+      "ranking": 8,
+      "genres": "1,5"
+   },
+   {
+      "id": 10,
+      "name": "Resident Evil 2",
+      "price": 81999,
+      "discount": 22,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "j12.jpg",
+      "ranking": 8,
+      "genres": "9"
+   },
+   {
+      "id": 11,
+      "name": "CyberPunk",
+      "price": 2199,
+      "discount": 25,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "juego-muestra.jpg",
+      "ranking": 3,
+      "genres": "10,6"
+   },
+   {
+      "id": 12,
+      "name": "Aura Kingdom",
+      "price": 1500,
+      "discount": 40,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "oferta-1.jpg",
+      "ranking": 5,
+      "genres": "12,6,5"
+   },
+   {
+      "id": 13,
+      "name": "Lost arks",
+      "price": 2360,
+      "discount": 50,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "img": "oferta-2.jpg",
+      "ranking": 2,
+      "genres": "5,2,3"
+   }
 ]

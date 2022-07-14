@@ -43,8 +43,14 @@ header{
     20%, 24%, 55% {        
         text-shadow: none;
     }    
-  }
+}
+
+button.dropdown-toggle::after{
+    display: none;
+}
+
 /*  */
+
 .header__section {
     display: flex;
     justify-content: space-between;
@@ -60,6 +66,7 @@ header{
 
 .header__section-div img{
     width: 70px;
+    margin-left: 10px;
 }
 header #burger {
     background-color: #000000;
@@ -80,8 +87,9 @@ header #burger i{
     display: flex;
     justify-content: space-around;
 }
-.header__section__div-user a{
+.header__section__div-user i{
     color: white;
+    font-size: 24px;
 }
 .header__div i{
     background-color: var(--colorMorado);
@@ -100,7 +108,6 @@ header #burger i{
 
 .header__nav{
     display: none;
-    
 }
 
 .header__nav__user{
@@ -144,7 +151,7 @@ header #burger i{
     }
     .neonText-principal {
         margin: 0;
-        display: block;
+        display: none;
         font-family: 'Rubik Glitch';
         font-weight: 100;
         font-size: 8vw;
@@ -157,22 +164,20 @@ header #burger i{
         background-repeat: inherit;
         background-position: center;
     }
-    .header__section__div-user{
-        font-size: 30px;
-    }
+    
     .header__section h3{
         font-size: 60px;
     }
     .header__section-div img{
         width: 100px;
     }
-    .header__nav{
+    .header__nav {
         display: block;
         font-weight: 700;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 10px;
+        padding: 10px 0;
     }
     .header__nav a{
         color: white;
@@ -184,7 +189,11 @@ header #burger i{
         justify-content: space-around;
     }
     #busqueda{
-        margin-top: 15px;
+        position: absolute;
+        left: 20%;
+        top: 10%;
+        width: 60%;
+        border-radius: 5px;
     }
     header #burger {
         display: none;

@@ -20,7 +20,7 @@
     flex-direction: column;
 }
 
-.main_register form .datos{
+.main_register .forms-datos .datos{
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -63,9 +63,11 @@
 }
 .main_register .button {
     text-align: center;
+    margin: 0px auto;
  }
- .main_register .button button{
+.main_register .button button{
         font-size: 20px;
+        font-family: 'Bungee';
         margin-top: 15px;
         padding: 0 15px;
         border-radius: 5px;
@@ -76,17 +78,22 @@
     border-bottom: 1.5px solid white;
     background-color: rgba(255, 255, 255, 0)
 }
+
+
+.register__imagen-perfil div{
+    color: violet;
+}
 /* tablets */
 @media (min-width: 768px){
     body{
         background-size: cover;
     }
     
-    .main_register form {
+    .main_register .forms-datos {
         display: flex;
         flex-wrap: wrap;
     }
-    .main_register form .datos {
+    .main_register .forms-datos .datos {
         display: flex;
         flex-direction: column;
         padding: 0px 15px;
@@ -142,7 +149,7 @@
 
     .main_register .button button {
         font-size: 25px;
-        margin-top: 0;
+        margin: 10px;
         padding: 5px 15px;
         
     }
