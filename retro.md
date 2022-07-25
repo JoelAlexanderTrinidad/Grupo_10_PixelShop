@@ -146,5 +146,27 @@ Tendríamos que comenzar a hacer una revisión grupal antes de la entrega final 
     -Seguir juntandonos con la misma frecuencia.
     -Seguir complementándonos como equipo.
  
- 
- 
+  # **RETROSPECTIVA SPRINT 6:**
+
+### Hacer más:
+    -Tomar la iniciativa para marcar las tareas.
+    -Pensar nuevas ideas para agregar al proyecto integrador
+    -Seguir consultando a los profes.
+    
+### Hacer menos:
+    -Tener una mejor división de tareas, como para pedir ayuda cuando tenemos algún problema para ser más eficientes con el tiempo.
+       
+### Dejar de hacer:
+    -Dejar de ignorar el Trello.
+    -Tratar de limitarnos a hacer lo justo y necesario.
+        
+### Comenzar a hacer:
+    -Asignarnos un día para compartir pantalla.
+    
+### Continuar haciendo:
+    -Debatir acerca de las propuestas de nuestros compañeros.
+    -Conectarnos a clase de apoyo para preguntar dudas.
+    -Solucionar los conflictos imprevistos.
+    -Seguir juntandonos con la misma frecuencia.
+    -Seguir complementándonos como equipo.
+    
