@@ -126,7 +126,7 @@ module.exports={
             const producto = await db.Product.findByPk(req.params.id)
 
             if(req.file){
-                fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',producto[0].img))
+                fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',producto.img))
             }
 
             await db.Product_gender.destroy({
