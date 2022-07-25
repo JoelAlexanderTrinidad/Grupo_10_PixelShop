@@ -52,6 +52,8 @@ module.exports={
     },
     processLogin:(req,res)=>{
     let errores = validationResult (req);
+   /*  errores = errores.mapped()
+    return res.send(errores) */
 
         if(errores.isEmpty()){
             User.findOne({

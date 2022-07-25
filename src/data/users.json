@@ -1,20 +1,6 @@
 [
    {
       "id": 1,
-      "nombre": "Elver",
-      "apellido": "García",
-      "tel": "123123",
-      "email": "tuvieja@gmail.com",
-      "password": "123123",
-      "terminos": "on",
-      "privacidad": "on",
-      "imagenPerfil": "image-1654029888549.jpg",
-      "rolId": 1,
-      "fecha": null,
-      "genero" : ""
-   },
-   {
-      "id": 2,
       "nombre": "Manuel",
       "apellido": "Ramirez",
       "tel": "1130442671",
@@ -28,7 +14,7 @@
       "genero" : ""
    },
    {
-      "id": 3,
+      "id": 2,
       "nombre": "alex",
       "apellido": "trinidad",
       "tel": 13232131,
