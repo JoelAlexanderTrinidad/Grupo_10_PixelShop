@@ -2,7 +2,7 @@ const db = require('../database/models');
 const { Op } = require("sequelize");
 const path = require('path');
 const fs = require('fs')
-
+const {validationResult} = require("express-validator");
 
 module.exports={
     productDetail:(req,res)=>{
@@ -65,6 +65,9 @@ module.exports={
     store: async (req,res) => {
 
         try {
+            let productError = validationResult(req);
+            if (productError.isEmpty()) {
+                
             const {id, name, price, discount, description, ranking, genres} = req.body;
             // console.log(genres)
             
@@ -92,11 +95,16 @@ module.exports={
                 })
             }
             return res.redirect('/admin')
+        }else{
+            res.render("formCrear", {
+                productError : productError.mapped(),
+                old : req.body
+            })
+        }
 
         } catch (error) {
             console.log(error)
         }
-            
     },
 
     edit : (req,res) => {

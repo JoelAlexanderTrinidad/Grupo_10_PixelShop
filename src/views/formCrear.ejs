@@ -8,11 +8,12 @@
         <form class="form" action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre del producto</label>
-                <input type="text" name="name" id="name" placeholder="Nombre del producto" required>
+                <input type="text" name="name" id="name" placeholder="Nombre del producto">
+                <span style="color: #6e0707;"><%= locals.productError && productError.name ? productError.name.msg : null %></span>
             </div>
             <div class="">
                 <label for="description">Descripción del producto</label>
-                <textarea name="description" id="description" cols="20" rows="5" placeholder="Descripción del producto" required></textarea>
+                <textarea name="description" id="description" cols="20" rows="5" placeholder="Descripción del producto"></textarea>
             </div>
             <div class="">
                 <input type="file" name="img" multiple >
