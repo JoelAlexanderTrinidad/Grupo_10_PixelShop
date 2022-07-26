@@ -53,22 +53,22 @@ module.exports={
         })
         .catch(error=> console.log(error))
     },
-    add:(req,res)=>{
-        db.Gender.findAll()
-        .then(genders =>{
-            return  res.render('formCrear',{
+    add: async (req,res) => {
+        try {
+            const genders = await db.Gender.findAll()
+            return res.render('formCrear',{
                 genders
-            })    
-        })
-        .catch(error=> console.log(error))
+            })  
+        } catch (error) {
+            error => console.log(error)
+        }
     },
     store: async (req,res) => {
 
         try {
-            let productError = validationResult(req);
-            if (productError.isEmpty()) {
-                
-            const {id, name, price, discount, description, ranking, genres} = req.body;
+            let errores = validationResult(req);
+            if (errores.isEmpty()) {
+                const {id, name, price, discount, description, ranking, genres} = req.body;
             // console.log(genres)
             
             let nuevoProducto = await db.Product.create(
@@ -95,16 +95,19 @@ module.exports={
                 })
             }
             return res.redirect('/admin')
-        }else{
-            res.render("formCrear", {
-                productError : productError.mapped(),
-                old : req.body
-            })
-        }
 
+            }else{
+                const genders = await db.Gender.findAll()
+                res.render("formCrear", {
+                    errores : errores.mapped(),
+                    genders
+                })
+            }
+            
         } catch (error) {
             console.log(error)
         }
+            
     },
 
     edit : (req,res) => {
