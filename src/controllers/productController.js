@@ -133,46 +133,55 @@ module.exports={
     update:  async (req,res) => {
 
         try {
-            const { name, price, discount, description, ranking} = req.body;
-            const producto = await db.Product.findByPk(req.params.id)
+            let errores = validationResult(req);
+            if (errores.isEmpty()) {
+                const { name, price, discount, description, ranking} = req.body;
+                const producto = await db.Product.findByPk(req.params.id)
 
-            if(req.file){
-                fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',producto[0].img))
-            }
+                if(req.file){
+                    fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',producto.img))
+                }
 
-            await db.Product_gender.destroy({
-                where: {
-                    productId: req.params.id
-                },
-            })
-            let generosJ = req.body.genres 
+                await db.Product_gender.destroy({
+                    where: {
+                        productId: req.params.id
+                    },
+                })
+                let generosJ = req.body.genres 
 
-            for (let index = 0; index < generosJ.length; index++) {
-               
-                await db.Product_gender.create({
-                    genderId: generosJ[index],
-                    productId: producto.id,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
+                for (let index = 0; index < generosJ.length; index++) {
+                
+                    await db.Product_gender.create({
+                        genderId: generosJ[index],
+                        productId: producto.id,
+                        createdAt: new Date(),
+                        updatedAt: new Date(),
+                    })
+                }
+                
+                await db.Product.update(
+                    {   
+                        name: name.trim(),
+                        price: +price,
+                        discount:+discount,
+                        description: description.trim(),
+                        img: req.file ? req.file.filename : producto.img,
+                        ranking : ranking,
+                        genres : !req.body.genres ? producto.genres : req.body.genres.toString()
+                    },{
+                        where :{
+                            id : producto.id
+                        }
+                    }) 
+                
+                return res.redirect('/admin/')
+            }else{
+                const genders = await db.Gender.findAll()
+                res.render("formEdit", {
+                    errores : errores.mapped(),
+                    genders
                 })
             }
-            
-            await db.Product.update(
-                {   
-                    name: name.trim(),
-                    price: +price,
-                    discount:+discount,
-                    description: description.trim(),
-                    img: req.file ? req.file.filename : producto.img,
-                    ranking : ranking,
-                    genres : !req.body.genres ? producto.genres : req.body.genres.toString()
-                },{
-                    where :{
-                        id : producto.id
-                    }
-                }) 
-            
-         return res.redirect('/admin/')  
         } catch (error) {
             console.log(error)
         }
