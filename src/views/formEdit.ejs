@@ -35,12 +35,12 @@
             </div>
             <div class="">
                 <label for="price">Precio del producto</label>
-                <input type="number" name="price" id="price" value="<%= product.price %>">
+                <input type="number" name="price" id="price" value="<%= product.price %>" min="0">
                 <span style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
             </div>
             <div class="">
                 <label for="discount">Descuento</label>
-                <input type="number" name="discount" id="discount" value="<%= product.discount %>">
+                <input type="number" name="discount" id="discount" value="<%= product.discount %>" min="0">
             </div>
             <div class="">
                 <label for="ranking">Ranking</label>
