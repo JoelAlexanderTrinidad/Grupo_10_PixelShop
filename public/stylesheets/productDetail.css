@@ -60,7 +60,8 @@
 .detail__main__section {
     border-radius: 10px;
     border: 1px solid #a9cff1;
-    margin: 22px auto;
+    margin-top: 20px;
+    width: 50%;
 }
 .main__section h3{
     padding-top: 10px;
@@ -240,6 +241,9 @@
 /* tablets */
 
 @media (min-width: 768px){    
+    .mercado-img{
+        width: 25%;
+    }
     .main {    
         margin: 0 auto;
         width: 100%;
@@ -262,12 +266,20 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
     }
     #buy-info{
         display: flex;
         flex-direction: column;
         width: 35%;
+    }
+    .mercado-pago{
+        width: 75%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    .main__section-buy{
+        width: 90%;
+        margin: 0 auto;
     }
     .main__section-buy h2 {
         font-size: 40px;
@@ -282,7 +294,7 @@
         width: 88%;
     }
     .main__section-info {
-        margin: 0 auto;
+        margin: 20px auto 0;
         width: 80%;
     }
     .main__section-buy button:hover {
@@ -290,7 +302,6 @@
         transform: scale(1.1);
         transition: all 0.5s;
     }
-
     .product__detail-buttons {
         margin: 20px 190px 0px;
        
@@ -320,9 +331,7 @@
     
     .detail__main__section {
         width: 30%;
-        margin: 0;
-        margin-bottom: 220px;
-        margin-right: 60px;
+        height: 100%;
     }
     .main__section-buy div {
         width: 80%;
