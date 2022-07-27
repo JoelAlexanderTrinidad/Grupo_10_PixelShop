@@ -122,11 +122,73 @@
 
 }
 
+/* errores validaciones */
+.displayNone{
+    display: none;
+}
 
+@keyframes manito {
+    0% {
+        left: 268px;
+    }
+    50% {
+        left: 284px;
+    }
+    100% {
+        left: 268px;
+    }
+  }
+
+.datos i{
+    font-size: 16px;
+    color: #3edef0;
+}
+
+#icono-error{
+    width: 18px;
+    position: relative;
+    bottom: 30px;
+    animation: manito .8s normal linear infinite;
+}
+
+
+#email-error{
+    color: #ff6666;
+    position: absolute;
+    bottom: 265px;
+}
+
+#icono-error-pass{
+    width: 18px;
+    position: relative;
+    bottom: 28px;
+    animation: manito .8s normal linear infinite;
+}
+#pass-error{
+    color: #ff6666;
+    position: relative;
+    bottom: 25px;
+}
 
 
 /* tablets */
 @media (min-width: 768px){
+    /* validaciones */
+    #email-error {
+        bottom: 205px;
+    }
+    @keyframes manito {
+        0% {
+            left: 171px;
+        }
+        50% {
+            left: 160px;
+        }
+        100% {
+            left: 171px;
+        }
+      }
+    /* ----------- */
     .main__login{
         display: flex;
         flex-direction: column;
@@ -168,6 +230,11 @@
 
 }
 @media (min-width: 1024px){
+    /* validaciones */
+    #email-error{
+        bottom: 245px;
+    }
+    /* ------------ */
 
     .main_login{
         width: 40%;
