@@ -9,12 +9,12 @@
             <div>
                 <label for="name">Nombre del producto</label>
                 <input type="text" name="name" id="name" value="<%= product.name %>">
-                <span style="color: #6e0707;"><%= locals.errores && errores.name ? errores.name.msg : null %></span>
+                <span id="errorName" style="color: #6e0707;"><%= locals.errores && errores.name ? errores.name.msg : null %></span>
             </div>
             <div class="">
                 <label for="description">Descripción del producto</label>
                 <textarea type="text"id="description" name="description" cols="30" rows="10"><%= product.description %></textarea>
-                <span style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
+                <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
             </div>
             <div class="">
                 <input type="file" name="img">
@@ -36,22 +36,23 @@
             <div class="">
                 <label for="price">Precio del producto</label>
                 <input type="number" name="price" id="price" value="<%= product.price %>">
-                <span style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
+                <span id="errorPrice" style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
             </div>
             <div class="">
                 <label for="discount">Descuento</label>
                 <input type="number" name="discount" id="discount" value="<%= product.discount %>">
-                <span style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
+                <span id="errorDiscount" style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
             </div>
             <div class="">
                 <label for="ranking">Ranking</label>
                 <input type="number" name="ranking" id="ranking" value="<%= product.ranking %>">
-                <span style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
+                <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
             </div>
             <div>
                 <button type="submit">Editar</button>
             </div>
         </form>
     </main>
+    <script src="/js/productEdit.js"></script>
 </body>
 </html>
