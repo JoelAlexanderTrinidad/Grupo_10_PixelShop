@@ -41,6 +41,7 @@
             <div class="">
                 <label for="discount">Descuento</label>
                 <input type="number" name="discount" id="discount" value="<%= product.discount %>">
+                <span style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
             </div>
             <div class="">
                 <label for="ranking">Ranking</label>

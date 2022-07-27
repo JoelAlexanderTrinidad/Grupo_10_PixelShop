@@ -15,7 +15,7 @@ module.exports = [
         .notEmpty().withMessage("Debes especificar el precio del producto").bail()
         .isFloat({min : 0}).withMessage("Precio invalido"),
     check("discount")
-    .notEmpty().withMessage("Debes especificar el descuento del producto").bail()
+        .notEmpty().withMessage("Debes especificar el descuento del producto").bail()
         .isFloat({min : 0, max : 100}).withMessage("Descuento invalido"),
     check("ranking")
         .notEmpty().withMessage("Debes ingresar el Ranking del producto").bail()
