@@ -1,0 +1,14 @@
+#admin{
+    padding: 0;
+    width: 100px;
+}
+
+.agregarProductos{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+#tachito{
+    color: red;
+}

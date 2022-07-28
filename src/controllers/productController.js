@@ -74,7 +74,6 @@ module.exports={
 
         try {
             const {id, name, price, discount, description, ranking, genres} = req.body;
-            // console.log(genres)
             
             let nuevoProducto = await db.Product.create(
                 {   id : id, 

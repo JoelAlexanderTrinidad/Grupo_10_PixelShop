@@ -1,5 +1,3 @@
-// const products = require("../data/products.json");
-// const adminCheck = require("../middlewares/adminCheck");
 const db = require('../database/models');
 const { Op } = require("sequelize");
 

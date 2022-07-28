@@ -49,7 +49,23 @@ button.dropdown-toggle::after{
     display: none;
 }
 
-/*  */
+.nav1{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav2{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
 .header__section {
     display: flex;
@@ -187,6 +203,7 @@ header #burger i{
     .header__nav ul{
         display: flex;
         justify-content: space-around;
+        flex-direction: row;
     }
     #busqueda{
         position: absolute;
