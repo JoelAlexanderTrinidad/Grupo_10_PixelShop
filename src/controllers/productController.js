@@ -3,7 +3,6 @@ const { Op } = require("sequelize");
 const path = require('path');
 const fs = require('fs')
 
-
 module.exports={
     productDetail:(req,res)=>{
         const product = db.Product.findByPk(req.params.id);
@@ -21,6 +20,16 @@ module.exports={
             })
         Promise.all([juegoGen, generos, product, products])
         .then(([juegoGen, generos, product, products])=> {
+                const mezclarProductos = (productos) => {
+                    for (let i = productos.length -1; i > 0; i--) {
+                    let indiceAleatorio = Math.floor(Math.random() * (i + 1))
+                    let aux;
+                    aux = productos[i]
+                    productos[i] = productos[indiceAleatorio]
+                    productos[indiceAleatorio] = aux
+                    }
+                }
+                mezclarProductos(products);
                 let generoJuego = []
                 for (let i=0; i<generos.length; i++) {
                     generoJuego.push(generos[i].genderId)       
@@ -36,7 +45,6 @@ module.exports={
                             misGeneros.push(generosAsociados[j-1])
                         }
                     }
-                //    a.push(i)
                 }
                 return res.render('productDetail',{
                     product,
