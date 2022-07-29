@@ -7,8 +7,15 @@ module.exports = [
     check("description")
         .notEmpty().withMessage("Debes ingresar una descripción").bail()
         .isLength({min : 20}).withMessage("La descripción debe tener como mínimo 20 caracteres"),
-    /* check("img")
-        .¿?¿?¿?(".JPG",".JPEG",".PNG",".GIF").withMessage("Solo formatos JPG, JPEG, PNG, GIF"), */
+    body("img")
+        .custom((value, {req}) => {
+            let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+            if (!allowedExtensions.exec(req.file.filename)) {
+                return Promise.reject("Solo archivos con extensión .jpg, .jpeg, .png o .gif")
+            } else {
+                return true
+            }
+        }),
     check("genres")
         .notEmpty().withMessage("Debes especificar el/los generos del producto"),
     check("price")

@@ -17,7 +17,7 @@
                 <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
             </div>
             <div class="">
-                <input type="file" name="img" accept=".jpg, .jpeg, .png, .gif">
+                <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif" onchange="fileValidation()">
                 <span style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
             </div>
             <h4>Géneros de juego</h4>

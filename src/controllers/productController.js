@@ -9,12 +9,12 @@ module.exports={
         const product = db.Product.findByPk(req.params.id);
         
         const products = db.Product.findAll();
-               
+        
         const juegoGen = db.Gender.findAll({
             attributes : ['id','name']
             })
         const generos = db.Product_gender.findAll(
-             {
+            {
                 where :{
                     productId: req.params.id
                 } 
@@ -113,7 +113,7 @@ module.exports={
     edit : (req,res) => {
         const product = db.Product.findByPk(req.params.id);
         const genders = db.Gender.findAll({
-           
+        
         });
         const generosJ = db.Product_gender.findAll({
             where :{
@@ -177,9 +177,12 @@ module.exports={
                 return res.redirect('/admin/')
             }else{
                 const genders = await db.Gender.findAll()
+                const product = await db.Product.findByPk(req.params.id)
+
                 res.render("formEdit", {
                     errores : errores.mapped(),
-                    genders
+                    genders,
+                    product,
                 })
             }
         } catch (error) {
