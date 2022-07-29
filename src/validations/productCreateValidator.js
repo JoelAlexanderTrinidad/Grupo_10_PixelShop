@@ -10,7 +10,9 @@ module.exports = [
     body("img")
         .custom((value, {req}) => {
             let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-            if (!allowedExtensions.exec(req.file.filename)) {
+            if (!req.file) {
+                return true
+            } if (!allowedExtensions.exec(req.file.filename)) {
                 return Promise.reject("Solo archivos con extensión .jpg, .jpeg, .png o .gif")
             } else {
                 return true
