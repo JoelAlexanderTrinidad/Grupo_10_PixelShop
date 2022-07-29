@@ -1,4 +1,4 @@
-console.log("productEdit.js success!");
+console.log("formEditValidator.js success!");
 
 const $ = (element) => document.getElementById(element);
 

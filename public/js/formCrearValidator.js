@@ -1,4 +1,4 @@
-console.log("productCreate.js success!");
+console.log("formCrearValidator.js success!");
 
 const $ = (element) => document.getElementById(element);
 
