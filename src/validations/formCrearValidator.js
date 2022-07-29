@@ -1,9 +1,23 @@
 const {check, body} = require("express-validator");
+const db = require("../database/models");
 
 module.exports = [
     check("name")
         .notEmpty().withMessage("Debes ingresar el nombre del producto").bail()
         .isLength({min : 5}).withMessage("El nombre debe tener como mínimo 5 caracteres"),
+    body("name")
+        .custom(value => {
+            return db.Product.findOne({
+                where : {
+                    name : value
+                }
+            })
+            .then(product => {
+                if (product) {
+                    return Promise.reject("El producto ya se encuentra registrado")
+                }
+            })
+        }),
     check("description")
         .notEmpty().withMessage("Debes ingresar una descripción").bail()
         .isLength({min : 20}).withMessage("La descripción debe tener como mínimo 20 caracteres"),

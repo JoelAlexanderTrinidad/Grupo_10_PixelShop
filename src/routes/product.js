@@ -3,8 +3,8 @@ var router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const adminCheck = require('../middlewares/adminCheck');
-const productCreateValidator = require("../validations/productCreateValidator");
-const productEditValidator = require("../validations/productEditValidator")
+const formCrearValidator = require("../validations/formCrearValidator");
+const formEditValidator = require("../validations/formEditValidator")
 
 const {productCart,productDetail, add, edit, store, search, update, remove}=require('../controllers/productController');
 
@@ -27,9 +27,9 @@ router
       .get('/cart',productCart)
       .get('/detail/:id', productDetail)
       .get('/crear', adminCheck,add)
-      .post('/crear', upload.single('img'), productCreateValidator, store)
+      .post('/crear', upload.single('img'), formCrearValidator, store)
       .get('/edit/:id', adminCheck,edit)
-      .put('/update/:id', upload.single('img'), adminCheck, productEditValidator,update)
+      .put('/update/:id', upload.single('img'), adminCheck, formEditValidator,update)
       .get('/result', search)
       .delete('/remove/:id', adminCheck,remove)
 
