@@ -40,20 +40,24 @@
 
 .main__login form div input {
     border: none;
-    color: violet;
+    color: #000000;
     padding: 3px 0;
   
 }
 
 .main__login .datos input{
-    width: 65%;
+    width: 100%;
     border-radius: 5px;
     border-bottom: 1.5px solid white;
     background-color: #ffffff
 }
-.main__login .required{
+.main__login .required {
+    padding-top: 20px;
+    width: 27%;
+    display: flex;
     margin: 10px 4px;
-    font-size: 13px;
+    margin: 0 auto;
+    align-items: baseline;
 }
 .section__login .button {
     text-align: center;
@@ -167,7 +171,6 @@
     .main__login .required{
         margin: 10px 4px;
         font-size: 15px;
-        margin: 0 auto;
     }
     .main__login .datos{
         font-size: 18px;

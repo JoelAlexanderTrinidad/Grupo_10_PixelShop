@@ -10,12 +10,12 @@
             <form action="" method="POST">
                 <div class="datos">
                     <label for="email" class="main__login-capitalize"> Usuario/Correo electrónico</label>
-                    <input type="email" name="email" id="email" placeholder=" usuario/email" >
+                    <input type="email" class="form-input form-control" name="email" id="email" placeholder=" usuario/email" >
                     <span id="email-error"  style="color: #ff6666;"><%= locals.errores && errores.email? errores.email.msg : null %></span>
                 </div>
                 <div class="datos">
                     <label for="password" class="main__login-capitalize">Contraseña</label>
-                    <input type="password" name="password" id="password" placeholder=" Contraseña" ><span id="icono-error-pass"></span>
+                    <input type="password" class="form-input form-control" name="password" id="password" placeholder=" Contraseña" ><span id="icono-error-pass"></span>
                     <span id="pass-error" style="color: #ff6666;"><%= locals.errores && errores.password? errores.password.msg : null %> </span>           
             <section class="required">
                     <input type="checkbox" id="recordame" name="recordame" value="recordarme"  >

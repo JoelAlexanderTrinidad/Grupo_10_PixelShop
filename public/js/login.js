@@ -7,23 +7,24 @@ $('email').addEventListener('blur', function(e){
             this.classList.add('is-invalid')
             $('email-error').innerHTML = 'Debes ingresar tu email'
         }else if(!regExEmail.test(this.value.trim())){
-            $('icono-error').innerHTML = ''
+            this.classList.add('is-invalid')
             $('email-error').innerHTML = 'El email tiene un formato incorrecto'
         }else{
-            $('icono-error').innerHTML = null
+            this.classList.remove('is-invalid')
+            this.classList.add('is-valid')
             $('email-error').innerHTML = null
         }
     }
 })
 
 $('password').addEventListener('blur', function(e){
-    console.log(this.value);
     if(e){
         if(!this.value.trim()){
-            $('icono-error-pass').innerHTML = ''
+            this.classList.add('is-invalid')
             $('pass-error').innerHTML = 'Debes ingresar tu contraseña'
         }else{
-            $('icono-error-pass').innerHTML = null
+            this.classList.remove('is-invalid')
+            this.classList.add('is-valid')
             $('pass-error').innerHTML = null
         }
     }
