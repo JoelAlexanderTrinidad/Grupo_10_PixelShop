@@ -2,6 +2,10 @@
     background-size: auto;
 }
 
+.main__login-capitalize{
+    text-transform: capitalize;
+}
+
 .main_login{
     width: 90%;
     color: white;
@@ -14,7 +18,6 @@
 }
 .main_login h2{
     text-align: center;
-    text-transform: uppercase;
 }
 
 .main__login{
