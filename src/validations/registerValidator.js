@@ -4,7 +4,7 @@ const db = require('../database/models')
 
 module.exports = [
     check('nombre')
-        .custom(value => !/\s/.test(value)).withMessage('No se permiten espacios').bail()
+        /* .custom(value => !/\s/.test(value)).withMessage('No se permiten espacios').bail() */
         .isLength({min: 2}).withMessage('Debe ingresar como mínimo 2 letras').bail()
         .isAlpha().withMessage('El nombre debe contener solo letras'),
         
@@ -33,7 +33,9 @@ module.exports = [
         }),
 
     check('password')
-        .isLength({min: 4, max: 12}).withMessage('La contraseña debe tener entre 4 y 12 caracteres'),
+        .isLength({min: 6, max: 12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres').bail()
+        .isAlphanumeric().withMessage('La contraseña debe tener al menos 1 caracter numérico'),
+        
 
     body('password2')
         .custom((value, {req}) => {

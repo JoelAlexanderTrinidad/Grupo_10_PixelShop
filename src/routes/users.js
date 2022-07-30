@@ -8,6 +8,7 @@ const profileValidator = require('../validations/profileValidator');
 
 /* /users */
 const {register,login, processLogin, processRegister, editProfile, logout, updateProfile, removeUser, profile}=require('../controllers/userController');
+const {checkEmail}= require('../controllers/apis/user')
 const userCheck = require('../middlewares/userCheck');
 const sessionCheck=require('../middlewares/sessionCheck');
 router
@@ -21,4 +22,6 @@ router
       .delete('/deleteUser',removeUser)
       .get('/profile',profile)
 
+      /* apis */
+      .post('/api/check-email', checkEmail)
 module.exports = router;
