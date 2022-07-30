@@ -35,7 +35,7 @@
 }
 
 .main__login ::placeholder{
-    color: violet;
+    color: #7c7c7c;
 }
 
 .main__login form div input {
@@ -46,8 +46,10 @@
 }
 
 .main__login .datos input{
+    width: 65%;
+    border-radius: 5px;
     border-bottom: 1.5px solid white;
-    background-color: rgba(255, 255, 255, 0)
+    background-color: #ffffff
 }
 .main__login .required{
     margin: 10px 4px;
@@ -123,54 +125,6 @@
     font-weight: 600;
 
 }
-
-/* errores validaciones */
-.displayNone{
-    display: none;
-}
-
-@keyframes manito {
-    0% {
-        left: 268px;
-    }
-    50% {
-        left: 284px;
-    }
-    100% {
-        left: 268px;
-    }
-  }
-
-.datos i{
-    font-size: 16px;
-    color: #3edef0;
-}
-
-#icono-error{
-    width: 18px;
-    position: relative;
-    bottom: 30px;
-    animation: manito .8s normal linear infinite;
-}
-
-
-#email-error{
-    color: #ff6666;
-    position: absolute;
-    bottom: 265px;
-}
-
-#icono-error-pass{
-    width: 18px;
-    position: relative;
-    bottom: 28px;
-    animation: manito .8s normal linear infinite;
-}
-#pass-error{
-    color: #ff6666;
-    position: relative;
-}
-
 
 /* tablets */
 @media (min-width: 768px){
