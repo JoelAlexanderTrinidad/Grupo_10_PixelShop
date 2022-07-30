@@ -33,8 +33,7 @@ module.exports = [
         }),
 
     check('password')
-        .isLength({min: 6, max: 12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres').bail()
-        .isAlphanumeric().withMessage('La contraseña debe tener al menos 1 caracter numérico'),
+        .isLength({min: 6, max: 12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres').bail(),
         
 
     body('password2')
