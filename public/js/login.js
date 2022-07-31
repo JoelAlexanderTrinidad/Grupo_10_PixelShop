@@ -29,3 +29,30 @@ $('password').addEventListener('blur', function(e){
         }
     }
 })
+
+$('login-form').addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    let elements = e.target.elements
+    let error = false
+
+    console.log(e.target.elements);
+
+    for(let i=0; i<elements.length -1; i++){
+        if(!elements[i].value.trim()){
+            elements[i].classList.add('is-invalid')
+            error = true
+            $('pass-error').innerHTML = 'Los campos son obligatorios'
+        }
+    }
+
+    for(let i=0; i<elements.length -1; i++){
+        if(!elements[i].classList.contains('is-invalid')){
+            error = true
+        }
+    }
+
+    !error && e.target.submit()
+    
+
+})
