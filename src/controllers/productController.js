@@ -178,11 +178,17 @@ module.exports={
             }else{
                 const genders = await db.Gender.findAll()
                 const product = await db.Product.findByPk(req.params.id)
+                let generosJ = await db.Product_gender.findAll({
+                    where : {
+                        productId : req.params.id
+                    }
+                })
 
                 res.render("formEdit", {
                     errores : errores.mapped(),
                     genders,
                     product,
+                    generosJ
                 })
             }
         } catch (error) {

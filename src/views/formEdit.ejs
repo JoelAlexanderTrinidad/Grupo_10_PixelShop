@@ -8,12 +8,12 @@
         <form class="form" method="POST" action="/product/update/<%= product.id %>?_method=PUT"  enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre del producto</label>
-                <input type="text" name="name" id="name" value="<%= product.name %>">
+                <input type="text" name="name" id="name" value="<%= product.name %>" class="form-control">
                 <span id="errorName" style="color: #6e0707;"><%= locals.errores && errores.name ? errores.name.msg : null %></span>
             </div>
             <div class="">
                 <label for="description">Descripción del producto</label>
-                <textarea type="text"id="description" name="description" cols="30" rows="10"><%= product.description %></textarea>
+                <textarea type="text"id="description" name="description" cols="30" class="form-control" rows="10"><%= product.description %></textarea>
                 <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
             </div>
             <div class="">
@@ -35,17 +35,17 @@
             </div>
             <div class="">
                 <label for="price">Precio del producto</label>
-                <input type="number" name="price" id="price" value="<%= product.price %>">
+                <input type="number" name="price" id="price" value="<%= product.price %>" class="form-control">
                 <span id="errorPrice" style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
             </div>
             <div class="">
                 <label for="discount">Descuento</label>
-                <input type="number" name="discount" id="discount" value="<%= product.discount %>">
+                <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-control">
                 <span id="errorDiscount" style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
             </div>
             <div class="">
                 <label for="ranking">Ranking</label>
-                <input type="number" name="ranking" id="ranking" value="<%= product.ranking %>">
+                <input type="number" name="ranking" id="ranking" value="<%= product.ranking %>" class="form-control">
                 <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
             </div>
             <div>
