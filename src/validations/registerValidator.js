@@ -43,7 +43,17 @@ module.exports = [
             }
             return true;
         }).withMessage('¡Las contraseñas no coinciden!'),
-
+    body("img")
+        .custom((value, {req}) => {
+            let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+            if (!req.file) {
+                return true
+            } if (!allowedExtensions.exec(req.file.filename)) {
+                return Promise.reject("Solo archivos con extensión .jpg, .jpeg, .png o .gif")
+            } else {
+                return true
+            }
+        }),
     check('terminos')
         .isString('on').withMessage('Debes aceptar los términos y condiciones'),
 
