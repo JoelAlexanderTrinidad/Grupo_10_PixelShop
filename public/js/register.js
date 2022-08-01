@@ -147,6 +147,26 @@ $('password2').addEventListener('blur', async function (){
             break;
     }
 });
+/* 
+function fileValidation() {
+    let fileInput = $("imagenPerfil");
+    let filePath = fileInput.value;
+    let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    if (!allowedExtensions.exec(filePath)) {
+        alert("Solo archivos con extension .jpg, jpeg, png y .gif")
+        fileInput.value = "";
+        return false
+    } else {
+        if (fileInput.files && fileInput.files[0]) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById("imagenPerfil").innerHTML = "<img src='"+e.target.result+"' width='200px' height='200px'/>";
+            };
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+};
+ */
 $('terminos').addEventListener('click', function(){
     this.classList.toggle('is-invalid');
     this.classList.toggle('is-valid');

@@ -14,11 +14,11 @@ const sessionCheck=require('../middlewares/sessionCheck');
 router
       .get('/login', sessionCheck,login)
       .get('/register',sessionCheck,register)
-      .post('/register', upload.single('image'),registerValidator,processRegister)
+      .post('/register', upload.single('imagenPerfil'),registerValidator,processRegister)
       .post('/login',loginValidator, processLogin)
       .get('/logout', logout)
       .get('/editProfile',userCheck, editProfile)
-      .put('/update-profile', upload.single('image'), profileValidator, userCheck,updateProfile)
+      .put('/update-profile', upload.single('imagenPerfil'), profileValidator, userCheck,updateProfile)
       .delete('/deleteUser',removeUser)
       .get('/profile',profile)
 

@@ -49,9 +49,10 @@
                 </div> 
               </div>
                 <div class="register__imagen-perfil">
-                    <label for="image">Subir imágen de perfil</label>
-                    <input type="file"  id="imagenPerfil" name="image" accept="image/gif, image/png, image/jpeg, image/jpg">
+                    <label for="imagenPerfil">Subir imágen de perfil</label>
+                    <input type="file"  id="imagenPerfil" name="imagenPerfil" accept="image/gif, image/png, image/jpeg, image/jpg">
                     <div>(opcional)</div>
+                    <span id="errorImg"><%= locals.errores && errores.imagenPerfil? errores.imagenPerfil.msg : null %></span>
                     
                 </div>
                 <section class="requied">

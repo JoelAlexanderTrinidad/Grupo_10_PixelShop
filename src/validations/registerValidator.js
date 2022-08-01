@@ -43,7 +43,7 @@ module.exports = [
             }
             return true;
         }).withMessage('¡Las contraseñas no coinciden!'),
-    body("img")
+    body("imagenPerfil")
         .custom((value, {req}) => {
             let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
             if (!req.file) {
@@ -54,6 +54,7 @@ module.exports = [
                 return true
             }
         }),
+
     check('terminos')
         .isString('on').withMessage('Debes aceptar los términos y condiciones'),
 
