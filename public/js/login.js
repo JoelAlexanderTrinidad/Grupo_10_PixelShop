@@ -36,9 +36,7 @@ $('login-form').addEventListener('submit', (e) => {
     let elements = e.target.elements
     let error = false
 
-    console.log(e.target.elements);
-
-    for(let i=0; i<elements.length -1; i++){
+    for(let i=0; i<=2; i++){
         if(!elements[i].value.trim()){
             elements[i].classList.add('is-invalid')
             error = true
@@ -46,13 +44,11 @@ $('login-form').addEventListener('submit', (e) => {
         }
     }
 
-    for(let i=0; i<elements.length -1; i++){
-        if(!elements[i].classList.contains('is-invalid')){
+    for(let i=0; i<=2; i++){
+        if(elements[i].classList.contains('is-invalid')){
             error = true
         }
+        console.log(error);
     }
-
     !error && e.target.submit()
-    
-
 })
