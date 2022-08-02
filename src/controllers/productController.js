@@ -67,6 +67,25 @@ module.exports={
 
         try {
             let errores = validationResult(req);
+            /* return res.send(req.file) */
+            
+            if(!req.file){
+                null
+            }else{
+                const image = req.file.originalname
+                const ext = image.slice(-4)
+                const imageName = req.file.filename
+            let errorImg = false
+                if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == 'jpeg')){
+                    errorImg = false
+                }else{
+                    errorImg = true
+                }
+                if(errorImg){
+                    fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
+                }
+            }
+
             if (errores.isEmpty()) {
                 const {id, name, price, discount, description, ranking, genres} = req.body;
             // console.log(genres)
@@ -85,7 +104,7 @@ module.exports={
             let nuevoProductArray = JSON.parse("[" + genres + "]");
 
             for (let index = 0; index < nuevoProductArray.length; index++) {
-               
+            
                     await db.Product_gender.create({
                     
                     genderId: nuevoProductArray[index],
