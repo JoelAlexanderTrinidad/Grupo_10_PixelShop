@@ -69,13 +69,14 @@ module.exports={
             let errores = validationResult(req);
             /* return res.send(req.file) */
             
-            if (req.file) {
+            if(!req.file){
+                null
+            }else{
                 const image = req.file.originalname
                 const ext = image.slice(-4)
                 const imageName = req.file.filename
-                let errorImg = false
-
-                if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == '.jpeg')){
+            let errorImg = false
+                if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == 'jpeg')){
                     errorImg = false
                 }else{
                     errorImg = true
