@@ -147,7 +147,7 @@ $('password2').addEventListener('blur', async function (){
             break;
     }
 });
-$("img").addEventListener("change", function() {
+$("imagenPerfil").addEventListener("change", function() {
     let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
     switch (true) {
         case !this.value:
