@@ -147,26 +147,24 @@ $('password2').addEventListener('blur', async function (){
             break;
     }
 });
-/* 
-function fileValidation() {
-    let fileInput = $("imagenPerfil");
-    let filePath = fileInput.value;
+$("img").addEventListener("change", function() {
     let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-    if (!allowedExtensions.exec(filePath)) {
-        alert("Solo archivos con extension .jpg, jpeg, png y .gif")
-        fileInput.value = "";
-        return false
-    } else {
-        if (fileInput.files && fileInput.files[0]) {
-            let reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById("imagenPerfil").innerHTML = "<img src='"+e.target.result+"' width='200px' height='200px'/>";
-            };
-            reader.readAsDataURL(fileInput.files[0]);
-        }
+    switch (true) {
+        case !this.value:
+            this.classList.add("is-valid")
+            $("errorImg").innerHTML = null
+            break;
+        case !allowedExtensions.exec(this.value):
+            $("errorImg").innerHTML = "Formato de archivo no valido"
+            this.classList.add("is-invalid")
+            break;
+        default:
+            this.classList.remove("is-invalid")
+            this.classList.add("is-valid")
+            $("errorImg").innerHTML = null;
+            break;
     }
-};
- */
+})
 $('terminos').addEventListener('click', function(){
     this.classList.toggle('is-invalid');
     this.classList.toggle('is-valid');
