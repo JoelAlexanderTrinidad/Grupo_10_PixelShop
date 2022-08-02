@@ -132,7 +132,7 @@ $("ranking").addEventListener("blur", function() {
 
 $("form-create").addEventListener('submit', (e) => {
     e.preventDefault();
-    
+    console.log(e.target);
     let elements = e.target.elements;
     let error = false;
 
@@ -150,11 +150,12 @@ $("form-create").addEventListener('submit', (e) => {
         }
     }
 
-    if(!error){
+    if(!error && e.target.submit()){
+        e.target.submit()
         $("errorCreate").innerHTML = null
     }
     else {
-        e.target.submit()
+        $("errorCreate").innerHTML = "Revisa el formulario por favor"
     }
-    /* !error && e.target.submit() */
+    // !error && e.target.submit()
 })
