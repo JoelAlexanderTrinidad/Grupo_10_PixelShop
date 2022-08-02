@@ -5,7 +5,6 @@ const registerValidator = require('../validations/registerValidator');
 const loginValidator = require ('../validations/loginValidator');
 const profileValidator = require('../validations/profileValidator');
 
-
 /* /users */
 const {register,login, processLogin, processRegister, editProfile, logout, updateProfile, removeUser, profile}=require('../controllers/userController');
 const {checkEmail}= require('../controllers/apis/user')

@@ -14,7 +14,12 @@ module.exports={
     },
     processRegister:(req, res)=>{
         const errores = validationResult(req);
-        
+
+        const image = req.file.originalname
+        const ext = image.slice(-4)
+        const imageName = req.file.filename
+        let errorImg = false
+     
         if(errores.isEmpty()){
             
             let {id, nombre, apellido, tel, email, password, terminos, privacidad} = req.body;
@@ -39,6 +44,7 @@ module.exports={
                     imagenPerfil : usuarioNuevo.imagenPerfil,
                     rolId : usuarioNuevo.rolId
                 }
+              
                 res.locals.user = req.session.userLogin;
                 res.redirect('/');
             })
@@ -48,6 +54,14 @@ module.exports={
                 errores: errores.mapped(),
                 old: req.body
             });
+        }
+        if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == '.jpeg')){
+            errorImg = false
+        }else{
+            errorImg = true
+        }
+        if(errorImg){
+            fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
         }
     },
     processLogin:(req,res)=>{
