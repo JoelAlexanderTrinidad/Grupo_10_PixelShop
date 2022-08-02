@@ -38,7 +38,26 @@ $("description").addEventListener("blur", function() {
     }
 })
 
-function fileValidation() {
+$("img").addEventListener("change", function() {
+    let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    switch (true) {
+        case !this.value:
+            this.classList.add("is-valid")
+            $("errorImg").innerHTML = null
+            break;
+        case !allowedExtensions.exec(this.value):
+            $("errorImg").innerHTML = "Formato de archivo no valido"
+            this.classList.add("is-invalid")
+            break;
+        default:
+            this.classList.remove("is-invalid")
+            this.classList.add("is-valid")
+            $("errorImg").innerHTML = null;
+            break;
+    }
+})
+
+/* function fileValidation() {
     let fileInput = document.getElementById("img");
     let filePath = fileInput.value;
     let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
@@ -55,7 +74,7 @@ function fileValidation() {
             reader.readAsDataURL(fileInput.files[0]);
         }
     }
-}
+} */
 
 $("price").addEventListener("blur", function() {
     switch (true) {
@@ -109,4 +128,26 @@ $("ranking").addEventListener("blur", function() {
             $("errorRanking").innerHTML = null;
             break;
     }
+})
+
+$("form-create").addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    let elements = e.target.elements;
+    let error = false;
+
+    for (let i = 0; i < elements.length - 1; i++) {
+        if(!elements[i].value.trim()){
+            elements[i].classList.add('is-invalid');
+            error = true;
+            $("errorCreate").innerHTML = "Revisa el formulario por favor"
+        }
+    }
+
+    for (let i = 0; i < elements.length - 1; i++) {
+        if(elements[i].classList.contains('is-invalid')){
+            error = true
+        }
+    }
+    !error && e.target.submit()
 })

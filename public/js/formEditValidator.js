@@ -38,7 +38,26 @@ $("description").addEventListener("blur", function() {
     }
 })
 
-function fileValidation() {
+$("img").addEventListener("change", function() {
+    let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    switch (true) {
+        case !this.value:
+            this.classList.add("is-valid")
+            $("errorImg").innerHTML = null
+            break;
+        case !allowedExtensions.exec(this.value):
+            this.classList.add("is-invalid")
+            $("errorImg").innerHTML = "Formato de archivo no valido"
+            break;
+        default:
+            this.classList.remove("is-invalid")
+            this.classList.add("is-valid")
+            $("errorImg").innerHTML = null;
+            break;
+    }
+})
+
+/* function fileValidation() {
     let fileInput = document.getElementById("img");
     let filePath = fileInput.value;
     let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
@@ -55,7 +74,7 @@ function fileValidation() {
             reader.readAsDataURL(fileInput.files[0]);
         }
     }
-}
+} */
 
 $("price").addEventListener("blur", function() {
     switch (true) {

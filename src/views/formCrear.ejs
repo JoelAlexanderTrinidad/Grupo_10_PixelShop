@@ -5,7 +5,7 @@
     <%- include('./partials/header') %> 
     <main class="form__main">
         <h2>Crear producto</h2>
-        <form class="form" action="" method="POST" enctype="multipart/form-data">
+        <form class="form" id="form-create" action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre del producto</label>
                 <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-control">
@@ -18,7 +18,7 @@
             </div>
             <div class="">
                 <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif" onchange="fileValidation()">
-                <span style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
+                <span id="errorImg" style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
             </div>
             <h4>Géneros de juego</h4>
             <div class="gender">
@@ -46,6 +46,7 @@
                 <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
             </div>
             <div>
+                <span id="errorCreate" style="color: #6e0707;"><%= locals.errores && errores.create? errores.create.msg : null %></span>
                 <button type="submit">Crear</button>
             </div>
         </form>
