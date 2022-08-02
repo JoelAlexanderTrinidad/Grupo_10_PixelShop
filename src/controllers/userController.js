@@ -22,7 +22,7 @@ module.exports={
         const ext = image.slice(-4)
         const imageName = req.file.filename
         let errorImg = false
-        if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == '.jpeg')){
+        if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == 'jpeg')){
             errorImg = false
         }else{
             errorImg = true
