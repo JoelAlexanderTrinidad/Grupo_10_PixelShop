@@ -149,5 +149,12 @@ $("form-create").addEventListener('submit', (e) => {
             error = true
         }
     }
-    !error && e.target.submit()
+
+    if(!error){
+        $("errorCreate").innerHTML = null
+    }
+    else {
+        e.target.submit()
+    }
+    /* !error && e.target.submit() */
 })
