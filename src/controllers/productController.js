@@ -2,18 +2,19 @@ const db = require('../database/models');
 const { Op } = require("sequelize");
 const path = require('path');
 const fs = require('fs')
+const {validationResult} = require("express-validator");
 
 module.exports={
     productDetail:(req,res)=>{
         const product = db.Product.findByPk(req.params.id);
         
         const products = db.Product.findAll();
-               
+        
         const juegoGen = db.Gender.findAll({
             attributes : ['id','name']
             })
         const generos = db.Product_gender.findAll(
-             {
+            {
                 where :{
                     productId: req.params.id
                 } 
@@ -61,19 +62,41 @@ module.exports={
         })
         .catch(error=> console.log(error))
     },
-    add:(req,res)=>{
-        db.Gender.findAll()
-        .then(genders =>{
-            return  res.render('formCrear',{
+    add: async (req,res) => {
+        try {
+            const genders = await db.Gender.findAll()
+            return res.render('formCrear',{
                 genders
-            })    
-        })
-        .catch(error=> console.log(error))
+            })  
+        } catch (error) {
+            error => console.log(error)
+        }
     },
     store: async (req,res) => {
 
         try {
-            const {id, name, price, discount, description, ranking, genres} = req.body;
+            let errores = validationResult(req);
+            
+            /* if(!req.file){
+                null
+            }else{
+                const image = req.file.originalname
+                const ext = image.slice(-4)
+                const imageName = req.file.filename
+            let errorImg = false
+                if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == 'jpeg')){
+                    errorImg = false
+                }else{
+                    errorImg = true
+                }
+                if(errorImg){
+                    fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
+                }
+            } */
+
+            if (errores.isEmpty()) {
+                const {id, name, price, discount, description, ranking, genres} = req.body;
+            // console.log(genres)
             
             let nuevoProducto = await db.Product.create(
                 {   id : id, 
@@ -89,7 +112,7 @@ module.exports={
             let nuevoProductArray = JSON.parse("[" + genres + "]");
 
             for (let index = 0; index < nuevoProductArray.length; index++) {
-               
+            
                     await db.Product_gender.create({
                     
                     genderId: nuevoProductArray[index],
@@ -100,6 +123,16 @@ module.exports={
             }
             return res.redirect('/admin')
 
+            }else{
+                const imageName = req.file.filename
+                fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName));
+                const genders = await db.Gender.findAll()
+                res.render("formCrear", {
+                    errores : errores.mapped(),
+                    genders
+                })
+            }
+            
         } catch (error) {
             console.log(error)
         }
@@ -109,7 +142,7 @@ module.exports={
     edit : (req,res) => {
         const product = db.Product.findByPk(req.params.id);
         const genders = db.Gender.findAll({
-           
+        
         });
         const generosJ = db.Product_gender.findAll({
             where :{
@@ -129,47 +162,65 @@ module.exports={
     update:  async (req,res) => {
 
         try {
-            const { name, price, discount, description, ranking} = req.body;
-            const producto = await db.Product.findByPk(req.params.id)
+            let errores = validationResult(req);
+            if (errores.isEmpty()) {
+                const { name, price, discount, description, ranking} = req.body;
+                const producto = await db.Product.findByPk(req.params.id)
 
 
             if(req.file){
                 fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',producto.img))
             }
 
-            await db.Product_gender.destroy({
-                where: {
-                    productId: req.params.id
-                },
-            })
-            let generosJ = req.body.genres 
+                await db.Product_gender.destroy({
+                    where: {
+                        productId: req.params.id
+                    },
+                })
+                let generosJ = req.body.genres 
 
-            for (let index = 0; index < generosJ.length; index++) {
-               
-                await db.Product_gender.create({
-                    genderId: generosJ[index],
-                    productId: producto.id,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
+                for (let index = 0; index < generosJ.length; index++) {
+                
+                    await db.Product_gender.create({
+                        genderId: generosJ[index],
+                        productId: producto.id,
+                        createdAt: new Date(),
+                        updatedAt: new Date(),
+                    })
+                }
+                
+                await db.Product.update(
+                    {   
+                        name: name.trim(),
+                        price: +price,
+                        discount:+discount,
+                        description: description.trim(),
+                        img: req.file ? req.file.filename : producto.img,
+                        ranking : ranking,
+                        genres : !req.body.genres ? producto.genres : req.body.genres.toString()
+                    },{
+                        where :{
+                            id : producto.id
+                        }
+                    }) 
+                
+                return res.redirect('/admin/')
+            }else{
+                const genders = await db.Gender.findAll()
+                const product = await db.Product.findByPk(req.params.id)
+                let generosJ = await db.Product_gender.findAll({
+                    where : {
+                        productId : req.params.id
+                    }
+                })
+
+                res.render("formEdit", {
+                    errores : errores.mapped(),
+                    genders,
+                    product,
+                    generosJ
                 })
             }
-            
-            await db.Product.update(
-                {   
-                    name: name.trim(),
-                    price: +price,
-                    discount:+discount,
-                    description: description.trim(),
-                    img: req.file ? req.file.filename : producto.img,
-                    ranking : ranking,
-                    genres : !req.body.genres ? producto.genres : req.body.genres.toString()
-                },{
-                    where :{
-                        id : producto.id
-                    }
-                }) 
-            
-         return res.redirect('/admin/')  
         } catch (error) {
             console.log(error)
         }

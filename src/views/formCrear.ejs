@@ -2,46 +2,55 @@
 <html lang="en">
 <%- include('./partials/head',{title: 'Agregar Producto | Pixel Shop'}) %> 
 <body  class="form__body">
-   <%- include('./partials/header') %> 
+    <%- include('./partials/header') %> 
     <main class="form__main">
         <h2>Crear producto</h2>
-        <form class="form" action="" method="POST" enctype="multipart/form-data">
+        <form class="form" id="form-create" action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre del producto</label>
-                <input type="text" name="name" id="name" placeholder="Nombre del producto" required>
+                <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-control">
+                <span id="errorName" style="color: #6e0707;"><%= locals.errores && errores.name ? errores.name.msg : null %></span>
             </div>
             <div class="">
                 <label for="description">Descripción del producto</label>
-                <textarea name="description" id="description" cols="20" rows="5" placeholder="Descripción del producto" required></textarea>
+                <textarea name="description" id="description" cols="20" rows="5" class="form-control" placeholder="Descripción del producto"></textarea>
+                <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
             </div>
             <div class="">
-                <input type="file" name="img"  >
+                <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif" onchange="fileValidation()">
+                <span id="errorImg" style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
             </div>
             <h4>Géneros de juego</h4>
             <div class="gender">
-                 <% genders.forEach( ({name, id}) => { %>
+                <% genders.forEach( ({name, id}) => { %>
                     <div class="gender__div">
-                        <input   type="checkbox" name="genres" id="genres" value="<%= id%>">
+                        <input type="checkbox" name="genres" id="genres" value="<%= id%>">
                         <label for="genres"><%=name%></label>
                     </div>
-                <% })%>      
+                <% }) %>
+                <span style="color: #6e0707;"><%= locals.errores && errores.genres ? errores.genres.msg : null %></span>
             </div>
             <div class="">
                 <label for="price">Precio del producto</label>
-                <input type="number" name="price" id="price" placeholder="precio del producto" required>
+                <input type="number" name="price" id="price" placeholder="precio del producto" class="form-control">
+                <span id="errorPrice" style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
             </div>
             <div class="">
                 <label for="discount">Descuento</label>
-                <input type="number" name="discount" id="discount" placeholder="descuento del producto" >
+                <input type="number" name="discount" id="discount" placeholder="descuento del producto" class="form-control">
+                <span id="errorDiscount" style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
             </div>
             <div class="">
                 <label for="ranking">Ranking</label>
-                <input type="number" name="ranking" id="ranking" placeholder="Ranking" required>
+                <input type="number" name="ranking" id="ranking" placeholder="Ranking" class="form-control">
+                <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
             </div>
             <div>
+                <span id="errorCreate" class="" style="color: #6e0707;"><%= locals.errores && errores.create? errores.create.msg : null %></span>
                 <button type="submit">Crear</button>
             </div>
         </form>
     </main>
+    <script src="/js/formCrearValidator.js"></script>
 </body>
 </html>
