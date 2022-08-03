@@ -5,7 +5,7 @@
     <%- include('./partials/header') %> 
     <main class="form__main">
         <h2>Crear producto</h2>
-        <form class="form" id="form-create" action="" method="POST" enctype="multipart/form-data">
+        <form class="form" id="create-form" action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre del producto</label>
                 <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-control">
@@ -46,11 +46,12 @@
                 <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
             </div>
             <div>
-                <span id="errorCreate" class="" style="color: #6e0707;"><%= locals.errores && errores.create? errores.create.msg : null %></span>
+                <span id="errorForm" style="color: #6e0707;"><%= locals.errores && errores.create? errores.create.msg : null %></span>
                 <button type="submit">Crear</button>
             </div>
         </form>
     </main>
+    <%- include('./partials/footer') %>
     <script src="/js/formCrearValidator.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
    <%- include('./partials/header') %>
     <main class="form__main">
         <h2>Editar producto</h2>
-        <form class="form" method="POST" action="/product/update/<%= product.id %>?_method=PUT"  enctype="multipart/form-data">
+        <form class="form" id="edit-form" method="POST" action="/product/update/<%= product.id %>?_method=PUT"  enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre del producto</label>
                 <input type="text" name="name" id="name" value="<%= product.name %>" class="form-control">
@@ -17,7 +17,7 @@
                 <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
             </div>
             <div class="">
-                <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif" onchange="fileValidation()">
+                <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif">
                 <img src="/images/<%= product.img %>" alt="">
                 <span style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
             </div>
@@ -49,10 +49,12 @@
                 <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
             </div>
             <div>
+                <span id="errorForm" style="color: #6e0707;"><%= locals.errores && errores.create? errores.create.msg : null %></span>
                 <button type="submit">Editar</button>
             </div>
         </form>
     </main>
+    <%- include('./partials/footer') %>
     <script src="/js/formEditValidator.js"></script>
 </body>
 </html>
