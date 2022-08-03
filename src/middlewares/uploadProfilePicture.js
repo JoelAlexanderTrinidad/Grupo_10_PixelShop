@@ -14,4 +14,17 @@ const upload = multer({
     storage
 });
 
+
+/* const upload = multer({
+  storage,
+  fileFilter(req, file, next) {
+    const isPhoto = file.mimetype.startsWith('image/');
+    if (isPhoto) {
+      next(null, true);
+    }  else {
+      next({ messageImg: "El tipo de archivo no es válido" }, false);
+    } 
+  }
+});
+ */
 module.exports = upload;

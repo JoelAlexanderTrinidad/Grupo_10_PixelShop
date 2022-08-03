@@ -14,6 +14,23 @@ module.exports={
     },
     processRegister:(req, res)=>{
         const errores = validationResult(req);
+
+        /* if(!req.file){
+            null
+        }else{
+            const image = req.file.originalname
+            const ext = image.slice(-4)
+            const imageName = req.file.filename
+            let errorImg = false
+        if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == 'jpeg')){
+            errorImg = false
+        }else{
+            errorImg = true
+        }
+        if(errorImg){
+            fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
+        }
+        } */
         
         if(errores.isEmpty()){
             
@@ -39,16 +56,20 @@ module.exports={
                     imagenPerfil : usuarioNuevo.imagenPerfil,
                     rolId : usuarioNuevo.rolId
                 }
+            
                 res.locals.user = req.session.userLogin;
                 res.redirect('/');
             })
             .catch(error => console.log(error))
         }else{
+            const imageName = req.file.filename
+            fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName));
             res.render('register',{
                 errores: errores.mapped(),
                 old: req.body
             });
         }
+        
     },
     processLogin:(req,res)=>{
     let errores = validationResult (req);
@@ -136,7 +157,8 @@ module.exports={
     profile : (req, res) => {
         User.findByPk(req.session.userLogin.id)
         .then(user => {
-            const fecha = user.fecha = moment().format('DD-MM-YYYY');
+            const fecha = moment(user.fecha).format('DD-MM-YYYY');
+            console.log(fecha)
             res.render("profile", {
                 user,
                 fecha
@@ -166,5 +188,5 @@ module.exports={
         } catch (error) {
             console.log(error)
         }
-    },
+    }
 }

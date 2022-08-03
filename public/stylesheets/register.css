@@ -21,12 +21,13 @@
 }
 
 .main_register .forms-datos .datos{
-    text-transform: uppercase;
+    
     display: flex;
     flex-direction: column;
     padding: 10px 25px;
     margin: 3px auto;
 }
+
 .main_register .required{
     margin: 0 25px;
 }
@@ -36,9 +37,9 @@
 
 .main_register form div input {
     border: none;
-    color: violet;
     padding: 3px 0;
 }
+
 #genero{
     display: flex;
     justify-content: space-between;
@@ -76,7 +77,6 @@
 }
 .main_register .datos input{
     border-bottom: 1.5px solid white;
-    background-color: rgba(255, 255, 255, 0)
 }
 
 
