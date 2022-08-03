@@ -138,7 +138,7 @@ $("form-create").addEventListener('submit', (e) => {
         if(!elements[i].value.trim()){
             elements[i].classList.add('is-invalid');
             error = true;
-            $("errorCreate").innerHTML = "Revisa el formulario por favor"
+            $("errorForm").innerHTML = "Revisa el formulario por favor"
         }
     }
 
@@ -150,10 +150,10 @@ $("form-create").addEventListener('submit', (e) => {
 
     if(!error && e.target.submit()){
         e.target.submit()
-        $("errorCreate").innerHTML = null
+        $("errorForm").innerHTML = null
     }
     else {
-        $("errorCreate").innerHTML = "Revisa el formulario por favor"
+        $("errorForm").innerHTML = "Revisa el formulario por favor"
     }
     // !error && e.target.submit()
 })
