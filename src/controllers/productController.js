@@ -67,9 +67,8 @@ module.exports={
 
         try {
             let errores = validationResult(req);
-            /* return res.send(req.file) */
             
-            if(!req.file){
+            /* if(!req.file){
                 null
             }else{
                 const image = req.file.originalname
@@ -84,7 +83,7 @@ module.exports={
                 if(errorImg){
                     fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
                 }
-            }
+            } */
 
             if (errores.isEmpty()) {
                 const {id, name, price, discount, description, ranking, genres} = req.body;
@@ -116,6 +115,8 @@ module.exports={
             return res.redirect('/admin')
 
             }else{
+                const imageName = req.file.filename
+                fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName));
                 const genders = await db.Gender.findAll()
                 res.render("formCrear", {
                     errores : errores.mapped(),
