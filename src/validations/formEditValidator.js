@@ -8,19 +8,6 @@ module.exports = [
     check("description")
         .notEmpty().withMessage("Debes ingresar una descripción").bail()
         .isLength({min : 20}).withMessage("La descripción debe tener como mínimo 20 caracteres"),
-    body("name")
-        .custom(value => {
-            return db.Product.findOne({
-                where : {
-                    name : value
-                }
-            })
-            .then(product => {
-                if (product) {
-                    return Promise.reject("El producto ya se encuentra registrado")
-                }
-            })
-        }),
     body("img")
         .custom((value, {req}) => {
             let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
