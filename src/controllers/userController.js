@@ -106,8 +106,10 @@ module.exports={
     editProfile: (req,res) => {
         User.findByPk(req.session.userLogin.id)
         .then(usuario => {
-            return res.render("editProfile", {
-                usuario
+            const fecha = !usuario.fecha ? null : moment(usuario.fecha).toISOString().slice(0,10)  
+            res.render("editProfile", {
+                usuario,
+                fecha
             })
         })
         .catch(error => console.log(error))
@@ -125,7 +127,7 @@ module.exports={
                 where : {
                     id: req.session.userLogin.id
                 },
-                attributes : ['imagenPerfil', 'password']
+                attributes : ['imagenPerfil', 'password', 'fecha']
             })
             if(errores.isEmpty()){
                 if(req.file){
@@ -135,7 +137,8 @@ module.exports={
                await User.update({
                     ...req.body,
                     password: usuario[0].password && !req.body.nuevaPass1 ? usuario[0].password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
-                    imagenPerfil: req.file ? req.file.filename : usuario[0].imagenPerfil
+                    imagenPerfil: req.file ? req.file.filename : usuario[0].imagenPerfil,
+                    fecha: req.body.fecha? req.body.fecha :usuario[0].fecha
                 },{
                     where : { id : req.session.userLogin.id }
                 });
@@ -159,8 +162,7 @@ module.exports={
     profile : (req, res) => {
         User.findByPk(req.session.userLogin.id)
         .then(user => {
-            const fecha = !user.fecha ? null : moment(user.fecha).format('DD-MM-YYYY');
-           
+            const  fecha = !user.fecha ? null : moment(user.fecha).toISOString().slice(0,10)          
             res.render("profile", {
                 user,
                 fecha
