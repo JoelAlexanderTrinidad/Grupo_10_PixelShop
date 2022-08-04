@@ -62,8 +62,10 @@ module.exports={
             })
             .catch(error => console.log(error))
         }else{
+        if(req.file){
             const imageName = req.file.filename
             fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName));
+            }
             res.render('register',{
                 errores: errores.mapped(),
                 old: req.body
@@ -130,7 +132,7 @@ module.exports={
                         fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',usuario[0].imagenPerfil))
                     }
 
-                User.update({
+               await User.update({
                     ...req.body,
                     password: usuario[0].password && !req.body.nuevaPass1 ? usuario[0].password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
                     imagenPerfil: req.file ? req.file.filename : usuario[0].imagenPerfil
@@ -157,8 +159,8 @@ module.exports={
     profile : (req, res) => {
         User.findByPk(req.session.userLogin.id)
         .then(user => {
-            const fecha = moment(user.fecha).format('DD-MM-YYYY');
-            console.log(fecha)
+            const fecha = !user.fecha ? null : moment(user.fecha).format('DD-MM-YYYY');
+           
             res.render("profile", {
                 user,
                 fecha
