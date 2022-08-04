@@ -39,10 +39,6 @@ $("description").addEventListener("blur", function() {
 $("img").addEventListener("change", function() {
     let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
     switch (true) {
-        case !this.value:
-            this.classList.add("is-valid")
-            $("errorImg").innerHTML = null
-            break;
         case !allowedExtensions.exec(this.value):
             $("errorImg").innerHTML = "Formato de archivo no valido"
             this.classList.add("is-invalid")
@@ -138,7 +134,6 @@ $("form-create").addEventListener('submit', function(e) {
         if(!elements[i].value.trim()){
             elements[i].classList.add('is-invalid');
             error = true;
-            $("errorForm").innerHTML = "Revisa el formulario por favor"
         }
     }
 
@@ -148,13 +143,11 @@ $("form-create").addEventListener('submit', function(e) {
         }
     }
 
-    if(!error ){
+    if(!error){
         e.target.submit()
-        $("errorForm").innerHTML = null
     }
     else {
         e.target.submit()
-        $("errorForm").innerHTML = "Revisa el formulario por favor"
     }
     // !error && e.target.submit()
 })

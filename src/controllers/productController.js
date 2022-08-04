@@ -106,10 +106,10 @@ module.exports={
                     description: description.trim(),
                     img: req.file ? req.file.filename : 'default-image.jpg',
                     ranking : ranking,
-                    genres : genres.toString()
+                    genres : genres
                 })
                 
-            let nuevoProductArray = JSON.parse("[" + genres + "]");
+            let nuevoProductArray = JSON.parse("[" + genres.toString() + "]");
 
             for (let index = 0; index < nuevoProductArray.length; index++) {
             
@@ -129,14 +129,16 @@ module.exports={
                     fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName));
                 }               
                 const genders = await db.Gender.findAll()
+                const array = genders.map(genero => genero.id)
                 res.render("formCrear", {
                     errores : errores.mapped(),
                     genders,
+                    array,
                     old:req.body
                 })
             }
             
-             
+            
         } catch (error) {
             console.log(error)
         }

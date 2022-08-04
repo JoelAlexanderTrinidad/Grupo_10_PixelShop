@@ -25,7 +25,7 @@ module.exports = [
         .custom((value, {req}) => {
             let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
             if (!req.file) {
-                return true
+                return Promise.reject("Debes ingresar una imagen del producto")
             } if (!allowedExtensions.exec(req.file.filename)) {
                 return Promise.reject("Solo archivos con extensión .jpg, .jpeg, .png o .gif")
             } else {
