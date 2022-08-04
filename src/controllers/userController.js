@@ -130,9 +130,6 @@ module.exports={
                 attributes : ['imagenPerfil', 'password', 'fecha']
             })
             if(errores.isEmpty()){
-                if(req.file){
-                        fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',usuario[0].imagenPerfil))
-                    }
 
                await User.update({
                     ...req.body,
@@ -142,17 +139,20 @@ module.exports={
                 },{
                     where : { id : req.session.userLogin.id }
                 });
-                
+                if(req.file){
+                    fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',usuario[0].imagenPerfil))
+                }
                 req.session.userLogin = {
                     ...req.session.userLogin
                   }
                   return res.redirect("/users/profile");
             }else{
-                return res.render("editProfile", {
-                    usuario : req.body,
-                    errores : errores.mapped()
-                  });
-            }
+                    return res.render("editProfile", {
+                        usuario : req.body,
+                        errores : errores.mapped()
+                      });
+                }
+
 
         } catch (error) {
             console.log(error)
