@@ -63,10 +63,11 @@ module.exports={
         .catch(error=> console.log(error))
     },
     add: async (req,res) => {
+        
         try {
             const genders = await db.Gender.findAll()
             return res.render('formCrear',{
-                genders
+                genders,
             })  
         } catch (error) {
             error => console.log(error)
@@ -93,7 +94,6 @@ module.exports={
                     fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
                 }
             } */
-
             if (errores.isEmpty()) {
                 const {id, name, price, discount, description, ranking, genres} = req.body;
             // console.log(genres)
@@ -108,7 +108,7 @@ module.exports={
                     ranking : ranking,
                     genres : genres.toString()
                 })
-
+                
             let nuevoProductArray = JSON.parse("[" + genres + "]");
 
             for (let index = 0; index < nuevoProductArray.length; index++) {
@@ -124,15 +124,19 @@ module.exports={
             return res.redirect('/admin')
 
             }else{
-                const imageName = req.file.filename
-                fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName));
+                if(req.file){
+                    const imageName = req.file.filename
+                    fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName));
+                }               
                 const genders = await db.Gender.findAll()
                 res.render("formCrear", {
                     errores : errores.mapped(),
-                    genders
+                    genders,
+                    old:req.body
                 })
             }
             
+             
         } catch (error) {
             console.log(error)
         }

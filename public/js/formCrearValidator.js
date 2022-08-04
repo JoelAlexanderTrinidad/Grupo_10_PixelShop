@@ -128,10 +128,10 @@ $("ranking").addEventListener("blur", function() {
     }
 })
 
-$("form-create").addEventListener('submit', (e) => {
+$("form-create").addEventListener('submit', function(e) {
     e.preventDefault();
     console.log(e.target);
-    let elements = e.target.elements;
+    let elements = this.elements;
     let error = false;
 
     for (let i = 0; i < elements.length - 1; i++) {
@@ -148,11 +148,12 @@ $("form-create").addEventListener('submit', (e) => {
         }
     }
 
-    if(!error && e.target.submit()){
+    if(!error ){
         e.target.submit()
         $("errorForm").innerHTML = null
     }
     else {
+        e.target.submit()
         $("errorForm").innerHTML = "Revisa el formulario por favor"
     }
     // !error && e.target.submit()
