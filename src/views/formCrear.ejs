@@ -22,12 +22,21 @@
             </div>
             <h4>Géneros de juego</h4>
             <div class="gender">
-                <% genders.forEach( ({name, id}) => { %>
+                <% genders.forEach( ({name,id}) => { %>
                     <div class="gender__div">
-                        <input type="checkbox" name="genres" id="genres" value="<%=id%>">
+                        <input type="checkbox" name="genres" id="genres" value="<%= id %>"
+                        <% if (locals.old && old.genres) { %>                         
+                            <% oldGenero.forEach((element, i) => { %>
+                                <%= element === id && 'checked'%>
+                        <% }) %>
+                        <% } else { %>
+                            <% null %>
+                        <% } %>
+                        >
                         <label for="genres"><%=name%></label>
                     </div>
                 <% }) %>
+                
                 <span style="color: #6e0707;"><%= locals.errores && errores.genres ? errores.genres.msg : null %></span>
             </div>
             <div class="">

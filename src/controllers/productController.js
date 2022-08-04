@@ -3,6 +3,7 @@ const { Op } = require("sequelize");
 const path = require('path');
 const fs = require('fs')
 const {validationResult} = require("express-validator");
+const { localsName } = require('ejs');
 
 module.exports={
     productDetail:(req,res)=>{
@@ -94,9 +95,12 @@ module.exports={
                     fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
                 }
             } */
+
+            // const {id, name, price, discount, description, ranking, genres} = req.body;
+            // return res.send(genres)
+
             if (errores.isEmpty()) {
                 const {id, name, price, discount, description, ranking, genres} = req.body;
-            // console.log(genres)
             
             let nuevoProducto = await db.Product.create(
                 {   id : id, 
@@ -129,12 +133,21 @@ module.exports={
                     fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName));
                 }               
                 const genders = await db.Gender.findAll()
-                const array = genders.map(genero => genero.id)
-                res.render("formCrear", {
+
+                let genre;
+                let oldGenero;
+
+                if(req.body.genres){
+                    genre = req.body.genres
+                    oldGenero = genre.map((i) => Number(i));
+                }
+                console.log(genre);
+                
+                return res.render("formCrear", {
                     errores : errores.mapped(),
                     genders,
-                    array,
-                    old:req.body
+                    oldGenero,
+                    old: req.body
                 })
             }
             
