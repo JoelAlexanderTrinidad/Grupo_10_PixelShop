@@ -135,11 +135,11 @@ module.exports={
                     ...req.body,
                     password: usuario[0].password && !req.body.nuevaPass1 ? usuario[0].password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
                     imagenPerfil: req.file ? req.file.filename : usuario[0].imagenPerfil,
-                    fecha: req.body.fecha? req.body.fecha :usuario[0].fecha
+                    fecha: req.body.fecha? moment(req.body.fecha).toISOString().slice(0,10) : moment(usuario[0].fecha).toISOString().slice(0,10)
                 },{
                     where : { id : req.session.userLogin.id }
                 });
-                if(req.file){
+                if(req.file && usuario[0].imagenPerfil != "no-image.png"){
                     fs.unlinkSync(path.resolve(__dirname,'..', '..','public','images',usuario[0].imagenPerfil))
                 }
                 req.session.userLogin = {
@@ -149,7 +149,8 @@ module.exports={
             }else{
                     return res.render("editProfile", {
                         usuario : req.body,
-                        errores : errores.mapped()
+                        errores : errores.mapped(),
+                        fecha : moment(usuario[0].fecha).toISOString().slice(0,10)
                       });
                 }
 

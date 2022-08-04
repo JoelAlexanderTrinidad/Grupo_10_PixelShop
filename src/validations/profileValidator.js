@@ -18,9 +18,16 @@ module.exports = [
     check('email')
         .notEmpty().withMessage('Debes ingresar un email').bail()
         .isEmail().withMessage('Email inválido'),
+
+    body('nuevaPass1')
+        .custom((value, {req}) => {
+            if(value !== req.body.nuevaPass2){
+                return false;
+            }
+            return true;
+        }).withMessage('¡Las contraseñas no coinciden!'),
     
     body('passAntiguo')
-        .notEmpty().withMessage('Debes ingresar la contraseña antigua')
         .custom((value, {req}) =>{
             return db.User.findOne({
                 where : {
@@ -32,14 +39,5 @@ module.exports = [
                 }
               }).catch(() => Promise.reject('Debes ingresar la contraseña antigua'))
             }),
-
-    body('nuevaPass1')
-        .custom((value, {req}) => {
-            if(value !== req.body.nuevaPass2){
-                return false;
-            }
-            return true;
-        }).withMessage('¡Las contraseñas no coinciden!'),
-    
 ]
 
