@@ -44,14 +44,5 @@ module.exports={
                 })
             })
             .catch(error => console.log(error))        
-    },
-    admin:(req,res)=> {
-        db.Product.findAll()
-            .then(products => {
-                return res.render('admin', {
-                    products
-                })
-            })
-            .catch(error => console.log(error))
     }
 }
