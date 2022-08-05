@@ -136,13 +136,16 @@ module.exports={
 
                 let genre;
                 let oldGenero;
+                let body = req.body.genres
 
-                if(req.body.genres){
+                if(!body || typeof body == 'string'){                      
+                    oldGenero = null
+                    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',typeof Number(body));
+                }else{
                     genre = req.body.genres
                     oldGenero = genre.map((i) => Number(i));
                 }
-                console.log(genre);
-                
+                return res.send(typeof body)
                 return res.render("formCrear", {
                     errores : errores.mapped(),
                     genders,

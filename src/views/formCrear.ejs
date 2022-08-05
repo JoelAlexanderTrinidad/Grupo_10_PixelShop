@@ -25,7 +25,7 @@
                 <% genders.forEach( ({name,id}) => { %>
                     <div class="gender__div">
                         <input type="checkbox" name="genres" id="genres" value="<%= id %>"
-                        <% if (locals.old && old.genres) { %>                         
+                        <% if (locals.old && old.genres && oldGenero != null) { %>                         
                             <% oldGenero.forEach((element, i) => { %>
                                 <%= element === id && 'checked'%>
                         <% }) %>
