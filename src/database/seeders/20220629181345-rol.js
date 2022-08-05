@@ -11,6 +11,11 @@ const rols = [
     createdAt: new Date(),
     updatedAt: new Date(),
   },
+  {
+    name: "superAdmin",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
 ];
 
 module.exports = {
