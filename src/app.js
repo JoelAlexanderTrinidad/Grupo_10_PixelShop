@@ -13,9 +13,9 @@ const localCheck = require('./middlewares/localCheck');
 const cookieCheck = require('./middlewares/cookieCheck');
 
 var indexRouter = require('./routes/index');
+var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
-var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -41,9 +41,9 @@ app.use(cookieCheck);
 app.use(localCheck);
 
 app.use('/', indexRouter);
+app.use('/admin', adminRouter)
 app.use('/product',productRouter);
 app.use('/users', usersRouter);
-app.use('/admin', adminRouter)
 
 // Rutas //
 /*app.get('/',(req,res)=> res.sendFile(path.resolve(__dirname,"views","index.html")));
