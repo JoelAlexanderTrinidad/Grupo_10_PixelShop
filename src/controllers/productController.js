@@ -110,10 +110,10 @@ module.exports={
                     description: description.trim(),
                     img: req.file ? req.file.filename : 'default-image.jpg',
                     ranking : ranking,
-                    genres : genres
+                    genres : genres.toString()
                 })
                 
-            let nuevoProductArray = JSON.parse("[" + genres.toString() + "]");
+            let nuevoProductArray = JSON.parse("[" + genres + "]");
 
             for (let index = 0; index < nuevoProductArray.length; index++) {
             
