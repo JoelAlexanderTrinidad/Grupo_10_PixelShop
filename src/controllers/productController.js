@@ -125,7 +125,7 @@ module.exports={
                     updatedAt: new Date(),
                 })
             }
-            return res.redirect('/admin')
+            return res.redirect('/admin/listProduct')
 
             }else{
                 if(req.file){
@@ -230,7 +230,7 @@ module.exports={
                         }
                     }) 
                 
-                return res.redirect('/admin/')
+                return res.redirect('/admin/listProduct')
             }else{
                 const genders = await db.Gender.findAll()
                 const product = await db.Product.findByPk(req.params.id)
@@ -292,7 +292,7 @@ module.exports={
                 where : { id : req.params.id}
             })
 
-            return res.redirect("/admin");
+            return res.redirect("/admin/listProduct");
         } 
         catch (error) {
             console.log(error)

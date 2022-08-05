@@ -4,11 +4,11 @@ var router = express.Router();
 /* / */
 const adminCheck = require('../middlewares/adminCheck');
 const superAdminCheck = require('../middlewares/superAdminCheck');
-const {admin} = require('../controllers/adminController')
+const {admin, superAdmin} = require('../controllers/adminController')
 
 router
-      .get('/admin/listProduct', adminCheck, admin)
-      .get('/admin/listUser', superAdminCheck, )
+      .get('/listProduct', adminCheck, admin)
+      .get('/listUsers', superAdminCheck, superAdmin)
       
 
 module.exports = router;

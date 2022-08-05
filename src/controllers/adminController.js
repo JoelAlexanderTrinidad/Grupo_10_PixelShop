@@ -12,19 +12,24 @@ admin:(req,res)=> {
         })
         .catch(error => console.log(error))
 },
-superAdmin:(req,res)=> {
-    db.User.findAll({
+superAdmin:async(req,res)=> {
+   try {
+    const users = await db.User.findAll({
         where :{
             rolId:{
             [Op.ne]: 3
             } 
         }
     })
-        .then(user => {
-            return res.render('listUsers', {
-                user
+    const rol = await db.Rol.findAll()
+
+return res.render('listUsers', {
+                users,
+                rol
             })
-        })
-        .catch(error => console.log(error))
+       
+   } catch (error) {
+    console.log(error)
+   }
 }
 }
