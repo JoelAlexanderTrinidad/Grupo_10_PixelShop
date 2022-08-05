@@ -137,19 +137,23 @@ module.exports={
                 let genre;
                 let oldGenero;
                 let body = req.body.genres
+                let numGenero ;
 
-                if(!body || typeof body == 'string'){                      
+                if(!body){                      
                     oldGenero = null
                     console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',typeof Number(body));
-                }else{
+                } else if( typeof body == 'string'){
+                    numGenero = +body
+                }
+                else{
                     genre = req.body.genres
                     oldGenero = genre.map((i) => Number(i));
                 }
-                return res.send(typeof body)
                 return res.render("formCrear", {
                     errores : errores.mapped(),
                     genders,
                     oldGenero,
+                    numGenero,
                     old: req.body
                 })
             }
