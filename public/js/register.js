@@ -208,10 +208,7 @@ $('formulario').addEventListener('submit', function (e) {
         error=true
     }
     if(!error){
-        $('errorm').innerHTML = null
-    }
-    else {
-        e.target.submit() 
+        e.target.submit()
     }
 }
 )
