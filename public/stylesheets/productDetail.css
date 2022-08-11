@@ -16,6 +16,7 @@
 
 .main h3 {
     font-size: 20px;
+    text-align: center;
     margin: 10px 0 20px;
     color: var(--colorLetras);
 }
@@ -56,12 +57,16 @@
     color: var(--colorPrueba3);
 }
 
+.main__section-resumen{
+    line-break: anywhere;
+}
 
 .detail__main__section {
+    margin: 0 auto;
     border-radius: 10px;
     border: 1px solid #a9cff1;
     margin-top: 20px;
-    width: 50%;
+    width: 80%;
 }
 .main__section h3{
     padding-top: 10px;
@@ -262,7 +267,7 @@
     }
     .main #info-principal {
         margin: 0 auto;
-        width: 100%;
+        width: 80%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -270,7 +275,7 @@
     #buy-info{
         display: flex;
         flex-direction: column;
-        width: 35%;
+        width: 75%;
     }
     .mercado-pago{
         width: 75%;
@@ -330,6 +335,7 @@
     }
     
     .detail__main__section {
+        margin: 20px 0;
         width: 30%;
         height: 100%;
     }
