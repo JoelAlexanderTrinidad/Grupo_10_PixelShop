@@ -32,6 +32,8 @@
                         <li><a class="dropdown-item" href="/users/logout">Cerrar Sesión</a></li>
                         <% if (locals.userLogin?.rolId === 2 || locals.userLogin?.rolId === 3) { %>
                             <li><a class="dropdown-item" href="/admin/listProduct">Productos</a></li>
+                        <% } %>
+                        <% if ( locals.userLogin?.rolId === 3) { %>
                             <li><a class="dropdown-item" href="/admin/listUsers">Usuarios</a></li>
                         <% } %>
                         <% }else{ %>                            

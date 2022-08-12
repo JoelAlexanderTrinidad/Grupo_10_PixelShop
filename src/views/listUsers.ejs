@@ -13,6 +13,7 @@
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
         <th scope="col">Rol</th>
+        <th scope="col">Eliminar</th>
       </tr>
     </thead>
     <tbody>
@@ -21,44 +22,24 @@
           <th scope="row"><%= user.id %> </th>
           <td><%= user.nombre %></td>
           <td><%= user.apellido %></td>
-          <td><%= user.rolId %></td>
+          <form action="/admin/update/<%= user.id %>?_method=PUT" method="POST"></form>
+          <td>
+          <select>
+            <option selected hidden value="<%= user.rolId %>">
+              <%= user.rolId %></option>
+              <% rols.forEach(rol => { %>
+                <option class="text-uppercase" value="<%= rol.id %> "><%= rol.id %>. <%=  rol.name %></option>
+              <% }) %>
+          </select>
+          <button type="submit" style="border: none; background: none;"><ion-icon name="pencil-outline"></ion-icon></td>
+          </form>
+          <form action="/admin/remove/<%= user.id %>?_method=DELETE" method="POST">
+            <td><a href=""><button class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></td>
+        </form>
         </tr>
-        
-      <% }) %>
+        <% }) %>
     </tbody>
   </table>
-  
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-  
 </main>
 <%- include('./partials/footer') %>
 </body>
