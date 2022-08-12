@@ -129,6 +129,9 @@ module.exports={
                 },
                 attributes : ['imagenPerfil', 'password', 'fecha']
             })
+
+
+            
             if(errores.isEmpty()){
 
                await User.update({
