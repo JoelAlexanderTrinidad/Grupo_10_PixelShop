@@ -135,11 +135,16 @@ header #burger i{
     justify-content: center;
     padding: 10px 0;
     background-color: var(--colorFucsia);
+    position: relative;
 }
 
-#busqueda button{
-    border: 1px solid #1d3d66;
+#busqueda button {
+    width: 26px;
+    border: none;
     border-radius: 3px;
+    position: absolute;
+    background-color: #e9e9e9;
+    left: 85%;
 }
 
 #busqueda button i{
@@ -242,8 +247,10 @@ header #burger i{
     #busqueda input {
         padding: 5px;
     }
-    #busqueda button {    
-        width: 30px;
+    #busqueda button {
+        width: 32px;
+        height: 34px;
+        left: 88%;
     }
     header {
         background-repeat: no-repeat;
