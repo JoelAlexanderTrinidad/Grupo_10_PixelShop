@@ -35,14 +35,17 @@ return res.render('listUsers', {
 },
 update : async (req,res) => {
     try { 
+        const {rolId} = req.body
+
         await db.User.update({
-            rolId : req.body.rolId
+            rolId
         },{
             where :{
                 id : req.params.id
             }
         })
         
+        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>' + rolId)
         return res.redirect('/admin/listUsers')
 
     } catch (error) {

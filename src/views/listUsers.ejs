@@ -24,11 +24,12 @@
           <td><%= user.apellido %></td>
           <form action="/admin/update/<%= user.id %>?_method=PUT" method="POST">
           <td>
-          <select>
-            <option selected hidden value="<%= user.rolId %>">
+          <select name="rolId">
+            <option hidden value="">
               <%= user.rolId %></option>
               <% rols.forEach(rol => { %>
-                <option class="text-uppercase" value="<%= rol.id %> "><%= rol.id %>. <%=  rol.name %></option>
+                <option class="text-uppercase" value="<%= rol.id%>" <%= user.rolId === rol.id ? 'selected' : null %>>
+                  <%= rol.id %>. <%=  rol.name %></option>
               <% }) %>
           </select>
           <a href=""><button type="submit" class="badge rounded-pill border-0"><i  class="fas fa-edit"></i></button></a></td>
