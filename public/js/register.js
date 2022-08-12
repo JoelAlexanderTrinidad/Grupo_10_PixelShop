@@ -180,12 +180,13 @@ $('formulario').addEventListener('submit', function (e) {
     error = false
     let elements = this.elements;
 
-
     for (let i = 0; i < elements.length -3 ; i++) {
         if(!elements[i].value ){
             elements[i].classList.add('is-invalid');
             $('errorm').innerHTML = "Todos los campos son obligatorios";
             error= true
+        }else{
+            error= false
         }
         
     }
@@ -193,7 +194,8 @@ $('formulario').addEventListener('submit', function (e) {
 
         if(!elements[i].classList.contains('is-invalid') ){
            error=true
-            
+        }else{
+            error= false
         }
         
     }
@@ -201,16 +203,21 @@ $('formulario').addEventListener('submit', function (e) {
         $('terminos').classList.add('is-invalid')
         $('errorTerminos').innerHTML = "Debes aceptar terminos y condiciones de uso";
         error=true
+    }else{
+        $('privacidad').classList.remove('is-invalid')
+        error= false
     }
     if(!$('privacidad').checked){
         $('privacidad').classList.add('is-invalid')
         $('errorPriv').innerHTML = "Debes aceptar las politicas de privacidad ";
         error=true
+    }else{
+        $('privacidad').classList.remove('is-invalid')
+        error= false
     }
+
     if(!error){
         $('errorm').innerHTML = null
-    }
-    else {
         e.target.submit() 
     }
 }
