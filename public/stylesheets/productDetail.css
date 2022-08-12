@@ -56,9 +56,16 @@
 .main__section-desc a{
     color: var(--colorPrueba3);
 }
-
-.main__section-resumen{
-    line-break: anywhere;
+.about-the-game{
+    display: flex;
+    justify-content: center;
+}
+.description{
+    margin: 0px auto;
+    border: dashed;
+    border-radius: 5px;
+    padding: 10px;
+    border-color: darkcyan;
 }
 
 .detail__main__section {
@@ -92,7 +99,6 @@
 }
 
 .main__section__articles {
-    margin-top: 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -309,9 +315,11 @@
     }
     .product__detail-buttons {
         margin: 20px 190px 0px;
-       
     }
-    
+    .description{
+        margin: 20px;
+        width: 65%;
+    }
 
 @media (min-width: 1024px){
     .main__section__articles article {
@@ -357,6 +365,9 @@
     .product__detail-buttons #editar {
         font-size: 25px;
     
+    }
+    .description{
+        width: 60%;
     }
 }
 }
