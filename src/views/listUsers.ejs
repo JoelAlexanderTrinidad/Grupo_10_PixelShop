@@ -22,7 +22,7 @@
           <th scope="row"><%= user.id %> </th>
           <td><%= user.nombre %></td>
           <td><%= user.apellido %></td>
-          <form action="/admin/update/<%= user.id %>?_method=PUT" method="POST"></form>
+          <form action="/admin/update/<%= user.id %>?_method=PUT" method="POST">
           <td>
           <select>
             <option selected hidden value="<%= user.rolId %>">
@@ -31,7 +31,7 @@
                 <option class="text-uppercase" value="<%= rol.id %> "><%= rol.id %>. <%=  rol.name %></option>
               <% }) %>
           </select>
-          <button type="submit" style="border: none; background: none;"><ion-icon name="pencil-outline"></ion-icon></td>
+          <a href=""><button type="submit" class="badge rounded-pill border-0"><i  class="fas fa-edit"></i></button></a></td>
           </form>
           <form action="/admin/remove/<%= user.id %>?_method=DELETE" method="POST">
             <td><a href=""><button class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></td>

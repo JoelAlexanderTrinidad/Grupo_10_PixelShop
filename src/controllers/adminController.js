@@ -34,12 +34,16 @@ return res.render('listUsers', {
    }
 },
 update : async (req,res) => {
-    try {
-        const usuario = await User.findAll({
-            where : {
-                id: req.params.id
+    try { 
+        await db.User.update({
+            rolId : req.body.rolId
+        },{
+            where :{
+                id : req.params.id
             }
         })
+        
+        return res.redirect('/admin/listUsers')
 
     } catch (error) {
         console.log(error)
