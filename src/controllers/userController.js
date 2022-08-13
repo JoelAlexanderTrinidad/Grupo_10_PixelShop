@@ -163,16 +163,19 @@ module.exports={
         }
 
     },
-    profile : (req, res) => {
-        User.findByPk(req.session.userLogin.id)
-        .then(user => {
+    profile : async (req, res) => {
+
+        try {
+           
+            const user = await User.findByPk(req.session.userLogin.id)
             const  fecha = !user.fecha ? null : moment(user.fecha).toISOString().slice(0,10)          
-            res.render("profile", {
+            return res.render("profile", {
                 user,
                 fecha
             })
-        })
-        .catch(error => console.log(error))
+        } catch (error) {
+            console.log(error)
+        }
     },
     removeUser : async (req,res) => {
         try {
