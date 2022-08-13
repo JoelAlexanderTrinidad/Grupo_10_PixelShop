@@ -133,12 +133,11 @@ module.exports={
 
             
             if(errores.isEmpty()){
-
                await User.update({
                     ...req.body,
                     password: usuario[0].password && !req.body.nuevaPass1 ? usuario[0].password : bcryptjs.hashSync(req.body.nuevaPass1, 10),
                     imagenPerfil: req.file ? req.file.filename : usuario[0].imagenPerfil,
-                    fecha: req.body.fecha? moment(req.body.fecha).toISOString().slice(0,10) : moment(usuario[0].fecha).toISOString().slice(0,10)
+                    fecha: req.body.fecha ? moment(req.body.fecha).toISOString().slice(0,10) : null
                 },{
                     where : { id : req.session.userLogin.id }
                 });
