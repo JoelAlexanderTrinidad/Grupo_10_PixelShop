@@ -3,6 +3,7 @@ var router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const adminCheck = require('../middlewares/adminCheck');
+const userCheck = require('../middlewares/userCheck');
 const formCrearValidator = require("../validations/formCrearValidator");
 const formEditValidator = require("../validations/formEditValidator")
 
@@ -24,7 +25,7 @@ const storage = multer.diskStorage({
 /* /product */
 
 router
-      .get('/cart',productCart)
+      .get('/cart',userCheck,productCart)
       .get('/detail/:id', productDetail)
       .get('/crear', adminCheck,add)
       .post('/crear', upload.single('img'), formCrearValidator, store)

@@ -7,9 +7,10 @@ const profileValidator = require('../validations/profileValidator');
 
 /* /users */
 const {register,login, processLogin, processRegister, editProfile, logout, updateProfile, removeUser, profile}=require('../controllers/userController');
-const {checkEmail}= require('../controllers/apis/user')
+const {checkEmail} = require('../controllers/apis/user')
 const userCheck = require('../middlewares/userCheck');
-const sessionCheck=require('../middlewares/sessionCheck');
+const sessionCheck = require('../middlewares/sessionCheck');
+
 router
       .get('/login', sessionCheck,login)
       .get('/register',sessionCheck,register)
@@ -19,7 +20,7 @@ router
       .get('/editProfile',userCheck, editProfile)
       .put('/update-profile', upload.single('imagenPerfil'), profileValidator, userCheck,updateProfile)
       .delete('/deleteUser',removeUser)
-      .get('/profile',profile)
+      .get('/profile',userCheck,profile)
 
       /* apis */
       .post('/api/check-email', checkEmail)
