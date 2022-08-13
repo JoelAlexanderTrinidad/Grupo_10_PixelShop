@@ -43,7 +43,9 @@
     justify-content: space-between;
 }
 
-
+.main_register__input{
+    border-radius: 4px;
+}
 .main_register .redes ul{
     display: flex;
     font-size: 36px;
