@@ -79,10 +79,11 @@
     padding: 10px;
 }
 
-.home__main .home__main__featured article{
+.home__main .home__main__featured article {
+    width: 90%;
     padding: 10px;
-    margin: 10px;
-    border: double; 
+    margin: 10px auto;
+    border: double;
     border-color: red blue green black;
 }
 
@@ -92,7 +93,6 @@
 }
 
 .home__main .home__main__featured p{
-    padding-bottom: 10px;
     text-align: center;
     font-weight: bold;
 }
@@ -168,6 +168,7 @@
     .container-slider {
         display: block;
         width: 90%;
+        max-width: 900px;
         margin: auto;
         overflow: hidden;
         box-shadow: 0 0 0 10px #fff, 0 2px 20px;
@@ -249,14 +250,14 @@
         width:90%;
     }
     .home__main .home__main__featured article {
-        width: 10%;
+        width: 12%;
         
     }
 }
 
 @media (min-width: 1024px){
     .slider{
-        width: 480%;
+        width: 300%;
     }
     .home__main .home__main__offer .details{
         font-size: 13px;
