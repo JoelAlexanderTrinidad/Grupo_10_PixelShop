@@ -5,7 +5,7 @@ let sliderSection = qsa('.slider__article');
 let sliderSectionLast = sliderSection[sliderSection.length -1];
 let btnRight = $('btn-right');
 let btnLeft = $('btn-left');
-let tempo = 5000
+let tempo = 2000
 
 slider.insertAdjacentElement('afterbegin', sliderSectionLast);
 
@@ -41,6 +41,6 @@ btnLeft.addEventListener('click' ,function(e){
     Prev();
 });
 
-setInterval(function(){
+/* setInterval(function(){
     Next();
-}, tempo)
+}, tempo) */

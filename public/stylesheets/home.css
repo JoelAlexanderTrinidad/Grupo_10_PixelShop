@@ -154,13 +154,21 @@
     margin: 0 auto;
 }
 
+.container-slider{
+    display: none;
+}
+
 @media (min-width: 768px){
+    .destacados__no-slider{
+        display: none;
+    }
 
     /* SLIDER */
     .container-slider {
+        display: block;
         width: 90%;
         margin: auto;
-        overflow: hidden;
+        /* overflow: hidden; */
         box-shadow: 0 0 0 10px #fff, 0 2px 20px;
         position: relative;
     }
@@ -269,12 +277,8 @@
         margin: 20px 8%;
     }
     
-    .home__main .home__main__offer{
-        display: none;
-    }
-    
     .home__main .home__main__offer article{
-        width: 20%;
+        width: 25%;
     }
 
     .home__main .home__main__recommended article{
