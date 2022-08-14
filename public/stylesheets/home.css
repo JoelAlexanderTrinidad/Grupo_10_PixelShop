@@ -209,10 +209,14 @@
     
     .slider__btn--left{
         left: 10px;
+        width: 50px;
+        border-radius: 4px;
     }
     
     .slider__btn--right{
         right: 10px;
+        width: 50px;
+        border-radius: 4px;
     }
     /* ------------------------------------------------ */
     

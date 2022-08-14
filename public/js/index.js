@@ -5,7 +5,7 @@ let sliderSection = qsa('.slider__article');
 let sliderSectionLast = sliderSection[sliderSection.length -1];
 let btnRight = $('btn-right');
 let btnLeft = $('btn-left');
-let tempo = 3000
+let tempo = 5000
 
 slider.insertAdjacentElement('afterbegin', sliderSectionLast);
 
@@ -13,7 +13,7 @@ function Next(){
     let sliderSection = qsa('.slider__article');
     let sliderSectionFirst = sliderSection[0];
     slider.style.marginLeft = '-150%';
-    slider.style.transition = 'all .4s';
+    slider.style.transition = 'all .3s';
     setTimeout(function(){
         slider.style.transition = 'none'
         slider.insertAdjacentElement('beforeend', sliderSectionFirst);
@@ -25,7 +25,7 @@ function Prev(){
     let sliderSection = qsa('.slider__article');
     let sliderSectionLast = sliderSection[sliderSection.length -1];
     slider.style.marginLeft = '-50%';
-    slider.style.transition = 'all .4s';
+    slider.style.transition = 'all .3s';
     setTimeout(function(){
         slider.style.transition = 'none'
         slider.insertAdjacentElement('afterbegin', sliderSectionLast);
@@ -34,7 +34,7 @@ function Prev(){
 }
 
 btnRight.addEventListener('click' ,function(e){
-    Next();
+        Next();
 });
 
 btnLeft.addEventListener('click' ,function(e){
