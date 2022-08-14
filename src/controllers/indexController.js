@@ -11,7 +11,7 @@ module.exports={
                 }
             },
 			order : [['ranking','DESC']],
-            limit: 2
+            limit: 6
         })
         let ofertasEpeciales = db.Product.findAll({
             where: {
@@ -37,6 +37,8 @@ module.exports={
         })
         Promise.all([destacados, ofertasEpeciales, recomendados])
             .then(([destacados, ofertasEpeciales, recomendados]) => {
+        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',destacados);
+
                 return res.render('index', {
                     destacados,
                     ofertasEpeciales,

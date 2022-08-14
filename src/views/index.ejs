@@ -38,9 +38,8 @@
 
         <!-- Destacados -->
         <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
-        <section class="home__main__featured">
                 <!-- slider -->
-            <div class="container-slider">
+            <div class="container-slider home__main__featured">
                 <div class="slider " id="slider">
                     <% destacados.forEach(({id,name, price, discount, img}) => { %>
                     <article class="slider__article">
@@ -51,7 +50,7 @@
                             <i class="fas fa-star"></i>
                             <i class="far fa-star"></i>
                         </p>
-                        <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
+                        <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" ></a>
                     </article>
                     <% }) %>
                 </div>
@@ -59,8 +58,7 @@
                     <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
             </div>
   
-        </section>
-        <section class="destacados__no-slider">
+        <section class="destacados__no-slider home__main__featured" id="no-slider">
         <div >
             <div >
                 <% destacados.forEach(({id,name, price, discount, img}) => { %>
@@ -72,7 +70,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </p>
-                    <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
+                    <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt=""></a>
                 </article>
                 <% }) %>
             </div>
