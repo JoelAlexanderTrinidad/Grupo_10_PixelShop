@@ -30,44 +30,53 @@
             <% }) %>
         </section>
 
-        <!-- slider -->
-        <div class="container-slider">
-            <div class="slider " id="slider">
-                <% ofertasEpeciales.forEach(({id, name, price, discount, img}) => { %>             
-                    <article class="slider__article">
-                        <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
-                        
-                    </article>
-                <% }) %>
+    
+       
+               
               
-            </div>
-              <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
-              <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
-          </div>
+         
 
         <!-- Destacados -->
         <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
-        <section class="home__main__featured">
-            <% destacados.forEach(({id,name, price, discount, img}) => { %>
-            <article>
-                <p>popularidad: 
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </p>
-                <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
-            </article>
-            <% }) %>
-            <div class="carousel">
-                <i class="fas fa-dot-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
+                <!-- slider -->
+            <div class="container-slider home__main__featured">
+                <div class="slider " id="slider">
+                    <% destacados.forEach(({id,name, price, discount, img}) => { %>
+                    <article class="slider__article">
+                        <p>popularidad: 
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </p>
+                        <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" ></a>
+                    </article>
+                    <% }) %>
+                </div>
+                    <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+                    <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
             </div>
-        </section>
+  
+        <section class="destacados__no-slider home__main__featured" id="no-slider">
+        <div >
+            <div >
+                <% destacados.forEach(({id,name, price, discount, img}) => { %>
+                <article >
+                    <p>popularidad: 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </p>
+                    <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt=""></a>
+                </article>
+                <% }) %>
+            </div>
+        </div>
+
+    </section>
         <!-- Publicidad (desactivar adblock para ver :) -->
         <div class="home__main__publicidad">
             <a href="https://playground.digitalhouse.com/"><img src="/images/publicidad.jpg" alt="" width="100%"></a>

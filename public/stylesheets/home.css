@@ -79,19 +79,20 @@
     padding: 10px;
 }
 
-.home__main .home__main__featured article{
+.home__main .home__main__featured article {
+    width: 90%;
     padding: 10px;
-    margin: 10px;
-    border: double; 
+    margin: 10px auto;
+    border: double;
     border-color: red blue green black;
 }
 
 .home__main .home__main__featured img{
     border-radius: 5%;
+    height: 90%;
 }
 
 .home__main .home__main__featured p{
-    padding-bottom: 10px;
     text-align: center;
     font-weight: bold;
 }
@@ -154,26 +155,35 @@
     margin: 0 auto;
 }
 
+.container-slider{
+    display: none;
+}
+
 @media (min-width: 768px){
+    #no-slider{
+        display: none;
+    }
 
     /* SLIDER */
     .container-slider {
+        display: block;
         width: 90%;
+        max-width: 900px;
         margin: auto;
         overflow: hidden;
         box-shadow: 0 0 0 10px #fff, 0 2px 20px;
         position: relative;
     }
     
-    .slider{
+    .slider {
         display: flex;
-        width: 480%;
-        height: 500px;
+        width: 300%;
         margin-left: -100%;
+        justify-content: space-evenly;
     }
 
     .slider article{
-        width: 10%;
+       /*  width: 10%; */
         margin: 0 10px;
     }
     
@@ -200,7 +210,7 @@
         font-family: monospace;
         text-align: center;
         cursor: pointer;
-        background-color: #ffaae3;
+        background-color: #3a35589e;
     }
     
     .slider__btn:hover{
@@ -220,22 +230,6 @@
     }
     /* ------------------------------------------------ */
     
-    .home__main .home__main__featured{
-        width: 80%;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin: 0 auto;
-    }
-
-    .home__main .home__main__featured article{
-        width: 36%;
-    }
-
-    .home__main .home__main__featured .carousel{
-        width: 100%;
-    }
-
     .home__main .home__main__recommended{
         display: flex;
         flex-wrap: wrap;
@@ -255,9 +249,16 @@
     .home__main .home__main__offer .details {
         width:90%;
     }
+    .home__main .home__main__featured article {
+        width: 12%;
+        
+    }
 }
 
-@media (min-width: 1024px){  
+@media (min-width: 1024px){
+    .slider{
+        width: 300%;
+    }
     .home__main .home__main__offer .details{
         font-size: 13px;
     }
@@ -269,12 +270,8 @@
         margin: 20px 8%;
     }
     
-    .home__main .home__main__offer{
-        display: none;
-    }
-    
     .home__main .home__main__offer article{
-        width: 20%;
+        width: 25%;
     }
 
     .home__main .home__main__recommended article{

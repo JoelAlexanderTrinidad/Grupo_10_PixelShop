@@ -5,7 +5,7 @@ let sliderSection = qsa('.slider__article');
 let sliderSectionLast = sliderSection[sliderSection.length -1];
 let btnRight = $('btn-right');
 let btnLeft = $('btn-left');
-let tempo = 5000
+let tempo = 4000
 
 slider.insertAdjacentElement('afterbegin', sliderSectionLast);
 
