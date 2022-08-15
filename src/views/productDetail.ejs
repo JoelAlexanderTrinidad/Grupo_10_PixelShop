@@ -24,8 +24,8 @@
                                 <section class="main__section-info">
                                     <h3>Resumen</h3>
                                     <ul id="especificaciones">
-                                        <li>Precio: $<%= product.price - (product.price * product.discount) / 100 %> (
-                                                <%= product.discount %>%OFF)</li>
+                                        <li>Precio: $<%= (product.price - (product.price * product.discount) / 100).toFixed(2) %> (
+                                                <%= product.discount %>% OFF)</li>
                                         <li></li>
                                         <li>Idioma texto: xxxx</li>
                                         <li>Idioma voz: xxxx</li>
@@ -47,7 +47,7 @@
                                 <section class="main__section-buy">
                                     <span class="main__section-buy">
                                         <% if (+product.discount !==0) { %>
-                                            <h2>$<%= product.price - (product.price * product.discount) / 100 %>
+                                            <h2>$<%= (product.price - (product.price * product.discount) / 100).toFixed(2) %>
                                                     <span>ARS</span></h2>
                                             <h4 class="precioAnterior"><strike>$<%= product.price %></strike> <span>
                                                     <%= product.discount %>% OFF
