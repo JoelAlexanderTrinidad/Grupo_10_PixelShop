@@ -3,6 +3,7 @@ const { Op } = require("sequelize");
 const path = require('path');
 const fs = require('fs')
 const {validationResult} = require("express-validator");
+const fetch = require('node-fetch')
 const { localsName } = require('ejs');
 
 module.exports={
@@ -297,5 +298,8 @@ module.exports={
         catch (error) {
             console.log(error)
         }
+    },
+    explore: async (req, res) => {
+        
     }
 }

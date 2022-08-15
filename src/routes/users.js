@@ -24,4 +24,5 @@ router
 
       /* apis */
       .post('/api/check-email', checkEmail)
+      
 module.exports = router;

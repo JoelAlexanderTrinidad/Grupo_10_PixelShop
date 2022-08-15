@@ -7,7 +7,8 @@ const userCheck = require('../middlewares/userCheck');
 const formCrearValidator = require("../validations/formCrearValidator");
 const formEditValidator = require("../validations/formEditValidator")
 
-const {productCart,productDetail, add, edit, store, search, update, remove}=require('../controllers/productController');
+const {productCart,productDetail, add, edit, store, search, update, remove, explore}=require('../controllers/productController');
+const {exploreApi} = require('../controllers/apis/products')
 
 const storage = multer.diskStorage({
       destination: (req, file, callback) =>{
@@ -34,4 +35,7 @@ router
       .get('/result', search)
       .delete('/remove/:id', adminCheck,remove)
 
+      /* /api/product */
+      .get('/explore', explore)
+      
 module.exports = router;
