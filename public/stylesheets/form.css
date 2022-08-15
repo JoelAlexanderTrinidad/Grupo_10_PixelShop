@@ -43,6 +43,7 @@
     font-size: 20px;
     font-family: 'Bungee';
     padding: 5px;
+    border-radius: 10px;
 }
 
 @media (min-width: 768px){

@@ -20,7 +20,7 @@ module.exports={
 				}
 			},
 			order : [['id','DESC']],
-			limit : 2
+			limit : 8
             }
         )
         let recomendados = db.Product.findAll({
