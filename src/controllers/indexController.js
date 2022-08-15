@@ -25,14 +25,11 @@ module.exports={
         )
         let recomendados = db.Product.findAll({
             where: {
-                  discount : {
-					[Op.gte] : 5
-				},
                 ranking: {
-                    [Op.gte] : 6
+                    [Op.gte] : 0
                 }
                 },
-                order: [['createdAt', 'ASC']],
+                order: [['createdAt', 'DESC']],
                 limit: 6
         })
         Promise.all([destacados, ofertasEpeciales, recomendados])
