@@ -141,7 +141,6 @@ module.exports={
 
                 if(!body){                      
                     oldGenero = null
-                    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',typeof Number(body));
                 } else if( typeof body == 'string'){
                     numGenero = +body
                 }

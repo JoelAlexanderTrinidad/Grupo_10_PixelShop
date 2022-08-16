@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Orders', {
@@ -21,6 +22,9 @@ module.exports = {
         },
         onDelete :'cascade'
 
+      },
+      total:{
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

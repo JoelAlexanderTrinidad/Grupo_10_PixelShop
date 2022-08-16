@@ -15,24 +15,6 @@ module.exports={
     },
     processRegister:(req, res)=>{
         const errores = validationResult(req);
-
-        /* if(!req.file){
-            null
-        }else{
-            const image = req.file.originalname
-            const ext = image.slice(-4)
-            const imageName = req.file.filename
-            let errorImg = false
-        if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == 'jpeg')){
-            errorImg = false
-        }else{
-            errorImg = true
-        }
-        if(errorImg){
-            fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
-        }
-        } */
-        
         if(errores.isEmpty()){
             
             let {id, nombre, apellido, tel, email, password, terminos, privacidad} = req.body;
@@ -78,11 +60,27 @@ module.exports={
     let errores = validationResult (req);
 
         if(errores.isEmpty()){
+            const{email} =req.body
+
             User.findOne({
-                where : { email : req.body.email }
+                where : { email  }
             })
-            .then(usuario => {
-              
+            .then( async usuario => {
+              let order = await Order.findAll({
+                where:{
+                    userId:usuario.id,
+                    status:1
+                },
+                include: [{
+                   associaton: 'carts',
+                   include:[
+                    {
+                        associaton : 'product'
+                    }
+                   ]
+                }]
+              })
+              console.log(order);
                 req.session.userLogin = {
                     id: usuario.id,
                     nombre : usuario.nombre,

@@ -34,7 +34,6 @@ module.exports={
         })
         Promise.all([destacados, ofertasEpeciales, recomendados])
             .then(([destacados, ofertasEpeciales, recomendados]) => {
-        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',destacados);
 
                 return res.render('index', {
                     destacados,
