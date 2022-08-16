@@ -3,7 +3,11 @@
 <%- include('./partials/head',{title: 'Home | Pixel Shop'}) %> 
 <body class="home">
     <%- include('./partials/header') %> 
-    <main class="home__main">
+    <main class="home__main" id="home__main">
+        <div id="busqueda">
+            <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+       </div>
         <!-- Banner -->
         <section>
             <article class="home__main__banner">
