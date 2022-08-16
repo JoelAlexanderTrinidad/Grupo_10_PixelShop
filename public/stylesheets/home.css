@@ -144,6 +144,7 @@
     height: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-break: anywhere;
 }
 
 .home__main .home__main__recommended article div {
