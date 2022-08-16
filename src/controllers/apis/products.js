@@ -1,4 +1,4 @@
-const db= require('../../database/models');
+/* const db= require('../../database/models');
 const { Op } = require("sequelize");
 
 
@@ -6,13 +6,13 @@ module.exports ={
 
 exploreApi : async (req, res) =>{
     try {
-        let products = await db.Product.findAll(/* {
+        let products = await db.Product.findAll({
             where : {
               name : {
-                [Op.startsWith] : [req.params.leter]
+                [Op.startsWith] : [req.body.L]
               }
             }
-        } */)
+        })
         let response = {
           ok: true,
           meta: {
@@ -36,3 +36,4 @@ exploreApi : async (req, res) =>{
         }
     }
 }
+ */
