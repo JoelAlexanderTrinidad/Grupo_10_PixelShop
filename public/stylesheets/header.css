@@ -144,7 +144,7 @@ header #burger i{
     border-radius: 3px;
     position: absolute;
     background-color: #e9e9e9;
-    left: 85%;
+    left: 84%;
 }
 
 #busqueda button i{
@@ -213,7 +213,7 @@ header #burger i{
     #busqueda{
         position: absolute;
         left: 20%;
-        top: 10%;
+        top: 8%;
         width: 60%;
         border-radius: 5px;
     }
@@ -250,7 +250,7 @@ header #burger i{
     #busqueda button {
         width: 32px;
         height: 34px;
-        left: 88%;
+        left: 86%;
     }
     header {
         background-repeat: no-repeat;
