@@ -134,7 +134,7 @@
 
 }
 
-.Busqueda-noindex{
+#busqueda{
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -142,7 +142,7 @@
     position: relative;
 }
 
-.Busqueda-noindex button {
+#busqueda button {
     width: 26px;
     border: none;
     border-radius: 3px;
@@ -151,11 +151,11 @@
     left: 84%;
 }
 
-.Busqueda-noindex button i{
+#busqueda button i{
     color: #1d3d66;
 }
 
-.Busqueda-noindex input{
+#busqueda input{
     width: 80%;
     border-radius: 5px;
     border: none;
@@ -181,15 +181,15 @@
       }
     /* ----------- */
 
-    .Busqueda-noindex{
+    /* #busqueda{
         position: absolute;
         left: 20%;
         top: -190px;
         width: 60%;
         border-radius: 5px;
-    }
+    } */
 
-    .main_login-contenedor-principal{
+ /*    .main_login-contenedor-principal{
         width: 100%;
         background-color: white;
         position: absolute;
@@ -200,7 +200,7 @@
     .menu-burger{
         transform: translateY(-16px);
         transition: all .5s;
-    }
+    } */
     .main__login{
         display: flex;
         flex-direction: column;
@@ -248,7 +248,7 @@
     }
     /* ------------ */
 
-    .Busqueda button {
+    #busqueda button {
         width: 32px;
         height: 34px;
         left: 86%;

@@ -3,13 +3,6 @@
 <%- include('./partials/head',{title: 'Resultados | Pixel Shop'}) %> 
 <body class="home">
    <%- include('./partials/header') %>
-   <div class="main_login-contenedor-principal" id="home__main">
-    <form action="/product/result" method="GET">
-        <div class="Busqueda-noindex Busqueda">
-            <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-    </form>
         <main class="home__main">
            <h2  class="search-result">RESULTADO DE LA BÚSQUEDA: "<%= keyword %>"</h2>
            <section class="home__main__offer">
@@ -33,6 +26,5 @@
            </section>
        </main>
       <%- include('./partials/footer') %> 
-   </div>
 </body>
 </html>

@@ -3,14 +3,6 @@
 <%- include('./partials/head',{title: 'Home | Pixel Shop'}) %> 
 <body class="home">
     <%- include('./partials/header') %>
-    <div class="main_login-contenedor-principal" id="home__main">
-
-        <form action="/product/result" method="GET">
-            <div class="Busqueda-noindex Busqueda">
-                <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-        </form>
         <main class="home__main" >
             
             <!-- Banner -->
@@ -78,7 +70,6 @@
             <br>
         </main>
         <%- include('./partials/footer') %>
-    </div>
     <script src="/js/index.js"></script>
 </body>
 </html>

@@ -3,14 +3,6 @@
 <%- include('./partials/head',{title: 'Editar Producto | Pixel Shop'}) %> 
 <body  class="form__body">
    <%- include('./partials/header') %>
-   <div class="main_login-contenedor-principal" id="home__main">
-
-    <form action="/product/result" method="GET">
-        <div class="Busqueda-noindex Busqueda">
-            <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-    </form>
         <main class="form__main">
             <h2>Editar producto</h2>
             <form class="form" id="form-edit" method="POST" action="/product/update/<%= product.id %>?_method=PUT"  enctype="multipart/form-data">
@@ -63,7 +55,6 @@
             </form>
         </main>
         <%- include('./partials/footer') %>
-   </div>
     <script src="/js/formEditValidator.js"></script>
 </body>
 </html>
