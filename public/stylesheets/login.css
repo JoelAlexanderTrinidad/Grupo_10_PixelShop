@@ -6,6 +6,13 @@
     text-transform: capitalize;
 }
 
+.main_login-contenedor-principal{
+    width: 100%;
+    margin-top: -180px;
+    background-color: white;
+    position: absolute;
+}
+
 .main_login-contenedor{
     width: 90%;
     margin: 0 auto;
@@ -13,8 +20,10 @@
 
 .main_login{
     color: white;
-    background-color: #000000ad;
+    background-color: #576064;
     border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
    
 }
 .main_login h2{
