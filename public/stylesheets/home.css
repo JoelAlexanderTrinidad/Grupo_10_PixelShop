@@ -57,7 +57,7 @@
 }
 
 .home__main .home__main__offer .details{
-    width: 80%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
@@ -265,12 +265,14 @@
     .home__main .home__main__continue{
         width: 27%;
     }
+    .home__main .home__main__offer article {
+        width: 40%;
+    }
     .home__main .home__main__offer .details {
-        width:90%;
+        width: 95%;
     }
     .home__main .home__main__featured article {
-        width: 12%;
-        
+        width: 15%;
     }
 }
 
