@@ -3,12 +3,6 @@
 <%- include('./partials/head',{title: 'Perfil | Pixel Shop'}) %> 
 <body>
    <%- include('./partials/header') %>
-   <div class="main_login-contenedor-principal" id="home__main">
-
-     <div class="Busqueda-noindex Busqueda">
-      <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
-      <button><i class="fa-solid fa-magnifying-glass"></i></button>
-  </div>
     <main >
       <div class="card col-12 col-md-10 col-lg-8 mx-auto my-3" style="width: 18rem;">
         <img src="/images/<%= user.imagenPerfil %> " class="card-img-top" alt="...">
@@ -30,7 +24,6 @@
       </div>
     </main>
     <%- include('./partials/footer') %>
-  </div>
   <script src="/js/profile.js"></script>
 </body>
 </html>

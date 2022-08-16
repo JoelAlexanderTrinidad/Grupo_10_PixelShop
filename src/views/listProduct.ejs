@@ -2,13 +2,7 @@
 <html lang="en">
     <%- include('./partials/head',{title: 'Administrador | Pixel Shop'}) %> 
     <body>
-      <%- include('./partials/header') %>
-      <div class="main_login-contenedor-principal" id="home__main">
-
-        <div class="Busqueda-noindex Busqueda">
-          <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-      </div>
+       <%- include('./partials/header') %>
       <main class="col-12 col-md-10 col-lg-8 mx-auto">
         <div class="agregarProductos">
           <a href="/product/crear">Agregar productos</a>
@@ -34,7 +28,6 @@
             </ol>
       </main>
       <%- include('./partials/footer') %>
-      </div>
   <script src="/js/listProduct.js"></script>
 </body>
 </html>

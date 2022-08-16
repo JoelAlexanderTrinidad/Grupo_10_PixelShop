@@ -96,6 +96,7 @@
         position: absolute;
         transform: translateY(18px);
         transition: all .3s;
+        top: 34%;
     }
     
     .menu-burger{
