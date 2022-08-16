@@ -2,7 +2,7 @@
     background-size: contain;
     padding-top: 0px;
     transform: translateY(-180px);
-    transition: all .5s;
+    transition: all .3s;
     background-color: white;    
 }
 
@@ -240,6 +240,13 @@
         border-radius: 4px;
     }
     /* ------------------------------------------------ */
+    .home__main{
+        background-size: contain;
+        padding-top: 0px;
+        transform: translateY(0px);
+        transition: all .3s;
+        background-color: white;    
+    }
     
     .home__main .home__main__recommended{
         display: flex;

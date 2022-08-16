@@ -213,7 +213,7 @@ header #burger i{
     #busqueda{
         position: absolute;
         left: 20%;
-        top: 8%;
+        top: -1.8%;
         width: 60%;
         border-radius: 5px;
     }
@@ -256,6 +256,10 @@ header #burger i{
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+    }
+
+    #busqueda {
+        top: -4%;
     }
     
 }
