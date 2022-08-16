@@ -263,6 +263,10 @@ module.exports={
             }
         })
         .then(products=>{
+            if(keyword == ''){
+                products = null
+            }
+            // return res.send(products)
             return res.render('result',{
                 products,
                 keyword

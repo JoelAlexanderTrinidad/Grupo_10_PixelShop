@@ -4,12 +4,12 @@
 <body class="home">
    <%- include('./partials/header') %> 
     <main class="home__main">
-        <h2>Resultado de la busqueda: "<%= keyword %>"</h2>
+        <h2  class="search-result">RESULTADO DE LA BÚSQUEDA: "<%= keyword %>"</h2>
         <section class="home__main__offer">
-            <% if (products.length > 0) { %>             
+            <% if (products != null) { %>             
                 <% products.forEach(({id, name, price, discount, img}) => { %>             
                     <article>
-                        <a href="/product/detail/<%= id %>"><img src="/images/<%= img %>" alt="" width="100%"></a>
+                        <a href="/product/detail/<%= id %>"><img src="/images/<%= img %>" alt=""></a>
                         <div class="details">
                             <p>$<%= price %></p>
                             <span><%= discount %> OFF</span>

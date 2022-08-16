@@ -7,11 +7,15 @@
     display: none;
 }
 
+.search-result{
+    padding: 20px;
+}
+
 /*Ofertas Especiales*/
 
 .home__main h4{
     font-size: 20px;
-    padding: 20px 0;
+    padding: 20px 20px;
     font-family: 'Bungee';
     background: linear-gradient(to bottom, #3cdaf2, white 50%, #f0128c);
 }
