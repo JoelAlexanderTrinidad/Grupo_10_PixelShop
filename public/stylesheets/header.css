@@ -130,7 +130,7 @@ header #burger i{
     display: none;
 }
 
-#busqueda{
+.Busqueda{
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -138,7 +138,7 @@ header #burger i{
     position: relative;
 }
 
-#busqueda button {
+.Busqueda button {
     width: 26px;
     border: none;
     border-radius: 3px;
@@ -147,11 +147,11 @@ header #burger i{
     left: 84%;
 }
 
-#busqueda button i{
+.Busqueda button i{
     color: #1d3d66;
 }
 
-#busqueda input{
+.Busqueda input{
     width: 80%;
     border-radius: 5px;
     border: none;
@@ -210,10 +210,10 @@ header #burger i{
         justify-content: space-around;
         flex-direction: row;
     }
-    #busqueda{
+    .Busqueda{
         position: absolute;
         left: 20%;
-        top: -1.8%;
+        top: -150px;
         width: 60%;
         border-radius: 5px;
     }
@@ -244,10 +244,10 @@ header #burger i{
     .header__nav a {
         font-size: 15px;
     }
-    #busqueda input {
+    .Busqueda input {
         padding: 5px;
     }
-    #busqueda button {
+    .Busqueda button {
         width: 32px;
         height: 34px;
         left: 86%;
@@ -258,7 +258,7 @@ header #burger i{
         background-position: center;
     }
 
-    #busqueda {
+    .Busqueda {
         top: -4%;
     }
     
