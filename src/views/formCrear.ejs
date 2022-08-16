@@ -5,10 +5,12 @@
     <%- include('./partials/header') %>
     <div class="main_login-contenedor-principal" id="home__main">
 
-        <div class="Busqueda-noindex Busqueda">
-            <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+        <form action="/product/result" method="GET">
+            <div class="Busqueda-noindex Busqueda">
+                <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </form>
         <main class="form__main">
             <h2>Crear producto</h2>
             <form class="form" id="form-create" action="" method="POST" enctype="multipart/form-data">
