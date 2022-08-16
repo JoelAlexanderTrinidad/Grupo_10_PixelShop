@@ -122,10 +122,11 @@ header #burger i{
     padding-top: 5px;
 }
 
-/* .header__nav{
+.header__nav{
     display: none;
 }
- */
+
+
 .header__nav__user{
     display: none;
 }

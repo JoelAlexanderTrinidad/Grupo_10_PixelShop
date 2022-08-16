@@ -4,13 +4,18 @@
     width: 100%;
     background-color: white;
     position: absolute;
-    transform: translateY(-180px);
     transition: all .3s;
+    top: 15%;
 }
 
 .menu-burger{
-    transform: translateY(-16px);
-    transition: all .5s;
+    transform: translateY(168px);
+}
+
+
+.menu-burger--block{
+    display: block;
+
 }
 
 .home__main__banner video{
