@@ -46,8 +46,7 @@
     border: 2px solid var(--colorBordeRojo);
     padding: 20px;
     border-radius: 10px;
-    /* background-color: #aaa9f1; */
-    width: 100%;
+    width: 85%;
 }
 .main__section-info-div{
     margin-top: 5px;
@@ -56,9 +55,17 @@
 .main__section-desc a{
     color: var(--colorPrueba3);
 }
-
-.main__section-resumen{
-    line-break: anywhere;
+.about-the-game{
+    display: flex;
+    justify-content: center;
+}
+.description{
+    margin: 0px auto;
+    border: dashed;
+    border-radius: 5px;
+    padding: 10px;
+    border-color: darkcyan;
+    width: 90%;
 }
 
 .detail__main__section {
@@ -92,7 +99,6 @@
 }
 
 .main__section__articles {
-    margin-top: 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -215,7 +221,6 @@
     border: none;
     border-radius: 5px;
     padding: 12px;
-
 }
 
 .product__detail-buttons i {
@@ -275,7 +280,7 @@
     #buy-info{
         display: flex;
         flex-direction: column;
-        width: 75%;
+        width: 70%;
     }
     .mercado-pago{
         width: 75%;
@@ -300,7 +305,7 @@
     }
     .main__section-info {
         margin: 20px auto 0;
-        width: 80%;
+        width: 85%;
     }
     .main__section-buy button:hover {
         background-color: #ff05b4a1;
@@ -309,9 +314,11 @@
     }
     .product__detail-buttons {
         margin: 20px 190px 0px;
-       
     }
-    
+    .description{
+        margin: 20px;
+        width: 80%;
+    }
 
 @media (min-width: 1024px){
     .main__section__articles article {
@@ -331,7 +338,7 @@
         justify-content: center;
     }
     #buy-info{
-        width: 30%;
+        width: 35%;
     }
     
     .detail__main__section {
@@ -357,6 +364,9 @@
     .product__detail-buttons #editar {
         font-size: 25px;
     
+    }
+    .description{
+        width: 75%;
     }
 }
 }

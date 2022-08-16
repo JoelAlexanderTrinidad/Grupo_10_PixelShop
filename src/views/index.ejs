@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include('./partials/head',{title: 'Home | Pixel Shop'}) %> 
 <body class="home">
-   <%- include('./partials/header') %> 
+    <%- include('./partials/header') %> 
     <main class="home__main">
         <!-- Banner -->
         <section>
@@ -29,27 +29,14 @@
             </article>
             <% }) %>
         </section>
-
-    
-       
-               
-              
-         
-
         <!-- Destacados -->
         <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
                 <!-- slider -->
             <div class="container-slider home__main__featured">
                 <div class="slider " id="slider">
-                    <% destacados.forEach(({id,name, price, discount, img}) => { %>
+                    <% destacados.forEach(({id, img, ranking}) => { %>
                     <article class="slider__article">
-                        <p>popularidad: 
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </p>
+                        <p>ranking = <%= ranking %> <i class="fas fa-star"></i></p>
                         <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" ></a>
                     </article>
                     <% }) %>
@@ -57,38 +44,19 @@
                     <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
                     <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
             </div>
-  
-        <section class="destacados__no-slider home__main__featured" id="no-slider">
-        <div >
-            <div >
-                <% destacados.forEach(({id,name, price, discount, img}) => { %>
-                <article >
-                    <p>popularidad: 
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </p>
-                    <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt=""></a>
-                </article>
-                <% }) %>
-            </div>
-        </div>
-
-    </section>
+        <section class="destacados__no-slider home__main__featured" id="no-slider"></section>
         <!-- Publicidad (desactivar adblock para ver :) -->
         <div class="home__main__publicidad">
             <a href="https://playground.digitalhouse.com/"><img src="/images/publicidad.jpg" alt="" width="100%"></a>
         </div>
         <!-- Recomendados -->
-        <h4>RECOMENDADOS <i class="fa-solid fa-thumbs-up"></i></h4>
+        <h4>Ultimos titulos <i class="fa-solid fa-thumbs-up"></i></h4>
         <section class="home__main__recommended">
-            <% recomendados.forEach(({id,name, price, discount, img}) => { %>        
+            <% recomendados.forEach(({id, description, img}) => { %>        
                 <article>
                     <img src="/images/<%= img %>" alt="" width="100%"></a>
-                    <h5>Reseña popular</h5>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
+                    <h5>Descripción</h5>
+                    <p><%= description %></p>
                     <div>
                         <a href="/product/detail/<%= id %>">Ver mas</a>
                     </div>
@@ -100,7 +68,7 @@
         </div>
         <br>
     </main>
-   <%- include('./partials/footer') %>
-   <script src="/js/index.js"></script>
+    <%- include('./partials/footer') %>
+    <script src="/js/index.js"></script>
 </body>
 </html>

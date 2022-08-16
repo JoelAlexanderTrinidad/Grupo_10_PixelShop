@@ -54,10 +54,10 @@
                 <input type="number" name="ranking" id="ranking" placeholder="Ranking" class="form-control" value="<%= locals.old && old.ranking ? old.ranking : null %>">
                 <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
             </div>
-            <div>
-                <span id="errorForm" style="color: #6e0707;"><%= locals.errores && errores.create? errores.create.msg : null %></span>
+            <span class="bt-form">
                 <button type="submit">Crear</button>
-            </div>
+                <button><a class="text-dark" href="/admin/listProduct">Cancelar</a></button>
+            </span>
         </form>
     </main>
     <%- include('./partials/footer') %>
