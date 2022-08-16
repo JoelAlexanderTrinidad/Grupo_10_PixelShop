@@ -1,9 +1,10 @@
-const { User } = require('../database/models');
+const { User, Order } = require('../database/models');
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const moment = require('moment');
+const db = require('../database/models');
 
 module.exports={
     register:(req,res)=>{
@@ -81,13 +82,14 @@ module.exports={
                 where : { email : req.body.email }
             })
             .then(usuario => {
-                
+              
                 req.session.userLogin = {
                     id: usuario.id,
                     nombre : usuario.nombre,
                     apellido : usuario.apellido,
                     rolId : usuario.rolId,
-                    fecha: usuario.fecha
+                    fecha: usuario.fecha,
+                    order
                 }
                 if(req.body.recordame){
                     res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})

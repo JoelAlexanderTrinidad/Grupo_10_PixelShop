@@ -14,13 +14,9 @@
             </div>
             <div  class="header__section__div-user">
               <span>
-                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-cart-shopping"></i>
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="modal" data-bs-target="#cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
                   </button>
-                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                          <li><a class="dropdown-item" >Favoritos</a></li>
-                          <li><a class="dropdown-item" href="/product/cart">Carrito</a></li>
-                      </ul>
               </span>
               <span>
                   <button class="btn dropdown-toggle" type="button"  data-bs-toggle="dropdown" aria-expanded="false"> 
@@ -64,3 +60,53 @@
         </form>
      </header>
      <script src="/js/header.js"></script>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Mis compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table class="table" id="carrito">
+                <thead>
+                  <tr>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><img class="img-fluid" src="" alt=""></td>
+                    <td>Mark</td>
+                    <td><div class="d-flex">
+                        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-minus"></i></button>
+                        <input type="text" style="border: none; width: 20px; text-align: center;" value="1">
+                        <button class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i></button>
+                    </div></td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tfoot class="text-end">
+                    <span>TOTAL:</span>
+                    <span></span>
+                  </tfoot>
+                </tbody>
+              </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Vaciar carrito</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+          <button type="button" class="btn btn-primary">Finalizar compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
