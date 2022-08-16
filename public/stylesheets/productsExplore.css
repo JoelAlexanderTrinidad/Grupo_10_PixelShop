@@ -86,5 +86,33 @@
 }
 
 .no-found-games{
+    height: 300px;
+}
+
+.explore__main h1{
     height: 200px;
+    color: white;
+    font-size: 24px;
+    padding: 20px 0;
+}
+
+@media (min-width: 768px){
+    .explore__main--games article {
+        width: 30%;
+    }
+    .explore__main--games--name {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px){
+    .explore__main--games article {
+        width: 22%;
+    }
+
+    .ABC{
+        font-size: 14px;
+        width: 25px;
+        height: 25px;
+    }
 }

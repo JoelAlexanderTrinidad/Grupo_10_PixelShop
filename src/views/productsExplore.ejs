@@ -35,18 +35,7 @@
             </form>
         </section>
         <main class="explore__main">
-            <section class="explore__main--games">
-                <% products.forEach(({id,img, name, price, category})=> { %>
-                    <article>
-                        <a href="/product/detail/<%= id %>"><img src="/images/<%=img %>" alt=""></a>
-                        <div>
-                            <h4 class="explore__main--games--name">
-                                <%= name %>
-                            </h4>
-                        </div>
-                    </article>
-                    <% }) %>
-            </section>
+            <h1>Buscar juegos por letra</h1>
         </main>
             <%- include('./partials/footer') %>
     </body>
