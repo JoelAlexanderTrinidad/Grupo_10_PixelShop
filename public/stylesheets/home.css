@@ -1,9 +1,11 @@
-.home__main{
-    background-size: contain;
-    padding-top: 0px;
+
+
+.main_login-contenedor-principal{
+    width: 100%;
+    background-color: white;
+    position: absolute;
     transform: translateY(-180px);
     transition: all .3s;
-    background-color: white;    
 }
 
 .menu-burger{
