@@ -8,14 +8,20 @@
 
 .main_login-contenedor-principal{
     width: 100%;
-    margin-top: -180px;
     background-color: white;
     position: absolute;
+    transform: translateY(-180px);
+    transition: all .3s;
+}
+
+.menu-burger{
+    transform: translateY(-16px);
+    transition: all .5s;
 }
 
 .main_login-contenedor{
     width: 90%;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .main_login{

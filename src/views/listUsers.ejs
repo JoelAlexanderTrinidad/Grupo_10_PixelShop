@@ -3,45 +3,52 @@
     <%- include('./partials/head',{title: 'Lista de usuarios | Pixel Shop'}) %> 
     <body>
        <%- include('./partials/header') %>
-    <main class="col-12 col-md-10 col-lg-8 mx-auto">
-      <h3 >Usuarios</h3>
+       <div class="main_login-contenedor-principal" id="home__main">
 
-<table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Rol</th>
-        <th scope="col">Eliminar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% users.forEach(user => { %>
+         <div id="busqueda">
+          <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <main class="col-12 col-md-10 col-lg-8 mx-auto">
+        <h3 >Usuarios</h3>
+  
+  <table class="table">
+      <thead class="thead-dark">
         <tr>
-          <th scope="row"><%= user.id %> </th>
-          <td><%= user.nombre %></td>
-          <td><%= user.apellido %></td>
-          <form action="/admin/update/<%= user.id %>?_method=PUT" method="POST">
-          <td>
-          <select name="rolId">
-            <option hidden value="">
-              <%= user.rolId %></option>
-              <% rols.forEach(rol => { %>
-                <option class="text-uppercase" value="<%= rol.id%>" <%= user.rolId === rol.id ? 'selected' : null %>>
-                  <%= rol.id %>. <%=  rol.name %></option>
-              <% }) %>
-          </select>
-          <a href=""><button type="submit" class="badge rounded-pill border-0"><i  class="fas fa-edit"></i></button></a></td>
-          </form>
-          <form action="/admin/remove/<%= user.id %>?_method=DELETE" method="POST">
-            <td><a href=""><button class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></td>
-        </form>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Eliminar</th>
         </tr>
-        <% }) %>
-    </tbody>
-  </table>
-</main>
-<%- include('./partials/footer') %>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr>
+            <th scope="row"><%= user.id %> </th>
+            <td><%= user.nombre %></td>
+            <td><%= user.apellido %></td>
+            <form action="/admin/update/<%= user.id %>?_method=PUT" method="POST">
+            <td>
+            <select name="rolId">
+              <option hidden value="">
+                <%= user.rolId %></option>
+                <% rols.forEach(rol => { %>
+                  <option class="text-uppercase" value="<%= rol.id%>" <%= user.rolId === rol.id ? 'selected' : null %>>
+                    <%= rol.id %>. <%=  rol.name %></option>
+                <% }) %>
+            </select>
+            <a href=""><button type="submit" class="badge rounded-pill border-0"><i  class="fas fa-edit"></i></button></a></td>
+            </form>
+            <form action="/admin/remove/<%= user.id %>?_method=DELETE" method="POST">
+              <td><a href=""><button class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></td>
+          </form>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </main>
+  <%- include('./partials/footer') %>
+       </div>
 </body>
 </html>

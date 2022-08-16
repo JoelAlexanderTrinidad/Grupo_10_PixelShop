@@ -11,6 +11,19 @@
     text-align: center;
 
 }
+.main_login-contenedor-principal{
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    transform: translateY(-180px);
+    transition: all .3s;
+}
+
+.menu-burger{
+    transform: translateY(-16px);
+    transition: all .5s;
+}
+
 .main__section{
     margin: 5px;
     font-weight: 600;

@@ -3,58 +3,65 @@
 <%- include('./partials/head',{title: 'Editar Producto | Pixel Shop'}) %> 
 <body  class="form__body">
    <%- include('./partials/header') %>
-    <main class="form__main">
-        <h2>Editar producto</h2>
-        <form class="form" id="form-edit" method="POST" action="/product/update/<%= product.id %>?_method=PUT"  enctype="multipart/form-data">
-            <div>
-                <label for="name">Nombre del producto</label>
-                <input type="text" name="name" id="name" value="<%= product.name %>" class="form-control">
-                <span id="errorName" style="color: #6e0707;"><%= locals.errores && errores.name ? errores.name.msg : null %></span>
-            </div>
-            <div class="">
-                <label for="description">Descripción del producto</label>
-                <textarea type="text"id="description" name="description" cols="30" class="form-control" rows="10"><%= product.description %></textarea>
-                <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
-            </div>
-            <div class="">
-                <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif">
-                <img src="/images/<%= product.img %>" alt="">
-                <span style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
-            </div>
-            <h4>Géneros de juego</h4>
-            <div class="gender">
-                <% genders.forEach( ({id,name}) => { %>
-                    <div class="gender__div">
-                        <input class="" type="checkbox" name="genres" id="<%=name%>" value="<%= id %>" <% generosJ.forEach((element) => { %>
-                            <%= element.genderId === id && 'checked'%>
-                    <% }) %>>
-                        <label for="<%=name%>"><%=name%></label>
-                    </div>
-                <% }) %>
-                <span style="color: #6e0707;"><%= locals.errores && errores.genres ? errores.genres.msg : null %></span>
-            </div>
-            <div class="">
-                <label for="price">Precio del producto</label>
-                <input type="number" name="price" id="price" value="<%= product.price %>" class="form-control">
-                <span id="errorPrice" style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
-            </div>
-            <div class="">
-                <label for="discount">Descuento</label>
-                <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-control">
-                <span id="errorDiscount" style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
-            </div>
-            <div class="">
-                <label for="ranking">Ranking</label>
-                <input type="number" name="ranking" id="ranking" value="<%= product.ranking %>" class="form-control">
-                <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
-            </div>
-            <span class="bt-form">
-                <button type="submit">Editar</button>
-                <button><a class="text-dark" href="/admin/listProduct">Cancelar</a></button>
-            </span>
-        </form>
-    </main>
-    <%- include('./partials/footer') %>
+   <div class="main_login-contenedor-principal" id="home__main">
+
+       <div id="busqueda">
+        <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+        <main class="form__main">
+            <h2>Editar producto</h2>
+            <form class="form" id="form-edit" method="POST" action="/product/update/<%= product.id %>?_method=PUT"  enctype="multipart/form-data">
+                <div>
+                    <label for="name">Nombre del producto</label>
+                    <input type="text" name="name" id="name" value="<%= product.name %>" class="form-control">
+                    <span id="errorName" style="color: #6e0707;"><%= locals.errores && errores.name ? errores.name.msg : null %></span>
+                </div>
+                <div class="">
+                    <label for="description">Descripción del producto</label>
+                    <textarea type="text"id="description" name="description" cols="30" class="form-control" rows="10"><%= product.description %></textarea>
+                    <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
+                </div>
+                <div class="">
+                    <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif">
+                    <img src="/images/<%= product.img %>" alt="">
+                    <span style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
+                </div>
+                <h4>Géneros de juego</h4>
+                <div class="gender">
+                    <% genders.forEach( ({id,name}) => { %>
+                        <div class="gender__div">
+                            <input class="" type="checkbox" name="genres" id="<%=name%>" value="<%= id %>" <% generosJ.forEach((element) => { %>
+                                <%= element.genderId === id && 'checked'%>
+                        <% }) %>>
+                            <label for="<%=name%>"><%=name%></label>
+                        </div>
+                    <% }) %>
+                    <span style="color: #6e0707;"><%= locals.errores && errores.genres ? errores.genres.msg : null %></span>
+                </div>
+                <div class="">
+                    <label for="price">Precio del producto</label>
+                    <input type="number" name="price" id="price" value="<%= product.price %>" class="form-control">
+                    <span id="errorPrice" style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
+                </div>
+                <div class="">
+                    <label for="discount">Descuento</label>
+                    <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-control">
+                    <span id="errorDiscount" style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
+                </div>
+                <div class="">
+                    <label for="ranking">Ranking</label>
+                    <input type="number" name="ranking" id="ranking" value="<%= product.ranking %>" class="form-control">
+                    <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
+                </div>
+                <span class="bt-form">
+                    <button type="submit">Editar</button>
+                    <button><a class="text-dark" href="/admin/listProduct">Cancelar</a></button>
+                </span>
+            </form>
+        </main>
+        <%- include('./partials/footer') %>
+   </div>
     <script src="/js/formEditValidator.js"></script>
 </body>
 </html>

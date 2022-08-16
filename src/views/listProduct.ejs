@@ -3,34 +3,41 @@
     <%- include('./partials/head',{title: 'Administrador | Pixel Shop'}) %> 
     <body>
        <%- include('./partials/header') %>
-    <main class="col-12 col-md-10 col-lg-8 mx-auto">
-      <div class="agregarProductos">
-        <a href="/product/crear">Agregar productos</a>
+       <div class="main_login-contenedor-principal" id="home__main">
+
+         <div id="busqueda">
+          <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
-
-      <h3 id="agregarProductos">Lista de productos</h3>
-
-        <ol class="list-group list-group-numbered">
-        <% products.forEach(product => { %>   
-           <li class="list-group-item d-flex justify-content-between align-items-start">
-             <div class="ms-2 me-auto">
-               <div class="fw-bold"><%= product.name %></div>
+      <main class="col-12 col-md-10 col-lg-8 mx-auto">
+        <div class="agregarProductos">
+          <a href="/product/crear">Agregar productos</a>
+        </div>
+  
+        <h3 id="agregarProductos">Lista de productos</h3>
+  
+          <ol class="list-group list-group-numbered">
+          <% products.forEach(product => { %>   
+             <li class="list-group-item d-flex justify-content-between align-items-start">
+               <div class="ms-2 me-auto">
+                 <div class="fw-bold"><%= product.name %></div>
+                 
+               </div>
                
-             </div>
-             
-            <div class="list-group-item d-flex justify-content-between align-items-end" id="admin">
-              <span><a class="badge rounded-pill" href="/product/detail/<%= product.id %>"><i class="fa-solid fa-eye "></i></a></span>
-              <span><a class="badge rounded-pill" href="/product/edit/<%= product.id %>"><i class="fa-solid fa-pen-to-square "></i></a></span>
-              <form action="/product/remove/<%= product.id %>?_method=DELETE" method="POST">
-                  <span><a href=""><button id="btn-delete" class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></span>
-              </form>
-            </div>
-           </li>
-           <% }) %>
-          </ol>
-
-    </main>
-    <%- include('./partials/footer') %>
+              <div class="list-group-item d-flex justify-content-between align-items-end" id="admin">
+                <span><a class="badge rounded-pill" href="/product/detail/<%= product.id %>"><i class="fa-solid fa-eye "></i></a></span>
+                <span><a class="badge rounded-pill" href="/product/edit/<%= product.id %>"><i class="fa-solid fa-pen-to-square "></i></a></span>
+                <form action="/product/remove/<%= product.id %>?_method=DELETE" method="POST">
+                    <span><a href=""><button id="btn-delete" class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></span>
+                </form>
+              </div>
+             </li>
+             <% }) %>
+            </ol>
+  
+      </main>
+      <%- include('./partials/footer') %>
+       </div>
   <script src="/js/listProduct.js"></script>
 </body>
 </html>

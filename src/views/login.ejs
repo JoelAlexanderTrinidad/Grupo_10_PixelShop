@@ -3,7 +3,7 @@
     <%- include('./partials/head',{title: 'Ingresar | Pixel Shop'}) %> 
     <body>
        <%- include('./partials/header') %> 
-        <div class="main_login-contenedor-principal">
+        <div class="main_login-contenedor-principal" id="home__main">
             <div id="busqueda">
                 <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -58,8 +58,8 @@
                 
             </div>
             </main>
+            <%- include('./partials/footer') %>
         </div>
-    <%- include('./partials/footer') %>
     <script src="/js/login.js"></script>
 </body>
 </html>

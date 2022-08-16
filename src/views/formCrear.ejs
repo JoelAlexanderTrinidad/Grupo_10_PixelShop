@@ -2,65 +2,72 @@
 <html lang="en">
 <%- include('./partials/head',{title: 'Agregar Producto | Pixel Shop'}) %> 
 <body  class="form__body">
-    <%- include('./partials/header') %> 
-    <main class="form__main">
-        <h2>Crear producto</h2>
-        <form class="form" id="form-create" action="" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for="name">Nombre del producto</label>
-                <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-control" value="<%= locals.old && old.name ? old.name : null %>">
-                <span id="errorName" style="color: #6e0707;"><%= locals.errores && errores.name ? errores.name.msg : null %></span>
-            </div>
-            <div class="">
-                <label for="description">Descripción del producto</label>
-                <textarea name="description" id="description" cols="20" rows="5" class="form-control" placeholder="Descripción del producto" value="<%= locals.old && old.description ? old.description: null %>"></textarea>
-                <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
-            </div>
-            <div class="">
-                <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif" onchange="fileValidation()">
-                <span id="errorImg" style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
-            </div>
-            <h4>Géneros de juego</h4>
-            <div class="gender">
-                <% genders.forEach( ({name,id}) => { %>
-                    <div class="gender__div">
-                        <input type="checkbox" name="genres" id="<%=name%>" value="<%= id %>"
-                        <% if (locals.old && old.genres && oldGenero != null ) { %>                         
-                            <% oldGenero.forEach((element, i) => { %>
-                                <%= element === id && 'checked'%>
-                        <% }) %>
-                        <% } if(locals.old && old.genres && numGenero === id ) { %>
-                            checked
-                        <% } %>
-                        >
-                        <label for="<%=name%>"><%=name%></label>
-                    </div>
-                <% }) %>
-                
-                <span style="color: #6e0707;"><%= locals.errores && errores.genres ? errores.genres.msg : null %></span>
-            </div>
-            <div class="">
-                <label for="price">Precio del producto</label>
-                <input type="number" name="price" id="price" placeholder="precio del producto" class="form-control" value="<%= locals.old && old.price ? old.price : null %>">
-                <span id="errorPrice" style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
-            </div>
-            <div class="">
-                <label for="discount">Descuento</label>
-                <input type="number" name="discount" id="discount" placeholder="descuento del producto" class="form-control" value="<%= locals.old && old.discount ? old.discount : null %>">
-                <span id="errorDiscount" style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
-            </div>
-            <div class="">
-                <label for="ranking">Ranking</label>
-                <input type="number" name="ranking" id="ranking" placeholder="Ranking" class="form-control" value="<%= locals.old && old.ranking ? old.ranking : null %>">
-                <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
-            </div>
-            <span class="bt-form">
-                <button type="submit">Crear</button>
-                <button><a class="text-dark" href="/admin/listProduct">Cancelar</a></button>
-            </span>
-        </form>
-    </main>
-    <%- include('./partials/footer') %>
+    <%- include('./partials/header') %>
+    <div class="main_login-contenedor-principal" id="home__main">
+
+        <div id="busqueda">
+            <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <main class="form__main">
+            <h2>Crear producto</h2>
+            <form class="form" id="form-create" action="" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="name">Nombre del producto</label>
+                    <input type="text" name="name" id="name" placeholder="Nombre del producto" class="form-control" value="<%= locals.old && old.name ? old.name : null %>">
+                    <span id="errorName" style="color: #6e0707;"><%= locals.errores && errores.name ? errores.name.msg : null %></span>
+                </div>
+                <div class="">
+                    <label for="description">Descripción del producto</label>
+                    <textarea name="description" id="description" cols="20" rows="5" class="form-control" placeholder="Descripción del producto" value="<%= locals.old && old.description ? old.description: null %>"></textarea>
+                    <span id="errorDesc" style="color: #6e0707;"><%= locals.errores && errores.description ? errores.description.msg : null %></span>
+                </div>
+                <div class="">
+                    <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .gif" onchange="fileValidation()">
+                    <span id="errorImg" style="color: #6e0707;"><%= locals.errores && errores.img? errores.img.msg : null %></span>
+                </div>
+                <h4>Géneros de juego</h4>
+                <div class="gender">
+                    <% genders.forEach( ({name,id}) => { %>
+                        <div class="gender__div">
+                            <input type="checkbox" name="genres" id="<%=name%>" value="<%= id %>"
+                            <% if (locals.old && old.genres && oldGenero != null ) { %>                         
+                                <% oldGenero.forEach((element, i) => { %>
+                                    <%= element === id && 'checked'%>
+                            <% }) %>
+                            <% } if(locals.old && old.genres && numGenero === id ) { %>
+                                checked
+                            <% } %>
+                            >
+                            <label for="<%=name%>"><%=name%></label>
+                        </div>
+                    <% }) %>
+                    
+                    <span style="color: #6e0707;"><%= locals.errores && errores.genres ? errores.genres.msg : null %></span>
+                </div>
+                <div class="">
+                    <label for="price">Precio del producto</label>
+                    <input type="number" name="price" id="price" placeholder="precio del producto" class="form-control" value="<%= locals.old && old.price ? old.price : null %>">
+                    <span id="errorPrice" style="color: #6e0707;"><%= locals.errores && errores.price ? errores.price.msg : null %></span>
+                </div>
+                <div class="">
+                    <label for="discount">Descuento</label>
+                    <input type="number" name="discount" id="discount" placeholder="descuento del producto" class="form-control" value="<%= locals.old && old.discount ? old.discount : null %>">
+                    <span id="errorDiscount" style="color: #6e0707;"><%= locals.errores && errores.discount ? errores.discount.msg : null %></span>
+                </div>
+                <div class="">
+                    <label for="ranking">Ranking</label>
+                    <input type="number" name="ranking" id="ranking" placeholder="Ranking" class="form-control" value="<%= locals.old && old.ranking ? old.ranking : null %>">
+                    <span id="errorRanking" style="color: #6e0707;"><%= locals.errores && errores.ranking? errores.ranking.msg : null %></span>
+                </div>
+                <span class="bt-form">
+                    <button type="submit">Crear</button>
+                    <button><a class="text-dark" href="/admin/listProduct">Cancelar</a></button>
+                </span>
+            </form>
+        </main>
+        <%- include('./partials/footer') %>
+    </div>
     <script src="/js/formCrearValidator.js"></script>
 </body>
 </html>
