@@ -1,5 +1,14 @@
 
-console.log('carrito success ')
+console.log('carrito success')
+let query = new  URLSearchParams(location.search);
+
+const getCarts = async ()=>{
+    try {
+        let response = await fetch('')
+    } catch (error) {
+        
+    }
+}
 
  $('btn-cart-add') && $('btn-cart-add').addEventListener('click', async ({target})=>{
     console.log('agregando producto al carrito', target.value);

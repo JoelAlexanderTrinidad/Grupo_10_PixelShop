@@ -26,7 +26,19 @@ const getOrder = async (id) => {
   };
 module.exports ={
     list : async (req,res) =>{
-
+        if(req.session.userLogin.order){
+            return res.status(201).json({
+                ok: true,
+                order:  req.session.userLogin.order.id,
+                carts: req.session.userLogin.order.carts,
+            })
+        }else{
+            return res.status(200).json({
+                ok: false,
+                order:  null,
+                carts: [],
+            })
+        }
     }, 
     addItem : async (req,res) =>{
         let product = await db.Product.findByPk(req.body.id);

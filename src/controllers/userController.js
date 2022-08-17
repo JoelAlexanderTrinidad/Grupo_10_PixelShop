@@ -95,7 +95,7 @@ module.exports={
                     res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
                 }
                 res.locals.user = req.session.user;
-                res.redirect("/");
+                res.redirect("/?user=login");
             })
             .catch(error => console.log(error))
         }else{
