@@ -123,6 +123,10 @@ header #burger i{
 }
 
 .header__nav{
+    display: none;
+}
+
+/* .header__nav{
     transition: all 1.4s ease;
     opacity: 0;
     height: 0;
@@ -134,7 +138,7 @@ header #burger i{
     height: 180px;
     overflow: visible;
 }
-
+ */
 
 .header__nav__user{
     display: none;
@@ -196,6 +200,19 @@ header #burger i{
         background-repeat: inherit;
         background-position: center;
     }
+
+    /* .header__nav{
+        transition: none ;
+        opacity: 0;
+        height: 0;
+        overflow: visible;
+    }
+    
+    .burger{
+        transition: none;
+        height: 0;
+        overflow: visible;
+    } */
     
     .header__section h3{
         font-size: 60px;
