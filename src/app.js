@@ -45,7 +45,7 @@ app.use('/', indexRouter);
 app.use('/admin', adminRouter)
 app.use('/product',productRouter);
 app.use('/users', usersRouter);
-app.use('/api/carts', cartRouter)
+app.use('/api/cart', cartRouter)
 
 // Rutas //
 /*app.get('/',(req,res)=> res.sendFile(path.resolve(__dirname,"views","index.html")));

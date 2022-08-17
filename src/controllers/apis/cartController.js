@@ -1,6 +1,29 @@
 const db = require("../../database/models");
-const order = require("../../database/models/order");
-
+const getOrder = async (id) => {
+    try {
+      let order = await db.Order.findOne({
+        where: {
+          userId: id,
+          status: 1,
+        },
+        include: [
+          {
+            association: "carts",
+            attributes: ["id", "quantity"],
+            include: [
+              {
+                association: "product",
+                attributes: ["id", "name", "price", "discount"],
+              },
+            ],
+          },
+        ],
+      });
+      return order;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 module.exports ={
     list : async (req,res) =>{
 
@@ -23,26 +46,14 @@ module.exports ={
                     orderId: newOrder.id
                 })
 
-                let order = await Order.findAll({
-                    where:{
-                        userId:usuario.id,
-                        status:1
-                    },
-                    include: [{
-                       associaton: 'carts',
-                       include:[
-                        {
-                            associaton : 'product'
-                        }
-                       ]
-                    }]
-                  })
-
-                req.session.userLogin.order = order
+                
             }
-            return res.send(201).json({
+            let order = await getOrder(req.session.userLogin.id)
+            req.session.userLogin.order = order
+            return res.status(201).json({
                 ok: true,
-                carts: order.carts
+                order: order.id,
+                carts: order.carts,
             })
         }
     }, 

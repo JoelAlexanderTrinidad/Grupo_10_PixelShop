@@ -60,25 +60,27 @@ module.exports={
     let errores = validationResult (req);
 
         if(errores.isEmpty()){
-            const{email} =req.body
-
+        
             User.findOne({
-                where : { email  }
+                where : { email : req.body.email  }
             })
             .then( async usuario => {
-              let order = await Order.findAll({
+              let order = await db.Order.findAll({
                 where:{
                     userId:usuario.id,
-                    status:1
                 },
-                include: [{
-                   associaton: 'carts',
-                   include:[
+                include: [
                     {
-                        associaton : 'product'
-                    }
-                   ]
-                }]
+                      association: "carts",
+                      attributes: ["id", "quantity"],
+                      include: [
+                        {
+                          association: "product",
+                          attributes: ["id", "name", "price", "discount"],
+                        },
+                      ],
+                    },
+                  ],
               })
               console.log(order);
                 req.session.userLogin = {
@@ -87,7 +89,7 @@ module.exports={
                     apellido : usuario.apellido,
                     rolId : usuario.rolId,
                     fecha: usuario.fecha,
-                    order
+                    order : usuario.order
                 }
                 if(req.body.recordame){
                     res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
