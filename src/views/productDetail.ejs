@@ -27,8 +27,8 @@
                                             <li>Precio: $<%= (product.price - (product.price * product.discount) / 100).toFixed(2) %> (
                                                     <%= product.discount %>% OFF)</li>
                                             <li></li>
-                                            <li>Idioma texto: xxxx</li>
-                                            <li>Idioma voz: xxxx</li>
+                                            <li>Idioma texto: Ingles</li>
+                                            <li>Idioma voz: Español</li>
                                             <div class="main__section-info-div">
                                                 <li>Juego original y completo</li>
                                                 <li><b>Incluye guía paso a paso</b></li>
@@ -69,7 +69,7 @@
                                 <div class="description">
                                     <h3 class="about-the-game">Acerca de este Juego</h3>
                                     <hr>
-                                    <b><%= product.description %></b>
+                                    <p><%= product.description %></p>
                                 </div>
                             </div>
                         </section>
