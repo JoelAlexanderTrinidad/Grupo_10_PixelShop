@@ -45,5 +45,8 @@ module.exports={
     },
     aboutUs: (req,res) => {
         return res.render("aboutUs")
+    },
+    contacts: (req,res) => {
+        return res.render("contacts")
     }
 }
