@@ -9,23 +9,38 @@
         </div>
   
         <h3 id="agregarProductos">Lista de productos</h3>
-  
-          <ol id="listaProductos" class="list-group list-group-numbered">
-          <% products.forEach(product => { %>   
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold"><%= product.name %></div>
-              </div>
-              <div class="list-group-item d-flex justify-content-between align-items-end" id="admin">
-                <span><a class="badge rounded-pill" href="/product/detail/<%= product.id %>"><i class="fa-solid fa-eye "></i></a></span>
-                <span><a class="badge rounded-pill" href="/product/edit/<%= product.id %>"><i class="fa-solid fa-pen-to-square "></i></a></span>
-                <form action="/product/remove/<%= product.id %>?_method=DELETE" method="POST">
-                    <span><a href=""><button id="btn-delete" class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></span>
-                </form>
-              </div>
-            </li>
+       
+          <ol style="height: 530px;" id="listaProductos"" class="list-group list-group-numbered">
+            <% products.forEach(product => { %>   
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold"><%= product.name %></div>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-end" id="admin">
+                  <span><a class="badge rounded-pill" href="/product/detail/<%= product.id %>"><i class="fa-solid fa-eye "></i></a></span>
+                  <span><a class="badge rounded-pill" href="/product/edit/<%= product.id %>"><i class="fa-solid fa-pen-to-square "></i></a></span>
+                  <form action="/product/remove/<%= product.id %>?_method=DELETE" method="POST">
+                      <span><a href=""><button id="btn-delete" class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></span>
+                  </form>
+                </div>
+              </li>
             <% }) %>
             </ol>
+
+              <nav aria-label="">
+                <ul class="pagination d-flex justify-content-center">
+                  <% if (page > 1) { %> <li class="page-item"><a class="page-link" href="/admin/listProduct/?page=<%=page-1%>">Previous</a></li> <% } %>
+                    <% for( let i = 1; i <= ultimoLink; i++ ) { %>
+                      <% if (i === page) { %>
+                        <li class="page-item active"><a class="page-link" href="/admin/listProduct/?page=<%=i%>"><%=i%></a></li>
+                      <% continue; %>
+                    <% } %>
+                      <li class="page-item"><a class="page-link" href="/admin/listProduct/?page=<%=i%>"><%=i < 1 ? null : i%></a></li>
+                  <% } %>
+                  <% if (page < numeroPaginas) { %> <li class="page-item"><a class="page-link" href="/admin/listProduct/?page=<%=page+1%>">Next</a></li> <% } %>
+                  
+                </ul>
+              </nav>      
       </main>
       <%- include('./partials/footer') %>
   <script src="/js/listProduct.js"></script>
