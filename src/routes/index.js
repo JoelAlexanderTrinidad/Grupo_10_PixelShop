@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 /* / */
-const{index, admin}= require('../controllers/indexController');
+const{index, aboutUs}= require('../controllers/indexController');
 
 
 router
       .get('/',index)
-
+      .get("/aboutUs",aboutUs)
 
 module.exports = router;

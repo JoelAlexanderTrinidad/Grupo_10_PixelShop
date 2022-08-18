@@ -42,5 +42,8 @@ module.exports={
                 })
             })
             .catch(error => console.log(error))        
+    },
+    aboutUs: (req,res) => {
+        return res.render("aboutUs")
     }
 }
