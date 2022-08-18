@@ -6,7 +6,7 @@ const path = require('path');
 module.exports={
 admin: async (req,res)=> {
     // let page = req.query.page
-    const resultadoPorPagina = 5
+    const resultadoPorPagina = 10
     try {
         let products = await db.Product.findAll()
         // console.log('>>>>>>>>>>>>>>>>>>>', page);
@@ -46,8 +46,9 @@ admin: async (req,res)=> {
     }
 },
 superAdmin:async(req,res)=> {
+    const resultadoPorPagina = 10
    try {
-    const users = await db.User.findAll({
+    let users = await db.User.findAll({
         where :{
             rolId:{
             [Op.ne]: 3
@@ -56,9 +57,35 @@ superAdmin:async(req,res)=> {
     })
     const rols = await db.Rol.findAll()
 
+    const resultados = users.length
+        const numeroPaginas = Math.ceil(resultados / resultadoPorPagina)
+        let page = req.query.page ? Number(req.query.page) : 1
+        if(page > numeroPaginas){
+            res.redirect(`/?page=${encodeURIComponent(numeroPaginas)}`)
+        }else if(page < 1){
+            res.redirect(`/?page=${encodeURIComponent('1')}`)
+        }
+
+        const comenzando = (page - 1) * resultadoPorPagina
+        users = await db.User.findAll({
+            offset: comenzando, limit: resultadoPorPagina
+        })
+
+        let iterador = (page - 5) - 1 ? 1 : page - 5
+        let ultimoLink = (iterador + 9) <= numeroPaginas ? (iterador + 9) : page + (numeroPaginas - page)
+
+        if(ultimoLink < (page + 4)){
+            iterador -= (page + 4) - numeroPaginas
+        }
+
 return res.render('listUsers', {
                 users,
-                rols
+                rols,
+                resultados,
+                page,
+                iterador,
+                ultimoLink,
+                numeroPaginas
             })
        
    } catch (error) {

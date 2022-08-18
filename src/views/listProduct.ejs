@@ -9,21 +9,21 @@
         </div>
   
         <h3 id="agregarProductos">Lista de productos</h3>
-  
-          <ol id="listaProductos" style="height: 300px;" class="list-group list-group-numbered">
-          <% products.forEach(product => { %>   
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold"><%= product.name %></div>
-              </div>
-              <div class="list-group-item d-flex justify-content-between align-items-end" id="admin">
-                <span><a class="badge rounded-pill" href="/product/detail/<%= product.id %>"><i class="fa-solid fa-eye "></i></a></span>
-                <span><a class="badge rounded-pill" href="/product/edit/<%= product.id %>"><i class="fa-solid fa-pen-to-square "></i></a></span>
-                <form action="/product/remove/<%= product.id %>?_method=DELETE" method="POST">
-                    <span><a href=""><button id="btn-delete" class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></span>
-                </form>
-              </div>
-            </li>
+       
+          <ol style="height: 530px;" id="listaProductos"" class="list-group list-group-numbered">
+            <% products.forEach(product => { %>   
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold"><%= product.name %></div>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-end" id="admin">
+                  <span><a class="badge rounded-pill" href="/product/detail/<%= product.id %>"><i class="fa-solid fa-eye "></i></a></span>
+                  <span><a class="badge rounded-pill" href="/product/edit/<%= product.id %>"><i class="fa-solid fa-pen-to-square "></i></a></span>
+                  <form action="/product/remove/<%= product.id %>?_method=DELETE" method="POST">
+                      <span><a href=""><button id="btn-delete" class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></span>
+                  </form>
+                </div>
+              </li>
             <% }) %>
             </ol>
 
