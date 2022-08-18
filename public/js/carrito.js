@@ -45,6 +45,23 @@ const removeItem = async (id) => {
       console.log(error);
     }
   };
+  const removeItemAll = async (id) => {
+    try {
+      let response = await fetch("/api/cart/remove-itemAll", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: id,
+        }),
+      });
+      let result = await response.json();
+      showCart(result.carts);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 const showCart = (carts) => {
     if(carts.length >0){
@@ -52,7 +69,7 @@ const showCart = (carts) => {
         $('btn-buy').hidden = false;
         $('msg-empty').hidden= true;
         $("cart-items").innerHTML = null;
-        carts.forEach(({ product, quantity }) => {
+        carts.forEach(({ id:idItem, product, quantity }) => {
           let { id, name, price, discount, img } = product;
           $("cart-items").innerHTML += `
               <tr>
@@ -64,7 +81,9 @@ const showCart = (carts) => {
                   <button class="btn btn-sm btn-success" onclick="addItem(${id})"><i class="fa-solid fa-plus"></i></button>
               </div></td>
               <td>${price - (price * discount) / 100}</td>
-              <td>${price - ((price * discount) / 100) * quantity}</td>
+              <td>${(price - ((price * discount) / 100)) * quantity}</td>
+              <td>
+              <button class="btn btn-sm btn-danger" onclick="removeItemAll(${idItem})"><i class="fa-solid fa-trash"></i></button></td>
             </tr>`;
         });
     }else{

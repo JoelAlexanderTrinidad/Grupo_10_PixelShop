@@ -127,4 +127,20 @@ module.exports ={
         })
       }
     }, 
+    removeItemFull : async (req,res) =>{
+      try{
+              await db.Cart.destroy(
+              {where: {id : req.body.id}
+            })
+          let order = await getOrder(req.session.userLogin.id)
+          req.session.userLogin.order = order
+          return res.status(201).json({
+              ok: true,
+              order: order.id,
+              carts: order.carts,
+          })
+      }catch(error){
+        console.log(error)
+      }
+}
 }
