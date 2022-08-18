@@ -76,12 +76,7 @@
 
 /* Destacados */
 
-.home__main .home__main__featured{
-    background-image: url("/images/fondo-destacados.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 10px;
-}
+
 
 .home__main .home__main__featured article {
     width: 90%;

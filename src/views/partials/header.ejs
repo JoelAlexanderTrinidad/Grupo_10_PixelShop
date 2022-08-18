@@ -14,7 +14,7 @@
             </div>
             <div  class="header__section__div-user">
               <span>
-                <button type="button" class="btn dropdown-toggle" data-bs-toggle="modal" data-bs-target="#cart">
+                <button id="btn-cart" type="button" class="btn dropdown-toggle" data-bs-toggle="modal" data-bs-target="#cart">
                     <i class="fa-solid fa-cart-shopping"></i>
                   </button>
               </span>
@@ -73,7 +73,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <table class="table" id="carrito">
+            <table class="table" id="cart-box">
                 <thead>
                   <tr>
                     <th scope="col">Imagen</th>
@@ -83,18 +83,8 @@
                     <th scope="col">Subtotal</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td><img class="img-fluid" src="" alt=""></td>
-                    <td>Mark</td>
-                    <td><div class="d-flex">
-                        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-minus"></i></button>
-                        <input type="text" style="border: none; width: 20px; text-align: center;" value="1">
-                        <button class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i></button>
-                    </div></td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                  </tr>
+                <tbody id="cart-items">
+                
                   <tfoot class="text-end">
                     <span>TOTAL:</span>
                     <span></span>

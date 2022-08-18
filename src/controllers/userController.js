@@ -31,7 +31,7 @@ module.exports={
                 imagenPerfil: req.file ? req.file.filename : 'no-image.png',
                 rolId : '1'
             })
-            .then(usuarioNuevo => {
+       /*      .then(usuarioNuevo => {
                 req.session.userLogin = {
                     id : usuarioNuevo.id,
                     nombre : usuarioNuevo.nombre,
@@ -40,8 +40,9 @@ module.exports={
                     rolId : usuarioNuevo.rolId
                 }
             
-                res.locals.user = req.session.userLogin;
-                res.redirect('/');
+                res.locals.user = req.session.userLogin; */
+               .then(()=>{
+                res.redirect('/users/login');
             })
             .catch(error => console.log(error))
         }else{
@@ -58,16 +59,16 @@ module.exports={
     },
     processLogin:(req,res)=>{
     let errores = validationResult (req);
-
         if(errores.isEmpty()){
         
             User.findOne({
                 where : { email : req.body.email  }
             })
-            .then( async usuario => {
-              let order = await db.Order.findAll({
+            .then( async ({id,nombre, rolId, apellido, fecha}) => {
+              let order = await db.Order.findOne({
                 where:{
-                    userId:usuario.id,
+                    userId:id,
+                    status:1
                 },
                 include: [
                     {
@@ -76,28 +77,25 @@ module.exports={
                       include: [
                         {
                           association: "product",
-                          attributes: ["id", "name", "price", "discount"],
+                          attributes: ["id","img", "name", "price", "discount"],
                         },
                       ],
                     },
                   ],
               })
-              console.log(order);
                 req.session.userLogin = {
-                    id: usuario.id,
-                    nombre : usuario.nombre,
-                    apellido : usuario.apellido,
-                    rolId : usuario.rolId,
-                    fecha: usuario.fecha,
-                    order : usuario.order
+                    id,
+                    nombre,
+                    apellido,
+                    rolId,
+                    fecha,
+                    order 
                 }
                 if(req.body.recordame){
                     res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
                 }
-                res.locals.user = req.session.user;
-                res.redirect("/?user=login");
+                return res.redirect('/?user=true');
             })
-            .catch(error => console.log(error))
         }else{
             res.render('login',{
                 errores :errores.mapped(),

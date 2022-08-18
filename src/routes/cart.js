@@ -5,6 +5,6 @@ const {addItem, list} = require('../controllers/apis/cartController')
 
 router
     .post('/add-item', addItem)
-    .post('/get-items', list)
+    .get('/get-items', list)
 
 module.exports = router;
