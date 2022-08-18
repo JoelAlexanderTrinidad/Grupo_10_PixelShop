@@ -3,5 +3,36 @@
     text-align: center;
 }
 .contacts p{
+    margin: 15px;
+    text-align: center;
+}
+.contacts-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: outset;
+    border-radius: 5%;
     margin: 30px;
+    padding: 20px;
+}
+.contacts-card i{
+    color: var(--colorFucsia);
+}
+
+@media (min-width: 768px) {
+    .contacts-cards{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .contacts-card{
+        margin: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contacts-card{
+        width: 25%;
+        margin: 25px;
+    }
 }
