@@ -10,7 +10,7 @@
   
         <h3 id="agregarProductos">Lista de productos</h3>
   
-          <ol id="listaProductos" class="list-group list-group-numbered">
+          <ol id="listaProductos" style="height: 300px;" class="list-group list-group-numbered">
           <% products.forEach(product => { %>   
             <li class="list-group-item d-flex justify-content-between align-items-start">
               <div class="ms-2 me-auto">
@@ -26,20 +26,21 @@
             </li>
             <% }) %>
             </ol>
-              <nav aria-label="Page navigation example">
+
+              <nav aria-label="">
                 <ul class="pagination d-flex justify-content-center">
                   <% if (page > 1) { %> <li class="page-item"><a class="page-link" href="/admin/listProduct/?page=<%=page-1%>">Previous</a></li> <% } %>
-                    <% for( let i = iterador; i <= ultimoLink; i++ ) { %>
+                    <% for( let i = 1; i <= ultimoLink; i++ ) { %>
                       <% if (i === page) { %>
-                        <li class="page-item"><a class="page-link" href="/admin/listProduct/?page=<%=i%>"><%=i%></a></li>
+                        <li class="page-item active"><a class="page-link" href="/admin/listProduct/?page=<%=i%>"><%=i%></a></li>
                       <% continue; %>
                     <% } %>
-                      <li class="page-item"><a class="page-link" href="/admin/listProduct/?page=<%=i%>"><%=i%></a></li>
+                      <li class="page-item"><a class="page-link" href="/admin/listProduct/?page=<%=i%>"><%=i < 1 ? null : i%></a></li>
                   <% } %>
                   <% if (page < numeroPaginas) { %> <li class="page-item"><a class="page-link" href="/admin/listProduct/?page=<%=page+1%>">Next</a></li> <% } %>
                   
                 </ul>
-              </nav>            
+              </nav>      
       </main>
       <%- include('./partials/footer') %>
   <script src="/js/listProduct.js"></script>

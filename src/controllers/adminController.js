@@ -12,7 +12,6 @@ admin: async (req,res)=> {
         // console.log('>>>>>>>>>>>>>>>>>>>', page);
         const resultados = products.length
         const numeroPaginas = Math.ceil(resultados / resultadoPorPagina)
-        console.log('>>>>>>>>>>>>>>>>>>>>>>>>',numeroPaginas);
         let page = req.query.page ? Number(req.query.page) : 1
         if(page > numeroPaginas){
             res.redirect(`/?page=${encodeURIComponent(numeroPaginas)}`)
@@ -31,6 +30,8 @@ admin: async (req,res)=> {
         if(ultimoLink < (page + 4)){
             iterador -= (page + 4) - numeroPaginas
         }
+
+        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',iterador);
 
         return res.render('listProduct', {
             products,
