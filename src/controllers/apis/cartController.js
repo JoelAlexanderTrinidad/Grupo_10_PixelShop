@@ -83,9 +83,48 @@ module.exports ={
         }
     }, 
     removeItem : async (req,res) =>{
-
-    }, 
+      let product = await db.Product.findByPk(req.body.id);
+      let item = req.session.userLogin.order.carts.find(
+              (cart)=> cart.product.id == product.id);
+              if(item){
+                if (item.quantity > 1){
+                await db.Cart.update({
+                  quantity : item.quantity - 1,
+                },
+                {where: {id : item.id}
+              })
+            }else{
+              await db.Cart.destroy(
+              {where: {id : item.id}
+            })
+            };
+            }
+          let order = await getOrder(req.session.userLogin.id)
+          req.session.userLogin.order = order
+          return res.status(201).json({
+              ok: true,
+              order: order.id,
+              carts: order.carts,
+          })
+      },
     removeAll : async (req,res) =>{
-
+      console.log(req.body.id)
+      try {
+       await db.Order.destroy({where:{
+        id : req.body.id
+       }})
+       req.session.userLogin.order = null;
+       return res.status(201).json({
+           ok: true,
+           order: null,
+           carts: []
+       })
+      } catch (error) {
+        console.log(error)
+        return res.status(201).json({
+          ok:false,
+          msg: error.message
+        })
+      }
     }, 
 }
