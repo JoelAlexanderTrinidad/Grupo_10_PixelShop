@@ -18,7 +18,7 @@ Los sitios de referencia que utilizamos son los siguientes:
 * https://www.mercadolibre.com.ar/ (Home)
 * https://dixgamer.com/ (Descripción del producto)
 * https://www.fravega.com/ (Carrito de compra y descripción del producto)
-* https://argengamestore.com/ /Diseños de navegación)
+* https://argengamestore.com/ (Vistas quienes somos y contáctenos)
 
 Elegimos estas páginas para tener una visión y comprensión general acerca de la venta de videojuegos digitales. Nos sirvieron de ayuda, para organizar la información y diseñar nuestro proceso. 
 
