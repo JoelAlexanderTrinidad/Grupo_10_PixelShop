@@ -68,6 +68,7 @@ const showCart = (carts) => {
         $('cart-box').hidden = false;
         $('btn-buy').hidden = false;
         $('msg-empty').hidden= true;
+         $('cart-login').hidden= true;
         $("cart-items").innerHTML = null;
         carts.forEach(({ id:idItem, product, quantity }) => {
           let { id, name, price, discount, img } = product;
