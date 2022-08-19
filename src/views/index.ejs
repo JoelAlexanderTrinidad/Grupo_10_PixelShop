@@ -45,7 +45,14 @@
                         <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
                         <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
                 </div>
-            <section class="destacados__no-slider home__main__featured" id="no-slider"></section>
+                <section class="destacados__no-slider home__main__featured" id="no-slider">
+                    <% destacados.forEach(({id, img, ranking}) => { %>
+                        <article class="slider__article">
+                            <p>ranking = <%= ranking %> <i class="fas fa-star"></i></p>
+                            <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" ></a>
+                        </article>
+                        <% }) %>
+                </section>
             <!-- Publicidad (desactivar adblock para ver :) -->
             <div class="home__main__publicidad">
                 <a href="https://playground.digitalhouse.com/"><img src="/images/publicidad.jpg" alt="" width="100%"></a>
