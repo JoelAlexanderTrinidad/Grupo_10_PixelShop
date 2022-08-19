@@ -282,8 +282,8 @@
     .home__main__banner video{
         display: block;
         border: 10px double #af5f5fb3;
-        width: 85%;
-        margin: 20px 8%;
+        width: 55%;
+        margin: 0 auto;
     }
     
     .home__main .home__main__offer article{
