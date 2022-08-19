@@ -50,7 +50,9 @@ module.exports={
     productDetail:(req,res)=>{
         const product = db.Product.findByPk(req.params.id);
         
-        const products = db.Product.findAll();
+        const products = db.Product.findAll({
+            limit: 6,
+    });
         
         const juegoGen = db.Gender.findAll({
             attributes : ['id','name']

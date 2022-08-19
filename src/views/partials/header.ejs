@@ -68,15 +68,17 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Mis compras</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div id="cart-login" >
-            <p> Hola! Tenes que estar registrado para agregar al carrito</p>
-          <button class="button"><a href="/users/register">Registrate</a></button>
-          <button class="butto"><a href="/users/login">Ingresa</a></button>
-          </div>
+          <% if (!locals.userLogin) { %>
+            <div class="button"id="cart-login" >
+              <p> Hola! Tenes que estar registrado para agregar al carrito</p>
+            <button><a href="/users/register">Registrate</a></button>
+            <button><a href="/users/login">Ingresa</a></button>
+            </div>
+          <% } %>
             <table class="table" id="cart-box">
               <thead>
                 <tr>
@@ -91,7 +93,8 @@
               <tbody id="cart-items">
             
               </tbody>
-            </table>           
+            </table>   
+            <% if (locals.userLogin) { %>        
         <p id="msg-empty">No hay productos!!!</p>
         </div>
         <div class="modal-footer">
@@ -101,6 +104,7 @@
           </div>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
         </div>
+        <% } %>
       </div>
     </div>
   </div>
