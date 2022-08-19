@@ -1,7 +1,32 @@
 console.log("profile.js success");
 
-$("btn-delete").addEventListener("click", (e) => {
-    if (!confirm("¿Esta seguro que desea borrar su registro?")) {
-        e.preventDefault()
-    }
-})
+        $("deleteUser").addEventListener("submit", (e) => {
+            e.preventDefault()
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                  }).then((result) => {
+                            if (result.isConfirmed) {
+                                if(e){
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your file has been deleted.',
+                                        'success'
+                                        )
+                                        e.target.submit()
+                                }
+                                }
+                            
+                  })
+       /*  if(e){
+            $('deleteUser').addEventListener('submit', (e) => {
+                e.preventDefault()
+                e.target.submit()
+            })
+        } */
+    })

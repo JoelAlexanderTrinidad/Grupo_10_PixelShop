@@ -24,7 +24,8 @@
     "node-fetch": "^2.6.7",
     "nodemon": "^2.0.18",
     "sequelize": "^6.21.1",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "sweetalert2": "^11.4.28"
   },
   "nodemonConfig": {
     "ignore": "./src/data/*.json"

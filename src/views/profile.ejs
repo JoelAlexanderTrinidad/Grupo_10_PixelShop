@@ -17,8 +17,8 @@
         </ul>
         <div class="card-body d-flex justify-content-around col-12 align-items-end">
           <a href="/users/editProfile" class=" bt-profile">Editar</a>
-          <form action="/users/deleteUser?_method=DELETE" method="POST" enctype="multipart/form-data">
-            <button id="btn-delete" class="bt-profile" type="submit">Eliminar</button>
+          <form type="submit" id="deleteUser" action="/users/deleteUser?_method=DELETE" method="POST" enctype="multipart/form-data">
+            <button id="btn-delete" class="bt-profile">Eliminar</button>
           </form>
         </div>
       </div>
