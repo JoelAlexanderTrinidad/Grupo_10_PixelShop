@@ -73,15 +73,15 @@ const showCart = (carts) => {
           let { id, name, price, discount, img } = product;
           $("cart-items").innerHTML += `
               <tr>
-              <td><img class="img-fluid" src="/images/${img}" alt=""></td>
+              <td><img style="width: 100px;" src="/images/${img}" alt=""></td>
               <td>${name}</td>
               <td><div class="d-flex">
               <button class="btn btn-sm btn-danger" onclick="removeItem(${id})"><i class="fa-solid fa-minus"></i></button>
                   <input type="text" style="border: none; width: 20px; text-align: center;" value="${quantity}">
                   <button class="btn btn-sm btn-success" onclick="addItem(${id})"><i class="fa-solid fa-plus"></i></button>
               </div></td>
-              <td>${price - (price * discount) / 100}</td>
-              <td>${(price - ((price * discount) / 100)) * quantity}</td>
+              <td>${(price - (price * discount) / 100).toFixed(2)}</td>
+              <td>${((price - ((price * discount) / 100)) * quantity).toFixed(2)}</td>
               <td>
               <button class="btn btn-sm btn-danger" onclick="removeItemAll(${idItem})"><i class="fa-solid fa-trash"></i></button></td>
             </tr>`;

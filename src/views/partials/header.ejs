@@ -66,17 +66,18 @@
   <!-- Modal -->
   <div class="modal fade" id="cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" style="width: 800px;">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+          <h5 class="modal-title" id="exampleModalLabel">CARRITO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <% if (!locals.userLogin) { %>
-            <div class="button"id="cart-login" >
-              <p> Hola! Tenes que estar registrado para agregar al carrito</p>
-            <button><a href="/users/register">Registrate</a></button>
-            <button><a href="/users/login">Ingresa</a></button>
+            <div id="cart-login" class="text-center" >
+              
+              <p> Tenes que estar registrado para agregar al carrito</p>
+              <button style="border: none; padding: 5px; border-radius: 5px; background-color: #bddeefdb;"  class="button"><a href="/users/register">Registrate</a></button>
+              <button style="border: none; padding: 5px; border-radius: 5px; background-color: #bddeefdb;" class="button"><a href="/users/login">Ingresa</a></button>
             </div>
           <% } %>
             <table class="table" id="cart-box">
@@ -95,15 +96,15 @@
               </tbody>
             </table>   
             <% if (locals.userLogin) { %>        
-        <p id="msg-empty">No hay productos!!!</p>
-        </div>
-        <div class="modal-footer">
-          <div id="btn-buy">
-            <button type="button" id="btn-cart-removeAll" class="btn btn-danger" value="<%= locals.userLogin && userLogin.order?.id  %> ">Vaciar carrito</button>
-          <button type="button" class="btn btn-primary">Finalizar compra</button>
-          </div>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-          <% } %>
+              <p id="msg-empty">No hay productos!!!</p>
+              </div>
+              <div class="modal-footer">
+                <div id="btn-buy">
+                  <button type="button" id="btn-cart-removeAll" class="btn btn-danger" value="<%= locals.userLogin && userLogin.order?.id  %> ">Vaciar carrito</button>
+                  <button type="button" class="btn btn-primary">Finalizar compra</button>
+                </div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+            <% } %>
         </div>
       
       </div>
