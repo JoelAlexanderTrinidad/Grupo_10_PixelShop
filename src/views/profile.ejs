@@ -18,9 +18,7 @@
         <div class="card-body d-flex justify-content-around col-12 align-items-end">
           <a href="/users/editProfile" class=" bt-profile">Editar</a>
 
-          <form id="borrar" action="/users/deleteUser?_method=DELETE" method="POST" enctype="multipart/form-data">
-            <button class="bt-profile" type="submit">Eliminar</button>
-          </form>
+            <button id="deleteUser" value="<%= locals.userLogin && userLogin.id ? userLogin.id : null %>" class="bt-profile" type="submit">Eliminar</button>
 
         </div>
       </div>
