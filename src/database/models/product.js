@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
 
       Product.belongsToMany(models.User,{
         as: 'users',
-        through: 'order', // hace referencia a la tabla no a un modelo
+        through: 'carts', // hace referencia a la tabla no a un modelo
         foreignKey: 'productId',
         otherKey: 'userId'
     })

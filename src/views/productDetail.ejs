@@ -3,98 +3,98 @@
 <%- include('./partials/head',{title: 'Detalle de Producto | Pixel Shop' }) %>
     <body class="productDetail">
         <%- include('./partials/header') %>
-                <!-- #################### main #################### -->
-                <main class="main">
-                    <div class="main__background">
-                        <section id="main">
-                            <div id="info-principal">
-                                <section class="detail__main__section">
-                                    <div>
-                                        <img src="/images/<%= product.img %>" alt="">
-                                    </div>
-                                    <h3>
-                                        <%= product.name %> / <span>Digital</span>
-                                    </h3>
-                                    <hr>
-                                    <span class="mercado-img">
-                                        <img src="/images/metodos_de_pago.jpg" alt="">
-                                    </span>
-                                </section>
-                                <div id="buy-info">
-                                    <section class="main__section-info">
-                                        <h3>Resumen</h3>
-                                        <ul id="especificaciones">
-                                            <li>Precio: $<%= (product.price - (product.price * product.discount) / 100).toFixed(2) %> (
-                                                    <%= product.discount %>% OFF)</li>
-                                            <li></li>
-                                            <li>Idioma texto: Ingles</li>
-                                            <li>Idioma voz: Español</li>
-                                            <div class="main__section-info-div">
-                                                <li>Juego original y completo</li>
-                                                <li><b>Incluye guía paso a paso</b></li>
-                                                <li><b>Entrega inmediata</b></li>
-                                            </div>
-                                        </ul>
-                                        <ul class="main__section-categories">
-                                            <ul class="main__section-categories">
-                                                <% misGeneros.forEach((element, i)=> { %>
-                                                    <li>
-                                                        <%= misGeneros[i] %>
-                                                    </li>
-                                                    <% }) %>
-                                            </ul>
-                                    </section>
-                                    <section class="main__section-buy">
-                                        <span class="main__section-buy">
-                                            <% if (+product.discount !==0) { %>
-                                                <h2>$<%= (product.price - (product.price * product.discount) / 100).toFixed(2) %>
-                                                        <span>ARS</span></h2>
-                                                <h4 class="precioAnterior"><strike>$<%= product.price %></strike> <span>
-                                                        <%= product.discount %>% OFF
-                                                    </span></h4>
-                                                <% }else{ %>
-                                                    <h2>
-                                                        <%= product.discount %>
-                                                    </h2>
-                                                    <% } %>
-                                        </span>
-                                        <div>
-                                            <button><a href="/product/cart/"><i
-                                                        class="fa-solid fa-cart-shopping"></i>COMPRAR</a></button>
-                                            <button><a target="_blank" href="https://wa.me/5491165514798"><i class="fa-brands fa-whatsapp"></i>Asesor de
-                                                    ventas</a></button>
+            <!-- #################### main #################### -->
+            <main class="main">
+                <div class="main__background">
+                    <section id="main">
+                        <div id="info-principal">
+                            <section class="detail__main__section">
+                                <div>
+                                    <img src="/images/<%= product.img %>" alt="">
+                                </div>
+                                <h3>
+                                    <%= product.name %> / <span>Digital</span>
+                                </h3>
+                                <hr>
+                                <span class="mercado-img">
+                                    <img src="/images/metodos_de_pago.jpg" alt="">
+                                </span>
+                            </section>
+                            <div id="buy-info">
+                                <section class="main__section-info">
+                                    <h3>Resumen</h3>
+                                    <ul id="especificaciones">
+                                        <li>Precio: $<%= (product.price - (product.price * product.discount) / 100).toFixed(2) %> (
+                                                <%= product.discount %>% OFF)</li>
+                                        <li></li>
+                                        <li>Idioma texto: xxxx</li>
+                                        <li>Idioma voz: xxxx</li>
+                                        <div class="main__section-info-div">
+                                            <li>Juego original y completo</li>
+                                            <li><b>Incluye guía paso a paso</b></li>
+                                            <li><b>Entrega inmediata</b></li>
                                         </div>
-                                    </section>
-                                </div>
-                                <div class="description">
-                                    <h3 class="about-the-game">Acerca de este Juego</h3>
-                                    <hr>
-                                    <p><%= product.description %></p>
-                                </div>
-                            </div>
-                        </section>
-                        </section>
-                        <section class="main__section__articles">
-                            <div>
-                                <h3 id="more">Más productos</h3>
-                            </div>
-                            <% products.forEach(({id,img, name, price, category})=> { %>
-                                <article>
-                                    <a href="/product/detail/<%= id %>"><img src="/images/<%=img %>" alt=""></a>
+                                    </ul>
+                                    <ul class="main__section-categories">
+                                        <ul class="main__section-categories">
+                                            <% misGeneros.forEach((element, i)=> { %>
+                                                <li>
+                                                    <%= misGeneros[i] %>
+                                                </li>
+                                                <% }) %>
+                                        </ul>
+                                </section>
+                                <section class="main__section-buy">
+                                    <span class="main__section-buy">
+                                        <% if (+product.discount !==0) { %>
+                                            <h2>$<%= (product.price - (product.price * product.discount) / 100).toFixed(2) %>
+                                                    <span>ARS</span></h2>
+                                            <h4 class="precioAnterior"><strike>$<%= product.price %></strike> <span>
+                                                    <%= product.discount %>% OFF
+                                                </span></h4>
+                                            <% }else{ %>
+                                                <h2>
+                                                    <%= product.discount %>
+                                                </h2>
+                                                <% } %>
+                                    </span>
                                     <div>
-                                        <h4 class="product__detail__article-name">
-                                            <%= name %>
-                                        </h4>
-                                        <h4 class="product__detail__article-price">$<%= price %> <span>ARS</span></h4>
-                                        <p>
-                                            <%= category %>
-                                        </p>
+                                        <button value="<%= product.id %>" id="btn-cart-add" class="buy-now-button"><i
+                                                    class="fa-solid fa-cart-shopping"></i>AGREGAR AL CARRITO</button>
+                                        <button><a target="_blank" href="https://wa.me/5491165514798"><i class="fa-brands fa-whatsapp"></i>Asesor de
+                                                ventas</a></button>
                                     </div>
-                                </article>
-                                <% }) %>
-                        </section>
-                    </div>
-                </main>
-                <%- include('./partials/footer') %>
+                                </section>
+                            </div>
+                            <div class="description">
+                                <h3 class="about-the-game">Acerca de este Juego</h3>
+                                <hr>
+                                <b><%= product.description %></b>
+                            </div>
+                        </div>
+                    </section>
+                    </section>
+                    <section class="main__section__articles">
+                        <div>
+                            <h3 id="more">Más productos</h3>
+                        </div>
+                        <% products.forEach(({id,img, name, price, category})=> { %>
+                            <article>
+                                <a href="/product/detail/<%= id %>"><img src="/images/<%=img %>" alt=""></a>
+                                <div>
+                                    <h4 class="product__detail__article-name">
+                                        <%= name %>
+                                    </h4>
+                                    <h4 class="product__detail__article-price">$<%= price %> <span>ARS</span></h4>
+                                    <p>
+                                        <%= category %>
+                                    </p>
+                                </div>
+                            </article>
+                            <% }) %>
+                    </section>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
     </body>
 </html>

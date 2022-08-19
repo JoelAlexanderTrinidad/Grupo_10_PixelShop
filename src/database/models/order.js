@@ -11,11 +11,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Order.hasMany(models.Cart,
+        {
+          as:'carts',
+          foreignKey:'orderId',
+          onDelete: 'cascade'
+        }),
+        Order.belongsTo(models.User,
+          {
+            as:'user',
+            foreignKey:'userId'
+          })
     }
   }
   Order.init({
-    productId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    status: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
+    total: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Order',

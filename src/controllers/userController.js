@@ -1,9 +1,10 @@
-const { User } = require('../database/models');
+const { User, Order } = require('../database/models');
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const moment = require('moment');
+const db = require('../database/models');
 
 module.exports={
     register:(req,res)=>{
@@ -14,24 +15,6 @@ module.exports={
     },
     processRegister:(req, res)=>{
         const errores = validationResult(req);
-
-        /* if(!req.file){
-            null
-        }else{
-            const image = req.file.originalname
-            const ext = image.slice(-4)
-            const imageName = req.file.filename
-            let errorImg = false
-        if((ext == '.jpg') || (ext == '.png') || (ext == '.gif') || (ext == 'jpeg')){
-            errorImg = false
-        }else{
-            errorImg = true
-        }
-        if(errorImg){
-            fs.unlinkSync(path.resolve(__dirname,'..','..','public','images', imageName))
-        }
-        } */
-        
         if(errores.isEmpty()){
             
             let {id, nombre, apellido, tel, email, password, terminos, privacidad} = req.body;
@@ -48,7 +31,7 @@ module.exports={
                 imagenPerfil: req.file ? req.file.filename : 'no-image.png',
                 rolId : '1'
             })
-            .then(usuarioNuevo => {
+       /*      .then(usuarioNuevo => {
                 req.session.userLogin = {
                     id : usuarioNuevo.id,
                     nombre : usuarioNuevo.nombre,
@@ -57,8 +40,9 @@ module.exports={
                     rolId : usuarioNuevo.rolId
                 }
             
-                res.locals.user = req.session.userLogin;
-                res.redirect('/');
+                res.locals.user = req.session.userLogin; */
+               .then(()=>{
+                res.redirect('/users/login');
             })
             .catch(error => console.log(error))
         }else{
@@ -75,27 +59,43 @@ module.exports={
     },
     processLogin:(req,res)=>{
     let errores = validationResult (req);
-
         if(errores.isEmpty()){
+        
             User.findOne({
-                where : { email : req.body.email }
+                where : { email : req.body.email  }
             })
-            .then(usuario => {
-                
+            .then( async ({id,nombre, rolId, apellido, fecha}) => {
+              let order = await db.Order.findOne({
+                where:{
+                    userId:id,
+                    status:1
+                },
+                include: [
+                    {
+                      association: "carts",
+                      attributes: ["id", "quantity"],
+                      include: [
+                        {
+                          association: "product",
+                          attributes: ["id","img", "name", "price", "discount"],
+                        },
+                      ],
+                    },
+                  ],
+              })
                 req.session.userLogin = {
-                    id: usuario.id,
-                    nombre : usuario.nombre,
-                    apellido : usuario.apellido,
-                    rolId : usuario.rolId,
-                    fecha: usuario.fecha
+                    id,
+                    nombre,
+                    apellido,
+                    rolId,
+                    fecha,
+                    order 
                 }
                 if(req.body.recordame){
                     res.cookie("userPixelShop", req.session.userLogin,{maxAge: 1000*60*10})
                 }
-                res.locals.user = req.session.user;
-                res.redirect("/");
+                return res.redirect('/?user=true');
             })
-            .catch(error => console.log(error))
         }else{
             res.render('login',{
                 errores :errores.mapped(),

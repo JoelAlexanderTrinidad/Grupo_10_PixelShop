@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Orders', {
+    await queryInterface.createTable('Carts', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references : {
           model : {
-            tableName : 'products'
+            tableName : 'Products'
           },
           key : 'id'
         }
@@ -23,10 +23,24 @@ module.exports = {
         type: Sequelize.INTEGER,
         references : {
           model : {
-            tableName : 'users'
+            tableName : 'Users'
           },
           key : 'id'
         }
+      },
+      orderId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Orders'
+          },
+          key : 'id'
+        },
+        onDelete :'cascade'
+      },
+      quantity: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -39,6 +53,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Orders');
+    await queryInterface.dropTable('Carts');
   }
 };

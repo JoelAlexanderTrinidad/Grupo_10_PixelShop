@@ -14,13 +14,9 @@
             </div>
             <div  class="header__section__div-user">
               <span>
-                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-cart-shopping"></i>
+                <button id="btn-cart" type="button" class="btn dropdown-toggle" data-bs-toggle="modal" data-bs-target="#cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
                   </button>
-                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                          <li><a class="dropdown-item" >Favoritos</a></li>
-                          <li><a class="dropdown-item" href="/product/cart">Carrito</a></li>
-                      </ul>
               </span>
               <span>
                   <button class="btn dropdown-toggle" type="button"  data-bs-toggle="dropdown" aria-expanded="false"> 
@@ -63,3 +59,48 @@
         
      </header>
      <script src="/js/header.js"></script>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Mis compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-login" >
+            <p> Hola! Tenes que estar registrado para agregar al carrito</p>
+          <button class="button"><a href="/users/register">Registrate</a></button>
+          <button class="butto"><a href="/users/login">Ingresa</a></button>
+          </div>
+            <table class="table" id="cart-box">
+              <thead>
+                <tr>
+                  <th scope="col">Imagen</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Subtotal</th>
+                  <th scope="col">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+            
+              </tbody>
+            </table>           
+        <p id="msg-empty">No hay productos!!!</p>
+        </div>
+        <div class="modal-footer">
+          <div id="btn-buy">
+            <button type="button" id="btn-cart-removeAll" class="btn btn-danger" value="<%= locals.userLogin && userLogin.order?.id  %> ">Vaciar carrito</button>
+          <button type="button" class="btn btn-primary">Finalizar compra</button>
+          </div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+        </div>
+      </div>
+    </div>
+  </div>
