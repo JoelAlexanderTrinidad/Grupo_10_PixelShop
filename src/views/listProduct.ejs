@@ -19,8 +19,9 @@
                 <div class="list-group-item d-flex justify-content-between align-items-end" id="admin">
                   <span><a class="badge rounded-pill" href="/product/detail/<%= product.id %>"><i class="fa-solid fa-eye "></i></a></span>
                   <span><a class="badge rounded-pill" href="/product/edit/<%= product.id %>"><i class="fa-solid fa-pen-to-square "></i></a></span>
-                  <form action="/product/remove/<%= product.id %>?_method=DELETE" method="POST">
-                      <span><a href=""><button id="btn-delete" class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></span>
+                  <form id="borrarProducto" action="/product/remove/<%= product.id %>?_method=DELETE" method="POST">
+                      <!-- <span><button type="submit" id="btn-delete" class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></span> -->
+                      <button type="submit" class="badge rounded-pill border-0">eliminar</button>
                   </form>
                 </div>
               </li>
@@ -44,5 +45,6 @@
       </main>
       <%- include('./partials/footer') %>
   <script src="/js/listProduct.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
