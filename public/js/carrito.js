@@ -64,7 +64,7 @@ const removeItem = async (id) => {
   };
 
 const showCart = (carts) => {
-    if(carts.length >0){
+ if(carts.length >0){
         $('cart-box').hidden = false;
         $('btn-buy').hidden = false;
         $('msg-empty').hidden= true;
@@ -90,11 +90,10 @@ const showCart = (carts) => {
     }else{
         $('cart-box').hidden = true;
         $('msg-empty').hidden= false;
+         $('cart-login').hidden= false;
         $('btn-buy').hidden = true;
     }
-
 };
-
 $("btn-cart") &&
   $("btn-cart").addEventListener("click", async () => {
     let { order, carts } = await getCarts();
