@@ -1,4 +1,4 @@
-/* const db= require('../../database/models');
+const db= require('../../database/models');
 const { Op } = require("sequelize");
 
 
@@ -36,4 +36,3 @@ exploreApi : async (req, res) =>{
         }
     }
 }
- */

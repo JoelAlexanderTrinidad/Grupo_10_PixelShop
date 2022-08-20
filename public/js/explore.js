@@ -1,5 +1,4 @@
-/* console.log('explore success! c:');
-
+console.log('explore success! c:');
 
 const searchGames = async(L)=>{
     try {
@@ -20,8 +19,10 @@ const searchGames = async(L)=>{
     }
 }
 
+console.log('>>>>>>>>>>sdfsdf>>>>>>>>>>>>>',result);
+
 let leters = qsa('.ABC')
 
 leters.addEventListener('click' ,function(e){
     console.log(e);
-}); */
+});
