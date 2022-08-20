@@ -37,7 +37,6 @@ router
       .get('/explore', explore)
 
       /* /api/product */
-      .post('/explore', AtoZ)
-      .post('/exploreProducts/?', exploreApi) //http://localhost:3002/api/product/exploreProducts
+      .get('/exploreProducts/?', exploreApi) //http://localhost:3002/api/product/exploreProducts
       
 module.exports = router;

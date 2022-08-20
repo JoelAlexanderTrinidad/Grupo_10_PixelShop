@@ -23,6 +23,7 @@ const verifyEmail = async(email)=>{
     }
 }
 
+
 $('nombre').addEventListener('blur', function(){
     switch (true) {
         case !this.value.trim():

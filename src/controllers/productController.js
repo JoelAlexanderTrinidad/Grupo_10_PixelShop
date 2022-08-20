@@ -6,28 +6,6 @@ const {validationResult} = require("express-validator");
 const fetch = require('node-fetch')
 
 module.exports={
-    AtoZ: async (req, res) =>{
-        try {
-            let leter = req.body.L
-            let products = await db.Product.findAll({
-                where : {
-                  name : {
-                    [Op.startsWith] : [req.body.L]
-                  }
-                }
-            })
-            // return res.send(products)
-
-            return res.render('gamesAZ',{
-                products,
-                leter
-            })
-        
-            } catch (error) {
-                console.log(error)
-            }
-        },
-
     explore: async (req, res) => {
 
         let result

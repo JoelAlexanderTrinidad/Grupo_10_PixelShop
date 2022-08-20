@@ -9,7 +9,7 @@ exploreApi : async (req, res) =>{
         let products = await db.Product.findAll({
             where : {
               name : {
-                [Op.startsWith] : [req.body.L]
+                [Op.startsWith] : [req.query.l]
               }
             }
         })
@@ -19,7 +19,7 @@ exploreApi : async (req, res) =>{
             status: 200,
             total: products.length
           },
-          data : products
+          data : products,
         }
         return res.status(200).json(response)
             
