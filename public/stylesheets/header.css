@@ -243,6 +243,9 @@ header #burger i{
     .neonText{
         font-size: 20px;
     }
+    .header__section{
+        padding: 30px 45px 0;
+    }
     .header__section__div-user {
         width: 10%;
         font-size: 35px;
