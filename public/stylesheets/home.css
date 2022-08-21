@@ -138,22 +138,16 @@
 .home__main .home__main__recommended article img{
     border-radius: 5%;
 }
-
-.home__main .home__main__recommended article p{
-    background-color: rgb(210, 210, 210);
-    border-radius: 10px;
-    padding: 10px;
-    height: 200px;
+.home__main .home__main__recommended article span{
+height: 200px;
     overflow: hidden;
-    text-overflow: ellipsis;
-    line-break: anywhere;
+    text-align: justify;
 }
-
 .home__main .home__main__recommended article div {
     background-color: #ffffff;
     color: #404040;
     border-radius: 5%;
-    width: 30%;
+    width: 40%;
     padding: 5px;
     text-align: center;
     margin: 0 auto;
