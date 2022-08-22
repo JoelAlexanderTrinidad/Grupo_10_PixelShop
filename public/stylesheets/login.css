@@ -16,11 +16,9 @@
 .main_login{
     color: white;
     background-color: #576064;
-    border-radius: 20px;
     width: 90%;
     margin: 0 auto;
     background-image: url('../images/bg-login.jpg');
-   
 }
 .main_login h2{
     text-align: center;
@@ -206,9 +204,7 @@
         transform: translateY(-16px);
         transition: all .5s;
     } */
-    .main__login{
-       
-    }
+   
     .main_login {
         display: flex;
         flex-direction: column;

@@ -49,6 +49,10 @@ button.dropdown-toggle::after{
     display: none;
 }
 
+.heade-gif{
+    display: none;
+}
+
 .nav1{
     margin-bottom: 1rem;
     display: flex;
@@ -240,6 +244,23 @@ header #burger i{
 }
 
 @media (min-width: 1024px){
+
+   /*  .heade-gif{
+        position: absolute;
+        width: 100px;
+        bottom: 560px;
+        right: 0px;
+        overflow: hidden;
+        animation: gif 30s  infinite;
+        display: block;
+        animation-delay: 2s;
+    }
+
+    @keyframes gif {
+        from {right: 0px;}
+        to {right: 2000px;}
+    } */
+
     .neonText{
         font-size: 20px;
     }

@@ -6,6 +6,9 @@
     margin: 10px auto;
     border-radius: 20px;
     font-weight: 600;
+    background-image: url('../images/bg-login.jpg');
+    background-position: center;
+    background-size: cover;
 }
 .main_register h2, h4{
     text-align: center;
