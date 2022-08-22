@@ -1,5 +1,6 @@
 .login{
     background-size: auto;
+    
 }
 
 .main__login-capitalize{
@@ -18,6 +19,7 @@
     border-radius: 20px;
     width: 90%;
     margin: 0 auto;
+    background-image: url('../images/bg-login.jpg');
    
 }
 .main_login h2{
@@ -88,7 +90,8 @@
     margin: 15px 0 5px 0;
 }
 .main_login .redes ul li a i{
-    color: white;
+    color: #0d2630;
+    
 }
 .main_login .redes{ 
     margin-top: 20px;
@@ -100,6 +103,8 @@
 }
 .section__unirse p{
     text-align: center;
+    color: #1c1a18;
+    font-weight: 900;
 }
 .unete{
     text-align: center;
@@ -202,14 +207,17 @@
         transition: all .5s;
     } */
     .main__login{
+       
+    }
+    .main_login {
         display: flex;
         flex-direction: column;
-    }
-    .main_login{
         background-size: cover;
+        background-position: center;
+        background-size: inherit;
         width: 55%;
         margin: 0 auto;
-    } 
+    }
     
     .main__section form {
         display: flex;
