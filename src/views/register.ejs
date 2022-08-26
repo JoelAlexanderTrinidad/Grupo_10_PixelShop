@@ -3,90 +3,91 @@
     <%- include('./partials/head',{title: 'Registro | Pixel Shop'}) %> 
 
 <body class="register" >
-    <%- include('./partials/header') %> 
-    <main class="main_register">
-        <section>
-            <h2>Registrate</h2>
-            <h4>Es fácil y rápido</h4>
-        </section>
-        <section>
-            <form  id="formulario"action="" method="POST" enctype="multipart/form-data" >
-              <div class="forms-datos">
-                <div class="datos">
-                    <label for="nombre" >Nombre</label>
-                    <input type="text" class="form-control"  value="<%= locals.old && old.nombre ? old.nombre : null %>" name="nombre" id="nombre" placeholder=" nombre">
-                    <span id="errorNombre" class="text-danger"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %></span>
-                </div>
-
-                <div class="datos">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control"  name="apellido" id="apellido" placeholder="apellido" value="<%= locals.old && old.apellido ? old.apellido : null %>">
-                    <span id="errorApellido" class="text-danger"><%= locals.errores && errores.apellido ? errores.apellido.msg : null %></span>
-                </div>
-
-                <div class="datos">
-                    <label for="tel">Número de celular </label>
-                    <input type="number" class="form-control"  name="tel" id="tel" placeholder=" número de celular" value="<%= locals.old && old.tel ? old.tel : null %>">
-                    <span id="errorTel" class="text-danger"><%= locals.errores && errores.tel ? errores.tel.msg : null %></span>
-                </div>
-
-                <div class="datos">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" class="form-control"  name="email" id="email" placeholder=" email" value="<%= locals.old && old.email ? old.email : null %>">
-                    <span id="errorEmail" class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null %></span>
-                </div>
-
-              <div class="datos">
-                    <label for="password ">Contraseña</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder=" contraseña" >
-                    <span id="errorPass" class="text-danger"><%= locals.errores && errores.password ? errores.password.msg : null %></span>
-                </div>
-
-                <div class="datos">
-                    <label for="password2">Confirmar contraseña</label>
-                    <input type="password" class="form-control" name="password2" id="password2" placeholder="vuelva a escribir la contraseña" >
-                    <span id="errorPass2" class="text-danger"><%= locals.errores && errores.password2 ? errores.password2.msg : null %></span>
-                </div> 
-              </div>
-                <div class="register__imagen-perfil">
-                    <label for="imagenPerfil">Subir imágen de perfil</label>
-                    <input type="file"  id="imagenPerfil" name="imagenPerfil" accept="image/gif, image/png, image/jpeg, image/jpg">
-                    <div>(opcional)</div>
-                    <span id="errorImg" class="text-danger"><%= locals.errores && errores.imagenPerfil? errores.imagenPerfil.msg : null %></span>
+    <%- include('./partials/header') %>
+        <main class="main_register">
+            
+            <section>
+                <h2>Registrate</h2>
+                <h4>Es fácil y rápido</h4>
+            </section>
+            <section>
+                <form  id="formulario"action="" method="POST" enctype="multipart/form-data" >
+                  <div class="forms-datos">
+                    <div class="datos">
+                        <label for="nombre" >Nombre</label>
+                        <input type="text" class="form-control"  value="<%= locals.old && old.nombre ? old.nombre : null %>" name="nombre" id="nombre" placeholder=" nombre">
+                        <span id="errorNombre" class="text-danger"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %></span>
+                    </div>
+    
+                    <div class="datos">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control"  name="apellido" id="apellido" placeholder="apellido" value="<%= locals.old && old.apellido ? old.apellido : null %>">
+                        <span id="errorApellido" class="text-danger"><%= locals.errores && errores.apellido ? errores.apellido.msg : null %></span>
+                    </div>
+    
+                    <div class="datos">
+                        <label for="tel">Número de celular </label>
+                        <input type="number" class="form-control"  name="tel" id="tel" placeholder=" número de celular" value="<%= locals.old && old.tel ? old.tel : null %>">
+                        <span id="errorTel" class="text-danger"><%= locals.errores && errores.tel ? errores.tel.msg : null %></span>
+                    </div>
+    
+                    <div class="datos">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" class="form-control"  name="email" id="email" placeholder=" email" value="<%= locals.old && old.email ? old.email : null %>">
+                        <span id="errorEmail" class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null %></span>
+                    </div>
+    
+                  <div class="datos">
+                        <label for="password ">Contraseña</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder=" contraseña" >
+                        <span id="errorPass" class="text-danger"><%= locals.errores && errores.password ? errores.password.msg : null %></span>
+                    </div>
+    
+                    <div class="datos">
+                        <label for="password2">Confirmar contraseña</label>
+                        <input type="password" class="form-control" name="password2" id="password2" placeholder="vuelva a escribir la contraseña" >
+                        <span id="errorPass2" class="text-danger"><%= locals.errores && errores.password2 ? errores.password2.msg : null %></span>
+                    </div> 
+                  </div>
+                    <div class="register__imagen-perfil">
+                        <label for="imagenPerfil">Subir imágen de perfil</label>
+                        <input type="file"  id="imagenPerfil" name="imagenPerfil" accept="image/gif, image/png, image/jpeg, image/jpg">
+                        <div>(opcional)</div>
+                        <span id="errorImg" class="text-danger"><%= locals.errores && errores.imagenPerfil? errores.imagenPerfil.msg : null %></span>
+                        
+                    </div>
+                    <section class="requied">
+                        <div >
+                            <input type="checkbox"  id="terminos" name="terminos"  <%= locals.old && old.terminos ? 'checked' : null %>>
+                            <label for="terminos">Acepto los términos y condiciones de uso</label>
+                            <span id="errorTerminos" class="text-danger"><%= locals.errores && errores.terminos ? errores.terminos.msg : null %></span>
+                        </div>
+                        <div>
+                            <input type="checkbox"  id="privacidad" name="privacidad"  <%= locals.old && old.privacidad ? 'checked' : null %>>
+                            <label for="privacidad">He leído y acepto las políticas de privacidad</label>
+                            <span id="errorPriv"  class="text-danger" ><%= locals.errores && errores.privacidad ? errores.privacidad.msg : null %></span>
+                        </div>
+                    </section>
                     
-                </div>
-                <section class="requied">
-                    <div >
-                        <input type="checkbox"  id="terminos" name="terminos"  <%= locals.old && old.terminos ? 'checked' : null %>>
-                        <label for="terminos">Acepto los términos y condiciones de uso</label>
-                        <span id="errorTerminos" class="text-danger"><%= locals.errores && errores.terminos ? errores.terminos.msg : null %></span>
+                        <div class="button">
+                            <button type="submit">REGISTRATE</button>
+                        
+                            <p id="errorm" class="text-danger"></p>
                     </div>
-                    <div>
-                        <input type="checkbox"  id="privacidad" name="privacidad"  <%= locals.old && old.privacidad ? 'checked' : null %>>
-                        <label for="privacidad">He leído y acepto las políticas de privacidad</label>
-                        <span id="errorPriv"  class="text-danger" ><%= locals.errores && errores.privacidad ? errores.privacidad.msg : null %></span>
-                    </div>
-                </section>
                 
-                    <div class="button">
-                        <button type="submit">REGISTRATE</button>
-                    
-                        <p id="errorm" class="text-danger"></p>
-                </div>
-            
-                <section class="redes">
-                    <h4>O registrate con</h4>
-                    <ul>
-                        <li><a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a></li>
-                        <li><a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a></li>
-                        <li><a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                </section>
-            </form>
-            
-        </section>
-    </main>
-    <%- include('./partials/footer') %> 
+                    <section class="redes">
+                        <h4>O registrate con</h4>
+                        <ul>
+                            <li><a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a></li>
+                            <li><a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </section>
+                </form>
+                
+            </section>
+        </main>
+        <%- include('./partials/footer') %> 
     <script src="/js/register.js"></script>
 </body>
 </html>

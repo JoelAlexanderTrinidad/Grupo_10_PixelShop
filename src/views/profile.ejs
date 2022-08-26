@@ -2,27 +2,28 @@
 <html lang="en">
 <%- include('./partials/head',{title: 'Perfil | Pixel Shop'}) %> 
 <body>
-   <%- include('./partials/header') %> 
-  <main >
-    <div class="card col-12 col-md-10 col-lg-8 mx-auto my-3" style="width: 18rem;">
-      <img src="/images/<%= user.imagenPerfil %> " class="card-img-top" alt="...">
-      <div class="card-body mx-auto">
-        <h5 class="card-title text-capitalize" ><%= user.nombre %> <%= user.apellido %></h5>
+   <%- include('./partials/header') %>
+    <main >
+      <div class="card col-12 col-md-10 col-lg-8 mx-auto my-3" style="width: 18rem;">
+        <img src="/images/<%= user.imagenPerfil %> " class="card-img-top" alt="...">
+        <div class="card-body mx-auto">
+          <h5 class="card-title text-capitalize" ><%= user.nombre %> <%= user.apellido %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Tel: <%= user.tel %> </li>
+          <li class="list-group-item">Email: <%= user.email %> </li>
+          <li class="list-group-item">Fecha de nacimiento : <%= fecha %></li>
+        
+        </ul>
+        <div class="card-body d-flex justify-content-around col-12 align-items-end">
+          <a href="/users/editProfile" class=" bt-profile">Editar</a>
+          <form type="submit" id="deleteUser" action="/users/deleteUser?_method=DELETE" method="POST" enctype="multipart/form-data">
+            <button id="btn-delete" class="bt-profile">Eliminar</button>
+          </form>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Tel: <%= user.tel %> </li>
-        <li class="list-group-item">Email: <%= user.email %> </li>
-        <li class="list-group-item">Fecha de nacimiento : <%= fecha %></li>
-      
-      </ul>
-      <div class="card-body d-flex justify-content-around col-12 align-items-end">
-        <a href="/users/editProfile" class=" bt-profile">Editar</a>
-        <form action="/users/deleteUser?_method=DELETE" method="POST" enctype="multipart/form-data">
-          <button class="bt-profile" type="submit">Eliminar</button>
-        </form>
-      </div>
-    </div>
-  </main>
-  <%- include('./partials/footer') %> 
+    </main>
+    <%- include('./partials/footer') %>
+  <script src="/js/profile.js"></script>
 </body>
 </html>

@@ -28,12 +28,22 @@
     padding-top: 15px;
 }
 .form__main button{
-    margin: 15px auto;
+    margin: 20px 5px;
 }
 .form__main .gender {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.bt-form {
+    display: flex;
+    justify-content: center;
+}
+.bt-form button{
+    font-size: 20px;
+    font-family: 'Bungee';
+    padding: 5px;
+    border-radius: 10px;
 }
 
 @media (min-width: 768px){

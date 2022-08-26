@@ -11,7 +11,7 @@ module.exports={
                 }
             },
 			order : [['ranking','DESC']],
-            limit: 2
+            limit: 6
         })
         let ofertasEpeciales = db.Product.findAll({
             where: {
@@ -20,23 +20,21 @@ module.exports={
 				}
 			},
 			order : [['id','DESC']],
-			limit : 6
+			limit : 8
             }
         )
         let recomendados = db.Product.findAll({
             where: {
-                  discount : {
-					[Op.gte] : 5
-				},
                 ranking: {
-                    [Op.gte] : 6
+                    [Op.gte] : 0
                 }
                 },
-                order: [['createdAt', 'ASC']],
+                order: [['createdAt', 'DESC']],
                 limit: 6
         })
         Promise.all([destacados, ofertasEpeciales, recomendados])
             .then(([destacados, ofertasEpeciales, recomendados]) => {
+
                 return res.render('index', {
                     destacados,
                     ofertasEpeciales,
@@ -44,5 +42,11 @@ module.exports={
                 })
             })
             .catch(error => console.log(error))        
+    },
+    aboutUs: (req,res) => {
+        return res.render("aboutUs")
+    },
+    contacts: (req,res) => {
+        return res.render("contacts")
     }
 }

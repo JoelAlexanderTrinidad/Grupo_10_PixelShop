@@ -16,6 +16,9 @@ var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
+var cartRouter = require('./routes/cart')
+
+var productRouterApi = require('./routes/product')
 
 var app = express();
 
@@ -44,6 +47,9 @@ app.use('/', indexRouter);
 app.use('/admin', adminRouter)
 app.use('/product',productRouter);
 app.use('/users', usersRouter);
+app.use('/api/cart', cartRouter)
+
+app.use('/api/product', productRouterApi)
 
 // Rutas //
 /*app.get('/',(req,res)=> res.sendFile(path.resolve(__dirname,"views","index.html")));

@@ -14,13 +14,9 @@
             </div>
             <div  class="header__section__div-user">
               <span>
-                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-cart-shopping"></i>
+                <button id="btn-cart" type="button" class="btn dropdown-toggle" data-bs-toggle="modal" data-bs-target="#cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
                   </button>
-                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                          <li><a class="dropdown-item" >Favoritos</a></li>
-                          <li><a class="dropdown-item" href="/product/cart">Carrito</a></li>
-                      </ul>
               </span>
               <span>
                   <button class="btn dropdown-toggle" type="button"  data-bs-toggle="dropdown" aria-expanded="false"> 
@@ -46,21 +42,71 @@
         </section>
          <nav id="nav" class="header__nav">
              <ul class="nav1">
-                 <li><a href="">Comunidad</a></li>
+                 <li><a href="/">Inicio</a></li>
                  <li><a href="">Nuestra App</a></li>
-                 <li><a href="">Soporte</a></li>
+                 <li><a href="/contacts">Contáctenos</a></li>
                  <li><a href="">Idioma</a></li>
-             </ul>
-             <ul class="nav2">
-                 <li> <a href="">Suscripción Premium</a></li>
-                 <li> <a href="">Quienes Somos</a></li>
+                 <li><a href="">Suscripción Premium</a></li>
+                 <li><a href="/aboutUs">Quienes Somos</a></li>
              </ul>
          </nav>
          <form action="/product/result" method="GET">
-         <div id="busqueda">
-             <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
-             <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-        </form>
+            <div id="busqueda">
+                <input type="text" name="keyword" placeholder="Buscar videojuegos, marcas...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+               </div>
+           </form>
+        
      </header>
      <script src="/js/header.js"></script>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 800px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">CARRITO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <% if (!locals.userLogin) { %>
+            <div id="cart-login" class="text-center" >
+              
+              <p> Tenes que estar registrado para agregar al carrito</p>
+              <button style="border: none; padding: 5px; border-radius: 5px; background-color: #bddeefdb;"  class="button"><a href="/users/register">Registrate</a></button>
+              <button style="border: none; padding: 5px; border-radius: 5px; background-color: #bddeefdb;" class="button"><a href="/users/login">Ingresa</a></button>
+            </div>
+          <% } %>
+            <table class="table" id="cart-box">
+              <thead>
+                <tr>
+                  <th scope="col">Imagen</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Subtotal</th>
+                  <th scope="col">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+            
+              </tbody>
+            </table>   
+            <% if (locals.userLogin) { %>        
+              <p id="msg-empty">No hay productos!!!</p>
+              </div>
+              <div class="modal-footer main__section-buy">
+                <div class="" id="btn-buy">
+                  <button type="button" id="btn-cart-removeAll" class="btn btn-danger" value="<%= locals.userLogin && userLogin.order?.id  %> ">Vaciar carrito</button>
+                  <button type="button" class="btn btn-primary">Finalizar compra</button>
+                </div>
+              <button type="button" class="btn btn-secondary" id="seguir"data-bs-dismiss="modal">Seguir comprando</button>
+            <% } %>
+        </div>
+      
+      </div>
+    </div>
+  </div>

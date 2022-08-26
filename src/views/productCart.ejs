@@ -2,134 +2,134 @@
 <html lang="en">
     <%- include('./partials/head',{title: 'Home | Pixel Shop'}) %> 
     <body >
-       <%- include('./partials/header') %> 
-     <main class="productCart">
-<section>
-    <section class="productCart__button">
-        <input type="button" value="Carrito">
-        <input type="button" value="Favoritos">
-    </section>
-    <section class="productCart__section">
-    <section >
-        <article class="productCart__product">
-            <h2>Nombre del producto</h2>
-            <div class="productCart__product_info">
-                <span>
-                   <a href="/product/Detail" > <img  src="/images/destacado-1.jpg" alt></a>
-                </span>
-                <div>
-                <input type="button" value="-">
-                <span> 1 </span>
-                <input type="button" value="+">
-                <span> $p. original</span>
-                <span>$p. desc</span>
-                <i class="fa-solid fa-trash-can"></i>
-                </div>
-            </div>
-            <p>descripción del producto</p>
-            </article>
-            <article class="productCart__product">
-                <h2>Nombre del producto</h2>
-                <div class="productCart__product_info">
+    <%- include('./partials/header') %>
+         <main class="productCart">
+            <section>
+                <section class="productCart__button">
+                    <input type="button" value="Carrito">
+                    <input type="button" value="Favoritos">
+                </section>
+                <section class="productCart__section">
+                <section >
+                    <article class="productCart__product">
+                        <h2>Nombre del producto</h2>
+                        <div class="productCart__product_info">
+                            <span>
+                            <a href="/product/Detail" > <img  src="/images/destacado-1.jpg" alt></a>
+                            </span>
+                            <div>
+                            <input type="button" value="-">
+                            <span> 1 </span>
+                            <input type="button" value="+">
+                            <span> $p. original</span>
+                            <span>$p. desc</span>
+                            <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </div>
+                        <p>descripción del producto</p>
+                        </article>
+                        <article class="productCart__product">
+                            <h2>Nombre del producto</h2>
+                            <div class="productCart__product_info">
+                                <span>
+                                <a href="/product/Detail"> <img  src="/images/destacado-1.jpg" alt></a>
+                                </span>
+                                <div>
+                                <input type="button" value="-">
+                                <span> 1 </span>
+                                <input type="button" value="+">
+                                <span> $p. original</span>
+                                <span>$p. desc</span>
+                                <i class="fa-solid fa-trash-can"></i>
+                                </div>
+                            </div>
+                            <p>descripción del producto</p>
+                            </article>
+                </section>
+                <!--
                     <span>
-                       <a href="/product/Detail"> <img  src="/images/destacado-1.jpg" alt></a>
-                    </span>
-                    <div>
-                    <input type="button" value="-">
-                    <span> 1 </span>
-                    <input type="button" value="+">
-                    <span> $p. original</span>
-                    <span>$p. desc</span>
-                    <i class="fa-solid fa-trash-can"></i>
+                    <p>¿Quieres agregarle DLC?</p>
+                    <input type="button" value="Ver más">
+                </span>
+                -->
+            <div class="linea">
+    
+            </div>
+                <section class="productCart__resumen">
+                    <h2>Resumen de Compra</h2>
+                    <div class="productCart__resumen-descuento" >
+                        <p>¿Tenés un codigo de descuento?</p>
+                    <input class="codigo" type="text" placeholder="Codigo" id="">
+                    <input type="button" value="Aplicar">
                     </div>
+                    <h3>Productos (suma de productos)</h3>
+                    <ul >
+                        <li>Subtotal <p>$precio</p></li>
+                        <li>Total <p>$precio</p></li>
+                    </ul>
+                <div class="productCart__resumen-button">
+                    <input type="button" value="finalizar compra">
+                    <input type="button" value="continuar comprando">
                 </div>
-                <p>descripción del producto</p>
-                </article>
-    </section>
-    <!--
-        <span>
-        <p>¿Quieres agregarle DLC?</p>
-        <input type="button" value="Ver más">
-    </span>
-    -->
-   <div class="linea">
-
-   </div>
-    <section class="productCart__resumen">
-        <h2>Resumen de Compra</h2>
-        <div class="productCart__resumen-descuento" >
-            <p>¿Tenés un codigo de descuento?</p>
-        <input class="codigo" type="text" placeholder="Codigo" id="">
-        <input type="button" value="Aplicar">
-        </div>
-        <h3>Productos (suma de productos)</h3>
-        <ul >
-            <li>Subtotal <p>$precio</p></li>
-            <li>Total <p>$precio</p></li>
-        </ul>
-    <div class="productCart__resumen-button">
-        <input type="button" value="finalizar compra">
-        <input type="button" value="continuar comprando">
-    </div>
-    </section>
-</section>
-    <section class="productCart__carousel" >
-        <h2> Productos Similares</h2>
-        <section class="productCart__carousel-products">
-            <span>
-                <i class="fas fa-angle-left"></i>
-            </span>
-        <section class="productCart__carousel-products-box">
-            <article>
-                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
-                <div>
-                    <p>$xxxx</p>
-                    <i class="fas fa-heart"></i>  
-                    <i class="fas fa-shopping-cart"></i>          
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
-                <div>
-                    <p>$xxxx</p>
-                    <i class="fas fa-heart"></i>  
-                    <i class="fas fa-shopping-cart"></i>          
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
-                <div>
-                    <p>$xxxx</p>
-                    <i class="fas fa-heart"></i>  
-                    <i class="fas fa-shopping-cart"></i>          
-                </div>
-            </article>
-        </section>
-        <section class="productCart__articles">
-            <article>
-                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
-                <div>
-                    <p>$xxxx</p>
-                    <i class="fas fa-heart"></i>  
-                    <i class="fas fa-shopping-cart"></i>          
-                </div>
-            </article>
-            <article>
-                <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
-                <div>
-                    <p>$xxxx</p>
-                    <i class="fas fa-heart"></i>  
-                    <i class="fas fa-shopping-cart"></i>          
-                </div>
-            </article>
-        </section>
-      <span>
-        <i class="fas fa-angle-right"></i>
-      </span>
-        </section>
-    </section>
-</section>
-</main>
+                </section>
+            </section>
+                <section class="productCart__carousel" >
+                    <h2> Productos Similares</h2>
+                    <section class="productCart__carousel-products">
+                        <span>
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                    <section class="productCart__carousel-products-box">
+                        <article>
+                            <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
+                            <div>
+                                <p>$xxxx</p>
+                                <i class="fas fa-heart"></i>  
+                                <i class="fas fa-shopping-cart"></i>          
+                            </div>
+                        </article>
+                        <article>
+                            <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
+                            <div>
+                                <p>$xxxx</p>
+                                <i class="fas fa-heart"></i>  
+                                <i class="fas fa-shopping-cart"></i>          
+                            </div>
+                        </article>
+                        <article>
+                            <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
+                            <div>
+                                <p>$xxxx</p>
+                                <i class="fas fa-heart"></i>  
+                                <i class="fas fa-shopping-cart"></i>          
+                            </div>
+                        </article>
+                    </section>
+                    <section class="productCart__articles">
+                        <article>
+                            <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
+                            <div>
+                                <p>$xxxx</p>
+                                <i class="fas fa-heart"></i>  
+                                <i class="fas fa-shopping-cart"></i>          
+                            </div>
+                        </article>
+                        <article>
+                            <a href="/product/detail"><img src="/images/j1.jpg" alt=""></a>                
+                            <div>
+                                <p>$xxxx</p>
+                                <i class="fas fa-heart"></i>  
+                                <i class="fas fa-shopping-cart"></i>          
+                            </div>
+                        </article>
+                    </section>
+                <span>
+                    <i class="fas fa-angle-right"></i>
+                </span>
+                    </section>
+                </section>
+            </section>
+    </main>
 <%- include('./partials/footer') %> 
 </body>
 </html>

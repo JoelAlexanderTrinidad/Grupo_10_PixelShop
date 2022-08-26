@@ -3,10 +3,12 @@ var router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const adminCheck = require('../middlewares/adminCheck');
+const userCheck = require('../middlewares/userCheck');
 const formCrearValidator = require("../validations/formCrearValidator");
 const formEditValidator = require("../validations/formEditValidator")
 
-const {productCart,productDetail, add, edit, store, search, update, remove}=require('../controllers/productController');
+const {productCart,productDetail, add, edit, store, search, update, remove, explore, AtoZ}=require('../controllers/productController');
+const {exploreApi} = require('../controllers/apis/products')
 
 const storage = multer.diskStorage({
       destination: (req, file, callback) =>{
@@ -24,7 +26,7 @@ const storage = multer.diskStorage({
 /* /product */
 
 router
-      .get('/cart',productCart)
+      .get('/cart',userCheck,productCart)
       .get('/detail/:id', productDetail)
       .get('/crear', adminCheck,add)
       .post('/crear', upload.single('img'), formCrearValidator, store)
@@ -32,5 +34,9 @@ router
       .put('/update/:id', upload.single('img'), adminCheck, formEditValidator,update)
       .get('/result', search)
       .delete('/remove/:id', adminCheck,remove)
+      .get('/explore', explore)
 
+      /* /api/product */
+      .post('/explore', AtoZ)
+      
 module.exports = router;

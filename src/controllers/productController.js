@@ -3,13 +3,56 @@ const { Op } = require("sequelize");
 const path = require('path');
 const fs = require('fs')
 const {validationResult} = require("express-validator");
-const { localsName } = require('ejs');
+const fetch = require('node-fetch')
 
 module.exports={
+    AtoZ: async (req, res) =>{
+        try {
+            let leter = req.body.L
+            let products = await db.Product.findAll({
+                where : {
+                  name : {
+                    [Op.startsWith] : [req.body.L]
+                  }
+                }
+            })
+            // return res.send(products)
+
+            return res.render('gamesAZ',{
+                products,
+                leter
+            })
+        
+            } catch (error) {
+                console.log(error)
+            }
+        },
+
+    explore: async (req, res) => {
+
+        let result
+        try {
+            result = await db.Product.findAll({
+                limit: 12,
+            })
+            if(result){
+                return res.render('productsExplore',{
+                    products : result
+                })
+            }
+            
+        } catch (error) {
+            console.log(error)
+        }
+
+    },
+
     productDetail:(req,res)=>{
         const product = db.Product.findByPk(req.params.id);
         
-        const products = db.Product.findAll();
+        const products = db.Product.findAll({
+            limit: 6,
+    });
         
         const juegoGen = db.Gender.findAll({
             attributes : ['id','name']
@@ -141,7 +184,6 @@ module.exports={
 
                 if(!body){                      
                     oldGenero = null
-                    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',typeof Number(body));
                 } else if( typeof body == 'string'){
                     numGenero = +body
                 }
@@ -263,6 +305,10 @@ module.exports={
             }
         })
         .then(products=>{
+            if(keyword == ''){
+                products = null
+            }
+            // return res.send(products)
             return res.render('result',{
                 products,
                 keyword

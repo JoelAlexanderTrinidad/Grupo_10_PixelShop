@@ -2,96 +2,83 @@
 <html lang="en">
 <%- include('./partials/head',{title: 'Home | Pixel Shop'}) %> 
 <body class="home">
-   <%- include('./partials/header') %> 
-    <main class="home__main">
-        <!-- Banner -->
-        <section>
-            <article class="home__main__banner">
-                <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline preload="auto"  id="miVideo">
-                    <source src="/videos/videoplayback.mp4" type="video/mp4">
-                    </video>
-            </article>
-        </section>
-        <h4>OFERTAS ESPECIALES <i class="fa-solid fa-tag"></i></h4>
-        <!-- Ofertas especiales -->
-        <section class="home__main__offer">
-            <% ofertasEpeciales.forEach(({id, name, price, discount, img}) => { %>             
-            <article>
-                <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
-                <div class="details">
-                    <p>$<%= price %></p>
-                    <span><%= discount %> %OFF</span>
-                    <div>
-                        <i class="fas fa-cart-plus"></i>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </article>
-            <% }) %>
-        </section>
-
-        <!-- slider -->
-        <div class="container-slider">
-            <div class="slider " id="slider">
+    <%- include('./partials/header') %>
+        <main class="home__main" >
+            
+            <!-- Banner -->
+            <section>
+                <article class="home__main__banner">
+                    <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline preload="auto"  id="miVideo">
+                        <source src="/videos/videoplayback.mp4" type="video/mp4">
+                        </video>
+                </article>
+            </section>
+            <h4>OFERTAS ESPECIALES <i class="fa-solid fa-tag"></i></h4>
+            <!-- Ofertas especiales -->
+            <section class="home__main__offer">
                 <% ofertasEpeciales.forEach(({id, name, price, discount, img}) => { %>             
-                    <article class="slider__article">
-                        <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
-                        
-                    </article>
-                <% }) %>
-              
-            </div>
-              <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
-              <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
-          </div>
-
-        <!-- Destacados -->
-        <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
-        <section class="home__main__featured">
-            <% destacados.forEach(({id,name, price, discount, img}) => { %>
-            <article>
-                <p>popularidad: 
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </p>
-                <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
-            </article>
-            <% }) %>
-            <div class="carousel">
-                <i class="fas fa-dot-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-            </div>
-        </section>
-        <!-- Publicidad (desactivar adblock para ver :) -->
-        <div class="home__main__publicidad">
-            <a href="https://playground.digitalhouse.com/"><img src="/images/publicidad.jpg" alt="" width="100%"></a>
-        </div>
-        <!-- Recomendados -->
-        <h4>RECOMENDADOS <i class="fa-solid fa-thumbs-up"></i></h4>
-        <section class="home__main__recommended">
-            <% recomendados.forEach(({id,name, price, discount, img}) => { %>        
                 <article>
-                    <img src="/images/<%= img %>" alt="" width="100%"></a>
-                    <h5>Reseña popular</h5>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores hic reiciendis quidem quasi obcaecati aut minima perspiciatis repellat! Asperiores obcaecati odit excepturi nobis eius modi voluptas saepe quos tempore!</p>
-                    <div>
-                        <a href="/product/detail/<%= id %>">Ver mas</a>
+                    <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" width="100%"></a>
+                    <div class="details">
+                        <p>$<%= (price - (price * discount) / 100).toFixed(2) %></p>
+                        <span><%= discount %> %OFF</span>
+                        <div>
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
                     </div>
                 </article>
-            <% }) %>
-        </section>     
-        <div class="home__main__continue">
-            <a href="/">Seguir explorando</a><!-- Desplegar más productos o abrir una nueva pág-->
-        </div>
-        <br>
-    </main>
-   <%- include('./partials/footer') %>
-   <script src="/js/index.js"></script>
+                <% }) %>
+            </section>
+            <!-- Destacados -->
+            <h4>DESTACADOS <i class="fa-solid fa-heart"></i></h4>
+                    <!-- slider -->
+                <div class="container-slider home__main__featured">
+                    <div class="slider " id="slider">
+                        <% destacados.forEach(({id, img, ranking}) => { %>
+                        <article class="slider__article">
+                            <p>ranking = <%= ranking %> <i class="fas fa-star"></i></p>
+                            <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" ></a>
+                        </article>
+                        <% }) %>
+                    </div>
+                        <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+                        <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+                </div>
+
+                <section class="destacados__no-slider home__main__featured" id="no-slider">
+                    <% destacados.forEach(({id, img, ranking}) => { %>
+                        <article class="">
+                            <p>ranking = <%= ranking %> <i class="fas fa-star"></i></p>
+                            <a href="/product/detail/<%= id %>"><img src="images/<%= img %>" alt="" ></a>
+                        </article>
+                        <% }) %>
+                </section>
+
+            <!-- Publicidad (desactivar adblock para ver :) -->
+            <div class="home__main__publicidad">
+                <a href="https://playground.digitalhouse.com/"><img src="/images/publicidad.jpg" alt="" width="100%"></a>
+            </div>
+            <!-- Recomendados -->
+            <h4> Novedades <i class="fa-solid fa-thumbs-up"></i></h4>
+            <section class="home__main__recommended">
+                <% recomendados.forEach(({id, description, img}) => { %>        
+                    <article>
+                        <img src="/images/<%= img %>" alt="" width="100%"></a>
+                        <h5>Descripción</h5>
+                        <span><%= description %></span>
+                        <div>
+                            <a href="/product/detail/<%= id %>">Ver mas</a>
+                        </div>
+                    </article>
+                <% }) %>
+            </section>     
+            <div class="home__main__continue">
+                <a href="/product/explore">Seguir explorando</a><!-- Desplegar más productos o abrir una nueva pág-->
+            </div>
+            <br>
+        </main>
+        <%- include('./partials/footer') %>
+    <script src="/js/index.js"></script>
 </body>
 </html>

@@ -3,55 +3,57 @@
     <%- include('./partials/head',{title: 'Ingresar | Pixel Shop'}) %> 
     <body>
        <%- include('./partials/header') %> 
-    
-    <main class="main_login">
-        <h2 class="main__login-capitalize">Ingresá</h2>
-        <section class="main__login">
-            <form action="" method="POST" id="login-form">
-                <div class="datos">
-                    <label for="email" class="main__login-capitalize"> Usuario/Correo electrónico</label>
-                    <input type="email" class="form-input form-control" name="email" id="email" placeholder=" usuario/email" >
-                    <span id="email-error"  style="color: #ff6666;"><%= locals.errores && errores.email? errores.email.msg : null %></span>
-                </div>
-                <div class="datos">
-                    <label for="password" class="main__login-capitalize">Contraseña</label>
-                    <input type="password" class="form-input form-control" name="password" id="password" placeholder=" Contraseña" ><span id="icono-error-pass"></span>
-                    <span id="pass-error" style="color: #ff6666;"><%= locals.errores && errores.password? errores.password.msg : null %> </span>           
-            <section class="required">
-                    <input type="checkbox" id="recordame" name="recordame" value="recordarme"  >
-                    <label for="recordame" class="main__login-capitalize">Recordame</label>            
-                    
-            </section>
+            <main class="main_login">
+            <div class="main_login-contenedor">
+                    <h2 class="main__login-capitalize">Ingresá</h2>
+                    <section class="main__login">
+                        <form action="" method="POST" id="login-form">
+                            <div class="datos">
+                                <label for="email" class="main__login-capitalize"> Usuario/Correo electrónico</label>
+                                <input type="email" class="form-input form-control" name="email" id="email" placeholder=" usuario/email" >
+                                <span id="email-error"  style="color: #ff6666;"><%= locals.errores && errores.email? errores.email.msg : null %></span>
+                            </div>
+                            <div class="datos">
+                                <label for="password" class="main__login-capitalize">Contraseña</label>
+                                <input type="password" class="form-input form-control" name="password" id="password" placeholder=" Contraseña" ><span id="icono-error-pass"></span>
+                                <span id="pass-error" style="color: #ff6666;"><%= locals.errores && errores.password? errores.password.msg : null %> </span>           
+                        <section class="required">
+                                <input type="checkbox" id="recordame" name="recordame" value="recordarme"  >
+                                <label for="recordame" class="main__login-capitalize">Recordame</label>            
+                                
+                        </section>
+                        
+                    </section>
+                    <section class="section__login">
+                        <div class="button">
+                            <button type="submit" class="buy-now-button">INICIAR SESIÓN</button>
+                        </div>
+                            <a href="¿Has olvidado tu contraseña?"></a>
+                            <p>O</p>
+                        <div class="button">
+                            <button><a href="/users/register">REGISTRATE</a></button>
+                        </div>
+                    </section>
+                </form>
             
-        </section>
-        <section class="section__login">
-            <div class="button">
-                <button type="submit" class="buy-now-button">INICIAR SESIÓN</button>
+                    <section class="redes">
+                        <ul>
+                            <li><a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a></li>
+                            <li><a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </section>
+                    <section class="section__unirse">
+                        <p>Únete a Pixel y descubre miles de títulos de juegos</p>
+                        <p>Es gratis y fácil de usar</p>
+                    </section>
+                    <div class="unete">
+                        <a href="/users/register">Únete a Pixel</a>    
+                    </div>
+                
             </div>
-                <a href="¿Has olvidado tu contraseña?"></a>
-                <p>O</p>
-            <div class="button">
-                <button><a href="/users/register">REGISTRATE</a></button>
-            </div>
-        </section>
-    </form>
-
-        <section class="redes">
-            <ul>
-                <li><a href="http://facebook.com" target="__BLANK"><i class="fab fa-facebook-square"></i></a></li>
-                <li><a href="http://mail.google.com" target="__BLANK"><i class="fab fa-google"></i></a></li>
-                <li><a href="http://twitter.com"target="__BLANK"><i class="fab fa-twitter"></i></a></li>
-            </ul>
-        </section>
-        <section class="section__unirse">
-            <p>Únete a Pixel y descubre miles de títulos de juegos</p>
-            <p>Es gratis y fácil de usar</p>
-        </section>
-        <div class="unete">
-            <a href="/users/register">Únete a Pixel</a>    
-        </div>
-    </main>
-    <%- include('./partials/footer') %>
+            </main>
+            <%- include('./partials/footer') %>
     <script src="/js/login.js"></script>
 </body>
 </html>

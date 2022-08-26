@@ -3,45 +3,61 @@
     <%- include('./partials/head',{title: 'Lista de usuarios | Pixel Shop'}) %> 
     <body>
        <%- include('./partials/header') %>
-    <main class="col-12 col-md-10 col-lg-8 mx-auto">
-      <h3 >Usuarios</h3>
-
-<table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Rol</th>
-        <th scope="col">Eliminar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% users.forEach(user => { %>
+      <main class="col-12 col-md-10 col-lg-8 mx-auto">
+        <h3 >Usuarios</h3>
+  
+  <table class="table">
+      <thead class="thead-dark">
         <tr>
-          <th scope="row"><%= user.id %> </th>
-          <td><%= user.nombre %></td>
-          <td><%= user.apellido %></td>
-          <form action="/admin/update/<%= user.id %>?_method=PUT" method="POST">
-          <td>
-          <select name="rolId">
-            <option hidden value="">
-              <%= user.rolId %></option>
-              <% rols.forEach(rol => { %>
-                <option class="text-uppercase" value="<%= rol.id%>" <%= user.rolId === rol.id ? 'selected' : null %>>
-                  <%= rol.id %>. <%=  rol.name %></option>
-              <% }) %>
-          </select>
-          <a href=""><button type="submit" class="badge rounded-pill border-0"><i  class="fas fa-edit"></i></button></a></td>
-          </form>
-          <form action="/admin/remove/<%= user.id %>?_method=DELETE" method="POST">
-            <td><a href=""><button class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></td>
-        </form>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Eliminar</th>
         </tr>
-        <% }) %>
-    </tbody>
-  </table>
-</main>
-<%- include('./partials/footer') %>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr>
+            <th scope="row"><%= user.id %> </th>
+            <td><%= user.nombre %></td>
+            <td><%= user.apellido %></td>
+            <form action="/admin/update/<%= user.id %>?_method=PUT" method="POST">
+            <td>
+            <select name="rolId">
+              <option hidden value="">
+                <%= user.rolId %></option>
+                <% rols.forEach(rol => { %>
+                  <option class="text-uppercase" value="<%= rol.id%>" <%= user.rolId === rol.id ? 'selected' : null %>>
+                    <%= rol.id %>. <%=  rol.name %></option>
+                <% }) %>
+            </select>
+            <a href=""><button type="submit" class="badge rounded-pill border-0"><i  class="fas fa-edit"></i></button></a></td>
+            </form>
+            <form action="/admin/remove/<%= user.id %>?_method=DELETE" method="POST">
+              <td><a href=""><button class="badge rounded-pill border-0"><i id="tachito" class="fas fa-trash"></i></button></a></td>
+          </form>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+
+    <nav aria-label="">
+      <ul class="pagination d-flex justify-content-center">
+        <% if (page > 1) { %> <li class="page-item"><a class="page-link" href="/admin/listUsers/?page=<%=page-1%>">Atrás</a></li> <% } %>
+          <% for( let i = 1; i <= ultimoLink; i++ ) { %>
+            <% if (i === page) { %>
+              <li class="page-item active"><a class="page-link" href="/admin/listUsers/?page=<%=i%>"><%=i%></a></li>
+            <% continue; %>
+          <% } %>
+            <li class="page-item"><a class="page-link" href="/admin/listUsers/?page=<%=i%>"><%=i < 1 ? null : i%></a></li>
+        <% } %>
+        <% if (page < numeroPaginas) { %> <li class="page-item"><a class="page-link" href="/admin/listUsers/?page=<%=page+1%>">Siguiente</a></li> <% } %>
+        
+      </ul>
+    </nav>      
+
+  </main>
+  <%- include('./partials/footer') %>
 </body>
 </html>
